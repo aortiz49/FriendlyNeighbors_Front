@@ -1,0 +1,25 @@
+<h2 class="text-center">Neighborhoods</h2>
+<div class="neighTable container-fluid">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th class="h6">Name</th>
+          <th class="h6">Locality</th>
+          <th class="h6">Resident Capacity</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let n of neighborhoods">
+        <td>
+          {{n.name}}
+        </td>
+        <td>
+          {{n.locality}}
+        </td>
+        <td>
+          {{n.numberOfResidents}}
+        </td>
+      </tbody>
+    </table>
+  </div>
+</div>
