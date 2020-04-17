@@ -1,0 +1,37 @@
+<h3>
+  Business-List
+</h3>
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h5">Name</th>
+          <th class="h5">Address</th>
+          <th class="h5">Opening-Time</th>
+          <th class="h5">Closing-Time</th>
+          <th class="h5">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let c of businesses">
+          <td>
+            <dd>{{c.name}}</dd>
+          </td>
+          <td>
+            <dd>{{c.address}}</dd>
+          </td>
+          <td>
+            <dd>{{c.openingTime}}</dd>
+          </td>
+          <td>
+            <dd>{{c.closingTime}}</dd>
+          </td>
+          <td>
+            <dd>{{c.rating}}</dd>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
