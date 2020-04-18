@@ -1,0 +1,55 @@
+<h3>
+  Posts-List
+</h3>
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+      <tr>
+
+        <th class="h5">id</th>
+        <th class="h5">publishDate</th>
+        <th class="h5">title</th>
+        <th class="h5">description</th>
+        <th class="h5">numberOfLikes</th>
+        <th class="h5">author</th>
+
+      </tr>
+      </thead>
+      <tbody>
+
+      <div *ngFor="let c of posts">
+        <tr>
+
+          <td>
+            <dd>{{c.id}}</dd>
+          </td>
+          <td>
+            <dd>{{c.publishDate}}</dd>
+          </td>
+          <td>
+            <dd>{{c.title}}</dd>
+          </td>
+          <td>
+            <dd>{{c.description}}</dd>
+          </td>
+          <td>
+            <dd>{{c.numberOfLikes}}</dd>
+          </td>
+          <td>
+            <dd>{{c.author}}</dd>
+          </td>
+
+
+        </tr>
+
+          <br>
+        <th class="h5">Comments</th>
+        <app-post-comment [comments]="c.comments" ]></app-post-comment>
+      </div>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

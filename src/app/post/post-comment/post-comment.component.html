@@ -1,0 +1,36 @@
+<h3>
+  Posts-List
+</h3>
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+      <tr>
+
+
+         <th class="h5">id</th>
+         <th class="h5">author</th>
+         <th class="h5">post</th>
+         <th class="h5">date</th>
+         <th class="h5">text</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of comments">
+
+        <td><dd>{{c.id}}</dd></td>
+        <td><dd>{{c.author}}</dd></td>
+        <td><dd>{{c.post}}</dd></td>
+        <td><dd>{{c.date}}</dd></td>
+        <td><dd>{{c.text}}</dd></td>
+
+      </tr>
+
+
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
