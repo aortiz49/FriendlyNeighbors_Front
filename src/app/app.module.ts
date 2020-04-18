@@ -6,6 +6,7 @@ import {PostModule} from "./post/post.module";
 import {ResidentModule} from "./resident/resident.module";
 import {BusinessModule} from "./business/business.module";
 import {NotificationModule} from "./notification/notification.module";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import {NotificationModule} from "./notification/notification.module";
     PostModule,
     ResidentModule,
     BusinessModule,
-    NotificationModule
+    NotificationModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
