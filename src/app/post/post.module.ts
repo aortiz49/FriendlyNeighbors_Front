@@ -12,7 +12,7 @@ import { PostCommentComponent } from './post-comment/post-comment.component';
         FormsModule,
         RouterModule,
     ],
-  declarations: [PostListComponent, , PostCommentComponent],
+  declarations: [PostListComponent, PostCommentComponent],
   exports: [PostListComponent]
 })
 export class PostModule { }

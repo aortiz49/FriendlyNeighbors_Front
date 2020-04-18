@@ -13,12 +13,12 @@ export class BusinessListComponent implements OnInit {
   constructor(private bussinessService: BusinessService) {
 
   }
-  
-  private businesses:Array<Business>;
+
+  public businesses:Array<Business>;
 
   getAllBusiness(){
     this.bussinessService.getbusinesses().subscribe(bs => {
-        this.businesses = bs; 
+        this.businesses = bs;
       }
     )
   }

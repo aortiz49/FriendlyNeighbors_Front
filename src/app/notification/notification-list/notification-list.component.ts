@@ -9,13 +9,13 @@ import { NotificationService } from '../notification.service';
 })
 export class NotificationListComponent implements OnInit {
 
-  private notifications:Array<Notification>;
+  public notifications:Array<Notification>;
 
   constructor(private notificationService: NotificationService) { }
 
   getAllNotifications(){
     this.notificationService.getNotifications().subscribe(bs => {
-        this.notifications = bs; 
+        this.notifications = bs;
       }
     )
   }

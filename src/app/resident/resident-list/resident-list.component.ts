@@ -19,7 +19,7 @@ export class ResidentListComponent implements OnInit {
 
   @Input() neigh_id: number;
 
-  private residents: ResidentDetail[];
+  public residents: ResidentDetail[];
 
   public show: boolean;
 

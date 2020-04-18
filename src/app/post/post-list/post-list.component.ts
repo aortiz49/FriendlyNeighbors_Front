@@ -30,7 +30,7 @@ export class PostListComponent implements OnInit {
   }
 
 
-  private posts: PostDetail[];
+  public posts: PostDetail[];
 
   getAllPosts(){
     this.postService.getposts(this.neigh_id).subscribe(bs => {
