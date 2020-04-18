@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {PostModule} from "./post/post.module";
 import {ResidentModule} from "./resident/resident.module";
+import {BusinessModule} from "./business/business.module";
+import {NotificationModule} from "./notification/notification.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import {ResidentModule} from "./resident/resident.module";
   imports: [
     BrowserModule,
     PostModule,
-    ResidentModule
+    ResidentModule,
+    BusinessModule,
+    NotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
