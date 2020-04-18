@@ -7,6 +7,7 @@ import {ResidentModule} from "./resident/resident.module";
 import {BusinessModule} from "./business/business.module";
 import {NotificationModule} from "./notification/notification.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {NeighborhoodModule} from "./neighborhood/neighborhood.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     ResidentModule,
     BusinessModule,
     NotificationModule,
-    HttpClientModule
+    HttpClientModule,
+    NeighborhoodModule
   ],
   providers: [HttpClient ],
   bootstrap: [AppComponent]

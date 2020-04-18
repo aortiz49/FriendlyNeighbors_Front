@@ -19,7 +19,7 @@ export class NotificationService {
 
 getNotifications():Observable<Notification[]>{
   return this.http.get<Notification[]>(
-    API_URL + neighborhoods + "/" + 198 + notification + "/"
+    API_URL + neighborhoods + "/" + 200 + notification + "/"
 );
 }
 
