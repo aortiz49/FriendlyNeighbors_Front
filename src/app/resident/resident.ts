@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,26 +12,51 @@ import {Neighborhood} from "../neighborhood/neighborhood";
  */
 export class Resident {
 
-    /**
-     * Represents id of the resident
-     */
+  /**
+   * Represents id of the resident
+   */
 
-    public id: number;
+  public id: number;
 
-    /**
-     * Represents the neighborhood of resident
-     */
-    public neighborhood: Neighborhood;
+  /**
+   * Represents phone number of this resident
+   */
+  public phoneNumber: string;
 
-    public name: string;
+  /**
+   * Represents email of this resident
+   */
+  public email: string;
 
-    public profilePicture: String;
+  /**
+   * Represents the name of this resident
+   */
+  public name: string;
+
+  /**
+   * Represents nickname of this resident
+   */
+  public nickname: string;
+
+  /**
+   * The resident's address.
+   */
+  public address: string;
+
+  /**
+   * Represents preferences of this resident
+   */
+  public preferences: string;
+
+  /**
+   * Represents a link to a proof of residence file of this resident
+   */
+  public proofOfResidence: string;
+
+  /**
+   * Represents the neighborhood of this resident
+   */
+  public neighborhood: Neighborhood;
 
 
-    constructor() {
-        this.id = -1;
-        this.neighborhood = null;
-        this.name = "";
-        this.profilePicture = "";
-    }
 }

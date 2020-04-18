@@ -1,10 +1,12 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 import {Resident} from '../resident/resident';
+import {Post} from "../post/post";
+import {CommentP} from "../post/commentP";
 
 /**
  *This class represents a resident made by a resident
@@ -12,16 +14,22 @@ import {Resident} from '../resident/resident';
 export class ResidentDetail extends Resident {
 
 
-    private _album: string[];
+  /**
+   * Posts shared with this resident.
+   */
+  public postsToView: Post[];
 
 
-    get album(): string[] {
-        return this._album;
-    }
+  /**
+   * Represents posts made by this resident
+   */
+  public posts: Post[];
 
-    set album(value: string[]) {
-        this._album = value;
-    }
+  /**
+   * Represents comments posted by this resident
+   */
+  public comments: CommentP[];
+
 
 }
 
