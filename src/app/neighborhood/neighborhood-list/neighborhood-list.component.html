@@ -1,24 +1,21 @@
-<h2 class="text-center">Neighborhoods</h2>
-<div class="neighTable container-fluid">
-  <div class="col-md-12">
-    <table class="table table-striped">
-      <thead class="thead-dark">
+<h3>
+  Neighborhoods
+</h3>
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
         <tr>
-          <th class="h6">Name</th>
-          <th class="h6">Locality</th>
-          <th class="h6">Resident Capacity</th>
+          <th class="h5">Name</th>
         </tr>
       </thead>
-      <tbody *ngFor="let n of neighborhoods">
-        <td>
-          {{n.name}}
-        </td>
-        <td>
-          {{n.locality}}
-        </td>
-        <td>
-          {{n.numberOfResidents}}
-        </td>
+      <tbody>
+        <tr *ngFor="let c of neighborhoods">
+          <td>
+            <dd>{{c.name}}</dd>
+          </td>
+
+      </tr>
       </tbody>
     </table>
   </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Neighborhood } from '../Neighborhood';
+import { Neighborhood } from '../neighborhood';
 import {NeighborhoodService} from '../neighborhood.service'
 
 @Component({

@@ -7,6 +7,6 @@ import { NeighborhoodListComponent } from './neighborhood-list/neighborhood-list
     CommonModule
   ],
   declarations: [NeighborhoodListComponent],
-  exports: [NeighborhoodListComponent]
+  exports:[NeighborhoodListComponent]
 })
 export class NeighborhoodModule { }

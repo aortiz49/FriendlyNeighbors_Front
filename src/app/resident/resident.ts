@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
+import { Neighborhood } from '../neighborhood/neighborhood';
 
-import {Neighborhood} from "../neighborhood/neighborhood";
+
 
 /**
  *This class represents a resident made by a resident
