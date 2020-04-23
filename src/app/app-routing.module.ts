@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { NeighborhoodListComponent } from './neighborhood/neighborhood-list/neighborhood-list.component';
 
-
+const routes: Routes = [
+  { path: 'neighborhoods', component: NeighborhoodListComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

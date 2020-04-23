@@ -14,7 +14,7 @@ export class NeighborhoodListComponent implements OnInit {
 
   getNeighborhoods(): void {
     this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {
-      this.neighborhoods = neighborhoods;
+      this.neighborhoods = neighborhoods.slice(0,4);
     });
   }
 

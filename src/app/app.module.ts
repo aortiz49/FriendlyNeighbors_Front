@@ -8,6 +8,7 @@ import { BusinessModule } from './business/business.module';
 import { NotificationModule } from './notification/notification.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from './neighborhood/neighborhood.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { NeighborhoodModule } from './neighborhood/neighborhood.module';
     BusinessModule,
     NotificationModule,
     NeighborhoodModule,
+    AppRoutingModule,
     HttpClientModule,
   ],
   providers: [HttpClient],
