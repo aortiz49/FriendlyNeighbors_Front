@@ -20,7 +20,7 @@ import { UsersModule } from './users/users.module';
 import { AccountSettingsModule } from './account-settings/account-settings.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'neighborhoods', component: NeighborhoodListComponent },
   { path: 'main', component: LandingComponent },
 ];

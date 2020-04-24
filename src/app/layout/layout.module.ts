@@ -6,24 +6,20 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild([]),
-    FlexLayoutModule
-  ],
+  imports: [CommonModule, RouterModule.forChild([]), FlexLayoutModule],
   exports: [
     MainLayoutComponent,
-    FooterOnlyLayoutComponent
+    FooterOnlyLayoutComponent,
   ],
   declarations: [
     MainLayoutComponent,
     FooterOnlyLayoutComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
-  ]
+    SidebarComponent,
+  ],
 })
-export class LayoutModule { }
+export class LayoutModule {}
