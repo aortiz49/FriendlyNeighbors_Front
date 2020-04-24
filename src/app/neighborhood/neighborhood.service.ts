@@ -17,9 +17,6 @@ export class NeighborhoodService {
     return this.http.get<Neighborhood[]>(`${this.apiUrl}/`);
   }
 
- getNeighborhood(id):Observable<Neighborhood> {
-   return this.http.get<Neighborhood>(`${this.apiUrl}`);
- }
 
 
 }

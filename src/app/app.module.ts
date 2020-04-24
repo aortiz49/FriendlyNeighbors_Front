@@ -8,10 +8,28 @@ import { BusinessModule } from './business/business.module';
 import { NotificationModule } from './notification/notification.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from './neighborhood/neighborhood.module';
+import { LandingModule } from './landing/landing.module';
+import { Routes, RouterModule } from '@angular/router';
+import { NeighborhoodListComponent } from './neighborhood/neighborhood-list/neighborhood-list.component';
+import { LandingComponent } from './landing/landing.component';
+import { LayoutModule } from './layout/layout.module';
+import { LoginModule } from './login/login.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { RegistrationModule } from './registration/registration.module';
+import { UsersModule } from './users/users.module';
+import { AccountSettingsModule } from './account-settings/account-settings.module';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'neighborhoods', component: NeighborhoodListComponent },
+  { path: 'main', component: LandingComponent },
+];
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    RouterModule.forRoot(routes),
+    LandingModule,
     BrowserModule,
     PostModule,
     ResidentModule,
@@ -19,6 +37,12 @@ import { NeighborhoodModule } from './neighborhood/neighborhood.module';
     NotificationModule,
     NeighborhoodModule,
     HttpClientModule,
+    LayoutModule,
+    LoginModule,
+    DashboardModule,
+    RegistrationModule,
+    UsersModule,
+    AccountSettingsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent],
