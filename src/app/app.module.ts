@@ -8,6 +8,7 @@ import {BusinessModule} from "./business/business.module";
 import {NotificationModule} from "./notification/notification.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {NeighborhoodModule} from "./neighborhood/neighborhood.module";
+import { FavorModule } from './favor/favor.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {NeighborhoodModule} from "./neighborhood/neighborhood.module";
     ResidentModule,
     BusinessModule,
     NotificationModule,
+    FavorModule,
     HttpClientModule,
     NeighborhoodModule
   ],

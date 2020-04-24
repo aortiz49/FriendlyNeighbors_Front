@@ -1,31 +1,30 @@
 <h3>
-  Business-List
+  Favor-List
 </h3>
 <div class="container-fluid">
   <div class="col-6">
     <table class="table">
       <thead>
         <tr>
-          <th class="h5">Name</th>
-          <th class="h5">Address</th>
-          <th class="h5">Opening-Time</th>
-          <th class="h5">Closing-Time</th>
-          <th class="h5">Rating</th>
+          <th class="h5">Title</th>
+          <th class="h5">Description</th>
+          <th class="h5">Type</th>
+          <th class="h5">Is Help Wanted</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor= "let c of businesses">
+        <tr *ngFor= "let c of favors">
           <td>
-            <dd>{{c.name}}</dd>
+            <dd>{{c.title}}</dd>
           </td>
           <td>
-            <dd>{{c.address}}</dd>
+            <dd>{{c.description}}</dd>
           </td>
           <td>
-            <dd>{{c.openingTime}}</dd>
+            <dd>{{c.type}}</dd>
           </td>
           <td>
-            <dd>{{c.closingTime}}</dd>
+            <dd>{{c.isHelpWanted}}</dd>
           </td>
           <td>
             <dd>{{c.rating}}</dd>
