@@ -51,13 +51,36 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0404fa', endColorstr='#9b42da', GradientType=1 );
 
-  padding: 1em;
+  padding: 3em;
   padding-bottom: 0em;
+  padding-top: 2em;
+
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
 }
 
 footer {
+  padding: 2em;
+}
+
+p{
+  font-size: 18px;
   padding: 1em;
+}
+
+.container-fluid{
+  padding-left: 0;
+}
+
+.desc{
+  padding-top: 50px;
+}
+
+#desc{
+  color: white;
+}
+
+a{
+  color: white;
 }
