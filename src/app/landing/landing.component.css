@@ -46,7 +46,7 @@ p {
 }
 
 .desc,.profile {
-  padding-top: 150px;
+  padding-top: 120px;
 }
 
 a {
@@ -76,11 +76,11 @@ a {
 }
 
 .but1,.but2 {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .btn-round-lg:hover {
-  background-color: #9544d7}
+  background-color: #AA54d7}
 
 .btn-round-lg:active{
   background-color: red;
@@ -91,4 +91,8 @@ a {
 
 .container-fluid{
   padding-left: 50px;
+}
+.profile{
+  padding-left: 100px;
+
 }
