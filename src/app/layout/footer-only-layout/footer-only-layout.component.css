@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
+  overflow: hidden;
+
 }
 
-.content {
-  background: #71FA4C;
-}
+
 

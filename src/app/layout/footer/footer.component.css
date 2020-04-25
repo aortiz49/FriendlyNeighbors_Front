@@ -1,5 +1,8 @@
 :host {
-  background: #5786E1;
-  padding: 15px;
-  text-align: center;
+  padding-bottom: 3em;
+  padding-left: 4em;
+  text-align: left;
+  font-size: 1.2em;
+  overflow: hidden;
+
 }
