@@ -1,33 +1,13 @@
 <h3>
-  Notification-List
+  Notifications
 </h3>
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="h5">Header</th>
-          <th class="h5">Description</th>
-          <th class="h5">Seen</th>
-          <th class="h5">Priority</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor= "let c of notifications">
-          <td>
-            <dd>{{c.header}}</dd>
-          </td>
-          <td>
-            <dd>{{c.description}}</dd>
-          </td>
-          <td>
-            <dd>{{c.seen}}</dd>
-          </td>
-          <td>
-            <dd>{{c.priority}}</dd>
-          </td>
-      </tr>
-      </tbody>
-    </table>
+<div *ngIf= "selected">
+  <app-notification-detail [notificationDetail]= "selectedNotification"></app-notification-detail>
+</div>
+
+<div *ngFor= "let c of notifications">
+  <div class="alert alert-info" role="alert" (click)= "onSelected(c)" style="width: 60rem;">
+    <h5 class="card-title">{{c.header}}</h5>
+    <p> {{c.publishDate}}</p>
   </div>
 </div>

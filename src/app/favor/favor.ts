@@ -2,6 +2,7 @@ import { Resident } from '../resident/resident';
 
 export class Favor {
 
+  private _id:number;
   private _author: Resident;
   private _datePosted: Date;
   private _title: String;
@@ -10,7 +11,7 @@ export class Favor {
   private _isHelpWanted: Boolean;
   private _candidates: Resident[];
 
-constructor(candidates:Resident[], author:Resident, datePosted:Date, title:String, descrption:String, type:String, ishelpwanted:Boolean){
+constructor(id:number, candidates:Resident[], author:Resident, datePosted:Date, title:String, descrption:String, type:String, ishelpwanted:Boolean){
   this._author=author;
   this._datePosted=datePosted;
   this._title=title;
@@ -18,8 +19,11 @@ constructor(candidates:Resident[], author:Resident, datePosted:Date, title:Strin
   this._type=type;
   this._isHelpWanted=ishelpwanted;
   this._candidates=candidates;
+  this._id=id;
 }
-
+  public get id():number{
+    return this._id;
+  }
   public get isHelpWanted(): Boolean {
     return this._isHelpWanted;
   }

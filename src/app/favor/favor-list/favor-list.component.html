@@ -1,36 +1,13 @@
+
 <h3>
-  Favor-List
+  Favors
 </h3>
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="h5">Title</th>
-          <th class="h5">Description</th>
-          <th class="h5">Type</th>
-          <th class="h5">Is Help Wanted</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor= "let c of favors">
-          <td>
-            <dd>{{c.title}}</dd>
-          </td>
-          <td>
-            <dd>{{c.description}}</dd>
-          </td>
-          <td>
-            <dd>{{c.type}}</dd>
-          </td>
-          <td>
-            <dd>{{c.isHelpWanted}}</dd>
-          </td>
-          <td>
-            <dd>{{c.rating}}</dd>
-          </td>
-      </tr>
-      </tbody>
-    </table>
+<div *ngIf= "selected">
+  <app-favor-detail [favorDetail]= "selectedFavor"></app-favor-detail>
+</div>
+
+<div *ngFor= "let c of favors">
+  <div class="alert alert-danger" role="alert" (click)= "onSelected(c)" style="width: 60rem;">
+    <h5 class="card-title">{{c.title}}</h5>
   </div>
 </div>

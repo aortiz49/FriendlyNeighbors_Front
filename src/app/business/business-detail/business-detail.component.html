@@ -1,0 +1,36 @@
+<div class="jumbotron" style="width: 60rem;">
+  <h1 class="display-4">{{businessDetail.name}}</h1>
+  <h3>Owner: {{businessDetail.owner.name}}</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h5>Address</h5>
+        {{businessDetail.address}}
+      </div>
+      <div class="col-sm">
+        <h5>Rating</h5>
+        {{businessDetail.rating}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <h5>Opening Time:</h5>
+        {{businessDetail.openingTime}}
+      </div>
+      <div class="col-sm">
+        <h5>Closing Time</h5>
+        {{businessDetail.closingTime}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <h5>Latitude</h5>
+        {{businessDetail.latitude}}
+      </div>
+      <div class="col-sm">
+        <h5>Longitude</h5>
+        {{businessDetail.longitude}}
+      </div>
+    </div>
+  </div>
+</div>

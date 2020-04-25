@@ -1,0 +1,29 @@
+<div class="jumbotron" style="width: 60rem;">
+  <h1 class="display-4">{{favorDetail.title}}</h1>
+  <h3>Type</h3>
+  <h6>{{favorDetail.type}}</h6>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <h5>Description</h5>
+    </div>
+    <div class="row">
+      <p>{{favorDetail.description}}</p>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <h5>Author</h5>
+        {{favorDetail.author.name}}
+      </div>
+      <div class="col-sm">
+        <h5>is Help Wanted</h5>
+        {{favorDetail.isHelpWanted}}
+      </div>
+      <div class="col-sm">
+        <h5>Candidates</h5>
+        <dd *ngFor = "let a of favorDetail.candidates">{{a.name}}</dd>
+      </div>
+    </div>
+  </div>
+  <h6>{{favorDetail.datePosted}}</h6>
+</div>

@@ -19,6 +19,14 @@ export class FavorListComponent implements OnInit {
     })
   }
 
+  selected=false;
+  selectedFavor:Favor;
+
+  onSelected(c:Favor):void{
+    this.selected=true;
+    this.selectedFavor=c;
+  }
+
   ngOnInit() {
     this.getFavors();
   }

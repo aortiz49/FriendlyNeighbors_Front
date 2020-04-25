@@ -20,6 +20,15 @@ export class NotificationListComponent implements OnInit {
     )
   }
 
+  selected = false;
+  selectedNotification:Notification;
+
+  onSelected(b:Notification):void{
+    this.selected = true;
+    this.selectedNotification = b;
+  }
+
+
   ngOnInit() {
     this.getAllNotifications();
   }

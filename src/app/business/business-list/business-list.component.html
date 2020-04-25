@@ -1,37 +1,12 @@
 <h3>
-  Business-List
+  Businesses
 </h3>
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="h5">Name</th>
-          <th class="h5">Address</th>
-          <th class="h5">Opening-Time</th>
-          <th class="h5">Closing-Time</th>
-          <th class="h5">Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor= "let c of businesses">
-          <td>
-            <dd>{{c.name}}</dd>
-          </td>
-          <td>
-            <dd>{{c.address}}</dd>
-          </td>
-          <td>
-            <dd>{{c.openingTime}}</dd>
-          </td>
-          <td>
-            <dd>{{c.closingTime}}</dd>
-          </td>
-          <td>
-            <dd>{{c.rating}}</dd>
-          </td>
-      </tr>
-      </tbody>
-    </table>
+<div *ngIf= "selected">
+  <app-business-detail [businessDetail]= "selectedBusiness"></app-business-detail>
+</div>
+
+<div *ngFor= "let c of businesses">
+  <div class="alert alert-success" role="alert" (click)= "onSelected(c)" style="width: 60rem;">
+    <h5 class="card-title">{{c.name}}</h5>
   </div>
 </div>
