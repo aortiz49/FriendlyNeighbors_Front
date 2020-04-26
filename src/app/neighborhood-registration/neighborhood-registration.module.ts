@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NeighborhoodRegistrationComponent } from './neighborhood-registration.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule
   ],
   declarations: [NeighborhoodRegistrationComponent],
   exports: [NeighborhoodRegistrationComponent]
