@@ -6,10 +6,11 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { ToastrService } from 'ngx-toastr';
 import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { Neighborhood } from '../neighborhood/neighborhood';
-import { ToastrNotificationService } from '../utility/toastr-notification.service';
+import { Observable } from 'rxjs';
+import { ToastrService, IndividualConfig } from 'ngx-toastr';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-neighborhood-registration',
@@ -18,9 +19,11 @@ import { ToastrNotificationService } from '../utility/toastr-notification.servic
 })
 export class NeighborhoodRegistrationComponent implements OnInit {
   constructor(
-    private toastr: ToastrNotificationService,
-    private neighborhoodService: NeighborhoodService
+    private toastr: ToastrService,
+    private neighborhoodService: NeighborhoodService,
+    private router: Router
   ) {}
+
 
   // list of localities acceptable
   localities: Array<string> = [
@@ -74,16 +77,24 @@ export class NeighborhoodRegistrationComponent implements OnInit {
     var locality: string = this.neighborhoodForm.value.locality;
     var neigh = new Neighborhood(3000, name, locality, numberOfResidents);
 
-    this.neighborhoodService.addNeighborhood(neigh).subscribe();
+    const toastrConfig: Partial<IndividualConfig> = {
+      timeOut: 1000,
+    };
+
+    var observable = this.neighborhoodService
+      .addNeighborhood(neigh)
+      .subscribe(() => {
+        this.neighborhoodForm.reset();
+        this.neighborhoodForm.controls.locality.setValue('Choose...');
+        this.toastr.success(
+          'Comment was successfully created',
+          'Comment added',toastrConfig
+        );
+        setTimeout(() => {
+          this.router.navigateByUrl('');
+      }, 1500);
+      });
   }
 
   ngOnInit() {}
-
-  showToaster(){
-    this.toastr.successMessage("Neighborhood created successfully!","Notification")
-  }
-
-  showHtmlToaster(){
-    this.toastr.showHTMLMessage("<h2>Data shown successfully !!</h2>", "Notification")
-  }
 }
