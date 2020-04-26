@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { NeighborhoodService } from '../neighborhood/neighborhood.service';
+import { Neighborhood } from '../neighborhood/neighborhood';
 
 @Component({
   selector: 'app-neighborhood-registration',
@@ -6,6 +14,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./neighborhood-registration.component.css'],
 })
 export class NeighborhoodRegistrationComponent implements OnInit {
+  constructor(private neighborhoodService: NeighborhoodService) {}
+
   // list of localities acceptable
   localities: Array<string> = [
     'Antonio Narinño',
@@ -27,10 +37,39 @@ export class NeighborhoodRegistrationComponent implements OnInit {
     'Teusaquillo',
     'Tunjuelito',
     'Usaquén',
-    'Usme'
+    'Usme',
   ];
 
-  constructor() {}
+  neighborhoodForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    numberOfResidents: new FormControl('', [Validators.required]),
+    locality: new FormControl('', [Validators.required]),
+  });
+
+  onSubmit(): void {
+    console.log(
+      'Name:' +
+        this.neighborhoodForm.get('name').value +
+        '\n' +
+        'Locality:' +
+        this.neighborhoodForm.get('locality').value +
+        '\n' +
+        'Capacity:' +
+        this.neighborhoodForm.get('numberOfResidents').value
+    );
+
+    this.addNeighborhood();
+  }
+
+  addNeighborhood(): void {
+    var name: string = this.neighborhoodForm.value.name;
+    var numberOfResidents: number = this.neighborhoodForm.value
+      .numberOfResidents;
+    var locality: string = this.neighborhoodForm.value.locality;
+    var neigh = new Neighborhood(3000, name, locality, numberOfResidents);
+
+    this.neighborhoodService.addNeighborhood(neigh);
+  }
 
   ngOnInit() {}
 }
