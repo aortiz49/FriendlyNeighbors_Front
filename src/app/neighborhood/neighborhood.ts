@@ -8,22 +8,22 @@ export class Neighborhood {
   /**
    * The id of the neighborhood.
    */
-  private id: number;
+  public id: number;
 
   /**
    * The name of the neighborhood.
    */
-  private name: string;
+  public name: string;
 
   /**
    * The locality of the neighborhood.
    */
-  private locality: string;
+  public locality: string;
 
   /**
    * The max capacity of residents of the neighborhood.
    */
-  private numberOfResidents: number;
+  public numberOfResidents: number;
 
   //===================================================
   // Constructor

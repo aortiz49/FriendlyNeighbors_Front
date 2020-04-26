@@ -59,5 +59,7 @@ export class Resident {
    */
   public neighborhood: Neighborhood;
 
+  public profilePicture: string;
+
 
 }

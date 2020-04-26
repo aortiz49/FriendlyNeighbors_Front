@@ -1,36 +1,41 @@
-<h3>
-  Posts-List
-</h3>
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
-      <tr>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div [ngbCollapse]="isCollapsed">
 
 
-         <th class="h5">id</th>
-         <th class="h5">author</th>
-         <th class="h5">post</th>
-         <th class="h5">date</th>
-         <th class="h5">text</th>
+    <tr *ngFor="let r of comments; let i = index">
+        <div class="row header">
+            <div class="col-md-1 ">
 
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let c of comments">
+                <img *ngIf="r.author.profilePicture != null" class="profilePicture" src="{{r.author.profilePicture}}}">
 
-        <td><dd>{{c.id}}</dd></td>
-        <td><dd>{{c.author}}</dd></td>
-        <td><dd>{{c.post}}</dd></td>
-        <td><dd>{{c.date}}</dd></td>
-        <td><dd>{{c.text}}</dd></td>
-
-      </tr>
+                <img *ngIf="r.author.profilePicture == null" class="profilePicture" src="  https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS66Ukl8UTumuzg5glSqKAM0GLgv3VGuGLpmlp5muFBURXWWY8X&usqp=CAU">
 
 
-      </tbody>
-    </table>
+            </div>
 
 
-  </div>
+            <span class="spacer"></span>
+            <div class="col-md-10">
+                <div class="row name">{{r.author.name}}<span class = "text" > &nbsp; {{r.text}}</span>
+                </div>
+                <div class="row spacer">
+                </div>
+                <div class="row date"><span class="spacer"></span>{{getDate(r.date)}}
+                </div>
+            </div>
+        </div>
+
+    </tr>
+
 </div>
+
+
+</body>
+
+</html>

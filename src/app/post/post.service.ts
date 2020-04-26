@@ -13,7 +13,7 @@ const posts = "/posts";
 const API_URL2 = "../../assets/";
 const posts2 = "/posts.json";
 const comments = "/comments";
-const neighborhoods = "/neighborhoods";
+const neighborhoods = "neighborhoods";
 const residents = "/residents";
 
 @Injectable({
@@ -29,8 +29,8 @@ export class PostService {
      * Returns an Observable object that contains the list of posts received from the API
      * @returns The list of posts in real time
      */
-    getposts(neighborhood): Observable<PostDetail[]> {
-        return this.http.get<PostDetail[]>(
+    getposts(neighborhood): Observable<Post[]> {
+        return this.http.get<Post[]>(
             API_URL + neighborhoods + "/" + neighborhood + posts
         );
     }
