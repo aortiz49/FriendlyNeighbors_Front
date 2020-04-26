@@ -78,21 +78,21 @@ export class NeighborhoodRegistrationComponent implements OnInit {
     var neigh = new Neighborhood(3000, name, locality, numberOfResidents);
 
     const toastrConfig: Partial<IndividualConfig> = {
-      timeOut: 1000,
+      timeOut: 1800,
     };
-
+    var neighName = this.neighborhoodForm.value.name;
     var observable = this.neighborhoodService
       .addNeighborhood(neigh)
       .subscribe(() => {
         this.neighborhoodForm.reset();
         this.neighborhoodForm.controls.locality.setValue('Choose...');
         this.toastr.success(
-          'Comment was successfully created',
-          'Comment added',toastrConfig
+          'The neighborhood ' + neighName + " was added.",
+          'Success',toastrConfig
         );
         setTimeout(() => {
           this.router.navigateByUrl('');
-      }, 1500);
+      }, 2300);
       });
   }
 
