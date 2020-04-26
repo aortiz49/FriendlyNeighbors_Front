@@ -5,8 +5,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+
+import { ToastrService } from 'ngx-toastr';
 import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { Neighborhood } from '../neighborhood/neighborhood';
+import { ToastrNotificationService } from '../utility/toastr-notification.service';
 
 @Component({
   selector: 'app-neighborhood-registration',
@@ -14,7 +17,10 @@ import { Neighborhood } from '../neighborhood/neighborhood';
   styleUrls: ['./neighborhood-registration.component.css'],
 })
 export class NeighborhoodRegistrationComponent implements OnInit {
-  constructor(private neighborhoodService: NeighborhoodService) {}
+  constructor(
+    private toastr: ToastrNotificationService,
+    private neighborhoodService: NeighborhoodService
+  ) {}
 
   // list of localities acceptable
   localities: Array<string> = [
@@ -72,4 +78,12 @@ export class NeighborhoodRegistrationComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  showToaster(){
+    this.toastr.successMessage("Neighborhood created successfully!","Notification")
+  }
+
+  showHtmlToaster(){
+    this.toastr.showHTMLMessage("<h2>Data shown successfully !!</h2>", "Notification")
+  }
 }

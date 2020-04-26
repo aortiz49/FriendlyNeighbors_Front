@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { PostModule } from './post/post.module';
@@ -30,8 +32,10 @@ const routes: Routes = [
   declarations: [AppComponent],
   imports: [
     RouterModule.forRoot(routes),
+    ToastrModule.forRoot(),
     LandingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     PostModule,
     ResidentModule,
     BusinessModule,
@@ -44,7 +48,7 @@ const routes: Routes = [
     RegistrationModule,
     NeighborhoodRegistrationModule,
     UsersModule,
-    AccountSettingsModule
+    AccountSettingsModule,
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent],
