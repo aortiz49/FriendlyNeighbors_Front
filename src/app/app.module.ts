@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { PostModule } from './post/post.module';
 import { ResidentModule } from './resident/resident.module';
 import { BusinessModule } from './business/business.module';
 import { NotificationModule } from './notification/notification.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from './utility/HttpErrorInterceptorService.service';
 import { NeighborhoodModule } from './neighborhood/neighborhood.module';
 import { LandingModule } from './landing/landing.module';
 import { Routes, RouterModule } from '@angular/router';
@@ -31,6 +35,10 @@ const routes: Routes = [
   declarations: [AppComponent],
   imports: [
     RouterModule.forRoot(routes),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-left',
+      preventDuplicates: true
+    }),
     LandingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -46,9 +54,15 @@ const routes: Routes = [
     RegistrationModule,
     NeighborhoodRegistrationModule,
     UsersModule,
-    AccountSettingsModule
+    AccountSettingsModule,
   ],
-  providers: [HttpClient],
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ]
 })
 export class AppModule {}

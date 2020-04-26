@@ -11,12 +11,18 @@
         <form method="post" [formGroup]="neighborhoodForm" (ngSubmit)="onSubmit()">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputName"><h3 id ="inner">Neighborhood</h3></label>
-              <input type="text" class="form-control" formControlName="name" id="inputName" placeholder="Name of the neighborhood">
+              <label for="inputName">
+                <h3 id="inner">Neighborhood</h3>
+              </label>
+              <input type="text" class="form-control" formControlName="name" id="inputName"
+                placeholder="Name of the neighborhood">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputCapacity"><h3 id="inner">Capacity</h3></label>
-              <input type="number" class="form-control" formControlName="numberOfResidents" id="inputCapacity" placeholder="Max resident capacity">
+              <label for="inputCapacity">
+                <h3 id="inner">Capacity</h3>
+              </label>
+              <input type="number" class="form-control" formControlName="numberOfResidents" id="inputCapacity"
+                placeholder="Max resident capacity">
             </div>
           </div>
 
@@ -24,7 +30,9 @@
             <div class="form-group col-md-4">
             </div>
             <div class="form-group col-md-4">
-              <label for="inputState"><h3 id="inner">Locality</h3></label>
+              <label for="inputState">
+                <h3 id="inner">Locality</h3>
+              </label>
               <select formControlName="locality" id="inputState" class="form-control">
                 <option selected>Choose...</option>
                 <option *ngFor="let n of localities"> {{n}}</option>
@@ -32,8 +40,8 @@
               </select>
             </div>
           </div>
+          <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Submit</button>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
