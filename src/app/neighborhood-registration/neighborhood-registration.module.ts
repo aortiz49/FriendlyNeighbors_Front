@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { NeighborhoodRegistrationComponent } from './neighborhood-registration.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -17,9 +19,11 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [NeighborhoodRegistrationComponent],
-  exports: [NeighborhoodRegistrationComponent]
+  exports: [NeighborhoodRegistrationComponent,FormsModule,ReactiveFormsModule]
 })
 export class NeighborhoodRegistrationModule { }

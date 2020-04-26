@@ -8,22 +8,22 @@ export class Neighborhood {
   /**
    * The id of the neighborhood.
    */
-  private _id: number;
+  private id: number;
 
   /**
    * The name of the neighborhood.
    */
-  private _name: string;
+  private name: string;
 
   /**
    * The locality of the neighborhood.
    */
-  private _locality: string;
+  private locality: string;
 
   /**
    * The max capacity of residents of the neighborhood.
    */
-  private _numberOfResidents: number;
+  private numberOfResidents: number;
 
   //===================================================
   // Constructor
@@ -31,16 +31,16 @@ export class Neighborhood {
 
   /**
    * Constructs a new neighborhood.
-   * @param _id the id of the new neighborhood
-   * @param _name the name of the new neighborhood
-   * @param _locality the locality of the new neighborhood
-   * @param _numberOfResidents the max capacity of residents of the new neighborhood
+   * @param id the id of the new neighborhood
+   * @param name the name of the new neighborhood
+   * @param locality the locality of the new neighborhood
+   * @param numberOfResidents the max capacity of residents of the new neighborhood
    */
   constructor(id:number, name: string, locality: string, numberOfResidents: number) {
-    this._id = id;
-    this._name = name;
-    this._locality = locality;
-    this._numberOfResidents = numberOfResidents;
+    this.id = id;
+    this.name = name;
+    this.locality = locality;
+    this.numberOfResidents = numberOfResidents;
   }
   //===================================================
   // Getter & Setters
@@ -49,28 +49,28 @@ export class Neighborhood {
   /**
    * Returns the id of the neighborhood.
    */
-  get id(): number {
-    return this._id;
+  get Id(): number {
+    return this.id;
   }
 
   /**
    * Returns the name of the neighborhood.
    */
-  get name(): string {
-      return this._name;
+  get Name(): string {
+      return this.name;
   }
 
   /**
    * Returns the locality of the neighborhood.
    */
-  get locality(): string {
-      return this._locality;
+  get Locality(): string {
+      return this.locality;
   }
 
   /**
    * Returns the max number of residents in the neighborhood.
    */
-  get numberOfResidents(): number {
-      return this._numberOfResidents;
+  get NumberOfResidents(): number {
+      return this.numberOfResidents;
   }
 }
