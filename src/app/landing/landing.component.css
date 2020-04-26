@@ -79,11 +79,14 @@ a {
 }
 
 .btn-round-lg:hover {
-  background-color: #aa54d7;
+  background-color: #666;
+  border-color: #666;
+  color: white;
 }
 
 .btn-round-lg:active {
-  background-color: red;
+  background-color: #922946!important;
+  border-color: #922946!important;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
