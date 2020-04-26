@@ -1,11 +1,37 @@
 <div class="container-fluid info">
   <div class="row h-100">
     <div class="col form">
-      jhh
+      <div id="title">
+          <h2> Create Login</h2>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="username" class="bmd-label-floating">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="password" class="bmd-label-floating">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password">
+        </div>
+
+        <div class="form-group">
+          <label for="governmentId" class="bmd-label-floating">Government ID #</label>
+          <input type="number" class="form-control" id="password" placeholder="Enter ID number">
+        </div>
+
+
+      </form>
     </div>
 
     <div class="col tprint">
-      jhh
-    </div>
+      <div class="container">
+        <select formControlName="locality" id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option *ngFor="let n of neighborhoods"> {{n.name}}</option>
+
+        </select>
+      </div>
+
   </div>
 </div>

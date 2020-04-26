@@ -12,7 +12,7 @@ import { FormGroup } from '@angular/forms';
 export class NeighborhoodListComponent implements OnInit {
   constructor(private neighborhoodService: NeighborhoodService) {}
 
-  neighborhoods: Array<Neighborhood>;
+  public neighborhoods: Array<Neighborhood>;
 
   getNeighborhoods(): void {
     this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {

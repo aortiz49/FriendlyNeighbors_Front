@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginResgistrationComponent } from './login-resgistration.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
+    NeighborhoodModule
   ],
   declarations: [LoginResgistrationComponent]
 })
