@@ -18,6 +18,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { RegistrationModule } from './registration/registration.module';
 import { UsersModule } from './users/users.module';
 import { AccountSettingsModule } from './account-settings/account-settings.module';
+import { NeighborhoodRegistrationModule } from './neighborhood-registration/neighborhood-registration.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -41,6 +42,7 @@ const routes: Routes = [
     LoginModule,
     DashboardModule,
     RegistrationModule,
+    NeighborhoodRegistrationModule,
     UsersModule,
     AccountSettingsModule
   ],

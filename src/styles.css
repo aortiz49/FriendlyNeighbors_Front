@@ -20,6 +20,13 @@ h1 {
   font-variant: normal;
   font-weight: 700;
 }
+
+h2 {
+  font-family: Futura;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+}
 h3 {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   font-size: 1em;
