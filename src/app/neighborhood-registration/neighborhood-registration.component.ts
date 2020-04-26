@@ -68,7 +68,7 @@ export class NeighborhoodRegistrationComponent implements OnInit {
     var locality: string = this.neighborhoodForm.value.locality;
     var neigh = new Neighborhood(3000, name, locality, numberOfResidents);
 
-    this.neighborhoodService.addNeighborhood(neigh);
+    this.neighborhoodService.addNeighborhood(neigh).subscribe();
   }
 
   ngOnInit() {}

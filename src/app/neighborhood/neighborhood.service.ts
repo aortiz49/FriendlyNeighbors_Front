@@ -17,11 +17,7 @@ export class NeighborhoodService {
   }
 
   addNeighborhood(neighborhood: Neighborhood): Observable<Neighborhood> {
-    const headers = { 'content-type': 'application/json' };
-    const body = JSON.stringify(neighborhood);
-    console.log(body);
-    return this.http.post<Neighborhood>(`${this.apiUrl}/`, body, {
-      headers: headers,
-    });
+
+    return this.http.post<Neighborhood>(`${this.apiUrl}/`, neighborhood);
   }
 }
