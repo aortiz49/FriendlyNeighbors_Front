@@ -1,0 +1,34 @@
+:host{
+  width: 100%;
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+.row{
+  padding-left: 12vw;
+  padding-right: 12vw;
+  padding-top: 8vw;
+  padding-bottom: 8vw;
+}
+
+.form{
+  height: 100%;
+  width: 50%;
+  padding: 1vw;
+  background: white;
+  border-top-left-radius: 3% 3%;
+  border-bottom-left-radius: 3% 3%;
+}
+
+.tprint{
+  height: 100%;
+  width: 50%;
+  padding: 1vw;
+  background: #37325D;
+  border-top-right-radius: 3% 3%;
+  border-bottom-right-radius: 3% 3%;
+  opacity: 0.5;
+}

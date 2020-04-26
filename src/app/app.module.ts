@@ -23,6 +23,7 @@ import { RegistrationModule } from './registration/registration.module';
 import { UsersModule } from './users/users.module';
 import { AccountSettingsModule } from './account-settings/account-settings.module';
 import { NeighborhoodRegistrationModule } from './neighborhood-registration/neighborhood-registration.module';
+import { LoginResgistrationModule } from './login-resgistration/login-resgistration.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -46,6 +47,7 @@ const routes: Routes = [
     BusinessModule,
     NotificationModule,
     NeighborhoodModule,
+    LoginResgistrationModule,
     HttpClientModule,
     LayoutModule,
     LoginModule,
