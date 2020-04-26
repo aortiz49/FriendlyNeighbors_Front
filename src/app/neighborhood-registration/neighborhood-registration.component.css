@@ -46,9 +46,14 @@
   color: #fff;
   margin-top: 4%;
 }
+h1{
+  font-size: 4em;
+}
 
 h3 {
-  font-size: 1.3em;
+  font-size: 1.6em;
+  line-height: 1.4em;
+
 }
 
 .register-left img {
@@ -116,16 +121,19 @@ label{
 }
 
 #inner{
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 0em;
 }
 
 ::placeholder {
   font-family: Futura;
+  font-size: 1.2em;
+
 }
 
 select{
   font-family: Futura;
+  font-size: 1.2em;
 
 }
 .btn-round-lg {
