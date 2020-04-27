@@ -21,6 +21,7 @@ export class NeighborhoodService {
   }
 
   getNeighborhoodById(id: number): Observable<Neighborhood> {
-    return this.http.get<Neighborhood>(`${this.apiUrl}/` + id);
+    var a: string = `${this.apiUrl}/` + id;
+    return this.http.get<Neighborhood>(a);
   }
 }

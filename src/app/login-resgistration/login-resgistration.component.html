@@ -21,8 +21,8 @@
         </div>
         <label for="governmentId" class="bmd-label-floating">Neighborhood</label>
         <select  formControlName="neighborhood" id="inputState" formControlName="neighborhood" class="form-control">
-          <option selected>Choose...</option>
-          <option value={{n.id}} *ngFor="let n of neighborhoods"> {{n.name}}</option>
+          <option value="" disabled selected>Choose...</option>
+          <option value={{n.id}}  *ngFor="let n of neighborhoods"> {{n.name}}</option>
         </select>
         <div id="button">
           <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Submit</button>

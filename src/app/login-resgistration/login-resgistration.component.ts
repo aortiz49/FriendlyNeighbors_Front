@@ -3,6 +3,9 @@ import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { Neighborhood } from '../neighborhood/neighborhood';
 import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { FormGroup, FormControl } from '@angular/forms';
+import { LoginService } from '../login/login.service';
+import { Login } from '../login/login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-resgistration',
@@ -12,7 +15,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class LoginResgistrationComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
-    private neighborhoodService: NeighborhoodService
+    private neighborhoodService: NeighborhoodService,
+    private loginService: LoginService,
+    private router: Router
   ) {}
 
   neighborhoods: Array<Neighborhood>;
@@ -40,7 +45,7 @@ export class LoginResgistrationComponent implements OnInit {
         'Neighborhood:' +
         this.residentLoginForm.get('neighborhood').value
     );
-    this.addResidentLogin()
+    this.addResidentLogin();
   }
 
   getNeighborhoods(): void {
@@ -63,16 +68,31 @@ export class LoginResgistrationComponent implements OnInit {
   addResidentLogin(): void {
     var username: string = this.residentLoginForm.value.username;
     var password: string = this.residentLoginForm.value.password;
-    var govId: string = this.residentLoginForm.value.govId;
+    var govId: number = this.residentLoginForm.value.govId;
     var neighborhood: number = this.residentLoginForm.value.neighborhood;
 
-    var neighEntity: Neighborhood = this.getNeighborhood(neighborhood);
+    var login: Login = new Login(username, password, govId);
 
+    console.log(login);
     const toastrConfig: Partial<IndividualConfig> = {
       timeOut: 1800,
     };
+    var loginName = this.residentLoginForm.value.username;
 
-
+    var observable = this.loginService
+      .addLogin(neighborhood, login)
+      .subscribe(() => {
+        this.residentLoginForm.reset();
+        this.residentLoginForm.controls.neighborhood.setValue('Choose...');
+        this.toastr.success(
+          'The username ' + loginName + ' was added.',
+          'Success',
+          toastrConfig
+        );
+        setTimeout(() => {
+          this.router.navigateByUrl('');
+        }, 2300);
+      });
   }
 
   ngOnInit() {
