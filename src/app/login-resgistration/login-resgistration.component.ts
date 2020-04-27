@@ -50,9 +50,9 @@ export class LoginResgistrationComponent implements OnInit {
     });
   }
 
-  getNeighborhood(name: String): Neighborhood {
+  getNeighborhood(id: number): Neighborhood {
     this.neighborhoodService
-      .getNeighborhoodByName(name)
+      .getNeighborhoodById(id)
       .subscribe((chosenNeighborhood) => {
         // this.neighborhoods = neighborhoods.slice(0,4);
         this.chosenNeighborhood = chosenNeighborhood;
@@ -64,7 +64,7 @@ export class LoginResgistrationComponent implements OnInit {
     var username: string = this.residentLoginForm.value.username;
     var password: string = this.residentLoginForm.value.password;
     var govId: string = this.residentLoginForm.value.govId;
-    var neighborhood: string = this.residentLoginForm.value.neighborhood;
+    var neighborhood: number = this.residentLoginForm.value.neighborhood;
 
     var neighEntity: Neighborhood = this.getNeighborhood(neighborhood);
 

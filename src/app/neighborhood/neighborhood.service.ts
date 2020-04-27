@@ -20,8 +20,7 @@ export class NeighborhoodService {
     return this.http.post<Neighborhood>(`${this.apiUrl}/`, neighborhood);
   }
 
-  getNeighborhoodByName(name: String): Observable<Neighborhood> {
-    var a: string = `${this.apiUrl}/_` + name;
-    return this.http.get<Neighborhood>(a);
+  getNeighborhoodById(id: number): Observable<Neighborhood> {
+    return this.http.get<Neighborhood>(`${this.apiUrl}/` + id);
   }
 }

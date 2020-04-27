@@ -83,6 +83,10 @@ label{
 
 }
 
+.form-control{
+  font-family: Futura;
+}
+
 ::placeholder:active{
   color: white;
 }
