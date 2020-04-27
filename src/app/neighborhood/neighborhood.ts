@@ -74,3 +74,5 @@ export class Neighborhood {
       return this.numberOfResidents;
   }
 }
+
+

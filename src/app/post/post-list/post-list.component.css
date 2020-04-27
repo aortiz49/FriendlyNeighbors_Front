@@ -13,13 +13,13 @@ and open the template in the editor.
 .author-caption{
     color: grey;
 }
-p.precio {
-    font-family: "Verdana", Sans-serif;
-    color: #960018;
-    font-size: 17px;
-}
+
 .checked {
     color: orange;
+}
+.backgroundB{
+
+  background-color: #dadada;
 }
 
 
@@ -75,22 +75,6 @@ p.precio {
     height: 60px;
 }
 
-/* Closed submenu icon */
-#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
-    content: " \f0d7";
-    font-family: FontAwesome;
-    display: inline;
-    text-align: right;
-    padding-left: 10px;
-}
-/* Opened submenu icon */
-#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
-    content: " \f0da";
-    font-family: FontAwesome;
-    display: inline;
-    text-align: right;
-    padding-left: 10px;
-}
 
 .spacer {
     margin-left: 10px;

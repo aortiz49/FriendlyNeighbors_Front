@@ -1,9 +1,8 @@
 :host {
 
-
   width: 100%;
 }
 
-.content {
-  background:blue;
+.backgroundM {
+  background-color: #dadada;
 }

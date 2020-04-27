@@ -1,30 +1,42 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {AfterContentChecked, AfterContentInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {startWith, tap} from "rxjs/operators";
 
 
 @Component({
-    selector: 'app-spacer',
-    templateUrl: './spacer.component.html',
-    styleUrls: ['./spacer.component.css']
+  selector: 'app-spacer',
+  templateUrl: './spacer.component.html',
+  styleUrls: ['./spacer.component.css']
 })
 /**
  * @author albayona
  */
-export class SpacerComponent implements OnInit, OnChanges {
+export class SpacerComponent implements OnInit, AfterContentChecked {
 
-    constructor() {
-    }
+ @Input() public spacersNumber: number;
+
+  collection: Array<number>;
+  constructor(private ref: ChangeDetectorRef) {
+  }
+
+  isCollapsed: boolean;
 
 
+  ngOnInit() {
+    this.isCollapsed = true;
+    this.collection = Array(this.spacersNumber);
+  }
 
-    isCollapsed: boolean;
 
+  update(n){
+      this.spacersNumber = n;
+      this.isCollapsed = true;
+      this.collection = Array(this.spacersNumber);
+  }
 
-    ngOnInit() {
-        this.isCollapsed = true;
-    }
+  ngAfterContentChecked(): void {
+    this.ngOnInit()
 
-    ngOnChanges(): void {
+  }
 
-    }
 
 }

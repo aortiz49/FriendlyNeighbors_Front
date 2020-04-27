@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {PostService} from "../post.service";
 import {ToastrService} from "ngx-toastr";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
@@ -15,13 +15,14 @@ import {CommentP} from "../commentP";
     templateUrl: './post-detail.component.html',
     styleUrls: ['./post-detail.component.css']
 })
-export class PostDetailComponent implements OnInit, OnDestroy {
+export class PostDetailComponent implements OnInit, OnDestroy, AfterContentChecked {
 
 
     constructor(private  postService: PostService,
                 private toastrService: ToastrService,
                 private router: Router,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private cdRef : ChangeDetectorRef) {
         //This is added so we can refresh the view when one of the bikes in
         //the "Other bikes" list is clicked
         this.navigationSubscription = this.router.events.subscribe((e: any) => {
@@ -142,6 +143,10 @@ export class PostDetailComponent implements OnInit, OnDestroy {
         return humanized_time_span(date.replace("[UTC]", ""), new Date().toLocaleDateString(), custom_date_formats, null);
     }
 
+
+  ngAfterContentChecked() : void {
+    this.cdRef.detectChanges();
+  }
 
 }
 
