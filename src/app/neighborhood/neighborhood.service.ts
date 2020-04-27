@@ -17,7 +17,11 @@ export class NeighborhoodService {
   }
 
   addNeighborhood(neighborhood: Neighborhood): Observable<Neighborhood> {
-
     return this.http.post<Neighborhood>(`${this.apiUrl}/`, neighborhood);
+  }
+
+  getNeighborhoodByName(name: String): Observable<Neighborhood> {
+    var a: string = `${this.apiUrl}/_` + name;
+    return this.http.get<Neighborhood>(a);
   }
 }
