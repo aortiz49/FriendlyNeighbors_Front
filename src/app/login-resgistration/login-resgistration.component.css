@@ -5,6 +5,8 @@
 
 .container-fluid {
   height: 100%;
+
+  margin: auto;
 }
 
 .row {
@@ -12,6 +14,7 @@
   padding-right: 12vw;
   padding-top: 8vw;
   padding-bottom: 8vw;
+  margin:-15px;
 }
 
 .form {
@@ -48,17 +51,21 @@ h2{
 form{
   padding:3.2vw;
   padding-top:.5vw;
+  padding-bottom:.5vw;
+
 }
 
 label{
   font-family: Futura;
-  font-size:  1.2vw;
+  font-size:  1.1vw;
   font-weight: bolder;
   margin-bottom:.25vw;
-  color: #624FB5;
+  margin-top:.25vw;
+  color: black;
+  opacity: .55;
 }
 
-::placeholder{
+::placeholder,select{
   font-family: Futura;
   font-size:  1.2vw;
   font-weight: lighter;
@@ -68,8 +75,8 @@ label{
   margin-bottom: .5vw;
 }
 
-.form-control:focus{
-  background-color: #624FB5;
+.form-control:focus,select{
+  background-color: #593E92;
   opacity: .8;
   color: white;
   font-family: Futura;
@@ -79,3 +86,62 @@ label{
 ::placeholder:active{
   color: white;
 }
+
+select option{
+  background: white;
+  color:#9245D5 ;
+}
+
+.btn-round-lg {
+  border-radius: 40px;
+  background-color: #9544d7;
+  -webkit-box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 19px -3px rgba(0, 0, 0, 1);
+  box-shadow: 0 5px #999;
+}
+
+.btn {
+  width: 15vw;
+  height: 5vw;
+  font-family: Futura;
+  font-style: normal;
+  color: black;
+  opacity: .65;
+  font-size: 1.5vw;
+  text-align: center;
+  border-color: #00C7CC;
+  border-width: .2vw;
+  background-color: white;
+}
+
+
+.btn-round-lg:hover {
+  background-color: #5B3E94;
+  color: white;
+  border-color:#5B3E94 ;
+}
+
+.btn-round-lg:active {
+  background-color: #0D5445!important;
+  box-shadow: 0 5px #666;
+  border-color: #0D5445!important;
+  transform: translateY(10px);
+}
+
+#button{
+  padding: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive {
+  width: 35vw;
+  height: 38vw;
+  padding: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
