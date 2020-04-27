@@ -1,11 +1,15 @@
-<app-header fxLayout="column"></app-header>
+<app-header></app-header>
 
-<div fxLayout="row" fxFlex="100">
-  <app-sidebar fxLayout="column" fxFlex="300px"></app-sidebar>
-  <div class="content" fxLayout="column" fxFlex>
-    <router-outlet></router-outlet>
+
+<div class="row backgroundM" >
+  <div class="col-3">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-9 backgroundM">
+    <router-outlet ></router-outlet>
   </div>
 </div>
 
-<app-footer fxLayout="column"></app-footer>
+<app-footer></app-footer>
+
 

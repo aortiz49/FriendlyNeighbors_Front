@@ -1,9 +1,8 @@
 :host {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 100%;
+
+  width: 100%;
 }
 
-.content {
-  background:blue;
+.backgroundM {
+  background-color: #dadada;
 }

@@ -47,7 +47,7 @@ export class HttpErrorInterceptor extends HttpErrorResponse {
             errMsg = `${error.status}: ${error.error}`;
           }
         }
-        console.log(errMsg);
+        console.log(error);
         return throwError(errMsg);
       })
     );

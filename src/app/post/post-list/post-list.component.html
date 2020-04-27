@@ -1,51 +1,52 @@
-<h3>
-  Posts-List
-</h3>
-<div class="container-fluid">
-  <div class="col-6">
-    <table class="table">
-      <thead>
-      <tr>
+<!DOCTYPE html>
+<html>
+<head>
 
-        <th class="h5">id</th>
-        <th class="h5">publishDate</th>
-        <th class="h5">title</th>
-        <th class="h5">description</th>
-        <th class="h5">numberOfLikes</th>
-        <th class="h5">author</th>
-
-      </tr>
-      </thead>
-      <tbody>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- Bootstrap row -->
+<div class="row backgroundB">
 
 
-        <tr *ngFor="let c of posts">
+    <div id="main" class="col-md-10">
 
-          <td>
-            <dd>{{c.id}}</dd>
-          </td>
-          <td>
-            <dd>{{c.publishDate}}</dd>
-          </td>
-          <td>
-            <dd>{{c.title}}</dd>
-          </td>
-          <td>
-            <dd>{{c.description}}</dd>
-          </td>
-          <td>
-            <dd>{{c.numberOfLikes}}</dd>
-          </td>
-          <td>
-            <dd>{{c.author}}</dd>
-          </td>
+        <div *ngIf="searchModel.length > 0 ; else elseBlock" class="container">
 
 
-        </tr>
+            <div *ngFor="let post of posts">
+
+                <div id="{{ post.id + 's' }}" #c>
+                    <app-post-detail  (init)="updateInits(post.id)" *visibleWith="c.id" [neighborhood_id]=neigh_id [post_id]=post.id>
+                    </app-post-detail>
+                </div>
+
+            </div>
+
+        </div>
+
+        <ng-template #elseBlock>
+
+            <div *ngFor="let post of posts">
+
+                <div id="{{ post.id }}" #v >
+                    <app-post-detail  (init)="updateInits(post.id)" *visibleWith="v.id" [neighborhood_id]=neigh_id [post_id]=post.id>
+                    </app-post-detail>
+
+                  <app-spacer  id = "{{post.id + 's'}}" [spacersNumber]="30" ></app-spacer>
+                </div>
+              <div >
+
+              </div>
+            </div>
 
 
+        </ng-template>
 
-      </tbody>
-    </table>
-  </div>
+    </div>
+
 </div>
+
+</body>
+
+</html>

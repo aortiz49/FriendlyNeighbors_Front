@@ -1,9 +1,51 @@
-<div fxLayout="row" fxLayoutAlign="space-between center">
-  <div>Header</div>
-  <div fxLayout="row" fxLayoutGap="20px">
-    <a routerLink="/login">Login</a>
-    <a routerLink="/registration">Registration</a>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/account-settings">Account Settings</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark layout row">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="http://localhost:4200/home">
+
+  </a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">jjj</span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:4200/home">
+          Inicio
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">Groups</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/list">Pets</a>
+          <a class="dropdown-item" routerLink="/list">NN</a>
+          <a class="dropdown-item" routerLink="/list">NN</a>
+        </div>
+      </li>
+      <!-- Dropdown -->
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="//1/">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/neighborhood/99/posts/list">Posts</a>
+      </li>
+
+    </ul>
+
   </div>
-</div>
+  <!-- Collapsible content -->
+
+</nav>

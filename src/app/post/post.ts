@@ -5,6 +5,7 @@
  */
 
 import {Resident} from '../resident/resident';
+import {Business} from '../business/business';
 
 /**
  *This class represents a post made by a resident
@@ -40,10 +41,25 @@ export class Post {
   /**
    * Represents the author of this post
    */
-  public author: Resident;
+  author: Resident;
+
+  /**
+   * Represents the business author of this post
+   */
+  public business: Business;
+
+  // /**
+  //  * Represents the group this post is shared with
+  //  */
+  // public group: Group;
 
 
   constructor() {
-
+    this.id = -1;
+    this.publishDate = "";
+    this.title = "";
+    this.description = "";
+    this.numberOfLikes = -1;
+    this.author = new Resident();
   }
 }
