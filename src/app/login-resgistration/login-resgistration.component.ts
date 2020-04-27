@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { Neighborhood } from '../neighborhood/neighborhood';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-resgistration',
@@ -8,7 +9,10 @@ import { Neighborhood } from '../neighborhood/neighborhood';
   styleUrls: ['./login-resgistration.component.css'],
 })
 export class LoginResgistrationComponent implements OnInit {
-  constructor(private neighborhoodService: NeighborhoodService) {}
+  constructor(
+    private toastr: ToastrService,
+    private neighborhoodService: NeighborhoodService
+  ) {}
 
   neighborhoods: Array<Neighborhood>;
 

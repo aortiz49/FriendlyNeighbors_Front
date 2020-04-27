@@ -4,6 +4,7 @@ import { LoginResgistrationComponent } from './login-resgistration.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -20,8 +21,11 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    NeighborhoodModule
+    NeighborhoodModule,
+    ReactiveFormsModule
   ],
-  declarations: [LoginResgistrationComponent]
+  declarations: [LoginResgistrationComponent],
+  exports: [LoginResgistrationComponent,FormsModule,ReactiveFormsModule]
+
 })
 export class LoginResgistrationModule { }

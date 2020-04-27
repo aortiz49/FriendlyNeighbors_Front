@@ -5,22 +5,22 @@
         <h2> Create Login</h2>
       </div>
 
-      <form>
+      <form method="post" [formGroup]="residentLoginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="username" class="bmd-label-floating">Username</label>
-          <input type="text" class="form-control" id="username" placeholder="Enter username">
+          <input type="text" class="form-control" formControlName="username" id="username" placeholder="Enter username">
         </div>
         <div class="form-group">
           <label for="password" class="bmd-label-floating">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password">
+          <input type="password" class="form-control" formControlName="password" id="password" placeholder="Enter password">
         </div>
 
         <div class="form-group">
           <label for="governmentId" class="bmd-label-floating">Government ID #</label>
-          <input type="number" class="form-control" id="password" placeholder="Enter ID number">
+          <input type="number" class="form-control" formControlName="govId"id="password" placeholder="Enter ID number">
         </div>
         <label for="governmentId" class="bmd-label-floating">Neighborhood</label>
-        <select formControlName="neighborhood" id="inputState" class="form-control">
+        <select formControlName="neighborhood" id="inputState" formControlName="neighborhood" class="form-control">
           <option selected>Choose...</option>
           <option *ngFor="let n of neighborhoods"> {{n.name}}</option>
         </select>
