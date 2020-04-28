@@ -123,16 +123,16 @@ select option{
 
 
 .btn-round-lg:hover {
-  background-color: #5B3E94;
+  background-color: #544FA6;
   color: white;
-  border-color:#5B3E94 ;
+  border-color: #544FA6;
 }
 
 .btn-round-lg:active {
-  background-color: #0D5445!important;
+  background-color: #9644D7!important;
   box-shadow: 0 5px #666;
-  border-color: #0D5445!important;
   transform: translateY(10px);
+  border-color: #9644D7!important;
 }
 
 #button{
