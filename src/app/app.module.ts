@@ -25,6 +25,7 @@ import {AccountSettingsModule} from './account-settings/account-settings.module'
 import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighborhood-registration.module';
 import {VisibilityService} from "./shared/visibility-service.service";
 import { LoginResgistrationModule } from './login-resgistration/login-resgistration.module';
+import { ProfileRegistrationModule } from './profile-registration/profile-registration.module';
 
 
 const routes: Routes = [
@@ -50,6 +51,7 @@ const routes: Routes = [
     NotificationModule,
     NeighborhoodModule,
     LoginResgistrationModule,
+    ProfileRegistrationModule,
     HttpClientModule,
     LayoutModule,
     LoginModule,
