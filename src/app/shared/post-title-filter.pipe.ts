@@ -11,4 +11,4 @@ export class PostFilterPipe implements PipeTransform {
     return list ? list.filter(t => (t.description  + t.title + t.author.name ).search(new RegExp(filterText, 'i')) > -1) : [];
   }
 
-}
+  }

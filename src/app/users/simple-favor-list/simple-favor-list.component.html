@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!-- Author:  Andres Bayona -->
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="backgroundD" *ngFor="let f of favors">
+  <br>
+
+  <div  class="postFrame container-fluid">
+
+    <div class="row header">
+
+        <div class="col-md-6">
+        <div class="row name">{{f.author.name}}
+        </div>
+        <div class="row spacer">
+        </div>
+        <div class="row date">{{getDate(f.publishDate)}}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spacer">
+      <table class="table-light">
+        <thead>
+        <tr>
+          <th class="a" scope="col"> {{f.title}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="spacer">
+
+      <hr style="border: 1px solid#C8C8C8;"/>
+
+      <div class = "row">
+        <div class = "col-md-4">
+          <a class=" buttons btn btn-light d-flex justify-content-center" (click)="toggleCreateComments()"> <i class="fa fa-comments-o"></i></a>
+        </div>
+
+        <div class = "col-md-4">
+          <a class="buttons btn btn-light  d-flex justify-content-center"  (click)="addLike()">  <i class="fa fa-thumbs-up"></i></a>
+        </div>
+        <div class = "col-md-4">
+          <a class="buttons btn btn-light  d-flex justify-content-center" (click)=" toggleCreateComments()">  <i class="fa fa-share-square"></i></a>
+        </div>
+
+
+      </div>
+
+      <hr style="border: 1px solid#C8C8C8;"/>
+
+    </div>
+
+    <div class="spacer">
+
+
+      <div class = "row">
+
+          <a class="options d-flex justify-content-center" > View description </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+</div>
+
+
+</html>

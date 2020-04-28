@@ -6,13 +6,13 @@
 }
 
 .buttons {
-  color: #62a2b2;
+    color: #ac00ff;
 
 }
 
 .placeholder1 {
   color: rgb(74, 126, 142);
-  cursor: pointer;
+    cursor: pointer;
   display: inline;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 10px;

@@ -2,39 +2,51 @@
 <html>
 <head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div [ngbCollapse]="isCollapsed">
+<div [ngbCollapse]="isCollapsed" class = "backgroundC">
 
 
-    <tr *ngFor="let r of comments; let i = index">
-        <div class="row header">
-            <div class="col-md-1 ">
-
-                <img *ngIf="r.author.profilePicture != null" class="profilePicture" src="{{r.author.profilePicture}}}">
-
-                <img *ngIf="r.author.profilePicture == null" class="profilePicture" src="  https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS66Ukl8UTumuzg5glSqKAM0GLgv3VGuGLpmlp5muFBURXWWY8X&usqp=CAU">
+  <br>
+  <div *ngFor="let r of comments; let i = index">
 
 
-            </div>
+    <div class="row">
 
 
-            <span class="spacer"></span>
-            <div class="col-md-10">
-                <div class="row name">{{r.author.name}}<span class = "text" > &nbsp; {{r.text}}</span>
-                </div>
-                <div class="row spacer">
-                </div>
-                <div class="row date"><span class="spacer"></span>{{getDate(r.date)}}
-                </div>
-            </div>
-        </div>
+        <div class="col-1">
+        <img *ngIf="r.author.profilePicture != null" class="profilePicture" src="{{r.author.profilePicture}}}">
+        <img *ngIf="r.author.profilePicture == null" class="profilePicture" src="  https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS66Ukl8UTumuzg5glSqKAM0GLgv3VGuGLpmlp5muFBURXWWY8X&usqp=CAU">
+      </div>
 
-    </tr>
+      <div class="col-1">
+        <div class="spacer"></div>
+      </div>
+
+       <div class="col-9">
+        <div class="name">{{r.author.name}}<span class="text"> &nbsp; {{r.text}}</span></div>
+      </div>
+
+      <div class="col-2">
+        <div class="spacer"></div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="date">{{getDate(r.date)}}  </div>
+
+
+    <br>
+
+
+  </div>
+
 
 </div>
-
 
 </body>
 

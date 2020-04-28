@@ -22,9 +22,10 @@
 
 .profilePicture{
 
+  /*background-image: linear-gradient(to right bottom, #504fa1, #5e4fb2, #704ec1, #844ace, #9b42da);*/
+    border:  2px solid #6d16f7;
 
-    border:  2px solid #a3dff5;
-    color:rgb(38, 38, 38);
+  color:rgb(38, 38, 38);
 
     border-image-repeat:stretch;
     border-image-source:none;
@@ -252,9 +253,9 @@ p.precio {
 }
 
 a.buttons {
-    color: #62a2b2;
-    font-size:30px;
-    text-align:center;
+    color: #ac00ff;
+     font-size:30px;
+     text-align:center;
     cursor: pointer;
 
 }
