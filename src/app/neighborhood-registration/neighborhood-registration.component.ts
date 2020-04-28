@@ -93,7 +93,7 @@ export class NeighborhoodRegistrationComponent implements OnInit {
           'Success',toastrConfig
         );
         setTimeout(() => {
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('/newLocation');
       }, 2300);
       });
   }

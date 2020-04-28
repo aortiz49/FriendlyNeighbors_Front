@@ -1,0 +1,41 @@
+.container-fluid {
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #f65476,
+    #fc6f6c,
+    #fe8a67,
+    #fca36a,
+    #f8ba75
+  );
+}
+
+#place{
+  padding: 10px;
+}
+
+.v-center {
+  position: relative;
+  transform: translatey(-50%);
+  top: 50%;
+}
+
+h2 {
+  color: white;
+  font-size: 2.8vw;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  /* Magic! */
+  max-width: 14vw;
+}
+
+.myForm {
+  background: white;
+  height: 100%;
+  margin: 0 1.5vw;
+  padding: 2vw;
+  border-radius: 2vw;
+}

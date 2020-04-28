@@ -26,6 +26,8 @@ import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighb
 import {VisibilityService} from "./shared/visibility-service.service";
 import { LoginResgistrationModule } from './login-resgistration/login-resgistration.module';
 import { ProfileRegistrationModule } from './profile-registration/profile-registration.module';
+import { AgmCoreModule } from '@agm/core';
+import { LocationRegistrationModule } from './location-registration/location-registration.module';
 
 
 const routes: Routes = [
@@ -60,6 +62,8 @@ const routes: Routes = [
     NeighborhoodRegistrationModule,
     UsersModule,
     AccountSettingsModule,
+    LocationRegistrationModule
+
   ],
   bootstrap: [AppComponent],
   providers: [
