@@ -96,6 +96,7 @@ h3 {
 .container-fluid {
   padding-right: 0px;
   height: 100%;
+  width: 100%;
 }
 
 .neighborhoodForm {
@@ -114,6 +115,7 @@ h3 {
 .form-row {
   padding-left: 20%;
   padding-right: 20%;
+  margin-right: 0px;
 }
 
 form {
