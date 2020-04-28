@@ -68,6 +68,8 @@ export class NeighborhoodRegistrationComponent implements OnInit {
     );
 
     this.addNeighborhood();
+
+
   }
 
   addNeighborhood(): void {

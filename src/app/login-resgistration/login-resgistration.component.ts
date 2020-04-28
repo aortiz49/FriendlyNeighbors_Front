@@ -46,6 +46,7 @@ export class LoginResgistrationComponent implements OnInit {
         this.residentLoginForm.get('neighborhood').value
     );
     this.addResidentLogin();
+    this.residentLoginForm.controls.password.setValue('');
   }
 
   getNeighborhoods(): void {
