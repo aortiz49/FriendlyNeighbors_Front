@@ -1,13 +1,14 @@
-import {AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
 import {Post} from "../post";
 import {PostService} from "../post.service";
 import {PostFilterPipe} from "../../shared/post-title-filter.pipe";
 import {ToastrService} from "ngx-toastr";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {PostCommentComponent} from "../post-comment/post-comment.component";
 import {SpacerComponent} from "../spacer/spacer.component";
 import {delay} from "rxjs/operators";
+import {MethodInvocationService} from "../../shared/method-invocation.service";
 
 
 declare var $: any;
@@ -21,14 +22,15 @@ declare var $: any;
 })
 
 
-export class PostListComponent implements OnInit {
+export class PostListComponent implements OnInit, OnChanges {
 
   constructor(private  postService: PostService,
               private toastrService: ToastrService,
               private filterPipe: PostFilterPipe,
               private router: Router,
               private route: ActivatedRoute,
-              private cdr: ChangeDetectorRef) {
+              private cdr: ChangeDetectorRef,
+              private invocationService: MethodInvocationService) {
     //This is added so we can refresh the view when one of the bikes in
     //the "Other bikes" list is clicked
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
@@ -36,22 +38,41 @@ export class PostListComponent implements OnInit {
         this.ngOnInit();
       }
     });
+
+    this.invocationSubscription = this.invocationService.getClickEvent().subscribe(() => {
+      this.filter(this.searchModel);
+    });
+
   }
 
-  searchModel: string;
+
   posts: Array<Post>;
   originals: Array<Post>;
   navigationSubscription;
-  neigh_id: number;
-
-
+  invocationSubscription: Subscription;
+  @Input() neigh_id: number;
+  @Input() notRouted: boolean;
+  @Input() searchModel: string;
 
 
   ngOnInit() {
-    this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.searchModel = "";
-    this.getPostList();
+
+    if (!this.notRouted) this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
+
+    if (this.posts === undefined) {
+      this.getPostList();
+    }
+    if (this.originals === undefined) {
+      this.getCopyOfPosts();
+    }
+
     this.toastrService.success('Se registró correctamente');
+  }
+
+  ngOnChanges() {
+
+    this.filter(this.searchModel);
+    this.ngOnInit();
   }
 
   getPostList() {
@@ -63,7 +84,9 @@ export class PostListComponent implements OnInit {
     });
   }
 
-  getCopyOfPosts(): void {
+  getCopyOfPosts()
+    :
+    void {
     this.postService.getposts(this.neigh_id)
       .subscribe(originals => {
         this.originals = originals
@@ -73,9 +96,8 @@ export class PostListComponent implements OnInit {
 
   }
 
-  filter(value) {
+  filter(value: string) {
     this.posts = this.filterPipe.transform(this.originals, value);
-    this.toastrService.error(JSON.stringify(this.searchModel), 'SearchModel');
   }
 
   sortAlphDesc() {
@@ -98,11 +120,12 @@ export class PostListComponent implements OnInit {
   }
 
 
-
 }
 
 
-function SidebarCollapse() {
+function
+
+SidebarCollapse() {
   $('.menu-collapsed').toggleClass('d-none');
   $('.sidebar-submenu').toggleClass('d-none');
   $('.submenu-icon').toggleClass('d-none');

@@ -20,6 +20,12 @@ and open the template in the editor.
 .backgroundB{
 
   background-color: #dadada;
+
+}
+.body{
+  overflow:scroll;
+  max-height: 1000px;
+
 }
 
 

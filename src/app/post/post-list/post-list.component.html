@@ -4,28 +4,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class = "body">
 <!-- Bootstrap row -->
+
 <div class="row backgroundB">
 
 
     <div id="main" class="col-md-10">
-
-        <div *ngIf="searchModel.length > 0 ; else elseBlock" class="container">
-
-
-            <div *ngFor="let post of posts">
-
-                <div id="{{ post.id + 's' }}" #c>
-                    <app-post-detail  (init)="updateInits(post.id)" *visibleWith="c.id" [neighborhood_id]=neigh_id [post_id]=post.id>
-                    </app-post-detail>
-                </div>
-
-            </div>
-
-        </div>
-
-        <ng-template #elseBlock>
 
             <div *ngFor="let post of posts">
 
@@ -39,9 +24,6 @@
 
               </div>
             </div>
-
-
-        </ng-template>
 
     </div>
 

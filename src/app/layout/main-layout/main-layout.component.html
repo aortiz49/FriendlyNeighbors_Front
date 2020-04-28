@@ -1,15 +1,180 @@
-<app-header></app-header>
+
+<div class="mainbar">
+  <nav class="navbar navbar-expand-lg row mainbar">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="http://localhost:4200/home">
+
+    </a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active"  data-toggle="collapse" data-target="#bar2">
+          <div class="input-group">
+            <input [(ngModel)]="searchModel" type="text" class="form-control search-menu bg-light text-black-50 border-dark rounded-40" placeholder="  Discover...">
+            <div class="input-group-append">
+                                <span class="input-group-text bg-dark border-dark rounded-0">
+                                    <i (click)="clickMe(); test()"  class="fa fa-search-plus text-white" aria-hidden="true"></i>
+                                </span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">Groups</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/list">Pets</a>
+            <a class="dropdown-item" routerLink="/list">NN</a>
+            <a class="dropdown-item" routerLink="/list">NN</a>
+          </div>
+        </li>
+        <!-- Dropdown -->
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="//1/">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/neighborhood/99/posts/list">Posts</a>
+        </li>
+
+      </ul>
+
+    </div>
+    <!-- Collapsible content -->
+
+  </nav>
 
 
+  <nav id = "bar2" class="collapse navbar navbar-expand-lg bar  row">
+
+    <ul class="navbar-nav mr-auto">
+
+
+      <li class="nav-item">
+
+
+        <div class="  pretty p-switch p-slim col-1 "  (click)="setType('posts'); update()">
+
+          <input type="radio" name="radio1"/>
+          <div class="state  p-primary">
+            <label></label>
+          </div>
+
+        </div>
+
+        <div align="left" class="item"> Posts</div>
+
+
+      </li>
+
+
+      <li class="nav-item">
+
+
+        <div class="  pretty p-switch p-slim col-1 ">
+
+          <input type="radio" name="radio1"/>
+          <div class="state  p-primary">
+            <label></label>
+          </div>
+
+        </div>
+
+        <div align="left" class="item"> People</div>
+
+
+      </li>
+
+      <li class="nav-item">
+
+
+        <div class="  pretty p-switch p-slim col-1 ">
+
+          <input type="radio" name="radio1"/>
+          <div class="state  p-primary">
+            <label></label>
+          </div>
+
+        </div>
+
+        <div align="left" class="item"> Places</div>
+
+
+      </li>
+
+      <li class="nav-item">
+
+
+        <div class="  pretty p-switch p-slim col-1 ">
+
+          <input type="radio" name="radio1"/>
+          <div class="state  p-primary">
+            <label></label>
+          </div>
+
+        </div>
+
+        <div align="left" class="item"> Favors</div>
+
+
+      </li>
+
+      <li class="nav-item">
+
+
+        <div class="  pretty p-switch p-slim col-1 ">
+
+          <input type="radio" name="radio1"/>
+          <div class="state  p-primary">
+            <label></label>
+          </div>
+
+        </div>
+
+        <div align="left" class="item"> Services</div>
+
+
+      </li>
+
+    </ul>
+
+
+  </nav>
+
+</div>
 <div class="row backgroundM" >
-  <div class="col-3">
+  <div class="col-2">
     <app-sidebar></app-sidebar>
+
   </div>
-  <div class="col-9 backgroundM">
+  <div class="col-10 backgroundM">
+
+
+   <div *ngIf="searchModel.length == 0 ; else elseBlock">
     <router-outlet ></router-outlet>
   </div>
-</div>
 
+    <ng-template #elseBlock>
+
+      <app-post-list *ngIf="searchType == 'posts'" [notRouted]="true"  [neigh_id]="1" [searchModel]="searchModel" > </app-post-list>
+
+    </ng-template>
+
+  </div>
+
+</div>
 <app-footer></app-footer>
 
 

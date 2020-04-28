@@ -5,33 +5,33 @@
 
 
 #body-row {
-  margin-left:0;
-  margin-right:0;
+  margin-left: 0;
+  margin-right: 0;
   background-color: #4b177d;
   height: 100%;
 }
+
 #sidebar-container {
   background-color: #4b177d;
   padding: 0;
   min-height: 100vh;
 }
 
-.menu{
+.menu {
 
   background-color: #501784;
 
 
-   border-bottom-left-radius: 30%;
+  border-bottom-left-radius: 30%;
   border-top-left-radius: 30%;
 }
 
 
 .menu-collapsed {
-   display: inline;
-   color: white;
+  display: inline;
+  color: white;
 
- }
-
+}
 
 
 /* Menu item*/
@@ -46,6 +46,7 @@
   padding-left: 30px;
   background-color: #4b177d;
 }
+
 .sidebar-submenu {
   font-size: 0.9rem;
   background-color: #4b177d;
@@ -56,10 +57,12 @@
   background-color: transparent;
   height: 35px;
 }
+
 .sidebar-separator {
   background-color: transparent;
   height: 10px;
 }
+
 .logo-separator {
   background-color: #4b177d;
   height: 60px;
@@ -75,6 +78,7 @@
 
 
 }
+
 /* Opened submenu icon */
 #sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
   content: " \f0da";
@@ -110,7 +114,7 @@
 
 .btn-outline-purple:not(:disabled):not(.disabled).active, .btn-outline-purple:not(:disabled):not(.disabled):active, .show > .btn-outline-purple.dropdown-toggle {
   color: #212529;
-   background-color: #441773;
+  background-color: #441773;
   border-color: #0f071e
 }
 

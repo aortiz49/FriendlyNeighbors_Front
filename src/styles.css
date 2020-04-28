@@ -9,8 +9,8 @@ body, html {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-image: linear-gradient(to right bottom, #504fa1, #5e4fb2, #704ec1, #844ace, #9b42da);
-
+  /*background-image: linear-gradient(to right bottom, #504fa1, #5e4fb2, #704ec1, #844ace, #9b42da);*/
+  background-color: #dadada;
 }
 
 h1 {
