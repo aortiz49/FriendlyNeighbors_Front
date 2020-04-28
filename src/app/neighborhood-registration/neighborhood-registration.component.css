@@ -169,14 +169,16 @@ select{
 }
 
 .btn-round-lg:hover {
-  background-color: #282446;
+  background-color: #544FA6;
   color: white;
+  border-color: #544FA6;
 }
 
 .btn-round-lg:active {
-  background-color: #922946!important;
+  background-color: #9644D7!important;
   box-shadow: 0 5px #666;
   transform: translateY(10px);
+  border-color: #9644D7!important;
 }
 
 #button{
