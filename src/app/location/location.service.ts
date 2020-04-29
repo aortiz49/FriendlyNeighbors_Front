@@ -12,12 +12,12 @@ export class LocationService {
 
   constructor(private http: HttpClient) {}
 
-  // TODO: get all logins
-  // TODO: get login by username, by id sucks
+  // TODO: get all locations
+  // TODO: get location by name, by id sucks
 
-  addLogin(neighId: number, login: Login): Observable<Login> {
+  addLocation(neighId: number, location: Location): Observable<Location> {
 
-    var a:string = JSON.stringify(login);
-    return this.http.post<Login>(`${this.apiUrl}/${neighId}/logins/`, login);
+    var a:string = JSON.stringify(location);
+    return this.http.post<Location>(`${this.apiUrl}/${neighId}/locations/`, location);
   }
 }
