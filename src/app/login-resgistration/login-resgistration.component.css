@@ -27,8 +27,8 @@
 }
 
 h2 {
-  color: #524FA4;
-  font-size: 2.8vw;
+  color: #00c7cc;
+  font-size: 2.5vw;
   font-family: Futura;
   text-align: center;
 }
@@ -76,7 +76,7 @@ img {
 
 .form-control:focus,
 select {
-  background-color: #f65874;
+  background-color: #6D4EBE;
   opacity: 0.8;
   color: white;
   font-family: Futura;
@@ -106,7 +106,11 @@ input[type="text"] {
 input[type="password"] {
   font-family: Futura;
   font-size: 1.1vw;
+}
 
+input[type="select"] {
+  font-family: Futura;
+  font-size: 1.1vw;
 }
 
 .no-padding {
@@ -142,15 +146,15 @@ input[type="password"] {
 }
 
 .btn-round-lg:hover {
-  background-color: #f65675;
+  background-color: #6D4EBE;
   color: white;
-  border-color: #f65675;
+  border-color: #6D4EBE;
 }
 
 .btn-round-lg:active {
-  background-color: #f8b773 !important;
+  background-color: #824ACD !important;
   box-shadow: 0 5px #666;
-  border-color: #f8b773 !important;
+  border-color: #824ACD !important;
   transform: translateY(10px);
 }
 
