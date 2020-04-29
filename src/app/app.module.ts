@@ -64,6 +64,7 @@ const routes: Routes = [
     AccountSettingsModule,
     LocationRegistrationModule
 
+
   ],
   bootstrap: [AppComponent],
   providers: [

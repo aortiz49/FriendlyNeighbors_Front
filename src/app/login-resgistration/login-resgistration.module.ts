@@ -25,7 +25,7 @@ const routes: Routes = [
     ReactiveFormsModule
   ],
   declarations: [LoginResgistrationComponent],
-  exports: [LoginResgistrationComponent,FormsModule,ReactiveFormsModule]
+  exports: [LoginResgistrationComponent]
 
 })
 export class LoginResgistrationModule { }

@@ -54,11 +54,10 @@ export class LoginResgistrationComponent implements OnInit {
     ) {
       this.toastr.error("Passwords don't match!");
       this.residentLoginForm.reset();
-    }
-    if (this.residentLoginForm.get('neighborhood').value === null) {
+    } else if (this.residentLoginForm.get('neighborhood').value === null) {
       this.residentLoginForm.controls.neighborhood.setValue(-1);
       this.residentLoginForm.reset();
-      this.toastr.warning('Please select a neighborhood.','Warning');
+      this.toastr.warning('Please select a neighborhood.', 'Warning');
     } else {
       this.addResidentLogin();
       this.residentLoginForm.reset();

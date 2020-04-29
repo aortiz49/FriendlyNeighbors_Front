@@ -12,7 +12,7 @@
 
     <div id="place" class="col-sm-7 col-md-7">
       <div class="myForm">
-        <form>
+        <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name" class="bmd-label-floating">
               <h5>Name</h5>
@@ -88,6 +88,13 @@
             </div>
 
           </div>
+          <label for="governmentId" class="bmd-label-floating">
+            <h5>Neighborhood</h5>
+          </label>
+          <select formControlName="neighborhood" id="inputState" class="form-control">
+            <option [ngValue]= "null">Choose...</option>
+            <option value={{n.id}} *ngFor="let n of neighborhoods"> {{n.name}}</option>
+          </select>
 
           <div id="button">
             <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Submit</button>
