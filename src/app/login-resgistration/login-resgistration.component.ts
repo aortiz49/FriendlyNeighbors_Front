@@ -21,12 +21,12 @@ export class LoginResgistrationComponent implements OnInit {
   ) {}
 
   neighborhoods: Array<Neighborhood>;
-
   chosenNeighborhood: Neighborhood;
 
   residentLoginForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
+    confirmPass: new FormControl(''),
     govId: new FormControl(''),
     neighborhood: new FormControl(''),
   });
@@ -38,6 +38,8 @@ export class LoginResgistrationComponent implements OnInit {
         '\n' +
         'Password:' +
         this.residentLoginForm.get('password').value +
+        'Conf Password:' +
+        this.residentLoginForm.get('confirmPass').value +
         '\n' +
         'GovId:' +
         this.residentLoginForm.get('govId').value +
@@ -45,8 +47,18 @@ export class LoginResgistrationComponent implements OnInit {
         'Neighborhood:' +
         this.residentLoginForm.get('neighborhood').value
     );
-    this.addResidentLogin();
-    this.residentLoginForm.controls.password.setValue('');
+    if (
+      this.residentLoginForm.get('password').value !==
+      this.residentLoginForm.get('confirmPass').value
+    ) {
+      this.toastr.error("Passwords don't match!");
+      this.residentLoginForm.reset();
+    } else {
+      this.addResidentLogin();
+      this.residentLoginForm.controls.password.setValue('');
+      this.residentLoginForm.controls.confirmPass.setValue('');
+
+    }
   }
 
   getNeighborhoods(): void {
