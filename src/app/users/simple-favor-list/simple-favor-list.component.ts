@@ -1,14 +1,12 @@
 import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {PostService} from "../../post/post.service";
 import {ToastrService} from "ngx-toastr";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {PostDetail} from "../../post/post-detail";
-import {Post} from "../../post/post";
-import {PostCommentComponent} from "../../post/post-comment/post-comment.component";
-import {PostCommentCreateComponent} from "../../post/post-comment-create/post-comment-create.component";
-import {humanized_time_span} from "../../post/post-detail/post-detail.component";
+
 import {Favor} from "../../favor/favor";
 import {FavorService} from "../../favor/favor.service";
+import {delay} from "rxjs/operators";
+
+
 
 @Component({
   selector: 'app-simple-favor-list',
@@ -18,18 +16,38 @@ import {FavorService} from "../../favor/favor.service";
 export class SimpleFavorListComponent implements OnInit {
 
   constructor(private  favorService: FavorService,
-              private toastrService: ToastrService) {
+              private toastrService: ToastrService,
+              private router: Router,
+              private route: ActivatedRoute,
+  ) {
+
+    //This is added so we can refresh the view when one of the bikes in
+    //the "Other bikes" list is clicked
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.ngOnInit();
+      }
+    });
+
   }
 
+
   favors: Array<Favor>;
-  @Input() favor_id: number;
-  @Input() neighborhood_id: number;
-  @Output() init = new EventEmitter();
+  @Input()
+  neighborhood_id: number;
+
+  navigationSubscription;
 
 
+  updateSpacers(id) {
+    delay(100);
+    document.getElementById(id + 'f').remove();
+  }
 
 
-  getFavors(): void {
+  getFavors()
+    :
+    void {
     this.favorService.getFavors(this.neighborhood_id)
       .subscribe(posts => {
         this.favors = posts;
@@ -38,38 +56,13 @@ export class SimpleFavorListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.init.emit();
-    console.log("Initiated: on demand")
+
+    this.neighborhood_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
+    this.toastrService.success("Simple list on");
 
     this.getFavors();
-    this.toastrService.success('Post initiated: on demand');
-
-  }
 
 
-  getDate(date: string): string {
-
-    var custom_date_formats = {
-      past: [
-        {ceiling: 60, text: "$seconds seconds ago"},
-        {ceiling: 3600, text: "$minutes minutes ago"},
-        {ceiling: 86400, text: "$hours hours ago"},
-        {ceiling: 2629744, text: "$days days ago"},
-        {ceiling: 31556926, text: "$months months ago"},
-        {ceiling: null, text: "$years years ago"}
-      ],
-      future: [
-        {ceiling: 60, text: "in $seconds seconds"},
-        {ceiling: 3600, text: "in $minutes minutes"},
-        {ceiling: 86400, text: "in $hours hours"},
-        {ceiling: 2629744, text: "in $days days"},
-        {ceiling: 31556926, text: "in $months months"},
-        {ceiling: null, text: "in $years years"}
-      ]
-    }
-
-
-    return humanized_time_span(date.replace("[UTC]", ""), new Date().toLocaleDateString(), custom_date_formats, null);
   }
 
 

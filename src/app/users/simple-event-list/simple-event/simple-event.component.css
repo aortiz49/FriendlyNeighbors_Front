@@ -1,6 +1,6 @@
 .spacer {
   background-color: white;
-  margin-left: 35px;
+  /*margin-left: 35px;*/
 
 }
 
@@ -21,9 +21,7 @@
   line-height: 18px;
   text-transform: uppercase;
   float: right;
-  margin-right: 35px;
-  margin-top: -20px;
-
+  margin-right: 7px;
 }
 
 
@@ -32,9 +30,8 @@
 
   color: rgb(38, 38, 38);
   cursor: pointer;
-  display: block;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 11px;
+  font-size: 8px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
@@ -43,7 +40,7 @@
   font-variant-numeric: normal;
   font-weight: 600;
   margin-bottom: 0px;
-  margin-left: 0px;
+  margin-left: 17px;
   margin-right: 0px;
   margin-top: 0px;
   padding-bottom: 0px;
@@ -51,7 +48,6 @@
   padding-right: 0px;
   padding-top: 0px;
   position: relative;
-  text-align: left;
   text-decoration-color: rgb(38, 38, 38);
   text-decoration-line: none;
   text-decoration-style: solid;
@@ -86,7 +82,6 @@
 .options {
   color: rgb(74, 126, 142);
   cursor: pointer;
-  display: inline;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-stretch: 100%;
@@ -98,10 +93,10 @@
   font-weight: 500;
   letter-spacing: 0.2px;
   line-height: 18px;
-  text-size-adjust: 100%;
   text-transform: uppercase;
-  -webkit-box-direction: normal;
-
+  max-height: 20px;
+  border-top: 1px solid rgb(193, 193, 193);
+  text-align: center;
 }
 
 
@@ -191,6 +186,10 @@ a.buttons {
   cursor: pointer;
 }
 
+.postFrame {
+
+
+}
 
 .backgroundD {
 
@@ -204,10 +203,8 @@ a.buttons {
 
   color: #f8f9ff;
   border-color: #181818;
-  padding-right: 1%;
-  display: inline;
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size: 13px;
+    font-size: 13px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
@@ -217,28 +214,21 @@ a.buttons {
   font-weight: 800;
   letter-spacing: 0.2px;
   line-height: 18px;
-  margin: 30px 20px 20px;
   -webkit-box-direction: normal;
   outline-color: #0f071e;
-  background-color: #f72c57;
-  border-radius: 4px;
+    background-color: #3a3a3a;
+      border-radius: 4px;
+  margin: 15px;
+
 
 }
 
-
 body {
-    max-height: 400px;
-  max-width: 200px;
 
-  background-color: white;
-
-  border-image-outset: 0px;
+  background-color: #4d7ae0;
   border-image-repeat: stretch;
-  border-image-slice: 100%;
   border-image-source: none;
-  border-image-width: 1;
-  border-radius: 6px;
-  border: 1px solid rgb(193, 193, 193);
+  border-radius: 10px;
   color: rgb(38, 38, 38);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 9px;
@@ -249,28 +239,10 @@ body {
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
   font-weight: 400;
-
-  text-align: center;
-
-  overflow: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-
-}
-
-::-webkit-scrollbar {
-  width: 0px; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #FF0000;
-}
-
-
-.no-pad {
-
   padding: 0;
+
 }
 
+html {
+  background-color: white;
+}

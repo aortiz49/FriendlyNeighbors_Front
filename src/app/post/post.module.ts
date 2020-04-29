@@ -25,6 +25,6 @@ import {PostListRoutingModule} from "./post-list/post-list-routing.module";
         PostListRoutingModule
     ],
   declarations: [VisibleWith, SpacerComponent, PostListComponent, PostDetailComponent, PostCommentComponent, PostCommentCreateComponent, PostCommentEditComponent, PostCommentDeleteComponent, PostDeleteComponent],
-  exports: [PostListComponent]
+  exports: [PostListComponent, SpacerComponent, VisibleWith]
 })
 export class PostModule { }

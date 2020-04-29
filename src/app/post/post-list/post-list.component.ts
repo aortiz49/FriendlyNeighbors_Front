@@ -114,7 +114,7 @@ export class PostListComponent implements OnInit, OnChanges {
     });
   }
 
-  updateInits(id) {
+  updateSpacers(id) {
     delay(100);
     document.getElementById(id + 's').remove();
   }

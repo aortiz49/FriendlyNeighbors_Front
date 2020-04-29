@@ -4,7 +4,7 @@ export class Favor {
 
   public id:number;
   public author: Resident;
-  public datePosted: Date;
+  public datePosted: string;
   public title: String;
   public description: String;
   public type: String;

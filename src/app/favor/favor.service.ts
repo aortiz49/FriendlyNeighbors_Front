@@ -8,7 +8,7 @@ import { FavorDetail } from './favorDetail';
 
 const API_URL = environment.apiUrl;
 const favors = "/favors";
-const neighborhoods = "/neighborhoods";
+const neighborhoods = "neighborhoods";
 
 @Injectable({
   providedIn: 'root'

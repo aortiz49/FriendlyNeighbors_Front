@@ -1,4 +1,3 @@
-
 <div class="mainbar">
   <nav class="navbar navbar-expand-lg row mainbar">
 
@@ -10,7 +9,7 @@
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+      <span class="navbar-toggler-icon"><i class="fa fa-bars" style="color: white"></i></span>
     </button>
 
     <!-- Collapsible content -->
@@ -19,37 +18,80 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item active"  data-toggle="collapse" data-target="#bar2">
+        <li class="nav-item active" data-toggle="collapse" data-target="#bar2">
           <div class="input-group">
             <input [(ngModel)]="searchModel" type="text" class="form-control search-menu bg-light text-black-50 border-dark rounded-40" placeholder="  Discover...">
             <div class="input-group-append">
                                 <span class="input-group-text bg-dark border-dark rounded-0">
-                                    <i (click)="clickMe(); test()"  class="fa fa-search-plus text-white" aria-hidden="true"></i>
+                                    <i (click)="clickMe(); test()" class="fa fa-search-plus text-white" aria-hidden="true"></i>
                                 </span>
             </div>
           </div>
         </li>
 
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false">Groups</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" routerLink="/list">Pets</a>
-            <a class="dropdown-item" routerLink="/list">NN</a>
-            <a class="dropdown-item" routerLink="/list">NN</a>
-          </div>
-        </li>
-        <!-- Dropdown -->
+      </ul>
+
+
+      <!-- Links -->
+      <ul class="navbar-nav ml-auto">
+
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="//1/">Services</a>
+          <img class="profilePicture" src="http://placeimg.com/640/360/any%7D">
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/neighborhood/99/posts/list">Posts</a>
+          <a class="nav-link name" routerLink="//1/">Andres Bayona</a>
+        </li>
+
+
+        <li class="nav-item">
+          <div class="spacer"></div>
+        </li>
+
+        <li class="nav-item">
+          <div class="spacer"></div>
+        </li>
+
+        <li class="nav-item">
+          <div class="spacer"></div>
+        </li>
+
+        <li class="nav-item">
+          <div class="spacer"></div>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link name" routerLink="/users/1"><span class="btn-outline-purple  fa fa-home fa-2x"></span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <div class="spacer"></div>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link name" routerLink="/users/1"><span class="btn-outline-purple  fa fa-bell fa-2x"></span></a>
+        </li>
+
+
+        <li class="nav-item">
+          <div class="spacer"></div>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link  btn-outline-purple text" routerLink="//1/">Log out</a>
+        </li>
+
+        <li class="nav-item">
+          <div class="spacer"></div>
         </li>
 
       </ul>
+
 
     </div>
     <!-- Collapsible content -->
@@ -57,7 +99,7 @@
   </nav>
 
 
-  <nav id = "bar2" class="collapse navbar navbar-expand-lg bar  row">
+  <nav id="bar2" class="collapse navbar navbar-expand-lg bar  row">
 
     <ul class="navbar-nav mr-auto">
 
@@ -65,7 +107,7 @@
       <li class="nav-item">
 
 
-        <div class="  pretty p-switch p-slim col-1 "  (click)="setType('posts'); update()">
+        <div class="  pretty p-switch p-slim col-1 " (click)="setType('posts'); update()">
 
           <input type="radio" name="radio1"/>
           <div class="state  p-primary">
@@ -74,7 +116,7 @@
 
         </div>
 
-        <div align="left" class="item"> Posts</div>
+        <div class="item"> Posts</div>
 
 
       </li>
@@ -92,7 +134,7 @@
 
         </div>
 
-        <div align="left" class="item"> People</div>
+        <div class="item"> People</div>
 
 
       </li>
@@ -109,7 +151,7 @@
 
         </div>
 
-        <div align="left" class="item"> Places</div>
+        <div class="item"> Places</div>
 
 
       </li>
@@ -126,7 +168,7 @@
 
         </div>
 
-        <div align="left" class="item"> Favors</div>
+        <div class="item"> Favors</div>
 
 
       </li>
@@ -143,7 +185,7 @@
 
         </div>
 
-        <div align="left" class="item"> Services</div>
+        <div class="item"> Services</div>
 
 
       </li>
@@ -154,7 +196,7 @@
   </nav>
 
 </div>
-<div class="row backgroundM" >
+<div class="row backgroundM">
   <div class="col-2">
     <app-sidebar></app-sidebar>
 
@@ -162,13 +204,13 @@
   <div class="col-10 backgroundM">
 
 
-   <div *ngIf="searchModel.length == 0 ; else elseBlock">
-    <router-outlet ></router-outlet>
-  </div>
+    <div *ngIf="searchModel.length == 0 ; else elseBlock">
+      <router-outlet></router-outlet>
+    </div>
 
     <ng-template #elseBlock>
 
-      <app-post-list *ngIf="searchType == 'posts'" [notRouted]="true"  [neigh_id]="1" [searchModel]="searchModel" > </app-post-list>
+      <app-post-list *ngIf="searchType == 'posts'" [notRouted]="true" [neigh_id]="1" [searchModel]="searchModel"></app-post-list>
 
     </ng-template>
 

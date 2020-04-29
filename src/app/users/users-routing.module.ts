@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'users',
     component: MainLayoutComponent,
     children: [
-      { path: '', component: UsersComponent }
+      { path: ':id', component: UsersComponent }
     ]
   }
 ];
