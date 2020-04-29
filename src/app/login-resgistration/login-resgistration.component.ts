@@ -21,14 +21,14 @@ export class LoginResgistrationComponent implements OnInit {
   ) {}
 
   neighborhoods: Array<Neighborhood>;
-
   chosenNeighborhood: Neighborhood;
 
   residentLoginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    govId: new FormControl(''),
-    neighborhood: new FormControl(''),
+    username: new FormControl(null),
+    password: new FormControl(null),
+    confirmPass: new FormControl(null),
+    govId: new FormControl(null),
+    neighborhood: new FormControl(null),
   });
 
   onSubmit(): void {
@@ -38,6 +38,8 @@ export class LoginResgistrationComponent implements OnInit {
         '\n' +
         'Password:' +
         this.residentLoginForm.get('password').value +
+        'Conf Password:' +
+        this.residentLoginForm.get('confirmPass').value +
         '\n' +
         'GovId:' +
         this.residentLoginForm.get('govId').value +
@@ -45,8 +47,21 @@ export class LoginResgistrationComponent implements OnInit {
         'Neighborhood:' +
         this.residentLoginForm.get('neighborhood').value
     );
-    this.addResidentLogin();
-    this.residentLoginForm.controls.password.setValue('');
+
+    if (
+      this.residentLoginForm.get('password').value !==
+      this.residentLoginForm.get('confirmPass').value
+    ) {
+      this.toastr.error("Passwords don't match!");
+      this.residentLoginForm.reset();
+    } else if (this.residentLoginForm.get('neighborhood').value === null) {
+      this.residentLoginForm.reset();
+      this.toastr.warning('Please select a neighborhood.', 'Warning');
+    } else {
+      this.addResidentLogin();
+      this.residentLoginForm.reset();
+      this.residentLoginForm.controls.neighborhood.setValue('Choose...');
+    }
   }
 
   getNeighborhoods(): void {
@@ -80,9 +95,8 @@ export class LoginResgistrationComponent implements OnInit {
     };
     var loginName = this.residentLoginForm.value.username;
 
-    var observable = this.loginService
-      .addLogin(neighborhood, login)
-      .subscribe(() => {
+    var observable = this.loginService.addLogin(neighborhood, login).subscribe(
+      () => {
         this.residentLoginForm.reset();
         this.residentLoginForm.controls.neighborhood.setValue('Choose...');
         this.toastr.success(
@@ -93,7 +107,11 @@ export class LoginResgistrationComponent implements OnInit {
         setTimeout(() => {
           this.router.navigateByUrl('/newProfile');
         }, 2300);
-      });
+      },
+      () => {
+        this.residentLoginForm.reset();
+      }
+    );
   }
 
   ngOnInit() {
