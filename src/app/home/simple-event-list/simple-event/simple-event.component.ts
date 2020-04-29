@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {humanized_time_span} from "../../../post/post-detail/post-detail.component";
-import {Favor} from "../../../favor/favor";
 import {ToastrService} from "ngx-toastr";
+import {Favor} from "../../../favor/favor";
 
 @Component({
   selector: 'app-simple-event',
@@ -22,7 +22,7 @@ export class SimpleEventComponent implements OnInit {
   }
 
   @Output() init = new EventEmitter();
-  @Input() favor: Favor
+  @Input() favor: Favor;
 
 
   getDate(date: string): string {
