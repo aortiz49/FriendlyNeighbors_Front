@@ -1,21 +1,3 @@
-
-p.editar {
-  color: #009fff;
-  font-style: normal;
-  font-size: 12px;
-}
-
-p.eliminar {
-  color: #ff0000;
-  font-style: normal;
-  font-size: 12px;
-}
-
-.checked {
-  color: orange;
-}
-
-
 .spacer {
   background-color: white;
   margin-left: 35px;
@@ -101,56 +83,30 @@ p.eliminar {
 }
 
 
-
-.spacerPhoto {
-  background-color: white;
-  margin: 10px 0px;
-  width: 100%;
-
-}
-
-.profilePicture {
-
-
-  border: 2px solid #a3dff5;
-  color: rgb(38, 38, 38);
-
-  border-image-repeat: stretch;
-  border-image-source: none;
-
+.options {
+  color: rgb(74, 126, 142);
   cursor: pointer;
   display: inline;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
   font-variant-east-asian: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
-  font-weight: 400;
-  height: 40px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
   line-height: 18px;
-     margin-bottom: 0px;
-    margin-left: 20px;
-  margin-right: 0px;
-  margin-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
   text-size-adjust: 100%;
-  vertical-align: baseline;
-  width: 40px;
+  text-transform: uppercase;
   -webkit-box-direction: normal;
-  border-radius: 6px;
-
 
 }
 
 
-
-.bar {
+.header {
+  align-items: center;
   border-bottom-color: rgb(239, 239, 239);
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -170,6 +126,9 @@ p.eliminar {
   border-top-width: 0px;
   box-sizing: border-box;
   color: rgb(38, 38, 38);
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-stretch: 100%;
@@ -180,16 +139,17 @@ p.eliminar {
   font-variant-numeric: normal;
   font-weight: 400;
   height: auto;
-  width: 100%;
   line-height: 18px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   margin-top: 0px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: relative;
+  text-size-adjust: 100%;
   vertical-align: baseline;
   -webkit-box-align: center;
   -webkit-box-direction: normal;
@@ -198,7 +158,119 @@ p.eliminar {
 }
 
 
-.backgroundC {
+.spacerR {
+  background-color: white;
+  margin-top: 6px;
 
-  background-color: #f7f7f7;
+
 }
+
+
+.nav-link {
+  color: #960018;
+}
+
+a.buttons {
+  color: #ac00ff;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.checked {
+  color: orange;
+}
+
+.edit-icon {
+  margin-left: 5px;
+  margin-bottom: 4px;
+  margin-top: 1px;
+  margin-right: 5px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+
+.backgroundD {
+
+  background-color: #dadada;
+
+
+}
+
+
+.item {
+
+  color: #f8f9ff;
+  border-color: #181818;
+  padding-right: 1%;
+  display: inline;
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 13px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  margin: 30px 20px 20px;
+  -webkit-box-direction: normal;
+  outline-color: #0f071e;
+  background-color: #f72c57;
+  border-radius: 4px;
+
+}
+
+
+body {
+    max-height: 400px;
+  max-width: 200px;
+
+  background-color: white;
+
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-radius: 6px;
+  border: 1px solid rgb(193, 193, 193);
+  color: rgb(38, 38, 38);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 9px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+
+  text-align: center;
+
+  overflow: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+
+.no-pad {
+
+  padding: 0;
+}
+

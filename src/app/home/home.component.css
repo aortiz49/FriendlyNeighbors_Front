@@ -78,17 +78,139 @@
 }
 
 
-.banner {
+.pictures {
 
-  background-color: white;
-  height: 400px;
+
+  color: #f8f9ff;
+  border-color: #181818;
+  padding: 10px;
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  -webkit-box-direction: normal;
+  outline-color: #0f071e;
+  background: #7400ac;
+  border-radius: 4px;
+  max-width: 260px;
 
 
 }
 
-  .content {
+
+
+
+.banner {
+  display: flex;
+  background-color: white;
+  height: 500px;
+  border-radius: 8px;
+  border: 1px solid rgb(193, 193, 193);
+
+
+}
+
+.image {
+
+  background-color: white;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgb(193, 193, 193);
+  max-height: 75%;
+
+
+}
+
+.content {
 
 
   max-width: 1000px;
   margin: 0 auto;
 }
+
+
+.wraper {
+  align-self: flex-end;
+  position: absolute;
+  z-index: 11;
+  text-align: center;
+}
+
+
+.spacer {
+  max-height: 75%;
+
+}
+
+
+.footer {
+  position: relative;
+  height: 100px;
+  opacity: 0.6;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  border-radius: 9px;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+
+.outer-circle {
+  background: rgba(130, 0, 192, 0.4);
+  border-radius: 50%;
+  height: 245px;
+  width: 245px;
+  position: relative;
+  /*
+   Child elements with absolute positioning will be
+   positioned relative to this div
+  */
+}
+
+.inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  height: 230px;
+  width: 230px;
+  /*
+   Put top edge and left edge in the center
+  */
+  top: 50%;
+  left: 50%;
+  margin: -115px 0px 0px -115px;
+  border: 3px solid rgb(109, 22, 247);
+  /*
+   Offset the position correctly with
+   minus half of the width and minus half of the height
+  */
+}
+
+.name {
+
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 37px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  color: #1b1b1b;
+  border-color: #181818;
+  letter-spacing: 0.2px;
+  outline-color: #0f071e;
+  border-radius: 10px;
+  align-self: flex-end;
+  padding-bottom: 40px;
+
+}
+

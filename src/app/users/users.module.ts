@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { UsersRoutingModule } from './users-routing.module';
+import { UsersComponent } from './users.component';
 import { SimpleFavorListComponent } from './simple-favor-list/simple-favor-list.component';
 import { SimpleEventListComponent } from './simple-event-list/simple-event-list.component';
 import {PostModule} from "../post/post.module";
 import { SimpleFavorComponent } from './simple-favor-list/simple-favor/simple-favor.component';
 import { SimpleEventComponent } from './simple-event-list/simple-event/simple-event.component';
-import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    UsersRoutingModule,
     PostModule
   ],
-  exports: [
-    SimpleFavorListComponent,
-    SimpleEventListComponent
-  ],
-  declarations: [HomeComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent, GalleryComponent]
+  declarations: [UsersComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent]
 })
-export class HomeModule { }
+export class UsersModule { }

@@ -14,12 +14,14 @@ export class GalleryComponent implements OnInit {
 
 }
 
-let modalId = $('#image-gallery');
+declare var $: any;
+
+  let modalId = $('#image-gallery');
 
 $(document)
   .ready(function () {
 
-    loadGallery(true, 'a.thumbnail');
+      loadGallery(true, 'a.thumbnail');
 
     //This function disables buttons when needed
     function disableButtons(counter_max, counter_current) {
@@ -39,6 +41,8 @@ $(document)
      * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
      * @param setClickAttr  Sets the attribute for the click handler.
      */
+
+
 
     function loadGallery(setIDs, setClickAttr) {
       let current_image,
@@ -84,7 +88,7 @@ $(document)
   });
 
 // build key actions
-$(document)
+  $(document)
   .keydown(function (e) {
     switch (e.which) {
       case 37: // left
