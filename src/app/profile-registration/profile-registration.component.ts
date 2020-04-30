@@ -6,6 +6,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ResidentService } from '../resident/resident.service';
 import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { Resident } from '../resident/resident';
+import { Login } from '../login/login';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-profile-registration',
@@ -17,12 +19,16 @@ export class ProfileRegistrationComponent implements OnInit {
     private toastr: ToastrService,
     private neighborhoodService: NeighborhoodService,
     private residentService: ResidentService,
+    private loginService: LoginService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   neighborhood: Neighborhood;
   neighId: number;
+  loginId: number;
+
+  login: Login;
 
   residentProfileForm = new FormGroup({
     name: new FormControl(null),
@@ -48,28 +54,29 @@ export class ProfileRegistrationComponent implements OnInit {
     var phone: string = this.residentProfileForm.value.phone;
     var address: string = this.residentProfileForm.value.address;
 
+    var login: Login = this.login;
+
     var resident: Resident = new Resident(
       address,
       email,
       name,
       nickname,
-      phone
+      phone,
+      login
     );
 
     console.log(resident);
     const toastrConfig: Partial<IndividualConfig> = {
       timeOut: 1800,
     };
-    var residentName = this.residentProfileForm.value.username;
 
     var observable = this.residentService
       .addResident(this.neighId, resident)
       .subscribe(
         () => {
           this.residentProfileForm.reset();
-          this.residentProfileForm.controls.neighborhood.setValue('Choose...');
           this.toastr.success(
-            'The resident ' + residentName + ' was added.',
+            'The resident ' + name + ' was added.',
             'Success',
             toastrConfig
           );
@@ -91,6 +98,11 @@ export class ProfileRegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.neighId = +this.route.snapshot.paramMap.get('id');
-    console.log(this.neighId);
+    this.loginId = +this.route.snapshot.paramMap.get('log');
+    this.loginService
+      .getLoginById(this.neighId, this.loginId)
+      .subscribe((login) => {
+        this.login = login;
+      });
   }
 }

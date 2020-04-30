@@ -69,7 +69,8 @@ export class Resident {
     email: string,
     name: string,
     nickname: string,
-    phonenumber: string
+    phonenumber: string,
+    login: Login
   ) {
     this.address = address;
     this.email = email;
@@ -78,5 +79,6 @@ export class Resident {
     this.phoneNumber = phonenumber;
     this.preferences = '';
     this.proofOfResidence = '';
+    this.login = login;
   }
 }

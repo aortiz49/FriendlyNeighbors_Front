@@ -60,6 +60,6 @@ export class Post {
     this.title = "";
     this.description = "";
     this.numberOfLikes = -1;
-    this.author = new Resident("","","","","");
+    this.author = new Resident("","","","","",null);
   }
 }

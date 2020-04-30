@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: 'neighborhoods/:id/newProfile',
+    path: 'neighborhoods/:id/:log/newProfile',
     component: ProfileRegistrationComponent,
     children: [
       { path: '', component: ProfileRegistrationComponent }

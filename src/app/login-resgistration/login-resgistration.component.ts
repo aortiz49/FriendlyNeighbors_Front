@@ -108,9 +108,9 @@ export class LoginResgistrationComponent implements OnInit {
           'Success',
           toastrConfig
         );
-       // setTimeout(() => {
-        //  this.router.navigateByUrl(`/neighborhoods/${neighborhood}/newProfile`);
-        //}, 2300);
+        setTimeout(() => {
+          this.router.navigateByUrl(`/neighborhoods/${neighborhood}-${this.persistedLogin}/newProfile`);
+        }, 2300);
       },
       () => {
         this.residentLoginForm.reset();

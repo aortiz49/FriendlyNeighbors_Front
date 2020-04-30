@@ -19,6 +19,10 @@ export class LoginService {
     return this.http.post<Login>(`${this.apiUrl}/${neighId}/logins/`, login);
   }
 
+  getLoginById(neighId: number, id: number): Observable<Login> {
+    return this.http.get<Login>(`${this.apiUrl}/${neighId}/logins/${id}`);
+  }
+
   getLoginByUsername(neighId: number, username: String): Observable<Login> {
     return this.http.get<Login>(`${this.apiUrl}/${neighId}/logins/_${username}`);
   }
