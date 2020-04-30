@@ -5,10 +5,12 @@
 
 
 #body-row {
-  margin-left: 0;
+    margin-left: 0;
   margin-right: 0;
-  background-color: #4b177d;
-  height: 100%;
+    background-color: #4b177d;
+    height: 100%;
+
+  max-width: fit-content;
 }
 
 #sidebar-container {
@@ -120,4 +122,23 @@
 
 .btn-outline-purple:not(:disabled):not(.disabled).active:focus, .btn-outline-purple:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-purple.dropdown-toggle:focus {
   box-shadow: 0 0 0 .1rem rgba(75, 23, 125, 0.5)
+}
+
+
+.collapsing {
+    position: relative;
+    height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.collapsing.width {
+  -webkit-transition-property: width, visibility;
+  transition-property: width, visibility;
+  width: 0;
+  height: auto;
 }

@@ -197,11 +197,17 @@
 
 </div>
 <div class="row backgroundM">
-  <div class="col-2">
+
+  <div class="col" style="max-width: fit-content;">
+
+
     <app-sidebar></app-sidebar>
 
+
   </div>
-  <div class="col-10 backgroundM">
+
+
+  <div class="backgroundM col" style="max-width: 100%">
 
 
     <div *ngIf="searchModel.length == 0 ; else elseBlock">
@@ -217,6 +223,8 @@
   </div>
 
 </div>
+
+
 <app-footer></app-footer>
 
 

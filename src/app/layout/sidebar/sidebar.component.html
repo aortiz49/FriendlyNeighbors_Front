@@ -3,73 +3,72 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<div  id="body-row">
+<div id="body-row">
   <!-- Sidebar -->
   <div id="sidebar-container" class="menu-collapsed "><!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
     <!-- Bootstrap List Group -->
     <ul class="list-group">
-      <!-- Separator with title -->
+
+
+      <a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="c1 c2 c3 c4 c5 c6" class="btn-outline-purple menu list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <span class="fa fa-bars fa-fw mr-3"></span>
+        </div>
+      </a>
+
+
+      <!-- Separator without title -->
+      <li class="sidebar-separator "></li>
+
 
       <!-- /END Separator -->
       <!-- Menu with submenu -->
       <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="btn-outline-purple menu list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-file-image-o fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Posts</span>
+
+          <div class="collapse width multi-collapse" id="c1">
+            <span class="menu-collapsed d-none d-md-block">Posts</span>
+          </div>
+
           <span class="submenu-icon ml-auto"></span>
         </div>
       </a>
+
+
       <!-- Separator without title -->
       <li class="sidebar-separator "></li>
       <!-- Submenu content -->
       <div id='submenu1' class="collapse sidebar-submenu">
-        <a  class="nav-link list-group-item list-group-item-action menu text-white" routerLink="/posts/1">
+        <a class="nav-link list-group-item list-group-item-action menu text-white" routerLink="/posts/1">
           <span class="menu-collapsed">My Posts</span>
         </a>
+      </div>
 
-      </div>
-      <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="btn-outline-purple menu list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-map-marker fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Places</span>
-          <span class="submenu-icon ml-auto"></span>
-        </div>
-      </a>
-      <!-- Submenu content -->
-      <div id='submenu2' class="collapse sidebar-submenu">
-        <a href="#" class="list-group-item list-group-item-action menu text-white">
-          <span class="menu-collapsed">My Places</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action menu text-white">
-          <span class="menu-collapsed">Popular Places</span>
-        </a>
-      </div>
 
       <!-- Separator without title -->
       <li class="sidebar-separator "></li>
       <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-handshake-o fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Favors</span>
-        </div>
-      </a>
-      <!-- Separator without title -->
-      <li class="sidebar-separator "></li>
-      <!-- /END Separator -->
-      <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
-        <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-user fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">People</span>
+
+          <div class="collapse width multi-collapse" id="c2">
+            <span class="menu-collapsed d-none d-md-block">Favors</span>
+
+          </div>
         </div>
       </a>
 
       <!-- Separator without title -->
-      <li class="sidebar-separator "></li>
 
+      <!-- Separator without title -->
+      <li class="sidebar-separator "></li>
       <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-users fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Groups</span>
+          <span class="fa fa-calendar fa-fw mr-3"></span>
+          <div class="collapse width multi-collapse" id="c3">
+            <span class="menu-collapsed d-none d-md-block">Events</span>
+          </div>
         </div>
       </a>
 
@@ -80,18 +79,9 @@
       <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-home fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Neighborhood</span>
-        </div>
-      </a>
-
-
-      <!-- Separator without title -->
-      <li class="sidebar-separator "></li>
-      <!-- /END Separator -->
-      <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
-        <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-shopping-basket fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Store</span>
+          <div class="collapse width multi-collapse" id="c4">
+            <span class="menu-collapsed d-none d-md-block">Neighborhood</span>
+          </div>
         </div>
       </a>
 
@@ -102,7 +92,9 @@
       <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-calendar-check-o fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Services</span>
+          <div class="collapse width multi-collapse" id="c5">
+            <span class="menu-collapsed d-none d-md-block">Services</span>
+          </div>
         </div>
       </a>
 
@@ -113,11 +105,16 @@
       <a href="#" class="btn-outline-purple menu list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-question fa-fw mr-3"></span>
-          <span class="menu-collapsed d-none d-md-block">Help</span>
+          <div class="collapse width multi-collapse" id="c6">
+            <span class="menu-collapsed d-none d-md-block">Help</span>
+          </div>
         </div>
       </a>
 
+
     </ul><!-- List Group END-->
+
+
   </div><!-- sidebar-container END -->
 
 
