@@ -16,8 +16,14 @@ export class LoginService {
   // TODO: get login by username, by id sucks
 
   addLogin(neighId: number, login: Login): Observable<Login> {
-
-    var a:string = JSON.stringify(login);
     return this.http.post<Login>(`${this.apiUrl}/${neighId}/logins/`, login);
+  }
+
+  getLoginById(neighId: number, id: number): Observable<Login> {
+    return this.http.get<Login>(`${this.apiUrl}/${neighId}/logins/${id}`);
+  }
+
+  getLoginByUsername(neighId: number, username: String): Observable<Login> {
+    return this.http.get<Login>(`${this.apiUrl}/${neighId}/logins/_${username}`);
   }
 }

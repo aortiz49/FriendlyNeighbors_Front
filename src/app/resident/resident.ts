@@ -5,8 +5,7 @@
  */
 
 import { Neighborhood } from '../neighborhood/neighborhood';
-
-
+import { Login } from '../login/login';
 
 /**
  *This class represents a resident made by a resident
@@ -14,9 +13,13 @@ import { Neighborhood } from '../neighborhood/neighborhood';
 export class Resident {
 
   /**
+   * Represents login of the profile
+   */
+  public login: Login;
+
+  /**
    * Represents id of the resident
    */
-
   public id: number;
 
   /**
@@ -61,5 +64,21 @@ export class Resident {
 
   public profilePicture: string;
 
-
+  constructor(
+    address: string,
+    email: string,
+    name: string,
+    nickname: string,
+    phonenumber: string,
+    login: Login
+  ) {
+    this.address = address;
+    this.email = email;
+    this.name = name;
+    this.nickname = nickname;
+    this.phoneNumber = phonenumber;
+    this.preferences = '';
+    this.proofOfResidence = '';
+    this.login = login;
+  }
 }
