@@ -22,6 +22,9 @@ export class LoginResgistrationComponent implements OnInit {
 
   neighborhoods: Array<Neighborhood>;
   chosenNeighborhood: Neighborhood;
+  createdLoginId: number;
+
+  persistedLogin: Login;
 
   residentLoginForm = new FormGroup({
     username: new FormControl(null),
@@ -91,30 +94,40 @@ export class LoginResgistrationComponent implements OnInit {
 
     console.log(login);
     const toastrConfig: Partial<IndividualConfig> = {
-      timeOut: 1800,
+      timeOut: 5800,
     };
     var loginName = this.residentLoginForm.value.username;
 
-    var observable = this.loginService.addLogin(neighborhood, login).subscribe(
-      () => {
+    this.loginService.addLogin(neighborhood, login).subscribe(
+      (persistedLogin) => {
+        this.persistedLogin = persistedLogin;
         this.residentLoginForm.reset();
         this.residentLoginForm.controls.neighborhood.setValue('Choose...');
         this.toastr.success(
-          'The username ' + loginName + ' was added.',
+          'The username ' + this.persistedLogin.userName + ' was added with id ' + this.persistedLogin.id,
           'Success',
           toastrConfig
         );
-        setTimeout(() => {
-          this.router.navigateByUrl(`/neighborhoods/${neighborhood}/newProfile`);
-        }, 2300);
+       // setTimeout(() => {
+        //  this.router.navigateByUrl(`/neighborhoods/${neighborhood}/newProfile`);
+        //}, 2300);
       },
       () => {
         this.residentLoginForm.reset();
       }
     );
+
+
   }
+
+
+
+
+
 
   ngOnInit() {
     this.getNeighborhoods();
+
+
   }
 }
