@@ -1,6 +1,5 @@
 
 :host {
-  padding: 30px
 }
 
 .test {
@@ -109,10 +108,11 @@
 
 .banner {
   display: flex;
-  background-color: white;
+     background-color: white;
   height: 500px;
   border-radius: 8px;
   border: 1px solid rgb(193, 193, 193);
+  position: relative;
 
 
 }

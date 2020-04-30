@@ -1,3 +1,5 @@
+
+<div  style = "max-height: 700px">
 <div class="mainbar">
   <nav class="navbar navbar-expand-lg row mainbar">
 
@@ -196,18 +198,16 @@
   </nav>
 
 </div>
-<div class="row backgroundM">
-
-  <div class="col" style="max-width: fit-content;">
 
 
+<div class="  backgroundM" style="width: 100%; height: 700px">
+
+    <div class="" style="float: left; min-height: 600px">
     <app-sidebar></app-sidebar>
-
-
   </div>
 
 
-    <div class="backgroundM col contentS" style="max-width: 100%">
+      <div class=" backgroundM  contentS">
 
 
     <div *ngIf="searchModel.length == 0 ; else elseBlock">
@@ -225,6 +225,8 @@
 </div>
 
 
-<app-footer></app-footer>
+  <app-footer style = "min-height: 100%"></app-footer>
 
+
+</div>
 

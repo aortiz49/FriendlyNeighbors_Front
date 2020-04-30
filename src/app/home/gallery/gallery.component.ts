@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -16,12 +17,12 @@ export class GalleryComponent implements OnInit {
 
 declare var $: any;
 
-  let modalId = $('#image-gallery');
+let modalId = $('#image-gallery');
 
 $(document)
   .ready(function () {
 
-      loadGallery(true, 'a.thumbnail');
+    loadGallery(true, 'a.thumbnail');
 
     //This function disables buttons when needed
     function disableButtons(counter_max, counter_current) {
@@ -80,7 +81,7 @@ $(document)
               .attr('data-image-id', counter);
           });
       }
-      $(setClickAttr)
+       $(setClickAttr)
         .on('click', function () {
           updateGallery($(this));
         });
@@ -88,7 +89,7 @@ $(document)
   });
 
 // build key actions
-  $(document)
+$(document)
   .keydown(function (e) {
     switch (e.which) {
       case 37: // left

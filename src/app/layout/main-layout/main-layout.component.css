@@ -1,6 +1,5 @@
 :host {
 
-  width: 100%;
 }
 
 .backgroundM {
@@ -228,6 +227,5 @@ td {
 .contentS {
   overflow: auto;
   overflow-x: hidden;
-     max-height: 900px;
+  max-height: 900px;
 }
-
