@@ -31,7 +31,6 @@ import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
-  {path: 'neighborhoods', component: NeighborhoodListComponent},
   {path: 'main', component: LandingComponent},
 ];
 
