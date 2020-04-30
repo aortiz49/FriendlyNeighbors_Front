@@ -105,7 +105,7 @@ export class LoginResgistrationComponent implements OnInit {
           toastrConfig
         );
         setTimeout(() => {
-          this.router.navigateByUrl('/newProfile');
+          this.router.navigateByUrl(`/neighborhoods/${neighborhood}/newProfile`);
         }, 2300);
       },
       () => {

@@ -6,13 +6,10 @@
 
 import { Neighborhood } from '../neighborhood/neighborhood';
 
-
-
 /**
  *This class represents a resident made by a resident
  */
 export class Resident {
-
   /**
    * Represents id of the resident
    */
@@ -61,5 +58,19 @@ export class Resident {
 
   public profilePicture: string;
 
-
+  constructor(
+    address: string,
+    email: string,
+    name: string,
+    nickname: string,
+    phonenumber: string
+  ) {
+    this.address = address;
+    this.email = email;
+    this.name = name;
+    this.nickname = nickname;
+    this.phoneNumber = phonenumber;
+    this.preferences = "";
+    this.proofOfResidence = ""
+  }
 }
