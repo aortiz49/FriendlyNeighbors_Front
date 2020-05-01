@@ -1,14 +1,30 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {MainLayoutComponent} from '../layout/main-layout/main-layout.component';
 import {HomeComponent} from './home.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'neighborhood',
     component: MainLayoutComponent,
     children: [
-      { path: ':id', component: HomeComponent }
+      {
+        path: ':id',
+        children: [
+          {
+            path: 'residents',
+            children: [
+              {
+                path: ':id',
+                component: HomeComponent
+              }
+
+            ]
+
+          }
+
+        ]
+      }
     ]
   }
 ];
@@ -17,4 +33,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {
+}

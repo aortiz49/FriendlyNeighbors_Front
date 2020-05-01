@@ -14,25 +14,25 @@ and open the template in the editor.
 <body class="container-fluid ">
 
 <br>
-<div><span class="item">&nbsp; &nbsp; {{favor.title}} &nbsp;&nbsp; </span></div>
+<div><span class="item " [ngClass]= "type">&nbsp; &nbsp; {{favor.title}} &nbsp;&nbsp; </span></div>
 
 
 <div class="name ">{{favor.author.name}} <span class="date">{{getDate(favor.datePosted)}}   </span></div>
 
 
- <br>
+<br>
 
-     <div  class="options"  >
+<div class="options">
 
-       <i (click)="toggle11(); toggle12() " attr.data-target="#collapse_{{favor.id}}"  data-toggle="collapse"  class="options"  *ngIf="toggle1" class="fa fa-caret-down fa-2x"></i>
-       <i  (click)="toggle11(); toggle12() " attr.data-target="#collapse_{{favor.id}}"  data-toggle="collapse"  class="options"  *ngIf="toggle2" class=" fa fa-caret-up fa-2x"></i>
+  <i (click)="toggle11(); toggle12() " attr.data-target="#collapse_{{favor.id + type}}" data-toggle="collapse" class="options" *ngIf="toggle1" class="fa fa-caret-down fa-2x"></i>
+  <i (click)="toggle11(); toggle12() " attr.data-target="#collapse_{{favor.id  + type}}" data-toggle="collapse" class="options" *ngIf="toggle2" class=" fa fa-caret-up fa-2x"></i>
 
-     </div>
+</div>
 
 
- <div id="collapse_{{favor.id}}" class="collapse" #d>
+<div id="collapse_{{favor.id  + type}}" class="collapse" #d>
 
-  <p class = "text">{{favor.description}}</p>
+  <p class="text">{{favor.description}}</p>
 </div>
 
 </body>

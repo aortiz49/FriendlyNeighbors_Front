@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 import {Post} from "./post";
-import {Resident} from "../resident/resident";
+import {Resident} from "../home/resident";
 
 export class CommentP {
 

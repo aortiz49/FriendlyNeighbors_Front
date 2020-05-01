@@ -105,7 +105,7 @@
 }
 
 
-.header {
+.bar {
   align-items: center;
   border-bottom-color: rgb(239, 239, 239);
   border-bottom-style: solid;
@@ -227,11 +227,8 @@ a.buttons {
 
 
 body {
-    max-height: 400px;
-  max-width: 200px;
-
   background-color: white;
-
+    max-height: 150px;
   border-image-outset: 0px;
   border-image-repeat: stretch;
   border-image-slice: 100%;
@@ -274,3 +271,12 @@ body {
   padding: 0;
 }
 
+.c1 {
+  background-color: #f72c57;
+
+}
+
+.c2 {
+  background-color: #23f761;
+
+}
