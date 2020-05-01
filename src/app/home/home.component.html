@@ -31,13 +31,13 @@
   <div class="row content">
 
 
-    <div class="col-lg-4 col-md-6 mb-3">
+       <div class="col-lg-4 col-md-7 mb-4">
 
 
       <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
 
       <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [type] = "'color1'" [favors]="resident.favorsRequested">
+        <app-simple-favor-list [type]="'color1'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
 
@@ -46,8 +46,8 @@
 
       <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">Helped with favors</div>
 
-        <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [type] = "'color2'" [favors]="resident.favorsRequested">
+      <div style="max-width: 70%; margin: 0 0 0 auto">
+        <app-simple-favor-list [type]="'color2'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
 
@@ -62,15 +62,21 @@
     </div>
 
 
-    <div class="col-lg-5 col-md-6 mb-3">
+    <div class="col-lg-5 col-md-7 mb-3">
       <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">
       </app-post-list>
     </div>
 
-    <div class="col-lg-3 col-md-6 mb-3">
+    <div class="col-lg-3 col-md-7 mb-3">
 
-      <app-simple-event-list [favors]="resident.favorsRequested">
-      </app-simple-event-list>
+        <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
+
+      <div style="max-width: 80%; margin: 0 0  auto 0 ">
+        <app-simple-event-list [favors]="resident.favorsRequested">
+        </app-simple-event-list>
+      </div>
+
+
     </div>
 
 
