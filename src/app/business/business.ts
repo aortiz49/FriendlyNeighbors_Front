@@ -1,9 +1,9 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import{Resident} from "../resident/resident";
+import{Resident} from "../home/resident";
 import { Neighborhood } from '../neighborhood/neighborhood';
 
 /**
@@ -62,9 +62,9 @@ export class Business {
      */
     private _owner: Resident;
 
-    
 
-    constructor(id: number, name: String, address: String, openingTime: string, closingTime:String, rating:number, 
+
+    constructor(id: number, name: String, address: String, openingTime: string, closingTime:String, rating:number,
                 latitude:number, longitude:number, owner:Resident, neighborhood:Neighborhood) {
         this._id = id;
         this._name = name;

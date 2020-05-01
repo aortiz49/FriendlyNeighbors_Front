@@ -1,4 +1,4 @@
-import { Resident } from '../resident/resident';
+import { Resident } from '../home/resident';
 import { Business } from '../business/business';
 
 export enum Priority {

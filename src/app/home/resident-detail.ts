@@ -34,6 +34,9 @@ export class ResidentDetail extends Resident {
   public comments: CommentP[];
 
 
+  public album: string[];
+
+
 }
 
 

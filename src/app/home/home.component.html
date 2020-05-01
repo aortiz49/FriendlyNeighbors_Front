@@ -8,7 +8,7 @@
       <div class="outer-circle">
         <img class="inner-circle" src="http://placeimg.com/640/360/any%7D">
       </div>
-      <div class="name"> Andres Bayona
+      <div class="name"> {{resident.name}}
       </div>
 
 
@@ -20,8 +20,8 @@
     </div>
   </div>
 
-    <div class="info">
-    <p class = "options">About
+  <div class="info">
+    <p class="options">About
     </p>
   </div>
 
@@ -36,12 +36,12 @@
       <div class="favor">Recent favors
       </div>
 
-      <app-simple-favor-list>
+      <app-simple-favor-list [favors]="resident.favorsRequested">
       </app-simple-favor-list>
 
       <br>
 
-      <div class="pictures">Pictures
+        <div class="pictures">Pictures
       </div>
 
       <app-gallery>
@@ -50,16 +50,16 @@
     </div>
 
 
-    <div class="col-lg-6 col-md-6 mb-3">
-      <app-post-list>
-      </app-post-list>
+      <div class="col-lg-6 col-md-6 mb-3">
+        <app-post-list [postsByInput]="true"  [neigh_id]="neigh_id"  [posts]="resident.posts" [originals]="resident.posts">
+        </app-post-list>
     </div>
 
-    <div class="col-lg-3 col-md-6 mb-3">
+     <div class="col-lg-3 col-md-6 mb-3">
 
-      <app-simple-event-list>
+        <app-simple-event-list [favors]="resident.favorsRequested">
       </app-simple-event-list>
-    </div>
+       </div>
 
 
   </div>

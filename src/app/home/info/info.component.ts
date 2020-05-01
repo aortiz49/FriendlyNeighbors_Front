@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ToastrService} from "ngx-toastr";
 import {Favor} from "../../favor/favor";
 import {humanized_time_span} from "../../post/post-detail/post-detail.component";
-import {ResidentDetail} from "../../resident/resident-detail";
+import {ResidentDetail} from "../../home/resident-detail";
 
 @Component({
   selector: 'app-info',
