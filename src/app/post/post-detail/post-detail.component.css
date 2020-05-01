@@ -256,7 +256,7 @@ p.precio {
 }
 
 a.buttons {
-    color: #ac00ff;
+      color: #ac00ff !important;
      font-size:30px;
      text-align:center;
     cursor: pointer;

@@ -5,10 +5,10 @@
 
 
 #body-row {
-    margin-left: 0;
+  margin-left: 0;
   margin-right: 0;
-    background-color: #4b177d;
-    height: 100%;
+  background-color: #4b177d;
+    max-height: 100%;
 
   max-width: fit-content;
 }
@@ -16,7 +16,6 @@
 #sidebar-container {
   background-color: #4b177d;
   padding: 0;
-  min-height: 100vh;
 }
 
 .menu {
@@ -126,19 +125,18 @@
 
 
 .collapsing {
-    position: relative;
-    height: 0;
+  position: relative;
   overflow: hidden;
   -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
   -webkit-transition-duration: 0.35s;
-    transition-duration: 0.35s;
+  transition-duration: 0.35s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
+
 .collapsing.width {
   -webkit-transition-property: width, visibility;
   transition-property: width, visibility;
   width: 0;
-  height: auto;
 }
