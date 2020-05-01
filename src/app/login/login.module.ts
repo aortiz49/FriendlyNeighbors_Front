@@ -7,15 +7,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+    children: [{ path: '', component: LoginComponent }],
+  },
+];
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    RouterModule.forChild(routes),
     NeighborhoodModule,
-    ReactiveFormsModule,
+
   ],
   declarations: [LoginComponent],
-  exports: [LoginComponent,FormsModule,ReactiveFormsModule],
+  exports: [LoginComponent,FormsModule],
 })
 export class LoginModule {}
