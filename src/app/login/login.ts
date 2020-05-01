@@ -1,3 +1,5 @@
+import { Resident } from '../resident/resident';
+
 /**
  * Class that represents a Resident Login.
  */
@@ -30,6 +32,8 @@ export class Login {
    */
   public isActive: boolean;
 
+  public resident: Resident;
+
   //===================================================
   // Constructor
   //===================================================
@@ -39,6 +43,10 @@ export class Login {
    this.password = password;
    this.governmentId = govId;
    this.isActive = false;
+  }
+
+  get Resident() :Resident{
+    return this.resident;
   }
 
 

@@ -61,9 +61,25 @@ export class Resident {
 
   public profilePicture: string;
 
-  public login: Login;
+  constructor(
+    address: string,
+    email: string,
+    name: string,
+    nickname: string,
+    phonenumber: string,
+    login: Login
+  ) {
+    this.address = address;
+    this.email = email;
+    this.name = name;
+    this.nickname = nickname;
+    this.phoneNumber = phonenumber;
+    this.preferences = '';
+    this.proofOfResidence = '';
+    this.login = login;
+  }
 
-  public phone: string;
-
-
+  get Login(): Login {
+    return this.login;
+  }
 }

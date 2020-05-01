@@ -6,6 +6,7 @@ import { LoginService } from './login.service';
 import { Login } from './login';
 import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Resident } from '../resident/resident';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   neighborhoods: Array<Neighborhood>;
   login: Login;
+  public resident: Resident;
 
   LoginForm = new FormGroup({
     neighborhood: new FormControl(null),
@@ -35,7 +37,6 @@ export class LoginComponent implements OnInit {
     var neighborhood: number = this.LoginForm.value.neighborhood;
 
     this.getLogin(neighborhood, username);
-    this.authenticateLogin(password);
   }
 
   getLogin(neighId: number, username: string): void {
@@ -43,23 +44,36 @@ export class LoginComponent implements OnInit {
       .getLoginByUsername(this.neighborhoods[0].id, username)
       .subscribe((login) => {
         this.login = login;
+        this.resident = login.resident;
+        console.log(this.resident);
+
+        this.authenticateLogin(this.LoginForm.get('password').value);
       });
   }
 
   authenticateLogin(password: string): void {
+
     const toastrConfig: Partial<IndividualConfig> = {
       timeOut: 1800,
     };
 
     if (this.login.password === password) {
-      this.toastr.success('Password ok!');
+      this.toastr.success(
+        `Welcome back, ${this.resident.nickname} \ud83d\udc95`,
+        'Authenticated',toastrConfig
+      );
+      this.LoginForm.reset();
+
     }
 
-    setTimeout(() => {
-      this.router.navigateByUrl(
-        ``
+    else{
+      this.toastr.error(
+        `Incorrect password, try again.`,
+        'Authentication Failed',toastrConfig
       );
-    }, 2300);
+      this.LoginForm.reset();
+    }
+
   }
 
   ngOnInit() {
