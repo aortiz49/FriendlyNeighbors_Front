@@ -50,10 +50,10 @@
 }
 
 
-.favor {
+.title3 {
 
 
-  color: #f8f9ff;
+  color: #212121;
   border-color: #181818;
   padding: 10px;
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
@@ -69,9 +69,8 @@
   line-height: 18px;
   -webkit-box-direction: normal;
   outline-color: #0f071e;
-  background: #f72c57;
+  background: #ffffff;
   border-radius: 4px;
-  max-width: 200px;
 
 
 }
@@ -127,7 +126,7 @@
   -moz-border-radius-bottomleft: 9px;
   border-bottom-right-radius: 9px;
   border-bottom-left-radius: 9px;
-     border: 1px solid rgb(193, 193, 193);
+  border: 1px solid rgb(193, 193, 193);
   text-align: center;
 }
 

@@ -8,13 +8,24 @@
 }
 
 .thumb {
-  margin-top: 4px;
-    margin-bottom: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+.thumbnail {
+  margin: 0;
+  padding: 0;
+}
+
+.fitandcenter {
+  max-width: 100%;
+  margin: 0 auto
+
 }
 
 body {
-  max-height: 200px;
-  max-width: 260px;
+  max-height: 260px;
+  min-width: 100%;
 
   background-color: white;
 

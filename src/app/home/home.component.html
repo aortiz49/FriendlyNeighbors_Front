@@ -31,17 +31,20 @@
   <div class="row content">
 
 
-    <div class="col-lg-3 col-md-6 mb-3">
+    <div class="col-lg-4 col-md-6 mb-3">
 
-      <div class="favor">Recent favors
+
+      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
+
+      <div style="max-width: 70%; margin: 0 0 0 auto">
+        <app-simple-favor-list [favors]="resident.favorsRequested">
+        </app-simple-favor-list>
       </div>
 
-      <app-simple-favor-list [favors]="resident.favorsRequested">
-      </app-simple-favor-list>
 
       <br>
 
-        <div class="pictures">Pictures
+      <div class="title3" style="max-width: 100%;">Pictures of {{resident.name}}
       </div>
 
       <app-gallery>
@@ -50,16 +53,16 @@
     </div>
 
 
-      <div class="col-lg-6 col-md-6 mb-3">
-        <app-post-list [postsByInput]="true"  [neigh_id]="neigh_id"  [posts]="resident.posts" [originals]="resident.posts">
-        </app-post-list>
+    <div class="col-lg-5 col-md-6 mb-3">
+      <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">
+      </app-post-list>
     </div>
 
-     <div class="col-lg-3 col-md-6 mb-3">
+    <div class="col-lg-3 col-md-6 mb-3">
 
-        <app-simple-event-list [favors]="resident.favorsRequested">
+      <app-simple-event-list [favors]="resident.favorsRequested">
       </app-simple-event-list>
-       </div>
+    </div>
 
 
   </div>

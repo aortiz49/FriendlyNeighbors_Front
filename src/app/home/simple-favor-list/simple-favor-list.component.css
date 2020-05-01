@@ -227,9 +227,6 @@ a.buttons {
 
 
 body {
-    max-height: 300px;
-  max-width: 200px;
-
   background-color: white;
 
   border-image-outset: 0px;
