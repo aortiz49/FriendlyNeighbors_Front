@@ -49,6 +49,7 @@ const routes: Routes = [
     NotificationModule,
     NeighborhoodModule,
     LoginResgistrationModule,
+    LoginModule,
     ProfileRegistrationModule,
     HttpClientModule,
     LayoutModule,
