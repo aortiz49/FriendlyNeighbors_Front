@@ -37,7 +37,7 @@ export class CommentP {
 
     constructor() {
         this.id = -1;
-        this.author = new Resident("","","","","",null);
+        this.author = new Resident();
         this.post = new Post();
         this.date = " ";
         this.text = " ";

@@ -7,6 +7,7 @@ import {ResidentDetail} from "./resident-detail";
 import {PostDetail} from "../post/post-detail";
 import {FavorDetail} from "../favor/favorDetail";
 import {Post} from "../post/post";
+import {Resident} from "./resident";
 
 const API_URL = environment.apiUrl;
 const residents = "/residents";
@@ -62,6 +63,13 @@ export class ResidentService {
     );
   }
 
+  addResident(neighId: number, resident: Resident): Observable<Resident> {
+    var a = `${API_URL+neighborhoods}/${neighId + residents}/`;
+    return this.http.post<Resident>(
+      `${API_URL+neighborhoods}/${neighId + residents}/`,
+      resident
+    );
+  }
 
 }
 

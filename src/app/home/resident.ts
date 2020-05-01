@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import { Neighborhood } from '../neighborhood/neighborhood';
-
+import {Neighborhood} from '../neighborhood/neighborhood';
+import {Login} from "../login/login";
 
 
 /**
@@ -60,6 +60,10 @@ export class Resident {
   public neighborhood: Neighborhood;
 
   public profilePicture: string;
+
+  public login: Login;
+
+  public phone: string;
 
 
 }

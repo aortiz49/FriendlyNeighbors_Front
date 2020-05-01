@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NeighborhoodService } from '../neighborhood/neighborhood.service';
-import { Neighborhood } from '../neighborhood/neighborhood';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ResidentService } from '../resident/resident.service';
-import { ToastrService, IndividualConfig } from 'ngx-toastr';
-import { Resident } from '../resident/resident';
-import { Login } from '../login/login';
-import { LoginService } from '../login/login.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NeighborhoodService} from '../neighborhood/neighborhood.service';
+import {Neighborhood} from '../neighborhood/neighborhood';
+import {FormGroup, FormControl} from '@angular/forms';
+import {ResidentService} from '../home/resident.service';
+import {ToastrService, IndividualConfig} from 'ngx-toastr';
+import {Resident} from '../home/resident';
+import {Login} from '../login/login';
+import {LoginService} from '../login/login.service';
 
 @Component({
   selector: 'app-profile-registration',
@@ -22,7 +22,8 @@ export class ProfileRegistrationComponent implements OnInit {
     private loginService: LoginService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+  }
 
   neighborhood: Neighborhood;
   neighId: number;
@@ -57,13 +58,14 @@ export class ProfileRegistrationComponent implements OnInit {
     var login: Login = this.login;
 
     var resident: Resident = new Resident(
-      address,
-      email,
-      name,
-      nickname,
-      phone,
-      login
     );
+
+      resident.address = address;
+      resident.email = email;
+      resident.name = name;
+      resident.nickname = nickname;
+      resident.phone = phone;
+      resident.login = login;
 
     console.log(resident);
     const toastrConfig: Partial<IndividualConfig> = {
