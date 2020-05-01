@@ -81,4 +81,8 @@ export class Resident {
     this.proofOfResidence = '';
     this.login = login;
   }
+
+  get Login(): Login {
+    return this.login;
+  }
 }

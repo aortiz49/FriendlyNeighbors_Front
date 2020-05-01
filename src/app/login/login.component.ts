@@ -6,6 +6,7 @@ import { LoginService } from './login.service';
 import { Login } from './login';
 import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Resident } from '../resident/resident';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   neighborhoods: Array<Neighborhood>;
   login: Login;
+  resident:Resident;
 
   LoginForm = new FormGroup({
     neighborhood: new FormControl(null),
@@ -43,6 +45,10 @@ export class LoginComponent implements OnInit {
       .getLoginByUsername(this.neighborhoods[0].id, username)
       .subscribe((login) => {
         this.login = login;
+        this.resident = login.resident;
+        var test = this.login;
+        console.log(test);
+        this.toastr.success(`Welcome back, ${this.resident.nickname}`,"Authenticated");
       });
   }
 
@@ -51,15 +57,10 @@ export class LoginComponent implements OnInit {
       timeOut: 1800,
     };
 
-    if (this.login.password === password) {
-      this.toastr.success('Password ok!');
-    }
 
-    setTimeout(() => {
-      this.router.navigateByUrl(
-        ``
-      );
-    }, 2300);
+
+
+
   }
 
   ngOnInit() {
