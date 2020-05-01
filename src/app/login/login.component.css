@@ -57,22 +57,31 @@ form {
   padding: 1.5vw;
 }
 
-input[type="email"],
-input[type="password"] {
+input[type="text"],
+input[type="password"],
+select,
+select:hover,
+select,
+option:active{
   font-family: "Futura";
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   background-color: #313339;
   border-color: #222428;
   font-weight: lighter;
   color: #dcddde;
 }
 
-input:focus {
+
+
+.form-control:focus{
   border-color: #7289da;
   box-shadow: none;
   border-width: 2px;
   color: #dcddde;
+  background-color:#313339 ;
 }
+
+
 
 .btn{
   background-color: #7289da;
