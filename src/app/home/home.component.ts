@@ -50,10 +50,6 @@ export class HomeComponent implements OnInit {
     this.getFavors();
     this.getPosts();
 
-    console.log(this.posts)
-      console.log(this.favors);
-    console.log("sdfbJHBSDfJffffffffffffffffffffffffffffffffffffffffffffffffffffffDS<Fb")
-
   }
 
   getResident() {
