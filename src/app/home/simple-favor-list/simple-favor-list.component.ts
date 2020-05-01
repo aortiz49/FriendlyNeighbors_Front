@@ -50,7 +50,7 @@ export class SimpleFavorListComponent implements OnInit {
 
     if (this.type == 'color1') {
 
-      
+
 
         var items: any = document.getElementsByClassName('color1');
       for (let i = 0; i < items.length; i++) {
