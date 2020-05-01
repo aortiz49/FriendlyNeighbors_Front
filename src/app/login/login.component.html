@@ -7,12 +7,14 @@
         <h6>We're happy to see you again.</h6>
       </div>
 
-      <form>
+      <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+
+
         <div class="form-group">
           <label for="username" class="bmd-label-floating">
-            <h5>EMAIL</h5>
+            <h5>USERNAME</h5>
           </label>
-          <input type="email" class="form-control" formControlName="email" id="email">
+          <input type="text" class="form-control" formControlName="username" id="username">
         </div>
 
         <div class="form-group">

@@ -21,6 +21,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forChild(routes),
     NeighborhoodModule,
+    ReactiveFormsModule
 
   ],
   declarations: [LoginComponent],
