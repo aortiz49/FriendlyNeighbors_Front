@@ -10,11 +10,7 @@
   );
   padding-right: 12vw;
   padding-left: 12vw;
-
-
 }
-
-
 
 #place {
   padding: 0px;
@@ -34,7 +30,7 @@ h2 {
 }
 
 h5 {
-  color: #524FA4;
+  color: #524fa4;
   font-size: 1.2vmax;
   font-family: Futura;
 }
@@ -62,21 +58,20 @@ img {
   border-radius: 2vw;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-
 }
 
-.thumbPrint{
+.thumbPrint {
   background-color: black;
   padding: 0px;
-  height:100%;
+  height: 100%;
   border-top-right-radius: 2vw;
   border-bottom-right-radius: 2vw;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .form-control:focus,
 select {
-  background-color: #6D4EBE;
+  background-color: #6d4ebe;
   opacity: 0.8;
   color: white;
   font-family: Futura;
@@ -146,15 +141,15 @@ input[type="select"] {
 }
 
 .btn-round-lg:hover {
-  background-color: #6D4EBE;
+  background-color: #6d4ebe;
   color: white;
-  border-color: #6D4EBE;
+  border-color: #6d4ebe;
 }
 
 .btn-round-lg:active {
-  background-color: #824ACD !important;
+  background-color: #824acd !important;
   box-shadow: 0 5px #666;
-  border-color: #824ACD !important;
+  border-color: #824acd !important;
   transform: translateY(10px);
 }
 
@@ -165,20 +160,19 @@ input[type="select"] {
   align-items: center;
 }
 
-img{
+img {
   max-width: 28vw;
   height: 32vw;
 }
 
-
-.fa{
-  font-size: 1.0vw;
+.fa {
+  font-size: 1vw;
 }
 
-.input-group-text{
+.input-group-text {
   margin-bottom: 5px;
 }
 
-password{
+password {
   width: 50%;
 }
