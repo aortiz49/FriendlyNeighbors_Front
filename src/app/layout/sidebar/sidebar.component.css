@@ -1,30 +1,28 @@
 :host {
-  background: #FFFE55;
 
 }
 
 
 #body-row {
   margin-left: 0;
-  margin-right: 0;
-  background-color: #4b177d;
-    max-height: 100%;
 
+  background-color: #4b177d;
+  max-height: 100%;
   max-width: fit-content;
 }
 
 #sidebar-container {
   background-color: #4b177d;
   padding: 0;
+
 }
 
 .menu {
 
-  background-color: #501784;
-
-
+      background-color: #501784;
   border-bottom-left-radius: 30%;
-  border-top-left-radius: 30%;
+    border-top-left-radius: 30%;
+
 }
 
 
@@ -39,6 +37,8 @@
 #sidebar-container .list-group a {
   height: 50px;
   color: #ffffff;
+  background: #7d292d;
+
 }
 
 /* Submenu item*/
@@ -46,27 +46,32 @@
   height: 45px;
   padding-left: 30px;
   background-color: #4b177d;
+
 }
 
 .sidebar-submenu {
   font-size: 0.9rem;
   background-color: #4b177d;
+
 }
 
 /* Separators */
 .sidebar-separator-title {
   background-color: transparent;
   height: 35px;
+
 }
 
 .sidebar-separator {
   background-color: transparent;
   height: 10px;
+
 }
 
 .logo-separator {
   background-color: #4b177d;
   height: 60px;
+
 }
 
 /* Closed submenu icon */
@@ -93,13 +98,14 @@
 
 
 .btn-outline-purple {
+  background-color: #5e1897 !important;
 
 }
 
 .btn-outline-purple:hover {
   color: #212529;
-  background-color: #671ca3;
-  border-color: #3c1266
+  background-color: #671ca3 !important;
+  sborder-color: #3c1266
 
 
 }
@@ -110,17 +116,18 @@
 
 .btn-outline-purple.disabled, .btn-outline-purple:disabled {
   color: #4b177d;
-  background-color: transparent
+  background-color: transparent !important;
 }
 
 .btn-outline-purple:not(:disabled):not(.disabled).active, .btn-outline-purple:not(:disabled):not(.disabled):active, .show > .btn-outline-purple.dropdown-toggle {
   color: #212529;
-  background-color: #441773;
+  background-color: #441773 !important;
   border-color: #0f071e
 }
 
 .btn-outline-purple:not(:disabled):not(.disabled).active:focus, .btn-outline-purple:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-purple.dropdown-toggle:focus {
-  box-shadow: 0 0 0 .1rem rgba(75, 23, 125, 0.5)
+  box-shadow: 0 0 0 .1rem rgba(75, 23, 125, 0.5);
+  background-color: #441773 !important;
 }
 
 
