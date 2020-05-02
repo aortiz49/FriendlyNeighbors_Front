@@ -1,3 +1,5 @@
+import { Resident } from '../resident/resident';
+
 /**
  * Class that represents a neighborhood.
  */
@@ -25,6 +27,11 @@ export class Neighborhood {
    */
   public numberOfResidents: number;
 
+  /**
+   * The people of the neighborhood.
+   */
+  public people: Array<Resident>;
+
   //===================================================
   // Constructor
   //===================================================
@@ -36,7 +43,11 @@ export class Neighborhood {
    * @param locality the locality of the new neighborhood
    * @param numberOfResidents the max capacity of residents of the new neighborhood
    */
-  constructor(id:number, name: string, locality: string, numberOfResidents: number) {
+  constructor(
+    id: number,
+    name: string,
+    locality: string,
+    numberOfResidents: number  ) {
     this.id = id;
     this.name = name;
     this.locality = locality;
@@ -57,22 +68,24 @@ export class Neighborhood {
    * Returns the name of the neighborhood.
    */
   get Name(): string {
-      return this.name;
+    return this.name;
   }
 
   /**
    * Returns the locality of the neighborhood.
    */
   get Locality(): string {
-      return this.locality;
+    return this.locality;
+  }
+
+  get People(): Array<Resident>{
+    return this.people;
   }
 
   /**
    * Returns the max number of residents in the neighborhood.
    */
   get NumberOfResidents(): number {
-      return this.numberOfResidents;
+    return this.numberOfResidents;
   }
 }
-
-

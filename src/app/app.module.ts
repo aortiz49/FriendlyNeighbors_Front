@@ -14,12 +14,11 @@ import {HttpErrorInterceptor} from './utility/HttpErrorInterceptorService.servic
 import {NeighborhoodModule} from './neighborhood/neighborhood.module';
 import {LandingModule} from './landing/landing.module';
 import {Routes, RouterModule} from '@angular/router';
-import {NeighborhoodListComponent} from './neighborhood/neighborhood-list/neighborhood-list.component';
 import {LandingComponent} from './landing/landing.component';
 import {LayoutModule} from './layout/layout.module';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
-import {RegistrationModule} from './registration/registration.module';
+import {RegistrationModule} from './neighborhoodLayout/registration/registration.module';
 import {AccountSettingsModule} from './account-settings/account-settings.module';
 import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighborhood-registration.module';
 import {VisibilityService} from "./shared/visibility-service.service";
@@ -28,6 +27,7 @@ import { ProfileRegistrationModule } from './profile-registration/profile-regist
 import { LocationRegistrationModule } from './location-registration/location-registration.module';
 import {HomeModule} from "./home/home.module";
 import { AgmCoreModule } from '@agm/core';
+import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -59,6 +59,7 @@ const routes: Routes = [
     DashboardModule,
     RegistrationModule,
     NeighborhoodRegistrationModule,
+    NeighborhoodLayoutModule,
     AccountSettingsModule,
     LocationRegistrationModule,
     HomeModule,
