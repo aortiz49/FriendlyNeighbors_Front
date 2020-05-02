@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {ResidentService} from "./resident.service";
 import {ResidentDetail} from "./resident-detail";
@@ -7,6 +7,8 @@ import {FavorDetail} from "../favor/favorDetail";
 import {PostDetail} from "../post/post-detail";
 import {Resident} from "./resident";
 import {Post} from "../post/post";
+import {PostCommentCreateComponent} from "../post/post-comment-create/post-comment-create.component";
+import {PostListComponent} from "../post/post-list/post-list.component";
 
 @Component({
   selector: 'app-home',
@@ -22,6 +24,7 @@ export class HomeComponent implements OnInit {
   @Input() resident: ResidentDetail;
   posts: Post[];
   favors: FavorDetail[];
+  @ViewChild(PostListComponent, {static: true}) postsList: PostListComponent;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -63,12 +66,25 @@ export class HomeComponent implements OnInit {
       });
   }
 
+
+  updatePosts() {
+    this.service.getposts(this.neigh_id, this.resident_id)
+      .subscribe(posts => {
+
+        this.posts = posts;
+
+        console.log(this.posts);
+
+        this.postsList.updatePosts(this.posts);
+      });
+
+  }
+
+
   getPosts() {
     this.service.getposts(this.neigh_id, this.resident_id)
       .subscribe(posts => {
 
-        console.log(posts);
-        console.log("vvvvvv");
         this.posts = posts;
         console.log(this.posts);
       });

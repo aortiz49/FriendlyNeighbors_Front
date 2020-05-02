@@ -73,6 +73,10 @@ export class PostListComponent implements OnInit, OnChanges {
     this.toastrService.success('Post list component initiated');
   }
 
+  updatePosts(posts){
+    this.posts = posts;
+  }
+
   ngOnChanges() {
 
     this.filter(this.searchModel);

@@ -53,6 +53,8 @@ export class PostService {
      * @returns Post with the new id, false if there is an error
      */
     createpost(neighborhood, post, residentId): Observable<PostDetail> {
+
+           console.log(post)
         return this.http.post<PostDetail>(
             API_URL +
             neighborhoods +
