@@ -56,10 +56,11 @@ export class Post {
 
   constructor() {
     this.id = -1;
-    this.publishDate = "";
+    // @ts-ignore
+    this.publishDate = new Date();
     this.title = "";
     this.description = "";
-    this.numberOfLikes = -1;
+    this.numberOfLikes = 0;
     this.author = new Resident();
   }
 }

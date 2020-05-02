@@ -31,7 +31,7 @@
   <div class="row content">
 
 
-       <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-4 col-md-6 mb-4">
 
 
       <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
@@ -62,14 +62,22 @@
     </div>
 
 
-      <div class="col-lg-5 col-md-6 mb-3">
+    <div class="col-lg-5 col-md-6 mb-3">
+
+      <div class="title3" style="max-width: 100%;">What are you thinking about?
+      </div>
+        <app-post-create [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
+      </app-post-create>
+
       <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">
       </app-post-list>
+
+
     </div>
 
     <div class="col-lg-3 col-md-6 mb-3">
 
-        <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
+      <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
 
       <div style="max-width: 80%; margin: 0 0  auto 0 ">
         <app-simple-event-list [favors]="resident.favorsRequested">
