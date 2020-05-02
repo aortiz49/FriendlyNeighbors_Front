@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   neighborhoods: Array<Neighborhood>;
   login: Login;
-  public resident: Resident;
+  resident: Resident;
 
   LoginForm = new FormGroup({
     neighborhood: new FormControl(null),
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       .getLoginByUsername(this.neighborhoods[0].id, username)
       .subscribe((login) => {
         this.login = login;
-        this.resident = login.resident;
+        this.resident = this.login.resident;
         console.log(this.resident);
 
         this.authenticateLogin(this.LoginForm.get('password').value);
@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
   }
 
   authenticateLogin(password: string): void {
-
     const toastrConfig: Partial<IndividualConfig> = {
       timeOut: 1800,
     };
@@ -60,20 +59,23 @@ export class LoginComponent implements OnInit {
     if (this.login.password === password) {
       this.toastr.success(
         `Welcome back, ${this.resident.nickname} \ud83d\udc95`,
-        'Authenticated',toastrConfig
+        'Authenticated',
+        toastrConfig
       );
+      setTimeout(() => {
+        this.router.navigateByUrl(
+          `/neighborhoods/${this.resident.neighborhood.id}/residents/${this.resident.id}`
+        );
+      }, 2300);
       this.LoginForm.reset();
-
-    }
-
-    else{
+    } else {
       this.toastr.error(
         `Incorrect password, try again.`,
-        'Authentication Failed',toastrConfig
+        'Authentication Failed',
+        toastrConfig
       );
       this.LoginForm.reset();
     }
-
   }
 
   ngOnInit() {

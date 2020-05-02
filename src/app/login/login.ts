@@ -45,9 +45,6 @@ export class Login {
    this.isActive = false;
   }
 
-  get Resident() :Resident{
-    return this.resident;
-  }
 
 
 }
