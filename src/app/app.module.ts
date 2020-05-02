@@ -18,7 +18,7 @@ import {LandingComponent} from './landing/landing.component';
 import {LayoutModule} from './layout/layout.module';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
-import {RegistrationModule} from './neighborhoodLayout/registration/registration.module';
+import {RegistrationModule} from './neighborhoodLayout/default/registration.module';
 import {AccountSettingsModule} from './account-settings/account-settings.module';
 import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighborhood-registration.module';
 import {VisibilityService} from "./shared/visibility-service.service";

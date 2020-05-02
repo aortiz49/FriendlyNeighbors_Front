@@ -1,5 +1,4 @@
 <div class="header">
-    <h2>{{neighName}}</h2>
 </div>
 <div fxLayout="row" fxFlex="100">
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -8,10 +7,12 @@
     <div class="spinner horizontal"></div>
     <div class="spinner diagonal part-2"></div>
   </label>
-
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-      <li id="first" routerLink="/main">
+      <li routerLink="/neighborhoods/{{neighId}}">
+        <h6> <i class="fa fa-home fa-fw" aria-hidden="true"></i> Home</h6>
+      </li>
+      <li routerLink="/main">
         <h6><i class="fa fa-briefcase fa-fw" aria-hidden="true"></i> Businesses</h6>
       </li>
       <li routerLink="/main">
@@ -20,7 +21,7 @@
       <li routerLink="/main">
         <h6><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Locations</h6>
       </li>
-      <li id="last" outerLink="/main">
+      <li outerLink="/main">
         <h6><i class="fa fa-users fa-fw" aria-hidden="true"></i> Groups</h6>
       </li>
       <li routerLink="/neighborhoods/{{neighId}}/residents">
@@ -37,4 +38,3 @@
 
   </div>
 </div>
-
