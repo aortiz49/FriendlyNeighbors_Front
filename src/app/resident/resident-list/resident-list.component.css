@@ -30,10 +30,13 @@ h4 {
 
 #cardsRow {
   margin: 3vw;
+  margin-top: 2vw;
+  max-height: 100%;
 }
 
 .card {
   height: 5vw;
   background-color: teal;
   border-radius: 0.5vw;
+  margin: .7vw;
 }

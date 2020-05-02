@@ -11,10 +11,16 @@
 
 
   <div id="cardsRow" class="row">
-    <div class="col-sm-3 col-md-3 align-items-center" style="text-align: center;">
-     <div class="card card-block d-flex">
-      <div class="card-body align-items-center d-flex justify-content-center">
-        <h4>HEYY</h4>
-     </div>
-  </div>
-</div>
+    <div *ngFor="let r of residents" class="col-sm-3 col-md-3 align-items-center"
+      style="text-align: center; padding: 0;">
+      <div routerLink="/neighborhoods/{{neighId}}/residents/{{r.id}}" class="card card-block d-flex">
+        <div class="card-body align-items-center d-flex justify-content-center">
+          <h4 >
+            {{r.name}}
+          </h4>
+        </div>
+
+      </div>
+
+
+    </div>
