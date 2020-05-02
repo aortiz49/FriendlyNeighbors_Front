@@ -1,84 +1,26 @@
-<div style="     min-height: 100%;">
-  <div class=" banner" style="background-image: url('https://wallpaperaccess.com/full/1760835.jpg');">
+<div class="row">
 
 
-    <div class="wraper row">
+  <div class="col-lg-3 col-md-6 mb-3">
 
-
-      <div class="outer-circle">
-        <img class="inner-circle" src="http://placeimg.com/640/360/any%7D">
-      </div>
-      <div class="name"> {{resident.name}}
-      </div>
-
-
+    <div class="favor">Recent favors
     </div>
 
+    <app-simple-favor-list>
+    </app-simple-favor-list>
+      </div>
 
-    <div class="footer ">
 
-    </div>
+   <div class="col-lg-6 col-md-6 mb-3">
+    <app-post-list>
+    </app-post-list>
   </div>
 
-  <div class="info">
-    <p class="options">About
-    </p>
+  <div class="col-lg-3 col-md-6 mb-3">
+
+      <app-simple-event-list>
+    </app-simple-event-list>
   </div>
 
-  <br>
-  <br>
 
-  <div class="row content">
-
-
-       <div class="col-lg-4 col-md-7 mb-4">
-
-
-      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
-
-      <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [type]="'color1'" [favors]="resident.favorsRequested">
-        </app-simple-favor-list>
-      </div>
-
-
-      <br>
-
-      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">Helped with favors</div>
-
-      <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [type]="'color2'" [favors]="resident.favorsRequested">
-        </app-simple-favor-list>
-      </div>
-
-      <br>
-
-      <div class="title3" style="max-width: 100%;">Pictures of {{resident.name}}
-      </div>
-
-      <app-gallery>
-      </app-gallery>
-
-    </div>
-
-
-    <div class="col-lg-5 col-md-7 mb-3">
-      <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">
-      </app-post-list>
-    </div>
-
-    <div class="col-lg-3 col-md-7 mb-3">
-
-        <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
-
-      <div style="max-width: 80%; margin: 0 0  auto 0 ">
-        <app-simple-event-list [favors]="resident.favorsRequested">
-        </app-simple-event-list>
-      </div>
-
-
-    </div>
-
-
-  </div>
 </div>

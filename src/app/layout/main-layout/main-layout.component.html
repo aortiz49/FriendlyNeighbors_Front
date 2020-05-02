@@ -1,5 +1,5 @@
 <div class="mainbar">
-  <nav class="navbar    navbar-expand-md row mainbar">
+  <nav class="navbar navbar-expand-lg row mainbar">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="http://localhost:4200/home">
@@ -99,7 +99,7 @@
   </nav>
 
 
-  <nav id="bar2" class="collapse navbar navbar-expand-sm bar  row">
+  <nav id="bar2" class="collapse navbar navbar-expand-lg bar  row">
 
     <ul class="navbar-nav mr-auto">
 
@@ -196,16 +196,12 @@
   </nav>
 
 </div>
-
-
-<div class="  backgroundSideBar">
-
-  <div class="" style="float: left;">
+<div class="row backgroundM">
+  <div class="col-2">
     <app-sidebar></app-sidebar>
-    </div>
 
-
-  <div class=" backgroundM  contentS" style="padding-left: 30px">
+  </div>
+  <div class="col-10 backgroundM">
 
 
     <div *ngIf="searchModel.length == 0 ; else elseBlock">
@@ -221,7 +217,6 @@
   </div>
 
 </div>
+<app-footer></app-footer>
 
-
-<app-footer s></app-footer>
 

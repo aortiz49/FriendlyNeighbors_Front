@@ -8,8 +8,6 @@ import { SimpleEventListComponent } from './simple-event-list/simple-event-list.
 import {PostModule} from "../post/post.module";
 import { SimpleFavorComponent } from './simple-favor-list/simple-favor/simple-favor.component';
 import { SimpleEventComponent } from './simple-event-list/simple-event/simple-event.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { InfoComponent } from './info/info.component';
 
 @NgModule({
   imports: [
@@ -21,6 +19,6 @@ import { InfoComponent } from './info/info.component';
     SimpleFavorListComponent,
     SimpleEventListComponent
   ],
-  declarations: [HomeComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent, GalleryComponent, InfoComponent]
+  declarations: [HomeComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent]
 })
 export class HomeModule { }

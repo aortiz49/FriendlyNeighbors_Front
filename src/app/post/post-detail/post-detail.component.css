@@ -165,7 +165,7 @@
 
 
 
-  .header{
+.header{
     align-items:center;
     border-bottom-color:rgb(239, 239, 239);
     border-bottom-style:solid;
@@ -256,7 +256,7 @@ p.precio {
 }
 
 a.buttons {
-      color: #ac00ff !important;
+    color: #ac00ff;
      font-size:30px;
      text-align:center;
     cursor: pointer;

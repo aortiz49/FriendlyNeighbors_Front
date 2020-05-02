@@ -94,7 +94,7 @@ export class LoginResgistrationComponent implements OnInit {
 
     console.log(login);
     const toastrConfig: Partial<IndividualConfig> = {
-      timeOut: 5800,
+      timeOut: 1800,
     };
     var loginName = this.residentLoginForm.value.username;
 
