@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NeighborhoodListComponent } from './neighborhood-list/neighborhood-list.component';
 import { Neighborhood } from './neighborhood';
 import { NeighborhoodDetailComponent } from './neighborhood-detail/neighborhood-detail.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,7 +21,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule
   ],
-  declarations: [NeighborhoodListComponent,NeighborhoodDetailComponent],
-  exports:[NeighborhoodListComponent,NeighborhoodDetailComponent]
+  declarations: [NeighborhoodDetailComponent],
+  exports:[NeighborhoodDetailComponent]
 })
 export class NeighborhoodModule { }

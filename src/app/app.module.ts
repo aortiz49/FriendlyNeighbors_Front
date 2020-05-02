@@ -14,7 +14,6 @@ import {HttpErrorInterceptor} from './utility/HttpErrorInterceptorService.servic
 import {NeighborhoodModule} from './neighborhood/neighborhood.module';
 import {LandingModule} from './landing/landing.module';
 import {Routes, RouterModule} from '@angular/router';
-import {NeighborhoodListComponent} from './neighborhood/neighborhood-list/neighborhood-list.component';
 import {LandingComponent} from './landing/landing.component';
 import {LayoutModule} from './layout/layout.module';
 import {LoginModule} from './login/login.module';

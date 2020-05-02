@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import {MainLayoutComponent} from '../layout/main-layout/main-layout.component';
 import {DashboardComponent} from './dashboard.component';
 import { LoginComponent } from '../login/login.component';
-import { NeighborhoodListComponent } from '../neighborhood/neighborhood-list/neighborhood-list.component';
+import { NeighborhoodDetailComponent } from '../neighborhood/neighborhood-detail/neighborhood-detail.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: MainLayoutComponent,
     children: [
-      { path: '', component: NeighborhoodListComponent }
+      { path: '', component: NeighborhoodDetailComponent }
         ]
   }
 ];

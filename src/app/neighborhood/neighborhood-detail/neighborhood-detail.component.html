@@ -1,47 +1,51 @@
 <div class="container-fluid">
   <div class="header text-center" style="padding:5px; color:white;">
-    <h2>Inticaya <span>Engativá</span></h2>
-
   </div>
+
+
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
     <div class="spinner horizontal"></div>
     <div class="spinner diagonal part-2"></div>
   </label>
+
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-      <li routerLink="/main">
-        <span>All Businesses</span>
+      <li id="first" routerLink="/main">
+        <h6><i class="fa fa-briefcase fa-fw" aria-hidden="true"></i> Businesses</h6>
       </li>
       <li routerLink="/main">
-        <span>All Events</span>
+        <h6><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> Events</h6>
       </li>
       <li routerLink="/main">
-        <span>All Events</span>
+        <h6><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Locations</h6>
+      </li>
+      <li id="last" outerLink="/main">
+        <h6><i class="fa fa-users fa-fw" aria-hidden="true"></i> Groups</h6>
       </li>
       <li routerLink="/main">
-        <span>All Services</span>
+        <h6><i class="fa fa-user fa-fw" aria-hidden="true"></i> Residents</h6>
       </li>
       <li routerLink="/main">
-        <span>All Resident</span>
+        <h6><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> Services</h6>
       </li>
-      <li routerLink="/main">
-        <span>All Groups</span>
-      </li>
+
+
 
     </ul>
   </div>
+
+
+
   <div id='center' class="main center">
     <div class="mainInner">
-      <div>NEW RESIDENTS</div>
+      <div>
+        <h2 style="text-align: left;">
+        </h2>
+      </div>
     </div>
-    <div class="mainInner">
-      <div>UPCOMING EVENTS</div>
-    </div>
-    <div class="mainInner">
-      <div>HIGH-RATED BUSINESSES</div>
-    </div>
+
   </div>
 
 
