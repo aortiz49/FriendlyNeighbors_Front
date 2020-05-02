@@ -5,7 +5,7 @@ import {HomeComponent} from './home.component';
 
 const routes: Routes = [
   {
-    path: 'neighborhood',
+    path: 'neighborhoods',
     component: MainLayoutComponent,
     children: [
       {

@@ -68,12 +68,7 @@ export class PostListComponent implements OnInit, OnChanges {
         this.getCopyOfPosts();
       }
 
-         console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
     }
-
-
-          console.log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg");
-        console.log(this.posts.length)
 
     this.toastrService.success('Post list component initiated');
   }
@@ -130,26 +125,4 @@ export class PostListComponent implements OnInit, OnChanges {
 
 
 }
-
-
-function
-
-SidebarCollapse() {
-  $('.menu-collapsed').toggleClass('d-none');
-  $('.sidebar-submenu').toggleClass('d-none');
-  $('.submenu-icon').toggleClass('d-none');
-  $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
-
-  // Treating d-flex/d-none on separators with title
-  var SeparatorTitle = $('.sidebar-separator-title');
-  if (SeparatorTitle.hasClass('d-flex')) {
-    SeparatorTitle.removeClass('d-flex');
-  } else {
-    SeparatorTitle.addClass('d-flex');
-  }
-
-  // Collapse/Expand icon
-  $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
-}
-
 
