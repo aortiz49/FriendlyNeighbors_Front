@@ -1,4 +1,4 @@
-<app-header fxLayout="column"></app-header>
+<app-header id="header" fxLayout="column"></app-header>
 <div fxLayout="row" fxFlex="100">
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
@@ -21,9 +21,8 @@
       <li id="last" outerLink="/main">
         <h6><i class="fa fa-users fa-fw" aria-hidden="true"></i> Groups</h6>
       </li>
-      <li>
-          <h6><i class="fa fa-user fa-fw" aria-hidden="true"></i>Residents</h6>
-
+      <li routerLink="/neighborhoods/{{neighId}}/residents">
+        <h6><i class="fa fa-user fa-fw" aria-hidden="true"></i> Residents</h6>
       </li>
       <li routerLink="/main">
         <h6><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> Services</h6>
@@ -36,5 +35,4 @@
   </div>
 </div>
 
-<app-footer fxLayout="column"></app-footer>
-
+<app-footer id="footer" fxLayout="column"></app-footer>

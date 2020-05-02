@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ResidentListComponent} from "./resident-list/resident-list.component";
+import { ResidentRoutingModule } from './resident-routing.module';
 
 
 
@@ -11,6 +12,7 @@ import {ResidentListComponent} from "./resident-list/resident-list.component";
   ],
   imports: [
     CommonModule,
+    ResidentRoutingModule
 
   ]
 })

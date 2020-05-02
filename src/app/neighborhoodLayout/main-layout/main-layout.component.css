@@ -46,7 +46,6 @@ fa{
   width: 1vw;
 }
 
-
 .header {
   display: block;
   margin: 0 auto;
@@ -212,6 +211,7 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   vertical-align: middle;
 
 }
+
 
 .card{
   border-radius: .5vw!important;
