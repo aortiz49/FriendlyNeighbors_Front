@@ -1,9 +1,5 @@
-<div class="container-fluid">
-  <div class="header text-center" style="padding:5px; color:white;">
-    <h1>{{name}}</h1>
-  </div>
-
-
+<app-header fxLayout="column"></app-header>
+<div fxLayout="row" fxFlex="100">
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
@@ -26,36 +22,19 @@
         <h6><i class="fa fa-users fa-fw" aria-hidden="true"></i> Groups</h6>
       </li>
       <li>
-        <a routerLink="/neighborhoods/{{neighId}}/residents">
           <h6><i class="fa fa-user fa-fw" aria-hidden="true"></i>Residents</h6>
-        </a>
+
       </li>
       <li routerLink="/main">
         <h6><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> Services</h6>
       </li>
 
-
-
     </ul>
   </div>
-
-  <div id='center' class="main center">
-    <div class="row mainInner">
-
-      <div class="container-fluid">
-        <router-outlet></router-outlet>
-
-      </div>
-
-    </div>
+  <div class="content" fxLayout="column" fxFlex>
+    <router-outlet></router-outlet>
   </div>
 </div>
 
+<app-footer fxLayout="column"></app-footer>
 
-
-<!--
-          <div *ngFor="let n of people" class="cardCol col-sm-3 col-md-3">
-            <div class="card align-items-center" style="width: 100%;">
-              {{n.name}}
-            </div>
-          </div>-->
