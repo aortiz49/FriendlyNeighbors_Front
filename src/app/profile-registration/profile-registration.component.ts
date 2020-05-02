@@ -27,6 +27,7 @@ export class ProfileRegistrationComponent implements OnInit {
   neighborhood: Neighborhood;
   neighId: number;
   loginId: number;
+  resident: Resident;
 
   login: Login;
 
@@ -73,7 +74,8 @@ export class ProfileRegistrationComponent implements OnInit {
     var observable = this.residentService
       .addResident(this.neighId, resident)
       .subscribe(
-        () => {
+        (resident) => {
+          this.resident = resident;
           this.residentProfileForm.reset();
           this.toastr.success(
             'The resident ' + name + ' was added.',
@@ -82,8 +84,9 @@ export class ProfileRegistrationComponent implements OnInit {
           );
           setTimeout(() => {
             this.router.navigateByUrl(
-              `/neighborhoods/${this.neighId}/newProfile`
+              `/neighborhoods/${this.neighId}/residents/${this.resident.id}`
             );
+
           }, 2300);
         },
         () => {
