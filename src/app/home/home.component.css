@@ -1,6 +1,5 @@
 
 :host {
-  padding: 30px
 }
 
 .test {
@@ -31,48 +30,220 @@
   color: #f8f9ff;
   border-color: #181818;
   padding-right: 1%;
-  display:inline;
+  display: inline;
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size:17px;
-  font-stretch:100%;
-  font-style:normal;
-  font-variant-caps:normal;
-  font-variant-east-asian:normal;
-  font-variant-ligatures:normal;
-  font-variant-numeric:normal;
-  font-weight:500;
-  letter-spacing:0.2px;
-  line-height:18px;
+  font-size: 17px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 18px;
   margin: 30px 0px 0px;
-  text-size-adjust:70%;
+  text-size-adjust: 70%;
 
-  -webkit-box-direction:normal;
+  -webkit-box-direction: normal;
 
 }
 
 
-.favor {
+.title3 {
 
 
-     color: #f8f9ff;
+  color: #212121;
   border-color: #181818;
-    padding: 10px;
+  padding: 10px;
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-      font-size: 16px;
+  font-size: 16px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
-    font-variant-east-asian: normal;
+  font-variant-east-asian: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
   font-weight: 800;
-    letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
   line-height: 18px;
   -webkit-box-direction: normal;
   outline-color: #0f071e;
-  background: #f72c57;
+  background: #ffffff;
   border-radius: 4px;
-  max-width: 200px;
 
+
+}
+
+
+.pictures {
+
+
+  color: #f8f9ff;
+  border-color: #181818;
+  padding: 10px;
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  -webkit-box-direction: normal;
+  outline-color: #0f071e;
+  background: #7400ac;
+  border-radius: 4px;
+  max-width: 260px;
+
+
+}
+
+
+.banner {
+  display: flex;
+  background-color: white;
+  height: 500px;
+  border: 1px solid rgb(193, 193, 193);
+  position: relative;
+
+
+}
+
+
+.info {
+  position: relative;
+  height: 30px;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  align-self: flex-end;
+  -moz-border-radius-bottomright: 9px;
+  -moz-border-radius-bottomleft: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border: 1px solid rgb(193, 193, 193);
+  text-align: center;
+}
+
+
+.image {
+
+  background-color: white;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgb(193, 193, 193);
+  max-height: 75%;
+
+
+}
+
+.content {
+
+
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.wraper {
+  align-self: flex-end;
+  position: absolute;
+  z-index: 11;
+  text-align: center;
+}
+
+
+.spacer {
+  max-height: 75%;
+
+}
+
+
+.footer {
+  position: relative;
+  height: 100px;
+  opacity: 0.6;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+
+.outer-circle {
+  background: rgba(130, 0, 192, 0.4);
+  border-radius: 50%;
+  height: 245px;
+  width: 245px;
+  position: relative;
+  /*
+   Child elements with absolute positioning will be
+   positioned relative to this div
+  */
+}
+
+.inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  height: 230px;
+  width: 230px;
+  /*
+   Put top edge and left edge in the center
+  */
+  top: 50%;
+  left: 50%;
+  margin: -115px 0px 0px -115px;
+  border: 3px solid rgb(109, 22, 247);
+  /*
+   Offset the position correctly with
+   minus half of the width and minus half of the height
+  */
+}
+
+.name {
+
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 37px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  color: #1b1b1b;
+  border-color: #181818;
+  letter-spacing: 0.2px;
+  outline-color: #0f071e;
+  border-radius: 10px;
+  align-self: flex-end;
+  padding-bottom: 40px;
+
+}
+
+.options {
+  color: rgb(74, 126, 142);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+  padding: 10px;
 
 }

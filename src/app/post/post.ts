@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import {Resident} from '../resident/resident';
+import {Resident} from '../home/resident';
 import {Business} from '../business/business';
 
 /**
@@ -60,6 +60,6 @@ export class Post {
     this.title = "";
     this.description = "";
     this.numberOfLikes = -1;
-    this.author = new Resident("","","","","",null);
+    this.author = new Resident();
   }
 }

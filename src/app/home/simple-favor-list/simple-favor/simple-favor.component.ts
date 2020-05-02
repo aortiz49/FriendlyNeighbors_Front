@@ -13,8 +13,10 @@ import {delay} from "rxjs/operators";
 export class SimpleFavorComponent implements OnInit {
 
 
-  constructor( private toastrService: ToastrService) {
+  constructor(private toastrService: ToastrService) {
   }
+
+  @Input() type: string;
 
   ngOnInit() {
 
@@ -31,12 +33,12 @@ export class SimpleFavorComponent implements OnInit {
   toggle1: boolean;
   toggle2: boolean;
 
-  toggle11(){
-    this.toggle1 = ! this.toggle1;
+  toggle11() {
+    this.toggle1 = !this.toggle1;
   }
 
-  toggle12(){
-    this.toggle2 = ! this.toggle2;
+  toggle12() {
+    this.toggle2 = !this.toggle2;
   }
 
 
@@ -65,4 +67,6 @@ export class SimpleFavorComponent implements OnInit {
     return humanized_time_span(date.replace("[UTC]", ""), new Date().toLocaleDateString(), custom_date_formats, null);
   }
 
+
 }
+

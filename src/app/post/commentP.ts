@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 import {Post} from "./post";
-import {Resident} from "../resident/resident";
+import {Resident} from "../home/resident";
 
 export class CommentP {
 
@@ -37,7 +37,7 @@ export class CommentP {
 
     constructor() {
         this.id = -1;
-        this.author = new Resident("","","","","",null);
+        this.author = new Resident();
         this.post = new Post();
         this.date = " ";
         this.text = " ";
