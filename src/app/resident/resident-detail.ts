@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 
-import {Resident} from '../home/resident';
+import {Resident} from '../resident/resident';
 import {Post} from "../post/post";
 import {CommentP} from "../post/commentP";
-import {Favor} from "../favor/favor";
 
 /**
  *This class represents a resident made by a resident
@@ -26,15 +25,10 @@ export class ResidentDetail extends Resident {
    */
   public posts: Post[];
 
-  public favorsRequested: Favor[];
-
   /**
    * Represents comments posted by this resident
    */
   public comments: CommentP[];
-
-
-  public album: string[];
 
 
 }

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileRegistrationComponent } from './profile-registration.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: 'newProfile',
+    path: 'neighborhoods/:id/:log/newProfile',
     component: ProfileRegistrationComponent,
     children: [
       { path: '', component: ProfileRegistrationComponent }
@@ -15,8 +17,11 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  declarations: [ProfileRegistrationComponent]
+  declarations: [ProfileRegistrationComponent],
+  exports:[ProfileRegistrationComponent]
 })
 export class ProfileRegistrationModule { }

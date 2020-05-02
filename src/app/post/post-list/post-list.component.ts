@@ -46,36 +46,27 @@ export class PostListComponent implements OnInit, OnChanges {
   }
 
 
-  @Input() posts: Post[];
-  @Input() originals: Post[];
+  posts: Array<Post>;
+  originals: Array<Post>;
   navigationSubscription;
   invocationSubscription: Subscription;
   @Input() neigh_id: number;
   @Input() notRouted: boolean;
-  @Input() postsByInput: boolean;
   @Input() searchModel: string;
 
 
   ngOnInit() {
 
-    if (!this.postsByInput) {
-      if (!this.notRouted) this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
+    if (!this.notRouted) this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
 
-      if (this.posts === undefined) {
-        this.getPostList();
-      }
-      if (this.originals === undefined) {
-        this.getCopyOfPosts();
-      }
-
-         console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+    if (this.posts === undefined) {
+      this.getPostList();
+    }
+    if (this.originals === undefined) {
+      this.getCopyOfPosts();
     }
 
-
-          console.log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg");
-        console.log(this.posts.length)
-
-    this.toastrService.success('Post list component initiated');
+    this.toastrService.success('Se registró correctamente');
   }
 
   ngOnChanges() {

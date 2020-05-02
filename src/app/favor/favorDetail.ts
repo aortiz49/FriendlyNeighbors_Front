@@ -1,5 +1,5 @@
 import { Favor } from './favor';
-import { Resident } from '../home/resident';
+import { Resident } from '../resident/resident';
 
 export class FavorDetail extends Favor{
   candidates: Resident[];

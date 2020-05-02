@@ -31,8 +31,9 @@ export class SimpleEventListComponent implements OnInit {
   }
 
 
-  @Input() favors: Array<Favor>;
-  @Input() neighborhood_id: number;
+  favors: Array<Favor>;
+  @Input()
+  neighborhood_id: number;
 
   navigationSubscription;
 
@@ -43,10 +44,23 @@ export class SimpleEventListComponent implements OnInit {
   }
 
 
+  getFavors()
+    :
+    void {
+    this.favorService.getFavors(this.neighborhood_id)
+      .subscribe(posts => {
+        this.favors = posts;
+      });
+  }
+
+
   ngOnInit() {
 
     this.neighborhood_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.toastrService.success("SimpleEvent list on");
+    this.toastrService.success("Simple list on");
+
+    this.getFavors();
+
 
   }
 

@@ -5,6 +5,7 @@ import {ToastrModule} from 'ngx-toastr';
 
 import {AppComponent} from './app.component';
 import {PostModule} from './post/post.module';
+import {ResidentModule} from './resident/resident.module';
 import {BusinessModule} from './business/business.module';
 import {NotificationModule} from './notification/notification.module';
 import {HttpClient} from '@angular/common/http';
@@ -30,7 +31,6 @@ import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
-  {path: 'neighborhoods', component: NeighborhoodListComponent},
   {path: 'main', component: LandingComponent},
 ];
 
@@ -46,10 +46,12 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     PostModule,
+    ResidentModule,
     BusinessModule,
     NotificationModule,
     NeighborhoodModule,
     LoginResgistrationModule,
+    LoginModule,
     ProfileRegistrationModule,
     HttpClientModule,
     LayoutModule,

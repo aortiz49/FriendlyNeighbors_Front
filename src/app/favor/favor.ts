@@ -1,4 +1,4 @@
-import { Resident } from '../home/resident';
+import { Resident } from '../resident/resident';
 
 export class Favor {
 
