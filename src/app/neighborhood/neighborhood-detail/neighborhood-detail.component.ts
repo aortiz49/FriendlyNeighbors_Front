@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NeighborhoodService } from '../neighborhood.service';
 import { Neighborhood } from '../neighborhood';
+import { Resident } from 'src/app/resident/resident';
+import { ResidentService } from 'src/app/resident/resident.service';
 
 @Component({
   selector: 'app-neighborhood-detail',
@@ -11,19 +13,36 @@ import { Neighborhood } from '../neighborhood';
 export class NeighborhoodDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private neighborhoodService: NeighborhoodService
+    private neighborhoodService: NeighborhoodService,
+    private residentService: ResidentService
+
   ) {}
 
   neighId: number;
   neighborhood: Neighborhood;
+  name: string;
+  people: Array<Resident> = [];
 
   getNeighborhood(id: number): Neighborhood {
     this.neighborhoodService
       .getNeighborhoodById(id)
       .subscribe((neighborhood) => {
         this.neighborhood = neighborhood;
+        this.name = neighborhood.name;
+
+        console.log(neighborhood);
       });
     return this.neighborhood;
+  }
+
+  getResidents(neighborhood: number): Array<Resident> {
+    this.residentService
+      .getresidents(neighborhood)
+      .subscribe((people) => {
+        this.people = people;
+        console.log(people);
+      });
+    return this.people;
   }
 
   openNav() {
@@ -40,5 +59,6 @@ export class NeighborhoodDetailComponent implements OnInit {
   ngOnInit() {
     this.neighId = +this.route.snapshot.paramMap.get('id');
     this.getNeighborhood(this.neighId);
+    this.getResidents(this.neighId);
   }
 }

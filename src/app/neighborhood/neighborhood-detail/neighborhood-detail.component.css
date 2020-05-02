@@ -1,7 +1,7 @@
 .container-fluid {
   height: 100%;
   overflow-x: hidden;
-  background: #36393f;
+  background: #544fa6;
   padding: 0;
   margin: 0;
   font-family: Futura;
@@ -22,6 +22,14 @@ h2 {
   font-family: Futura;
 }
 
+h1{
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 3vw;
+  font-family: Futura;
+}
+
 fa{
   text-align: center;
   width: 1vw;
@@ -35,7 +43,7 @@ fa{
   max-width: 100%;
   box-shadow: none;
   position: fixed;
-  height: 3vw;
+  height: 4vw;
   overflow: hidden;
   z-index: 10;
 }
@@ -60,7 +68,7 @@ span {
   margin: 0 auto;
   display: block;
   height: 100%;
-  margin-top: 5vw;
+  margin-top: 5.5vw;
   margin-left: 16vw;
   margin-right: 16vw;
 }
@@ -77,14 +85,17 @@ span {
   font-weight: bold;
   letter-spacing: 1.25px;
   border-top-right-radius: 1vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 #sidebarMenu {
   position: fixed;
   left: 0;
   transform: translateX(-250px);
   transition: transform 200ms ease-in-out;
-  background: #544fa6;
-  margin-top: 5vw;
+  background: #36393f;
+  margin-top: 5.5vw;
   margin-bottom: 5vw;
   border-top-right-radius: 1vw;
   border-bottom-right-radius: 1vw;
@@ -146,6 +157,7 @@ input[type="checkbox"] {
   height: 3px;
   width: 100%;
   background-color: white;
+  margin-top: 1vw;
 }
 .horizontal {
   transition: all 0.3s;
@@ -183,4 +195,21 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   box-sizing: border-box;
   transform: rotate(-135deg);
   margin-top: -9px;
+}
+
+#content{
+  margin: 1vw;
+  vertical-align: middle;
+
+}
+
+.card{
+  border-radius: .5vw!important;
+  height: 4vw;
+
+}
+
+.cardCol{
+
+  padding:.7vw;
 }
