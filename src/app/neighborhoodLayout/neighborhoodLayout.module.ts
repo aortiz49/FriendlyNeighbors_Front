@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { FooterOnlyLayoutComponent } from './footer-only-layout/footer-only-layout.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -21,7 +20,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MainLayoutComponent,
     FooterOnlyLayoutComponent,
     FooterComponent,
-    HeaderComponent,
   ]
 })
 export class NeighborhoodLayoutModule { }

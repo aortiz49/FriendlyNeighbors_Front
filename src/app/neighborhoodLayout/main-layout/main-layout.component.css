@@ -1,12 +1,14 @@
 :host {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 100%;
   height:100%;
+  overflow: hidden;
 }
 
 .content {
-  background: #71FA4C;
+  background: #544FA6;
+  margin-top: 5.5vw;
+  padding: 0 12vw;
+  height:100%;
+  margin-bottom: 1vw;
 }
 
 .container-fluid {
@@ -47,14 +49,14 @@ fa{
 }
 
 .header {
-  display: block;
-  margin: 0 auto;
+  background-color: #544fa6;
   width: 100%;
   max-width: 100%;
   box-shadow: none;
+  text-align: center;
   position: fixed;
-  height: 4vw;
-  overflow: hidden;
+  height: 5.5vw;
+  padding: 1vw;
   z-index: 10;
 }
 
@@ -166,7 +168,6 @@ input[type="checkbox"] {
   height: 3px;
   width: 100%;
   background-color: white;
-  margin-top: 1vw;
 }
 .horizontal {
   transition: all 0.3s;
