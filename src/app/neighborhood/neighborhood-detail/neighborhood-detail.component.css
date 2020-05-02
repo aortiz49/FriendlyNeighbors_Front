@@ -122,7 +122,6 @@ span {
 }
 .sidebarMenuInner li a {
   color: #fff;
-  text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;

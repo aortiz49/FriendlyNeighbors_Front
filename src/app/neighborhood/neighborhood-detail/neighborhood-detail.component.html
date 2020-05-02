@@ -25,8 +25,10 @@
       <li id="last" outerLink="/main">
         <h6><i class="fa fa-users fa-fw" aria-hidden="true"></i> Groups</h6>
       </li>
-      <li routerLink="/main">
-        <h6><i class="fa fa-user fa-fw" aria-hidden="true"></i> Residents</h6>
+      <li>
+        <a routerLink="/neighborhoods/{{neighId}}/residents">
+          <h6><i class="fa fa-user fa-fw" aria-hidden="true"></i>Residents</h6>
+        </a>
       </li>
       <li routerLink="/main">
         <h6><i class="fa fa-cubes fa-fw" aria-hidden="true"></i> Services</h6>
@@ -41,30 +43,19 @@
     <div class="row mainInner">
 
       <div class="container-fluid">
-        <div id="content" class="row" style="width: 100%;">
+        <router-outlet></router-outlet>
 
-
-          <div *ngFor="let n of people"class="cardCol col-sm-3 col-md-3">
-            <div  class="card align-items-center" style="width: 100%;">
-              {{n.name}}
-            </div>
-          </div>
-
-
-
-
-
-
-
-        </div>
       </div>
 
     </div>
-
-
-
   </div>
-
-
-
 </div>
+
+
+
+<!--
+          <div *ngFor="let n of people" class="cardCol col-sm-3 col-md-3">
+            <div class="card align-items-center" style="width: 100%;">
+              {{n.name}}
+            </div>
+          </div>-->
