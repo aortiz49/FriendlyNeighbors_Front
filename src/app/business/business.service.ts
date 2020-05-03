@@ -19,7 +19,6 @@ constructor(private http:HttpClient) { }
 
 
   getbusinesses(neighID: number):Observable<Business[]>{
-    console.log("Antes de servicio");
     return this.http.get<Business[]>(
       "http://localhost:8080/s3_neighborhood-api/api/neighborhoods/" + neighID + "/businesses"
   );

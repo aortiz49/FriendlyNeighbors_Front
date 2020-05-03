@@ -1,11 +1,11 @@
 <h3>
   Businesses
 </h3>
-<div *ngIf= "selected">
+<div *ngIf="selected">
   <app-business-detail [businessDetail]= "selectedBusiness"></app-business-detail>
 </div>
 
-<div *ngFor= "let c of businesses">
+<div *ngFor="let c of businesses">
   <div class="alert alert-success" role="alert" (click)= "onSelected(c)" style="width: 60rem;">
     <h5 class="card-title">{{c.name}}</h5>
   </div>
