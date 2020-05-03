@@ -17,9 +17,9 @@ export class FavorService {
 
 constructor(private http:HttpClient) { }
 
-  getFavors(neigh_id):Observable<FavorDetail[]>{
+  getFavors(neigh_id: number):Observable<FavorDetail[]>{
     return this.http.get<FavorDetail[]>(
-      API_URL + neighborhoods + "/" + neigh_id + favors + "/"
+      API_URL + neighborhoods + "/" + neigh_id + favors
   );
   }
 

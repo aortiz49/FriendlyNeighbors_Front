@@ -17,6 +17,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
-  declarations: [RouterModule]
+  exports: [RouterModule]
 })
 export class FavorRoutingModule { }

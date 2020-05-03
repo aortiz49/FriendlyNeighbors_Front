@@ -30,6 +30,7 @@ import { AgmCoreModule } from '@agm/core';
 import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
 import {GroupModule} from "./group/group.module";
 import { LocationModule } from './location/location.module';
+import { FavorModule } from './favor/favor.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -67,7 +68,7 @@ const routes: Routes = [
     LocationModule,
     HomeModule,
     GroupModule,
-
+    FavorModule,
 
   ],
   bootstrap: [AppComponent],
