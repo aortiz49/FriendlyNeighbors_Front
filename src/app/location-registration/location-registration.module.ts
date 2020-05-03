@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainLayoutComponent } from '../neighborhoodLayout/main-layout/main-layout.component';
 
 const routes: Routes = [
   {

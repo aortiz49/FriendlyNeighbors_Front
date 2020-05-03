@@ -1,8 +1,6 @@
 .container-fluid {
   height: 100%;
   background:#544fa6;
-  padding-right: 8vw;
-  padding-left: 8vw;
 
 
 }
@@ -27,6 +25,13 @@ h1 {
   text-align: left;
   margin-bottom: 4vmax;
 
+}
+
+h3{
+  color: white;
+  font-size: 1.5vw;
+  padding: 0;
+  margin: 0;
 }
 
 h5 {
@@ -59,7 +64,6 @@ img {
 }
 
 .thumbPrint{
-  padding-right: 6vw;
   height:100%;
 }
 
@@ -108,7 +112,7 @@ input[type="select"] {
 }
 
 .fa {
-  font-size: 1.1vw;
+  font-size: 1.5vw;
 }
 
 .btn-round-lg {
@@ -174,4 +178,22 @@ password{
 
 .form-group{
   margin-bottom: 5px;
+}
+
+
+.createButton{
+  background-color: green;
+  width: 100%;
+  height: 4vw;
+}
+
+.card{
+  background-color:#36393f ;
+  height: 4vw;
+  margin: .7vw;
+
+}
+
+.createCol{
+  margin-bottom: 11vw;
 }
