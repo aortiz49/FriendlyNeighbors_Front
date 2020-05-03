@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{ Favor } from '../favor';
 import { FavorService } from '../favor.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-favor-list',
@@ -9,12 +10,14 @@ import { FavorService } from '../favor.service';
 })
 export class FavorListComponent implements OnInit {
 
-  constructor(private favorService:FavorService) { }
+  constructor(private favorService:FavorService,
+    private route: ActivatedRoute) { }
 
   public favors:Array<Favor>;
+  neighId: number;
 
   getFavors(){
-    this.favorService.getFavors().subscribe(bs=> {
+    this.favorService.getFavors(this.neighId).subscribe(bs=> {
       this.favors = bs;
     })
   }
@@ -28,7 +31,10 @@ export class FavorListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.neighId = +this.route.snapshot.paramMap.get('id');
+
     this.getFavors();
+
   }
 
 }
