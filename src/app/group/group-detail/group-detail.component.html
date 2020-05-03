@@ -1,0 +1,39 @@
+<div style="     min-height: 100%;">
+  <div class=" banner" style="background-image: url('https://wallpaperaccess.com/full/1760835.jpg');">
+
+
+    <div class="wraper row">
+
+      <div class="name"> &nbsp; &nbsp;&nbsp;{{group.name}}
+      </div>
+
+
+    </div>
+
+
+    <div class="footer ">
+
+    </div>
+  </div>
+
+  <div class="info">
+    <p class="options"> Description: <span>{{group.description}}</span></p>
+    <br>
+    <hr style="border: 1px solid#C8C8C8;"/>
+    <p class="options"> Date created: <span>{{group.dateCreated}}</span></p>
+
+  </div>
+
+    <br>
+  <br>
+
+  <div *ngFor="let r of group.members">
+
+     <app-simple-resident [resident]="r">
+    </app-simple-resident>
+
+
+  </div>
+
+
+</div>
