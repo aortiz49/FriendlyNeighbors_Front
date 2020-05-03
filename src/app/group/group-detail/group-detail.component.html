@@ -22,18 +22,19 @@
     <hr style="border: 1px solid#C8C8C8;"/>
     <p class="options"> Date created: <span>{{group.dateCreated}}</span></p>
 
-  </div>
+    <div class="options"> Members: </div>
+    <div *ngFor="let r of group.members">
 
-    <br>
-  <br>
+      <app-simple-resident [resident]="r">
+      </app-simple-resident>
 
-  <div *ngFor="let r of group.members">
 
-     <app-simple-resident [resident]="r">
-    </app-simple-resident>
-
+    </div>
 
   </div>
+
+
+
 
 
 </div>

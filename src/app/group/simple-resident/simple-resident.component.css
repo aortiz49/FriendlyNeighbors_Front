@@ -278,7 +278,7 @@ a.buttons {
 
 .postFrame{
 
-  max-width: 400px;
+  max-width: 800px;
   background-color: white;
   padding: 0px;
   border-image-outset:0px;
@@ -296,12 +296,12 @@ a.buttons {
   font-size:9px;
   font-stretch:100%;
   font-style:normal;
-  font-variant-caps:normal;
+    font-variant-caps:normal;
   font-variant-east-asian:normal;
   font-variant-ligatures:normal;
   font-variant-numeric:normal;
   font-weight:400;
-  margin-bottom:60px;
+  margin-bottom:5px;
   margin-top:0px;
   text-size-adjust:100%;
   -webkit-box-align:stretch;
@@ -312,7 +312,7 @@ a.buttons {
 
 .backgroundD{
 
-  background-color: #dadada;
+     background-color: #ffffff;
 
 
 }
