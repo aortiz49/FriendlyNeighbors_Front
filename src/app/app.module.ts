@@ -29,6 +29,7 @@ import {HomeModule} from "./home/home.module";
 import { AgmCoreModule } from '@agm/core';
 import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
 import {GroupModule} from "./group/group.module";
+import { LocationModule } from './location/location.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -63,6 +64,7 @@ const routes: Routes = [
     NeighborhoodLayoutModule,
     AccountSettingsModule,
     LocationRegistrationModule,
+    LocationModule,
     HomeModule,
     GroupModule,
 
