@@ -118,9 +118,9 @@
   position: relative;
   background-color: white;
    width: 100%;
-  height: 200px;
+  height: 100%;
   align-items: center;
-  display: inline-block;
+     display: inline-block;
   align-self: flex-end;
   -moz-border-radius-bottomright: 9px;
   -moz-border-radius-bottomleft: 9px;
