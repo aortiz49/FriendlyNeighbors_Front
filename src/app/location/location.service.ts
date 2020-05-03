@@ -23,8 +23,12 @@ export class LocationService {
 
 
   getLocations(neighId: number): Observable<Location[]> {
-
     var a:string = JSON.stringify(location);
     return this.http.get<Location[]>(`${this.apiUrl}/${neighId}/locations/`);
+  }
+
+  getLocationById(neighId:number, locId: number): Observable<Location> {
+    var a:string = JSON.stringify(location);
+    return this.http.get<Location>(`${this.apiUrl}/${neighId}/locations/${locId}`);
   }
 }

@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LocationComponent } from './location.component';
 import { MainLayoutComponent } from '../neighborhoodLayout/main-layout/main-layout.component';
 import { LocationListComponent } from './location-list/location-list.component';
+import { LocationDetailComponent } from './location-detail/location-detail.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,14 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [{ path: '', component: LocationListComponent }],
   },
+  {
+    path: 'neighborhoods/:id/locations/:lid',
+    component: MainLayoutComponent,
+    children: [{ path: '', component: LocationDetailComponent }],
+  },
 ];
+
+
 
 @NgModule({
   imports: [
@@ -25,7 +33,7 @@ const routes: Routes = [
     NeighborhoodModule,
     ReactiveFormsModule,
   ],
-  declarations: [LocationComponent,LocationListComponent],
-  exports: [LocationComponent,FormsModule,ReactiveFormsModule,LocationListComponent],
+  declarations: [LocationComponent,LocationListComponent,LocationDetailComponent],
+  exports: [LocationComponent,FormsModule,ReactiveFormsModule,LocationListComponent,LocationDetailComponent],
 })
 export class LocationModule {}
