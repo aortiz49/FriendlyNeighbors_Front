@@ -194,6 +194,11 @@ password{
 
 }
 
+.card:hover{
+  opacity:.7;
+  cursor: pointer;
+}
+
 .createCol{
   margin-bottom: 11vw;
 }

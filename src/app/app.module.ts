@@ -28,6 +28,7 @@ import { LocationRegistrationModule } from './location-registration/location-reg
 import {HomeModule} from "./home/home.module";
 import { AgmCoreModule } from '@agm/core';
 import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
+import { LocationModule } from './location/location.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -56,6 +57,7 @@ const routes: Routes = [
     HttpClientModule,
     LayoutModule,
     LoginModule,
+    LocationModule,
     DashboardModule,
     RegistrationModule,
     NeighborhoodRegistrationModule,

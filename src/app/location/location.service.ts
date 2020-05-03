@@ -20,4 +20,11 @@ export class LocationService {
     var a:string = JSON.stringify(location);
     return this.http.post<Location>(`${this.apiUrl}/${neighId}/locations/`, location);
   }
+
+
+  getLocations(neighId: number): Observable<Location[]> {
+
+    var a:string = JSON.stringify(location);
+    return this.http.get<Location[]>(`${this.apiUrl}/${neighId}/locations/`);
+  }
 }
