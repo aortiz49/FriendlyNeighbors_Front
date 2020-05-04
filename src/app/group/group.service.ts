@@ -6,6 +6,7 @@ import {ResidentDetail} from "../home/resident-detail";
 import {Post} from "../post/post";
 import {FavorDetail} from "../favor/favorDetail";
 import {Group} from "./group";
+import { Resident } from '../resident/resident';
 
 const API_URL = environment.apiUrl;
 const residents = "/groups";
@@ -21,13 +22,15 @@ export class GroupService {
   constructor(private http: HttpClient) {
   }
 
-  getgroups(neighborhood): Observable<Group[]> {
+  getgroups(neighborhood:number): Observable<Group[]> {
+    console.log(      API_URL + neighborhoods + "/" + neighborhood + residents
+    );
     return this.http.get<Group[]>(
-      API_URL + neighborhoods + "/" + neighborhood + residents + "/"
+      API_URL + neighborhoods + "/" + neighborhood + residents
     );
   }
 
-  getgroup(neighborhood, resident): Observable<Group> {
+  getgroup(neighborhood:number, resident:number): Observable<Group> {
 
     console.log(API_URL + neighborhoods + "/" + neighborhood + residents + "/" + resident);
 

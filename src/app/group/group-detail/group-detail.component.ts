@@ -17,13 +17,12 @@ export class GroupDetailComponent implements OnInit {
 
   @Input() group: Group;
   @Input() group_id: number;
-  @Input() neigh_id: number;
+   neigh_id: number;
 
   ngOnInit() {
     this.group = new Group();
-
-    this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.group_id = +this.route.root.firstChild.firstChild.firstChild.firstChild.snapshot.paramMap.get("id");
+    this.neigh_id = +this.route.snapshot.paramMap.get('id');
+    this.group_id = +this.route.snapshot.paramMap.get('gid');
     this.getDetail();
 
   }
@@ -31,8 +30,8 @@ export class GroupDetailComponent implements OnInit {
   getDetail(): void {
 
     this.service.getgroup(this.neigh_id, this.group_id)
-      .subscribe(o => {
-        this.group = o;
+      .subscribe((group) => {
+        this.group = group;
 
       });
   }
