@@ -15,7 +15,7 @@ import {NeighborhoodModule} from './neighborhood/neighborhood.module';
 import {LandingModule} from './landing/landing.module';
 import {Routes, RouterModule} from '@angular/router';
 import {LandingComponent} from './landing/landing.component';
-import {LayoutModule} from './layout/layout.module';
+import {LayoutModule} from './home-layout/layout.module';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {RegistrationModule} from './neighborhoodLayout/default/registration.module';

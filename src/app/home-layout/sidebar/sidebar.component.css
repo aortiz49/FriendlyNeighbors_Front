@@ -6,22 +6,22 @@
 #body-row {
   margin-left: 0;
 
-  background-color: #4b177d;
+  background-color: #473C98;
   max-height: 100%;
   max-width: fit-content;
 }
 
 #sidebar-container {
-  background-color: #4b177d;
+  background-color: #473C98;
   padding: 0;
 
 }
 
 .menu {
 
-      background-color: #501784;
+  background-color: #501784;
   border-bottom-left-radius: 30%;
-    border-top-left-radius: 30%;
+  border-top-left-radius: 30%;
 
 }
 
@@ -45,13 +45,13 @@
 #sidebar-container .list-group .sidebar-submenu a {
   height: 45px;
   padding-left: 30px;
-  background-color: #4b177d;
+  background-color: #473C98;
 
 }
 
 .sidebar-submenu {
   font-size: 0.9rem;
-  background-color: #4b177d;
+  background-color: #473C98;
 
 }
 
@@ -69,7 +69,7 @@
 }
 
 .logo-separator {
-  background-color: #4b177d;
+  background-color: #473C98;
   height: 60px;
 
 }
@@ -98,14 +98,14 @@
 
 
 .btn-outline-purple {
-  background-color: #5e1897 !important;
+  background-color: #544fa6 !important;
 
 }
 
 .btn-outline-purple:hover {
   color: #212529;
-  background-color: #671ca3 !important;
-  sborder-color: #3c1266
+  background-color: #6b57b6 !important;
+    sborder-color: #122a63
 
 
 }
@@ -115,7 +115,7 @@
 }
 
 .btn-outline-purple.disabled, .btn-outline-purple:disabled {
-  color: #4b177d;
+  color: #473C98;
   background-color: transparent !important;
 }
 

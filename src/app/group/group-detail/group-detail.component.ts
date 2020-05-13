@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-group-detail',
   templateUrl: './group-detail.component.html',
-  styleUrls: ['./group-detail.component.css']
+  styleUrls: ['./group-detail.component.css', './group-detail.component.scss']
 })
 export class GroupDetailComponent implements OnInit {
 
@@ -37,5 +37,5 @@ export class GroupDetailComponent implements OnInit {
       });
   }
 
-
 }
+
