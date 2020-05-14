@@ -2,8 +2,12 @@
 @import "~compass-sass-mixins/lib/compass/reset";
 @import "~font-awesome/css/font-awesome.min.css";
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
-    /* Variables */
+
+/* Variables */
 
 $backgroundColor: #473c98;
 $list: #544fa6;
@@ -11,7 +15,7 @@ $border: #6258bd;
 $geneicons: #fff;
 
 body {
-    background: $backgroundColor;
+  background: $backgroundColor;
   font-family: Lato, sans-serif;
 }
 
@@ -32,7 +36,6 @@ body {
   vertical-align: top;
 }
 
-/* IE7 */
 [class*="genericon"] {
   *overflow: auto;
   *zoom: 1;
@@ -49,7 +52,7 @@ body {
   display: block;
   list-style-type: none;
   overflow: hidden;
-  height: 700px;
+  height: 600px;
   font-size: 0;
 }
 
@@ -69,15 +72,16 @@ body {
     width: 450px;
 
     .social-links {
-      a {
+        a {
         &:before {
           margin-left: -100px;
         }
 
         &:after {
-          margin-left: -5px;
+          margin-left: 0px;
         }
       }
+
     }
   }
 
@@ -131,22 +135,41 @@ body {
       margin-left: 85px;
     }
   }
-}
 
-.twitter-icon {
-  a {
+  i {
+    display: block;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+
     &:before, &:after {
-      content: '\f202';
+      @include transition(all 0.4s 0.1s ease-in-out);
+      width: 80px;
+      height: 100%;
+      position: absolute;
+      text-indent: 0;
+      padding-top: 90px;
+      padding-left: 25px;
+      display: block;
+      font: normal 30px Genericons;
+      color: $geneicons;
     }
 
     &:after {
-      @include background-image(linear-gradient(#7adcf9, #4bc9f5));
+      font-size: 48px;
+      padding-left: 20px;
+      padding-top: 80px;
+      margin-left: 85px;
     }
+
+
   }
 }
 
-.facebook-icon {
+
+.post-icon {
   a {
+
     &:before, &:after {
       content: "Posts";
       cursor: pointer;
@@ -154,7 +177,7 @@ body {
       writing-mode: vertical-rl;
       text-transform: capitalize;
       font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-      font-size: 55px;
+      font-size: 43px;
       font-stretch: 100%;
       font-style: normal;
       font-variant-caps: normal;
@@ -163,72 +186,162 @@ body {
       font-variant-numeric: normal;
       letter-spacing: 5px;
       font-weight: 100;
-
+      padding: 100px 10px;
     }
 
     &:after {
-      @include background-image(linear-gradient(#548abf, #295b9e));
+      @include background-image(linear-gradient(#3767f9, #4bc9f5));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-file-alt;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#3767f9, #4bc9f5));
+
     }
   }
 }
 
-.linkedin-icon {
+
+.members-icon {
   a {
+
     &:before, &:after {
-      content: '\f208';
-    }
-
-    &:after {
-      @include background-image(linear-gradient(#00a9cd, #0083b4));
-    }
-  }
-}
-
-.insta-icon {
-  a {
-    &:before, &:after {
-      content: '\f215';
-    }
-
-    &:after {
-      @include background-image(linear-gradient(#7fc121, #298733));
-    }
-  }
-}
-
-.youtube-icon {
-  a {
-    &:before, &:after {
-      content: '\f213';
-    }
-
-    &:after {
-      @include background-image(linear-gradient(#df192a, #c41222));
-    }
-  }
-}
-
-.tumblr-icon {
-  a {
-    &:before, &:after {
-      content: '\f214';
-    }
-
-    &:after {
-      @include background-image(linear-gradient(#283e56, #325372));
-    }
-  }
-}
-
-.dribbble-icon {
-  a {
-    &:before, &:after {
-      content: '\f201';
+      content: "Members";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
     }
 
     &:after {
       @include background-image(linear-gradient(#e03a70, #f189b8));
     }
   }
+
+  i {
+    @extend .fas;
+    @extend .fa-users;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#e03a70, #f189b8));
+
+    }
+  }
 }
 
+
+.events-icon {
+  a {
+
+    &:before, &:after {
+      content: "Events";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#298733, #7fc121));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-calendar-alt;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#298733, #7fc121));
+
+    }
+  }
+}
+
+
+.pictures-icon {
+  a {
+
+    &:before, &:after {
+      content: "Pictures";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+        font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#ff771f, #ffbc35));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-camera-retro;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+         font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#ff771f, #ffbc35));
+
+    }
+  }
+}
