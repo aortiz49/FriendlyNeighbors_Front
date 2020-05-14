@@ -1,25 +1,21 @@
 @import "~compass-sass-mixins/lib/compass/css3";
 @import "~compass-sass-mixins/lib/compass/reset";
+@import "~font-awesome/css/font-awesome.min.css";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
     /* Variables */
 
 $backgroundColor: #473c98;
-$list: #6dc5dd;
-$border: #5ab2ca;
+$list: #544fa6;
+$border: #6258bd;
 $geneicons: #fff;
 
 body {
-     background: $backgroundColor;
+    background: $backgroundColor;
   font-family: Lato, sans-serif;
 }
 
 @font-face {
-  font-family: 'Genericons';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot');
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.woff') format('woff'),
-  url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 [class*="genericon"] {
@@ -69,7 +65,7 @@ body {
   font-size: 16px;
   @include transition(all 0.4s 0.1s ease-in-out);
 
-  &:focus {
+  &:hover {
     width: 450px;
 
     .social-links {
@@ -152,7 +148,22 @@ body {
 .facebook-icon {
   a {
     &:before, &:after {
-      content: '\f204';
+      content: "Posts";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 55px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+
     }
 
     &:after {

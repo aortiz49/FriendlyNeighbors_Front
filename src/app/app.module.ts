@@ -22,15 +22,16 @@ import {RegistrationModule} from './neighborhoodLayout/default/registration.modu
 import {AccountSettingsModule} from './account-settings/account-settings.module';
 import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighborhood-registration.module';
 import {VisibilityService} from "./shared/visibility-service.service";
-import { LoginResgistrationModule } from './login-resgistration/login-resgistration.module';
-import { ProfileRegistrationModule } from './profile-registration/profile-registration.module';
-import { LocationRegistrationModule } from './location-registration/location-registration.module';
+import {LoginResgistrationModule} from './login-resgistration/login-resgistration.module';
+import {ProfileRegistrationModule} from './profile-registration/profile-registration.module';
+import {LocationRegistrationModule} from './location-registration/location-registration.module';
 import {HomeModule} from "./home/home.module";
-import { AgmCoreModule } from '@agm/core';
-import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
+import {AgmCoreModule} from '@agm/core';
+import {NeighborhoodLayoutModule} from './neighborhoodLayout/neighborhoodLayout.module';
 import {GroupModule} from "./group/group.module";
-import { LocationModule } from './location/location.module';
-import { FavorModule } from './favor/favor.module';
+import {LocationModule} from './location/location.module';
+import {FavorModule} from './favor/favor.module';
+import {GroupLayoutModule} from "./group-layout/group-layout.module";
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -58,9 +59,10 @@ const routes: Routes = [
     ProfileRegistrationModule,
     HttpClientModule,
     LayoutModule,
+    GroupLayoutModule,
     LoginModule,
     DashboardModule,
-    RegistrationModule,
+      RegistrationModule,
     NeighborhoodRegistrationModule,
     NeighborhoodLayoutModule,
     AccountSettingsModule,
