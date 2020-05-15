@@ -1,6 +1,23 @@
 <body>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <div class="fitandcenter">
+  <br>
+  <div *ngIf="favors.length == 0">
+    <tr>
+      <td>
+        <i class="fas fa-pencil-alt fa-2x icon">
+        </i>
+      </td>
+      <td>
+             <span class="emptyMessage">{{emptyMessage}}
+          </span>
+      </td>
+    </tr>
+
+    <br>
+  </div>
+
+
   <div class="row fitandcenter">
     <div class="row fitandcenter" style="max-width: 110%">
 
@@ -8,7 +25,7 @@
         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
 
            data-target="#image-gallery"
-            attr.data-image="{{p}}">
+           attr.data-image="{{p}}">
 
           <img class="img-thumbnail"
                src='{{p}}'

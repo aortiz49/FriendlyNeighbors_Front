@@ -26,6 +26,23 @@
 
 }
 
+.emptyMessage {
+
+  color: rgb(154, 154, 153);
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+}
+
+.icon {
+  color: rgb(154, 154, 153);
+}
+
 
 .name {
 

@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-
-</head>
-
-
-
 <body>
 
 <div class=" row">
 
   <div class="col-1 no-pad">
   </div>
-  <div id="main" class="col-9 no-pad" style = "margin: 0 auto">
+  <div id="main" class="col-9 no-pad" style="margin: 0 auto">
     <br>
+    <div *ngIf="favors.length == 0">
+      <tr>
+        <td>
+          <i class="fas fa-pencil-alt fa-2x icon">
+          </i>
+        </td>
+          <td>
+             <span class="emptyMessage">{{emptyMessage}}
+          </span>
+        </td>
+      </tr>
+
+      <br>
+    </div>
+
+
     <div *ngFor="let favor of favors">
 
       <div id="{{ favor.id + 'ev'}}" #v>
@@ -38,5 +45,3 @@
 
 
 </body>
-
-</html>

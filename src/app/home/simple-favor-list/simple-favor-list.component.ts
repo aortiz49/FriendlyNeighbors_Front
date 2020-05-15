@@ -33,6 +33,7 @@ export class SimpleFavorListComponent implements OnInit {
 
   @Input() favors: Array<Favor>;
   @Input() type: string;
+  @Input() emptyMessage: string;
   @Input() neighborhood_id: number;
 
   navigationSubscription;

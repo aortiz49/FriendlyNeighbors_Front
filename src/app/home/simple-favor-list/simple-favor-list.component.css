@@ -4,6 +4,24 @@
 
 }
 
+.emptyMessage {
+
+  color: rgb(154, 154, 153);
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+}
+
+.icon {
+  color: rgb(154, 154, 153);
+}
+
+
 .date {
 
   color: rgb(74, 126, 142);
@@ -228,7 +246,7 @@ a.buttons {
 
 body {
   background-color: white;
-    max-height: 150px;
+  max-height: 150px;
   border-image-outset: 0px;
   border-image-repeat: stretch;
   border-image-slice: 100%;

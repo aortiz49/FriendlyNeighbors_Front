@@ -9,6 +9,7 @@ import {delay} from "rxjs/operators";
 export class GalleryComponent implements OnInit {
 
   @Input() album: string[];
+  @Input() emptyMessage: string;
 
   constructor() {
   }
