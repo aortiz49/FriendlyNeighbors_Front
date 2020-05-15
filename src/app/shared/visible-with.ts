@@ -16,15 +16,15 @@ export class VisibleWith {
 
 
     @Input()
-    set visibleWith(idDivvv) {
+    set visibleWith(elementID) {
 
 
-        console.log(idDivvv);
+        console.log(elementID);
         console.log("element");
-        console.log(document.getElementById(idDivvv));
-        if (document.getElementById(idDivvv) != null) {
+        console.log(document.getElementById(elementID));
+        if (document.getElementById(elementID) != null) {
             this.visibilityService
-                .elementInSight(new ElementRef(document.getElementById(idDivvv)))
+                .elementInSight(new ElementRef(document.getElementById(elementID)))
                 .pipe(filter(visible => visible), take(1))
                 .subscribe(() => {
                     this.viewContainer.createEmbeddedView(this.templateRef);

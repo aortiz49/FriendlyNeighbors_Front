@@ -131,6 +131,35 @@
 }
 
 
+.infoPanel {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+  -moz-border-radius-bottomright: 9px;
+  -moz-border-radius-bottomleft: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border: 1px solid rgb(193, 193, 193);
+    text-align: left;
+}
+
+
+.completeInfo {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  align-self: flex-end;
+  -moz-border-radius-bottomright: 9px;
+  -moz-border-radius-bottomleft: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border: 1px solid rgb(193, 193, 193);
+  text-align: center;
+}
+
 .image {
 
   background-color: white;
@@ -245,5 +274,70 @@
   text-size-adjust: 100%;
   -webkit-box-direction: normal;
   padding: 10px;
+
+}
+
+.residentAttributeName {
+  color: rgb(17, 36, 40);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+
+}
+
+
+.atributeIcon {
+  color: rgb(25, 54, 58);
+  cursor: pointer;
+  display: inline;
+  font-size: 19px;
+  font-stretch: 100%;
+  font-style: normal;
+    font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  -webkit-box-direction: normal;
+
+
+}
+
+.residentAttribute {
+  color: rgb(66, 66, 65);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+   font-size: 14px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+}
+
+.attributeLine{
+  margin: 0 auto;
+  max-width: 850px
 
 }
