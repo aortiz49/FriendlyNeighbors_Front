@@ -48,12 +48,10 @@ body {
 
 .accordion {
   background: $border;
-  width: 100%;
-  display: block;
-  list-style-type: none;
-  overflow: hidden;
-  height: 600px;
+  height: 670px;
   font-size: 0;
+  min-width: 1200px;
+  margin: 0 auto;
 }
 
 .tabs {
@@ -87,7 +85,7 @@ body {
   }
 
   &:hover {
-      background-color: #6f5cce;
+    background-color: #6f5cce;
   }
 
   .paragraph {
