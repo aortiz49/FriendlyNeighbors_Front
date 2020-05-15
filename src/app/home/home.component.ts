@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
   posts: Post[];
   favors: FavorDetail[];
   @ViewChild(PostListComponent, {static: true}) postsList: PostListComponent;
+  toggle1: boolean;
+  toggle2: boolean;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -52,6 +54,8 @@ export class HomeComponent implements OnInit {
     this.getResident();
     this.getFavors();
     this.getPosts();
+    this.toggle1 = true;
+    this.toggle2 = false;
 
   }
 
@@ -97,6 +101,15 @@ export class HomeComponent implements OnInit {
         this.favors = favors;
       });
 
+  }
+
+
+  toggle11() {
+    this.toggle1 = !this.toggle1;
+  }
+
+  toggle12() {
+    this.toggle2 = !this.toggle2;
   }
 
 

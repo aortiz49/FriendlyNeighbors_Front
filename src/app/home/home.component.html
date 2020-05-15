@@ -21,26 +21,54 @@
   </div>
 
   <div class="info">
-    <p class="options">More of {{resident.name}}
-    </p>
+    <div class="options">More of {{resident.name}}
+
+    </div>
+
+    <div class="options">
+      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseR_{{resident.id }}" data-toggle="collapse" class="options" *ngIf="toggle1" class="fa fa-caret-down fa-2x"></i>
+      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseR_{{resident.id}}" data-toggle="collapse" class="options" *ngIf="toggle2" class=" fa fa-caret-up fa-2x"></i>
+    </div>
+
   </div>
 
-  <div class="infoPanel container-fluid">
+  <div id="collapseR_{{resident.id}}" class="collapse">
+    <div class="infoPanel container-fluid">
 
-    <div class="attributeLine">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="residentAttributeName">
-            <span> &nbsp;</span>
-            <span class="atributeIcon fas fa-info-circle">
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-info-circle">
             </span> &nbsp; About
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="residentAttribute"> {{resident.preferences}}
+            </div>
+          </div>
+          <div class="col-md-4">
           </div>
         </div>
-        <div class="col-md-5">
-          <div class="residentAttribute"> {{resident.preferences}}
+
+
+        <div class="attributeLine">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="residentAttributeName">
+                <span> &nbsp;</span>
+                <span class="atributeIcon fas fa-signature">
+            </span> &nbsp; Nickname
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="residentAttribute"> {{resident.nickname}}
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
         </div>
       </div>
 
@@ -50,95 +78,76 @@
           <div class="col-md-3">
             <div class="residentAttributeName">
               <span> &nbsp;</span>
-              <span class="atributeIcon fas fa-signature">
-            </span> &nbsp; Nickname
+              <span class="atributeIcon fas fa-inbox">
+            </span> &nbsp; E-mail
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.nickname}}
+            <div class="residentAttribute"> {{resident.email}}
             </div>
           </div>
           <div class="col-md-4">
           </div>
         </div>
       </div>
-    </div>
 
 
-    <div class="attributeLine">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="residentAttributeName">
-            <span> &nbsp;</span>
-            <span class="atributeIcon fas fa-inbox">
-            </span> &nbsp; E-mail
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="residentAttribute"> {{resident.email}}
-          </div>
-        </div>
-        <div class="col-md-4">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="attributeLine">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="residentAttributeName">
-            <span> &nbsp;</span>
-            <span class="atributeIcon fas fa-map-marked">
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-map-marked">
             </span> &nbsp; Address
+            </div>
           </div>
-        </div>
-        <div class="col-md-5">
-          <div class="residentAttribute"> {{resident.address}}
+          <div class="col-md-5">
+            <div class="residentAttribute"> {{resident.address}}
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
+          <div class="col-md-4">
+          </div>
         </div>
       </div>
-    </div>
 
 
-    <div class="attributeLine">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="residentAttributeName">
-            <span> &nbsp;</span>
-            <span class="atributeIcon  fas fa-phone-square-alt">
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon  fas fa-phone-square-alt">
             </span> &nbsp; Phone
+            </div>
           </div>
-        </div>
-        <div class="col-md-5">
-          <div class="residentAttribute"> {{resident.phoneNumber}}
+          <div class="col-md-5">
+            <div class="residentAttribute"> {{resident.phoneNumber}}
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
+          <div class="col-md-4">
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="attributeLine">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="residentAttributeName">
-            <span> &nbsp;</span>
-            <span class="atributeIcon  fas fa-birthday-cake">
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon  fas fa-birthday-cake">
             </span> &nbsp; Birthday
+            </div>
           </div>
-        </div>
-        <div class="col-md-5">
-          <div class="residentAttribute"> {{resident.email}}
+          <div class="col-md-5">
+            <div class="residentAttribute"> {{resident.email}}
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
+          <div class="col-md-4">
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <br>
