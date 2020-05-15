@@ -1,116 +1,16 @@
-<head>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-
-
 <body>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<div class = "fitandcenter">
+<div class="fitandcenter">
   <div class="row fitandcenter">
-       <div class="row fitandcenter" style="max-width: 110%" >
-      <div class="col-lg-4 col-md-10      thumb">
+    <div class="row fitandcenter" style="max-width: 110%">
+      <div *ngFor="let p of album" class="col-lg-4 col-md-10      thumb">
         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-           data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-            <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-           data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
 
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-           data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-           data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
+           data-target="#image-gallery"
+           attr.data-image="{{p}}">
 
-
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
           <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-
-
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-               alt="Another alt text">
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-10      thumb">
-        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
-           data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-           data-target="#image-gallery">
-          <img class="img-thumbnail"
-               src="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+               src='{{p}}'
                alt="Another alt text">
         </a>
       </div>
@@ -142,3 +42,4 @@
 </div>
 
 </body>
+`
