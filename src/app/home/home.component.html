@@ -37,7 +37,7 @@
       <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
 
       <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [emptyMessage]="'Get started! You still have no favors to show here'" [type]="'color1'" [favors]="resident.favorsRequested">
+        <app-simple-favor-list [emptyMessage]="'You still have no favors to show here. Get started by going to the sidebar.'" [type]="'color1'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
 
@@ -47,7 +47,7 @@
       <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">Helped with favors</div>
 
       <div style="max-width: 70%; margin: 0 0 0 auto">
-          <app-simple-favor-list [emptyMessage]="'Get started! Looks like you are not a candidate to help with a favor'" [type]="'color2'" [favors]="resident.favorsRequested">
+        <app-simple-favor-list [emptyMessage]="'Looks like you are not a candidate to help with a favor. Get started by going to the sidebar.'" [type]="'color2'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
 
@@ -56,7 +56,7 @@
       <div class="title3" style="max-width: 100%;">Pictures of {{resident.name}}
       </div>
 
-      <app-gallery [album]="resident.album">
+      <app-gallery [emptyMessage]="' Looks like you have not posted any picture. Get started by going to the sidebar.'" [album]="resident.album">
       </app-gallery>
 
     </div>
@@ -80,7 +80,7 @@
       <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
 
       <div style="max-width: 80%; margin: 0 0  auto 0 ">
-        <app-simple-event-list [emptyMessage]="'Get started! Looks like you have not posted an event'" [favors]="resident.favorsRequested">
+        <app-simple-event-list [emptyMessage]="'Looks like you have not posted an event. Get started by going to the sidebar.'" [favors]="resident.favorsRequested">
         </app-simple-event-list>
       </div>
 
