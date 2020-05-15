@@ -3,11 +3,12 @@
 <div class="fitandcenter">
   <div class="row fitandcenter">
     <div class="row fitandcenter" style="max-width: 110%">
-      <div *ngFor="let p of album" class="col-lg-4 col-md-10      thumb">
+
+      <div *ngFor="let p of album" class="col-lg-4 col-md-10   thumb">
         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
 
            data-target="#image-gallery"
-           attr.data-image="{{p}}">
+            attr.data-image="{{p}}">
 
           <img class="img-thumbnail"
                src='{{p}}'
@@ -22,26 +23,26 @@
         <div class="modal-content">
 
 
-            <div id="{{'carouselExampleIndicators'}}" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li *ngFor="let f of album,let i = index" data-target="#carouselExampleIndicators" class="{{ (i == 0) ? 'active' : '' }}" attr.data-slide-to="{{i}}"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div *ngFor="let f of album,let i = index" class="{{ (i == 0) ? 'carousel-item active' : 'carousel-item' }}">
-                  <img class="d-block w-100" src="{{album[i]}}" alt="slide {{i}}">
-
-                </div>
+          <div id="{{'carouselExampleIndicators'}}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li *ngFor="let f of album,let i = index" data-target="#carouselExampleIndicators" class="{{ (i == 0) ? 'active' : '' }}" attr.data-slide-to="{{i}}"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div *ngFor="let f of album,let i = index" class="{{ (i == 0) ? 'carousel-item active' : 'carousel-item' }}">
+                <img class="d-block w-100" src="{{album[i]}}" alt="slide {{i}}">
 
               </div>
-              <a class="carousel-control-prev" href="#{{'carouselExampleIndicators'}}" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-                </a>
-              <a class="carousel-control-next" href="#{{'carouselExampleIndicators'}}" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
+
             </div>
+            <a class="carousel-control-prev" href="#{{'carouselExampleIndicators'}}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#{{'carouselExampleIndicators'}}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
 
         </div>

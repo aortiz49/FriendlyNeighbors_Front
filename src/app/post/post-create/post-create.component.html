@@ -1,12 +1,13 @@
 <div class="postFrame">
-  <form name="post" (ngSubmit)="reviewForm.form.valid && postComment(reviewForm)" #reviewForm="ngForm" novalidate>
 
+  <form name="post" (ngSubmit)="reviewForm.form.valid && postComment(reviewForm)" #reviewForm="ngForm" novalidate>
+    <br>
     <div class="row">
       <div class="col-md-1 ">
 
       </div>
       <div class="form-group col-md-8 ">
-        <input type="text" name="Text" class="form-control" placeholder="Add title" id="Text" [(ngModel)]="post.title"
+        <input type="text" name="Text" class="form-control" placeholder="Add a title" id="Text" [(ngModel)]="post.title"
                #Text="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && Text.invalid }" required>
         <div class="invalid-feedback">
           <div>Title missing</div>
@@ -15,13 +16,13 @@
 
 
     </div>
-        <div class="row">
+    <div class="row">
 
       <div class="col-md-1 ">
 
       </div>
-           <div class="form-group col-md-8 ">
-        <input type="text" name="Text2" class="form-control" placeholder="Add body" id="Text2" [(ngModel)]="post.description"
+      <div class="form-group col-md-8 ">
+        <input type="text" name="Text2" class="form-control" placeholder="Write what you want" id="Text2" [(ngModel)]="post.description"
                #Text2="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && Text2.invalid }" required>
         <div class="invalid-feedback">
           <div>Body missing</div>

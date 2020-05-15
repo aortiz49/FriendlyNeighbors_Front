@@ -28,10 +28,7 @@ body {
   min-width: 100%;
 
   background-color: white;
-
-  border-image-outset: 0px;
   border-image-repeat: stretch;
-  border-image-slice: 100%;
   border-image-source: none;
   border-image-width: 1;
   border-radius: 6px;

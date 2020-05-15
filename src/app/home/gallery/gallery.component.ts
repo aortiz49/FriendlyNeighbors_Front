@@ -1,6 +1,5 @@
-
-
 import {Component, Input, OnInit} from '@angular/core';
+import {delay} from "rxjs/operators";
 
 @Component({
   selector: 'app-gallery',
