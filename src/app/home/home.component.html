@@ -1,6 +1,6 @@
 `
 <div style="min-height: 100%;">
-  <div class=" banner" style="background-image: url('http://placeimg.com/1500/500/any%7D'); background-repeat: no-repeat;  background-position: center;">
+  <div class=" banner">
 
 
     <div class="wraper2 row">
@@ -23,7 +23,9 @@
 
       </div>
     </div>
+    <div class="muralPicture"></div>
     <div class="transparencyPanel"></div>
+
 
   </div>
 
@@ -159,6 +161,26 @@
             <div *ngIf="!isEmpty(resident.birthDate)" class="residentAttribute"> {{resident.birthDate}}
             </div>
             <div *ngIf="isEmpty(resident.birthDate)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-history">
+            </span> &nbsp; Joined in
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.joinDate)" class="residentAttribute"> {{resident.joinDate}}
+            </div>
+            <div *ngIf="isEmpty(resident.joinDate)" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">

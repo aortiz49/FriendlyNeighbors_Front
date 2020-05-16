@@ -234,7 +234,7 @@
 .transparencyPanel {
   position: relative;
   height: 100px;
-  background-image: linear-gradient(to right, rgba(17, 36, 40, 0), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.0));
+  background-image: linear-gradient(to right, rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.2), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.0));
   width: 100%;
   align-items: center;
   display: inline-block;
@@ -426,3 +426,5 @@
     margin: 0 auto;
   }
 }
+
+
