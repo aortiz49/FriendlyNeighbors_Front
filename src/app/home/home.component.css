@@ -202,7 +202,15 @@
   position: absolute;
   z-index: 11;
   text-align: center;
-  margin-left: 11%;
+  margin-left: -630px;
+}
+
+.wraper2 {
+  align-self: flex-end;
+  position: absolute;
+  z-index: 11;
+  text-align: center;
+  margin-left: 50%;
 }
 
 
@@ -380,3 +388,30 @@
 
 }
 
+.eventLayout {
+
+  max-width: 80%;
+  margin: 0 0 auto 0;
+
+}
+
+
+@media only screen and (max-width: 700px) {
+  .eventLayout {
+    margin: 0 auto;
+  }
+}
+
+
+.favorLayout {
+
+  max-width: 70%;
+  margin: 0 0 0 auto;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .favorLayout {
+    margin: 0 auto;
+  }
+}

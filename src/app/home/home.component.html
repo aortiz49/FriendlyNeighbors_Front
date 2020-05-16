@@ -2,16 +2,18 @@
   <div class=" banner" style="background-image: url('http://placeimg.com/1500/500/any%7D'); background-repeat: no-repeat;  background-position: center;">
 
 
-    <div class="wraper row">
+    <div class="wraper2 row">
+      <div class="wraper row">
 
 
-      <div class="outer-circle">
+        <div class="outer-circle">
           <img class="inner-circle" src="http://placeimg.com/500/500/people">
-      </div>
-      <div class="name"> {{resident.name}}
-      </div>
+        </div>
+        <div class="name"> {{resident.name}}
+        </div>
 
 
+      </div>
     </div>
 
 
@@ -160,9 +162,9 @@
     <div class="col-lg-4 col-md-6 mb-4">
 
 
-      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
+      <div class="title3 favorLayout">New favors</div>
 
-      <div style="max-width: 70%; margin: 0 0 0 auto">
+      <div class="favorLayout">
         <app-simple-favor-list [emptyMessage]="'You still have no favors to show here. Get started by going to the sidebar.'" [type]="'color1'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
@@ -170,9 +172,9 @@
 
       <br>
 
-      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">Helped with favors</div>
+      <div class="title3 favorLayout">Helped with favors</div>
 
-      <div style="max-width: 70%; margin: 0 0 0 auto">
+      <div class="favorLayout">
         <app-simple-favor-list [emptyMessage]="'Looks like you are not a candidate to help with a favor. Get started by going to the sidebar.'" [type]="'color2'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
@@ -203,9 +205,9 @@
 
     <div class="col-lg-3 col-md-6 mb-3">
 
-      <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
+      <div class="title3 eventLayout">Upcoming events</div>
 
-      <div style="max-width: 80%; margin: 0 0  auto 0 ">
+      <div class="eventLayout">
         <app-simple-event-list [emptyMessage]="'Looks like you have not posted an event. Get started by going to the sidebar.'" [favors]="resident.favorsRequested">
         </app-simple-event-list>
       </div>

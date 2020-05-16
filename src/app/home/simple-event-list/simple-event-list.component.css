@@ -252,7 +252,6 @@ a.buttons {
 
 body {
   max-height: 400px;
-  max-width: 200px;
   overflow: auto;
   overflow-x: hidden;
   scrollbar-width: none;
