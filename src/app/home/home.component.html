@@ -12,11 +12,11 @@
           </div>
         </div>
 
-         <div style="align-self: flex-end">
+        <div style="align-self: flex-end">
 
           <tr class="name">{{resident.name}}
           </tr>
-          <tr class="year">Living in {{resident.neighborhood.name}} since  {{resident.yearJoined}}
+          <tr class="year">Living in {{resident.neighborhood.name}} since  {{resident.livingSince}}
           </tr>
 
         </div>
@@ -52,9 +52,9 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div *ngIf="resident.preferences != null" class="residentAttribute"> {{resident.preferences}}
+            <div *ngIf="!isEmpty(resident.preferences)" class="residentAttribute"> {{resident.preferences}}
             </div>
-            <div *ngIf="resident.preferences == null" class="emptyAttribute"> Nothing to show
+            <div *ngIf="isEmpty(resident.preferences)" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">
@@ -72,7 +72,9 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="residentAttribute"> {{resident.nickname}}
+              <div *ngIf="!isEmpty(resident.nickname)" class="residentAttribute"> {{resident.nickname}}
+              </div>
+              <div *ngIf="isEmpty(resident.nickname)" class="emptyAttribute"> Nothing to show
               </div>
             </div>
             <div class="col-md-4">
@@ -92,7 +94,9 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.email}}
+            <div *ngIf="!isEmpty(resident.email)" class="residentAttribute"> {{resident.email}}
+            </div>
+            <div *ngIf="isEmpty(resident.email)" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">
@@ -111,7 +115,9 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.address}}
+            <div *ngIf="!isEmpty(resident.address)" class="residentAttribute"> {{resident.address}}
+            </div>
+            <div *ngIf="isEmpty(resident.address)" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">
@@ -130,7 +136,9 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.phoneNumber}}
+            <div *ngIf="!isEmpty(resident.phoneNumber)" class="residentAttribute"> {{resident.phoneNumber}}
+            </div>
+            <div *ngIf="isEmpty(resident.phoneNumber)" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">
@@ -148,7 +156,9 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.birthDate}}
+            <div *ngIf="!isEmpty(resident.birthDate)" class="residentAttribute"> {{resident.birthDate}}
+            </div>
+            <div *ngIf="isEmpty(resident.birthDate)" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">

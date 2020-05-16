@@ -67,8 +67,8 @@ export class HomeComponent implements OnInit {
 
         this.resident.profilePicture = "http://placeimg.com/640/360/any";
         // @ts-ignore
-        this.resident.birthDate = new Date();
-        this.resident.yearJoined = "2001";
+          this.resident.joinDate = new Date();
+        this.resident.livingSince = "2001";
 
       });
 
@@ -111,15 +111,25 @@ export class HomeComponent implements OnInit {
 
   toggle11() {
     this.toggle1 = !this.toggle1;
-
-    console.log("---------------------------------------------------");
-    console.log(this.resident.preferences);
-    console.log(this.resident.address);
-    console.log(this.resident.email);
   }
+
 
   toggle12() {
     this.toggle2 = !this.toggle2;
+  }
+
+  isEmpty(atr): boolean {
+
+    let rta: boolean;
+
+    if (atr == undefined) {
+      rta = true;
+    } else if (atr == null) {
+      rta = true;
+    } else if (atr.toString() == '') {
+      rta = true;
+    }
+    return rta;
   }
 
 

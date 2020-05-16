@@ -60,9 +60,11 @@ export class Resident {
 
   public profilePicture: string;
 
-  public yearJoined: string;
+  public livingSince: string;
 
   public birthDate: string;
+
+  public joinDate: string;
 
 
 }
