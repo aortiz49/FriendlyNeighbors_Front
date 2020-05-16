@@ -4,10 +4,7 @@ import {ResidentService} from "./resident.service";
 import {ResidentDetail} from "./resident-detail";
 import {ToastrService} from "ngx-toastr";
 import {FavorDetail} from "../favor/favorDetail";
-import {PostDetail} from "../post/post-detail";
-import {Resident} from "./resident";
 import {Post} from "../post/post";
-import {PostCommentCreateComponent} from "../post/post-comment-create/post-comment-create.component";
 import {PostListComponent} from "../post/post-list/post-list.component";
 
 @Component({
@@ -57,9 +54,11 @@ export class HomeComponent implements OnInit {
     this.toggle1 = true;
     this.toggle2 = false;
 
+
   }
 
   getResident() {
+
     this.service.getresident(this.neigh_id, this.resident_id)
       .subscribe(residentDetail => {
         this.resident = residentDetail;
@@ -72,6 +71,8 @@ export class HomeComponent implements OnInit {
         this.resident.yearJoined = "2001";
 
       });
+
+
   }
 
 
@@ -110,6 +111,11 @@ export class HomeComponent implements OnInit {
 
   toggle11() {
     this.toggle1 = !this.toggle1;
+
+    console.log("---------------------------------------------------");
+    console.log(this.resident.preferences);
+    console.log(this.resident.address);
+    console.log(this.resident.email);
   }
 
   toggle12() {

@@ -203,6 +203,7 @@
   z-index: 12;
   text-align: center;
   margin-left: -630px;
+    width: 100%;
 }
 
 .wraper2 {
@@ -211,6 +212,7 @@
   z-index: 11;
   text-align: center;
   margin-left: 50%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -317,7 +319,7 @@
   font-variant-east-asian: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
-    font-weight: 200;
+  font-weight: 200;
   color: #dbf1ff;
   border-color: #181818;
   letter-spacing: 0.9px;
@@ -420,6 +422,26 @@
   text-size-adjust: 100%;
   -webkit-box-direction: normal;
 }
+
+.emptyAttribute {
+  color: rgb(122, 122, 121);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+}
+
 
 .attributeLine {
   max-width: 850px;

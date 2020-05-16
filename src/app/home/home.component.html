@@ -5,19 +5,24 @@
 
     <div class="wraper2 row">
       <div class="wraper row">
-        <div class="outer-circle">
-          <img class="inner-circle" src="http://placeimg.com/500/500/people">
-        </div>
-        <div style="align-self: flex-end;">
+
+        <th>
+          <div class="outer-circle">
+            <img class="inner-circle" src="http://placeimg.com/500/500/people">
+          </div>
+        </th>
+
+         <th style="align-self: flex-end">
+
           <tr class="name">{{resident.name}}
           </tr>
           <tr class="year">Living in {{resident.neighborhood.name}} since  {{resident.yearJoined}}
           </tr>
 
-        </div>
+        </th>
 
       </div>
-      </div>
+    </div>
     <div class="transparencyPanel"></div>
 
   </div>
@@ -47,7 +52,9 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.preferences}}
+            <div *ngIf="resident.preferences != null" class="residentAttribute"> {{resident.preferences}}
+            </div>
+            <div *ngIf="resident.preferences == null" class="emptyAttribute"> Nothing to show
             </div>
           </div>
           <div class="col-md-4">
