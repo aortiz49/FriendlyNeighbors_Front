@@ -67,6 +67,10 @@ export class HomeComponent implements OnInit {
         this.resident.album = ["http://placeimg.com/500/500/any", "http://placeimg.com/500/500/arch", "http://placeimg.com/500/500/nature", "http://placeimg.com/500/500/tech", "http://placeimg.com/500/500/tech/sepia", "http://placeimg.com/500/500/animals/sepia", "http://placeimg.com/500/500/animals", "http://placeimg.com/500/500/people", "http://placeimg.com/500/500/people/grayscale", "http://placeimg.com/500/500/people/sepia", "http://placeimg.com/500/500/tech/sepia", "http://placeimg.com/500/500/arch/grayscale"];
 
         this.resident.profilePicture = "http://placeimg.com/640/360/any";
+        // @ts-ignore
+        this.resident.birthDate = new Date();
+        this.resident.yearJoined = "2001";
+
       });
   }
 

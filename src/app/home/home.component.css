@@ -221,7 +221,7 @@
 
 @media only screen and (max-width: 1300px) {
   .wraper2 {
-      margin: 0 auto;
+    margin: 0 auto;
   }
 }
 
@@ -235,7 +235,7 @@
   position: relative;
   height: 100px;
   background-image: linear-gradient(to right, rgba(17, 36, 40, 0), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.0));
-  width: 100%;
+  min-width: 100%;
   align-items: center;
   display: inline-block;
   align-self: flex-end;
@@ -245,6 +245,13 @@
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .transparencyPanel {
+    background-image: linear-gradient(to right, rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.0));
+  }
 }
 
 
@@ -299,6 +306,29 @@
   margin-left: 33px;
 
 }
+
+.year {
+
+  font-family: "Harlow Solid", "Harlow Solid Italic", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 18px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+    font-weight: 200;
+  color: #dbf1ff;
+  border-color: #181818;
+  letter-spacing: 0.9px;
+  outline-color: #0f071e;
+  border-radius: 10px;
+  align-self: flex-end;
+  padding-bottom: 40px;
+  margin-left: 23px;
+
+}
+
 
 .options {
   color: rgb(74, 126, 142);

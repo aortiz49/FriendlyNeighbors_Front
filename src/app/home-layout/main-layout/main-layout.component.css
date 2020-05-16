@@ -4,15 +4,22 @@
 
 .backgroundM {
   background-color: #dadada;
+  padding-left: 30px;
 }
+
+@media only screen and (max-width: 1300px) {
+  .backgroundM {
+    padding: 0;
+  }
+}
+
 
 .backgroundSideBar {
   background-color: #544FA6;
-
   width: 100%;
-  height: 100%;
-}
+    height: 100%;
 
+}
 
 .style4style4 {
 

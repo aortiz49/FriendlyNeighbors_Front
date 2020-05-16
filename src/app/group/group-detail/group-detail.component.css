@@ -2,10 +2,6 @@
 :host {
 }
 
-
-:host {
-}
-
 .test {
 
 
@@ -182,6 +178,16 @@
   text-align: center;
 }
 
+.image {
+
+  background-color: white;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgb(193, 193, 193);
+  max-height: 75%;
+
+
+}
 
 .content {
 
@@ -194,11 +200,30 @@
 .wraper {
   align-self: flex-end;
   position: absolute;
-  z-index: 11;
+  z-index: 12;
   text-align: center;
-  margin-left: 11%;
+  margin-left: -630px;
 }
 
+.wraper2 {
+  align-self: flex-end;
+  position: absolute;
+  z-index: 11;
+  text-align: center;
+  margin-left: 50%;
+}
+
+@media only screen and (max-width: 1300px) {
+  .wraper {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .wraper2 {
+    margin: 0 auto;
+  }
+}
 
 .spacer {
   max-height: 75%;
@@ -209,7 +234,7 @@
 .transparencyPanel {
   position: relative;
   height: 100px;
-  background-image: linear-gradient(to left, rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1));
+  background-image: linear-gradient(to right, rgba(17, 36, 40, 0), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.0));
   width: 100%;
   align-items: center;
   display: inline-block;
@@ -223,10 +248,40 @@
 }
 
 
+.outer-circle {
+  background: rgba(130, 0, 192, 0.4);
+  border-radius: 50%;
+  height: 245px;
+  width: 245px;
+  position: relative;
+  /*
+   Child elements with absolute positioning will be
+   positioned relative to this div
+  */
+}
+
+.inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  height: 230px;
+  width: 230px;
+  /*
+   Put top edge and left edge in the center
+  */
+  top: 50%;
+  left: 50%;
+  margin: -115px 0px 0px -115px;
+  border: 3px solid rgb(109, 22, 247);
+  /*
+   Offset the position correctly with
+   minus half of the width and minus half of the height
+  */
+}
+
 .name {
 
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size: 67px;
+  font-size: 41px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
@@ -240,7 +295,7 @@
   outline-color: #0f071e;
   border-radius: 10px;
   align-self: flex-end;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
   margin-left: 33px;
 
 }
@@ -344,3 +399,30 @@
 
 }
 
+.eventLayout {
+
+  max-width: 80%;
+  margin: 0 0 auto 0;
+
+}
+
+
+@media only screen and (max-width: 700px) {
+  .eventLayout {
+    margin: 0 auto;
+  }
+}
+
+
+.favorLayout {
+
+  max-width: 70%;
+  margin: 0 0 0 auto;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .favorLayout {
+    margin: 0 auto;
+  }
+}

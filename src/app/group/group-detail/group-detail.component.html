@@ -1,14 +1,18 @@
 `
-<div style="min-height: 100%; max-width: 1700px; margin: 0 auto">
-    <div class=" banner" style="background-image: url('https://wallpaperaccess.com/full/1760835.jpg');">
-
-       <div class="wraper row">
+<div style="min-height: 100%;">
 
 
-      <div class="name"> {{group.name}}
+  <div class=" banner" style="background-image: url('http://placeimg.com/1500/500/any%7D'); background-repeat: no-repeat;  background-position: center;">
+    <div class="wraper2 row">
+      <div class="wraper row">
+        <div class="outer-circle">
+          <img class="inner-circle" src="http://placeimg.com/500/500/people">
+        </div>
+        <div class="name"> {{group.name}}
+        </div>
+
+
       </div>
-
-
     </div>
 
 
@@ -23,8 +27,8 @@
     </div>
 
     <div class="options">
-      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseG_{{group.id }}" data-toggle="collapse" class="options" *ngIf="toggle1" class="fa fa-caret-down fa-2x"></i>
-      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseG_{{group.id}}" data-toggle="collapse" class="options" *ngIf="toggle2" class=" fa fa-caret-up fa-2x"></i>
+      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseG_{{group.id }}" data-toggle="collapse" *ngIf="toggle1" class=" options fa fa-caret-down fa-2x"></i>
+        <i (click)="toggle11(); toggle12() " attr.data-target="#collapseG_{{group.id}}" data-toggle="collapse" *ngIf="toggle2" class=" options fa fa-caret-up fa-2x"></i>
     </div>
 
   </div>
@@ -42,7 +46,7 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.preferences}}
+            <div class="residentAttribute"> {{group.description}}
             </div>
           </div>
           <div class="col-md-4">
@@ -60,7 +64,7 @@
               </div>
             </div>
             <div class="col-md-5">
-              <div class="residentAttribute"> {{resident.nickname}}
+              <div class="residentAttribute"> {{group.dateCreated}}
               </div>
             </div>
             <div class="col-md-4">
@@ -80,7 +84,7 @@
             </div>
           </div>
           <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.email}}
+            <div class="residentAttribute"> {{group.name}}
             </div>
           </div>
           <div class="col-md-4">
@@ -88,65 +92,9 @@
         </div>
       </div>
 
-
-      <div class="attributeLine">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="residentAttributeName">
-              <span> &nbsp;</span>
-              <span class="atributeIcon fas fa-map-marked">
-            </span> &nbsp; Address
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.address}}
-            </div>
-          </div>
-          <div class="col-md-4">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="attributeLine">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="residentAttributeName">
-              <span> &nbsp;</span>
-              <span class="atributeIcon  fas fa-phone-square-alt">
-            </span> &nbsp; Phone
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.phoneNumber}}
-            </div>
-          </div>
-          <div class="col-md-4">
-          </div>
-        </div>
-      </div>
-
-      <div class="attributeLine">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="residentAttributeName">
-              <span> &nbsp;</span>
-              <span class="atributeIcon  fas fa-birthday-cake">
-            </span> &nbsp; Birthday
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="residentAttribute"> {{resident.email}}
-            </div>
-          </div>
-          <div class="col-md-4">
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
-
 
 </div>
 
