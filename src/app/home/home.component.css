@@ -203,7 +203,7 @@
   z-index: 12;
   text-align: center;
   margin-left: -630px;
-    width: 100%;
+  width: 100%;
 }
 
 .wraper2 {
@@ -290,7 +290,7 @@
 .name {
 
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size: 41px;
+  font-size: 37px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
