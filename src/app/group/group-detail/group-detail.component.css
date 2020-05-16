@@ -3,6 +3,9 @@
 }
 
 
+:host {
+}
+
 .test {
 
 
@@ -23,6 +26,12 @@
   align-content: center;
   border-bottom-right-radius: 20%;
   min-height: 60px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 
 }
 
@@ -45,8 +54,13 @@
   line-height: 18px;
   margin: 30px 0px 0px;
   text-size-adjust: 70%;
-
   -webkit-box-direction: normal;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 
 }
 
@@ -54,8 +68,7 @@
 .title3 {
 
 
-  color: #212121;
-  border-color: #181818;
+  color: #112428;
   padding: 10px;
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
   font-size: 16px;
@@ -65,13 +78,19 @@
   font-variant-east-asian: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.2px;
   line-height: 18px;
   -webkit-box-direction: normal;
   outline-color: #0f071e;
   background: #ffffff;
   border-radius: 4px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 
 
 }
@@ -116,10 +135,42 @@
 
 
 .info {
+  height: 47px;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  -moz-border-radius-bottomright: 9px;
+  -moz-border-radius-bottomleft: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  border: 1px solid rgb(193, 193, 193);
+  text-align: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+
+.infoPanel {
+  background-color: white;
+  max-width: 950px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid rgb(193, 193, 193);
+  text-align: left;
+  margin: 0 auto;
+
+  padding: 10px;
+}
+
+
+.completeInfo {
   position: relative;
   background-color: white;
   width: 100%;
-  height: 100%;
   align-items: center;
   display: inline-block;
   align-self: flex-end;
@@ -128,19 +179,9 @@
   border-bottom-right-radius: 9px;
   border-bottom-left-radius: 9px;
   border: 1px solid rgb(193, 193, 193);
+  text-align: center;
 }
 
-
-.image {
-
-  background-color: white;
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid rgb(193, 193, 193);
-  max-height: 75%;
-
-
-}
 
 .content {
 
@@ -155,6 +196,7 @@
   position: absolute;
   z-index: 11;
   text-align: center;
+  margin-left: 11%;
 }
 
 
@@ -167,44 +209,19 @@
 .transparencyPanel {
   position: relative;
   height: 100px;
-  opacity: 0.6;
-  background-color: #4f3ac3;
+  background-image: linear-gradient(to left, rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1));
   width: 100%;
   align-items: center;
   display: inline-block;
   align-self: flex-end;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
-
-.outer-circle {
-  background: rgba(130, 0, 192, 0.4);
-  border-radius: 50%;
-  height: 245px;
-  width: 245px;
-  position: relative;
-  /*
-   Child elements with absolute positioning will be
-   positioned relative to this div
-  */
-}
-
-.inner-circle {
-  position: absolute;
-  border-radius: 50%;
-  height: 230px;
-  width: 230px;
-  /*
-   Put top edge and left edge in the center
-  */
-  top: 50%;
-  left: 50%;
-  margin: -115px 0px 0px -115px;
-  border: 3px solid rgb(109, 22, 247);
-  /*
-   Offset the position correctly with
-   minus half of the width and minus half of the height
-  */
-}
 
 .name {
 
@@ -216,23 +233,24 @@
   font-variant-east-asian: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
-  letter-spacing: 0.2px;
   font-weight: 800;
-  color: #1b1b1b;
+  color: #ffffff;
   border-color: #181818;
+  letter-spacing: 0.2px;
   outline-color: #0f071e;
   border-radius: 10px;
   align-self: flex-end;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
+  margin-left: 33px;
 
 }
 
 .options {
-  color: rgb(31, 50, 62);
+  color: rgb(74, 126, 142);
   cursor: pointer;
   display: inline;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 25px;
+  font-size: 16px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
@@ -245,5 +263,84 @@
   text-size-adjust: 100%;
   -webkit-box-direction: normal;
   padding: 10px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 
 }
+
+.residentAttributeName {
+  color: rgb(17, 36, 40);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+
+.atributeIcon {
+  color: rgb(25, 54, 58);
+  cursor: pointer;
+  display: inline;
+  font-size: 19px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  -webkit-box-direction: normal;
+
+
+}
+
+.residentAttribute {
+  color: rgb(66, 66, 65);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  text-size-adjust: 100%;
+  -webkit-box-direction: normal;
+}
+
+.attributeLine {
+  max-width: 850px;
+  margin: 0 auto;
+  margin-bottom: 7px;
+  margin-top: 7px;
+
+}
+

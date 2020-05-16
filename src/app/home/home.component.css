@@ -202,6 +202,7 @@
   position: absolute;
   z-index: 11;
   text-align: center;
+  margin-left: 11%;
 }
 
 
@@ -214,7 +215,7 @@
 .transparencyPanel {
   position: relative;
   height: 100px;
-  background-image: linear-gradient(to bottom, rgba(17, 36, 40, 0.2), rgba(17, 36, 40, 0.3), rgba(17, 36, 40, 0.4), rgba(17, 36, 40, 0.4));
+  background-image: linear-gradient(to right, rgba(17, 36, 40, 0), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.6), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.5), rgba(17, 36, 40, 0.1), rgba(17, 36, 40, 0.0));
   width: 100%;
   align-items: center;
   display: inline-block;
@@ -261,7 +262,7 @@
 .name {
 
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size: 37px;
+  font-size: 41px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
@@ -276,6 +277,7 @@
   border-radius: 10px;
   align-self: flex-end;
   padding-bottom: 40px;
+  margin-left: 33px;
 
 }
 
