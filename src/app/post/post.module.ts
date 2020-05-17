@@ -15,6 +15,7 @@ import {SpacerComponent} from "./spacer/spacer.component";
 import {VisibleWith} from "../shared/visible-with";
 import {PostListRoutingModule} from "./post-list/post-list-routing.module";
 import { PostCreateComponent } from './post-create/post-create.component';
+import { SimpleResidentListComponent } from './simple-resident-list/simple-resident-list.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,7 @@ import { PostCreateComponent } from './post-create/post-create.component';
         NgbModule,
         PostListRoutingModule
     ],
-  declarations: [VisibleWith, SpacerComponent, PostListComponent, PostDetailComponent, PostCommentComponent, PostCommentCreateComponent, PostCommentEditComponent, PostCommentDeleteComponent, PostDeleteComponent, PostCreateComponent],
-  exports: [PostListComponent, SpacerComponent, VisibleWith, PostCreateComponent]
+  declarations: [VisibleWith, SpacerComponent, PostListComponent, PostDetailComponent, PostCommentComponent, PostCommentCreateComponent, PostCommentEditComponent, PostCommentDeleteComponent, PostDeleteComponent, PostCreateComponent, SimpleResidentListComponent],
+  exports: [PostListComponent, SpacerComponent, VisibleWith, PostCreateComponent, SimpleResidentListComponent]
 })
 export class PostModule { }

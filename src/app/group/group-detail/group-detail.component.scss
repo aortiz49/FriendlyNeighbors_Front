@@ -70,7 +70,7 @@ body {
   &:focus {
     width: 80%;
 
-    .social-links {
+    .links {
       a {
         &:before {
           margin-left: -100px;
@@ -110,7 +110,7 @@ body {
 }
 
 
-.social-links {
+.links {
   display: block;
 
   a {
