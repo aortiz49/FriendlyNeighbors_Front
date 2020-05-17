@@ -10,14 +10,14 @@ export class SimpleResidentListComponent implements OnInit {
   constructor() {
   }
 
-    ngOnInit() {
+  ngOnInit() {
   }
 
 }
 
 declare var $: any;
 
-// // Material Select Initialization
-// $(document).ready(function () {
-//     $('.mdb-select').materialSelect();
-// });
+// Material Select Initialization
+$(document).ready(function () {
+    $('.mdb-select').materialSelect();
+});
