@@ -8,7 +8,7 @@
 
         <div>
           <div class="outer-circle">
-            <img class="inner-circle" src="http://placeimg.com/500/500/people">
+            <img class="inner-circle" src='{{resident.profilePicture}}'>
           </div>
         </div>
 
@@ -233,7 +233,7 @@
 
       <div class="title3" style="max-width: 100%;">What are you thinking about?
       </div>
-      <app-post-create [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
+      <app-post-create [residents]="residents" [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
       </app-post-create>
 
       <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">

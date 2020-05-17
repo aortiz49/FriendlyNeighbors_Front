@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PostListComponent} from './post-list/post-list.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import {RouterModule} from "@angular/router";
 import {PostDetailComponent} from './post-detail/post-detail.component';
@@ -15,6 +15,8 @@ import {SpacerComponent} from "./spacer/spacer.component";
 import {VisibleWith} from "../shared/visible-with";
 import {PostListRoutingModule} from "./post-list/post-list-routing.module";
 import {PostCreateComponent} from './post-create/post-create.component';
+import {NgSelectModule} from "@ng-select/ng-select";
+
 
 @NgModule({
   imports: [
@@ -22,8 +24,9 @@ import {PostCreateComponent} from './post-create/post-create.component';
     FormsModule,
     SharedModule,
     RouterModule,
-     NgbModule,
-    PostListRoutingModule
+    NgbModule,
+    PostListRoutingModule,
+    NgSelectModule,
   ],
   declarations: [VisibleWith, SpacerComponent, PostListComponent, PostDetailComponent, PostCommentComponent, PostCommentCreateComponent, PostCommentEditComponent, PostCommentDeleteComponent, PostDeleteComponent, PostCreateComponent],
   exports: [PostListComponent, SpacerComponent, VisibleWith, PostCreateComponent]

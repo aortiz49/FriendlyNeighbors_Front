@@ -36,5 +36,23 @@
       </div>
     </div>
   </form>
-</div>
 
+
+</div>
+<!--[searchFn]="searchByName" clearAllText="Clear"-->
+
+<!--<ng-select [multiple]="true" [(ngModel)]="residents" >-->
+
+<!--  <ng-option *ngFor="let r of residents" [value]="r.id"> {{r.name}} ({{r.nickname}})-->
+<!--          <img height="15" width="15" [src]="r.profilePicture"/>-->
+<!--    </ng-option>-->
+<!--</ng-select>-->
+
+
+<ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Who can see your post? Type or select">
+  <ng-option *ngFor="let r of residents" [value]="r.id">
+    <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
+    <span class="name"> {{r.name}} </span><span class="nickName"> ({{r.nickname}})</span>
+    <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
+  </ng-option>
+</ng-select>

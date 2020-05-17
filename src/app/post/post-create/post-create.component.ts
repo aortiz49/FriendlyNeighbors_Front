@@ -5,6 +5,7 @@ import {Post} from "../post";
 import {CommentP} from "../commentP";
 import {NgForm} from "@angular/forms";
 import {PostDetail} from "../post-detail";
+import {Resident} from "../../home/resident";
 
 @Component({
   selector: 'app-post-create',
@@ -19,12 +20,13 @@ export class PostCreateComponent implements OnInit {
   @Input() post: PostDetail;
   @Input() residen_id: number;
   @Input() neigh_id: number;
+  @Input() residents: Resident[];
+  @Input() selected: Resident[];
 
   @Output() updatePost = new EventEmitter();
 
 
   postComment(reviewForm: NgForm): PostDetail {
-
 
 
     this.postService.createpost(this.neigh_id, this.post, this.residen_id)
@@ -39,13 +41,9 @@ export class PostCreateComponent implements OnInit {
   }
 
 
-
   ngOnInit() {
-        this.post = new PostDetail();
-
+    this.post = new PostDetail();
   }
 
-  ngOnChanges(): void {
 
-  }
 }
