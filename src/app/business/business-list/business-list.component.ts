@@ -35,6 +35,11 @@ export class BusinessListComponent implements OnInit {
     this.selectedBusiness = c;
   }
 
+  nothingSelected():void{
+    this.selected = false;
+
+  }
+
   ngOnInit() {
       this.neighId = +this.route.snapshot.paramMap.get('id');
 
