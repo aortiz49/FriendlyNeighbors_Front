@@ -125,8 +125,29 @@
 
 
     <td class="viewersFrame collapse width" id="viewers">
+
+      <div class="row">
+        <div class="options col-8">Add viewers
+        </div>
+        <div class=col-2>
+          <a class=" buttons2 btn btn-light d-flex justify-content-center " (click)="addViewers()"> <i class="fa fa-plus-square"></i></a>
+        </div>
+      </div>
+
+
+      <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
+        <ng-option *ngFor="let r of residents" [value]="r">
+          <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
+          <span class="name2"> {{r.name}} </span>
+          <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
+        </ng-option>
+      </ng-select>
+
+
+      <div class="options">All viewers
+      </div>
       <div class="list-group">
-          <input class="form-control" id="myInput" type="text" placeholder="Search..." [(ngModel)]="searchModel">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..." [(ngModel)]="searchModel">
         <a href="#" class="list-group-item list-group-item-action" style="padding: 1px; min-width: 100%; margin-bottom: 5px" *ngFor="let r of viewers  | residentName:searchModel">
           <span><img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/></span>
           <span class="name2"> {{r.name}}</span>

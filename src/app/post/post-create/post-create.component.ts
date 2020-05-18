@@ -36,7 +36,7 @@ export class PostCreateComponent implements OnInit {
 
         this.postID = post.id;
         console.log(this.postID + "---------------------------------------------")
-          console.log(this.selected + "---------------------------------------------")
+        console.log(this.selected + "---------------------------------------------")
 
         this.postService.addViewers(this.neigh_id, this.postID, this.selected).subscribe(() => {
           this.updatePost.emit();

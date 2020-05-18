@@ -255,6 +255,14 @@ a.buttons {
 
 }
 
+a.buttons2 {
+  color: #ac00ff !important;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
 .checked {
   color: orange;
 }

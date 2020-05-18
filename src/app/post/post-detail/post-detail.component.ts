@@ -9,6 +9,8 @@ import {PostDetail} from "../post-detail";
 import {Observable} from "rxjs";
 import {CommentP} from "../commentP";
 import {Resident} from "../../home/resident";
+import {ResidentService} from "../../home/resident.service";
+import {ResidentDetail} from "../../home/resident-detail";
 
 
 @Component({
@@ -20,6 +22,7 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
 
 
   constructor(private  postService: PostService,
+              private residentService: ResidentService,
               private toastrService: ToastrService,
               private router: Router,
               private route: ActivatedRoute,
@@ -41,9 +44,19 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   @Output() init = new EventEmitter();
   viewers: Resident[];
   searchModel: string;
+  selected: Resident[];
+  residents: ResidentDetail[];
 
   @ViewChild(PostCommentComponent, {static: true}) commentComponent: PostCommentComponent;
   @ViewChild(PostCommentCreateComponent, {static: true}) commentCreateComponent: PostCommentCreateComponent;
+
+  getAllResidents() {
+    this.residentService.getresidents(this.neighborhood_id)
+      .subscribe(residentDetail => {
+        this.residents = residentDetail;
+        console.log(this.residents);
+      });
+  }
 
 
   toggleComments(): void {
@@ -120,6 +133,8 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
     this.updateComments();
     this.toastrService.success('Post initiated: on demand');
     this.getViewers();
+    this.getAllResidents();
+
 
   }
 
@@ -127,6 +142,17 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
     if (this.navigationSubscription) {
       this.navigationSubscription.unsubscribe();
     }
+  }
+
+  addViewers() {
+
+    this.postService.addViewers(this.postDetail.author.neighborhood.id, this.postDetail.id, this.selected).subscribe(() => {
+      this.toastrService.success(this.selected.length + " viewers were successfully added", 'Viewers added');
+      this.getViewers();
+    }, err => {
+      this.toastrService.error(err, 'Error');
+    });
+
   }
 
 
