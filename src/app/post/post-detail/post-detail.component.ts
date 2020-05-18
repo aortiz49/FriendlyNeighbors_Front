@@ -45,16 +45,22 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   viewers: Resident[];
   searchModel: string;
   selected: Resident[];
-  residents: ResidentDetail[];
+  residents: Resident[];
 
   @ViewChild(PostCommentComponent, {static: true}) commentComponent: PostCommentComponent;
   @ViewChild(PostCommentCreateComponent, {static: true}) commentCreateComponent: PostCommentCreateComponent;
 
   getAllResidents() {
+
     this.residentService.getresidents(this.neighborhood_id)
       .subscribe(residentDetail => {
-        this.residents = residentDetail;
+
+        let missing: ResidentDetail[];
+        missing = residentDetail;
+        missing.filter(item => this.viewers.indexOf(item) < 0);
+        this.residents = missing;
         console.log(this.residents);
+
       });
   }
 

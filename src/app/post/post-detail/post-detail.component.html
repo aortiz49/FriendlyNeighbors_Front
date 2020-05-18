@@ -137,9 +137,10 @@
 
       <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
         <ng-option *ngFor="let r of residents" [value]="r">
-          <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
-          <span class="name2"> {{r.name}} </span>
-          <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
+
+            <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
+            <span class="name2"> {{r.name}} </span>
+            <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
         </ng-option>
       </ng-select>
 
