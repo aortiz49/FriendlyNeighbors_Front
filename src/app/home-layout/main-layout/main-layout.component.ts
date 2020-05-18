@@ -15,11 +15,10 @@ export class MainLayoutComponent implements OnInit, OnChanges {
   searchType: string;
 
   update(): void {
-
   }
 
-  constructor( private toastrService: ToastrService,
-               private invocationService: MethodInvocationService) {
+  constructor(private toastrService: ToastrService,
+              private invocationService: MethodInvocationService) {
     console.log('Main layout constructor called');
   }
 
@@ -27,25 +26,21 @@ export class MainLayoutComponent implements OnInit, OnChanges {
     this.searchModel = "";
   }
 
-
-
   ngOnChanges(changes: SimpleChanges): void {
 
   }
 
-  clickMe(){
+  clickMe() {
     this.invocationService.sendClickEvent();
   }
 
 
-  setType(t){
+  setType(t) {
     this.searchType = t;
   }
 
-  test(){
+  test() {
     this.toastrService.success(this.searchModel);
     this.toastrService.success(this.searchType);
-
   }
-
 }

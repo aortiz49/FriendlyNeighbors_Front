@@ -1,4 +1,4 @@
-import {AfterContentChecked, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output, Pipe, ViewChild} from '@angular/core';
 import {PostService} from "../post.service";
 import {ToastrService} from "ngx-toastr";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
@@ -8,6 +8,7 @@ import {PostCommentCreateComponent} from "../post-comment-create/post-comment-cr
 import {PostDetail} from "../post-detail";
 import {Observable} from "rxjs";
 import {CommentP} from "../commentP";
+import {Resident} from "../../home/resident";
 
 
 @Component({
@@ -38,10 +39,12 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   @Input() post_id: number;
   @Input() neighborhood_id: number;
   @Output() init = new EventEmitter();
-
+  viewers: Resident[];
+  searchModel: string;
 
   @ViewChild(PostCommentComponent, {static: true}) commentComponent: PostCommentComponent;
   @ViewChild(PostCommentCreateComponent, {static: true}) commentCreateComponent: PostCommentCreateComponent;
+
 
   toggleComments(): void {
     if (this.commentCreateComponent.isCollapsed == false) {
@@ -99,6 +102,13 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
       });
   }
 
+  getViewers(): void {
+    this.postService.getViewers(this.neighborhood_id, this.post_id)
+      .subscribe(residents => {
+        this.viewers = residents;
+      });
+
+  }
 
   ngOnInit() {
     this.init.emit();
@@ -109,6 +119,7 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
     this.getOtherPosts();
     this.updateComments();
     this.toastrService.success('Post initiated: on demand');
+    this.getViewers();
 
   }
 
@@ -117,6 +128,8 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
       this.navigationSubscription.unsubscribe();
     }
   }
+
+
 
   getDate(date: string): string {
 
@@ -132,7 +145,7 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
       future: [
         {ceiling: 60, text: "in $seconds seconds"},
         {ceiling: 3600, text: "in $minutes minutes"},
-           {ceiling: 86400, text: "in $hours hours"},
+        {ceiling: 86400, text: "in $hours hours"},
         {ceiling: 2629744, text: "in $days days"},
         {ceiling: 31556926, text: "in $months months"},
         {ceiling: null, text: "in $years years"}
@@ -147,6 +160,7 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   ngAfterContentChecked(): void {
     this.cdRef.detectChanges();
   }
+
 
 }
 
@@ -233,5 +247,3 @@ export function humanized_time_span(date, ref_date, date_formats, time_units) {
 
   return render_date(get_format());
 }
-
-

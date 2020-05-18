@@ -233,4 +233,19 @@ export class PostService {
       residents
     );
   }
+
+  getViewers(neighborhood, postId): Observable<Resident[]> {
+    return this.http.get<Resident[]>(
+      API_URL +
+      neighborhoods +
+      "/" +
+      neighborhood +
+      posts +
+      "/" +
+      postId +
+      viewers +
+      "/"
+    );
+  }
+
 }
