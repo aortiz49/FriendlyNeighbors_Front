@@ -1,60 +1,62 @@
 <div class="postFrame">
 
-  <form name="post" (ngSubmit)="reviewForm.form.valid && postComment(reviewForm)" #reviewForm="ngForm" novalidate>
-    <br>
-    <div class="row">
-      <div class="col-md-1 ">
+  <br>
+  <div class="row" style="margin-top: 20px">
+    <div class="col-1 "></div>
 
-      </div>
-      <div class="form-group col-md-8 ">
-        <label for="Text"></label><input type="text" name="Text" class="form-control" placeholder="Add a title" id="Text" [(ngModel)]="post.title"
+    <div class="col-10 placeholder2 container-fluid">
+      <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Who can see your post? Type or select">
+        <ng-option *ngFor="let r of residents" [value]="r">
+          <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
+          <span class="name"> {{r.name}} </span><span class="nickName"> ({{r.nickname}})</span>
+          <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
+        </ng-option>
+      </ng-select>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-1 "></div>
+  </div>
+  <form name="post" (ngSubmit)="reviewForm.form.valid && postComment(reviewForm)" #reviewForm="ngForm" novalidate>
+
+
+    <br>
+
+    <div class="row">
+      <div class="col-1 "></div>
+
+      <div class="form-group col-10 ">
+        <label for="Text"></label><input type="text" name="Text" class="form-control placeholder2" placeholder="Add a title" id="Text" [(ngModel)]="post.title"
                                          #Text="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && Text.invalid }" required>
         <div class="invalid-feedback">
           <div>Title missing</div>
         </div>
       </div>
-
-
+      <div class="col-1 ">
+      </div>
     </div>
+
     <div class="row">
 
-      <div class="col-md-1 ">
-
-      </div>
-      <div class="form-group col-md-8 ">
-        <label for="Text2"></label><input type="text" name="Text2" class="form-control" placeholder="Write what you want" id="Text2" [(ngModel)]="post.description"
+      <div class="col-1 "></div>
+      <div class="form-group col-8 ">
+        <label for="Text2"></label><input type="text" name="Text2" class="form-control placeholder2" placeholder="Write what you want" id="Text2" [(ngModel)]="post.description"
                                           #Text2="ngModel" [ngClass]="{ 'is-invalid': reviewForm.submitted && Text2.invalid }" required>
         <div class="invalid-feedback">
           <div>Body missing</div>
         </div>
       </div>
 
-      <div class="col-md-1 ">
-        <div class="form-group">
-          <button class="buttons btn btn-outline-light" type="submit"><i class="fa fa-paper-plane"></i></button>
-        </div>
+      <div class="col-2 ">
+
+          <button class="buttons btn btn-outline-light" style="font-size: 18px; font-weight: bold" type="submit">Post</button>
+
+        <div class="col-1 "></div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-1 ">
-
-      </div>
-      <div class="col-md-10">
-        <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Who can see your post? Type or select">
-          <ng-option *ngFor="let r of residents" [value]="r.id">
-            <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
-            <span class="name"> {{r.name}} </span><span class="nickName"> ({{r.nickname}})</span>
-            <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
-          </ng-option>
-        </ng-select>
-      </div>
-    </div>
 
   </form>
 
-  <br>
-  <br>
 
 </div>
 

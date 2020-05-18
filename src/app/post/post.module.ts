@@ -16,6 +16,7 @@ import {VisibleWith} from "../shared/visible-with";
 import {PostListRoutingModule} from "./post-list/post-list-routing.module";
 import {PostCreateComponent} from './post-create/post-create.component';
 import {NgSelectModule} from "@ng-select/ng-select";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -27,6 +28,9 @@ import {NgSelectModule} from "@ng-select/ng-select";
     NgbModule,
     PostListRoutingModule,
     NgSelectModule,
+    BrowserModule,
+    ReactiveFormsModule,
+
   ],
   declarations: [VisibleWith, SpacerComponent, PostListComponent, PostDetailComponent, PostCommentComponent, PostCommentCreateComponent, PostCommentEditComponent, PostCommentDeleteComponent, PostDeleteComponent, PostCreateComponent],
   exports: [PostListComponent, SpacerComponent, VisibleWith, PostCreateComponent]

@@ -21,22 +21,37 @@ export class PostCreateComponent implements OnInit {
   @Input() residen_id: number;
   @Input() neigh_id: number;
   @Input() residents: Resident[];
-  @Input() selected: Resident[];
+  selected: Resident[];
+  postID: number;
 
   @Output() updatePost = new EventEmitter();
 
 
   postComment(reviewForm: NgForm): PostDetail {
 
-
     this.postService.createpost(this.neigh_id, this.post, this.residen_id)
-      .subscribe(() => {
+      .subscribe(post => {
         reviewForm.resetForm();
-        this.updatePost.emit();
         this.toastrService.success("Post was successfully created", 'Post added');
+
+        this.postID = post.id;
+        console.log(this.postID + "---------------------------------------------")
+          console.log(this.selected + "---------------------------------------------")
+
+        this.postService.addViewers(this.neigh_id, this.postID, this.selected).subscribe(() => {
+          this.updatePost.emit();
+          this.toastrService.success(this.selected.length + " viewers were successfully added", 'Viewers added');
+
+        }, err => {
+          this.toastrService.error(err, 'Error');
+        });
+
+
       }, err => {
         this.toastrService.error(err, 'Error');
       });
+
+
     return this.post;
   }
 
