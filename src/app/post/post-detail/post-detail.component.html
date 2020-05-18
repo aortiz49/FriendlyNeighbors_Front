@@ -1,17 +1,16 @@
-<div class="backgroundD">
-  <td>
-    <div class="postFrame container-fluid">
+<table>
+  <tr class="backgroundD">
+
+    <td class="postFrame container-fluid">
 
       <div class="row header">
-        <div class="col-md-2 ">
+        <div class="col-md-auto ">
 
           <img class="profilePicture" src="{{postDetail.author.profilePicture}}}">
 
 
         </div>
-        <div class="col-md-1 ">
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-auto">
           <div class="row name">{{postDetail.author.name}}
           </div>
           <div class="row spacer">
@@ -92,13 +91,14 @@
 
         <div class="row">
           <div class="col-md-4">
-            <a class="options d-flex justify-content-center">Likes {{postDetail.numberOfLikes}}</a>
+            <a class="options d-flex justify-content-center">Likes ({{postDetail.numberOfLikes}})</a>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-4">
+            <a data-toggle="collapse" data-target="#viewers" class="options d-flex justify-content-center"> Viewers ({{postDetail.viewers.length}}) </a>
           </div>
-          <div class="col-md-5">
-            <a class="options d-flex justify-content-center" (click)=" toggleComments()"> View comments ({{postDetail.comments.length}}) </a>
+          <div class="col-md-4">
+            <a class="options d-flex justify-content-center" (click)=" toggleComments()"> Comments ({{postDetail.comments.length}}) </a>
           </div>
 
 
@@ -121,29 +121,23 @@
         <a *ngIf="commentComponent.isCollapsed == false" class="options d-flex justify-content-center" (click)=" toggleComments()"> Hide comments ({{postDetail.comments.length}}) </a>
       </div>
 
-    </div>
-  </td>
+    </td>
 
-  <td>
-    <div class="row header postFrame">
 
-      <div class="container">
-
-        <div class="list-group">
+    <td class="viewersFrame collapse width" id="viewers">
+      <div class="list-group">
           <input class="form-control" id="myInput" type="text" placeholder="Search..." [(ngModel)]="searchModel">
-          <a href="#" class="list-group-item list-group-item-action" *ngFor="let r of viewers  | residentName:searchModel">
-            <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
-            <span class="name"> {{r.name}}</span>
-            <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
-          </a>
+        <a href="#" class="list-group-item list-group-item-action" style="padding: 1px; min-width: 100%; margin-bottom: 5px" *ngFor="let r of viewers  | residentName:searchModel">
+          <span><img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/></span>
+          <span class="name2"> {{r.name}}</span>
+          <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
+        </a>
 
-        </div>
       </div>
-    </div>
-
-  </td>
-
-</div>
+    </td>
 
 
+  </tr>
+
+</table>
 

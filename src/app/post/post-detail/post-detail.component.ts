@@ -130,7 +130,6 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   }
 
 
-
   getDate(date: string): string {
 
     var custom_date_formats = {
