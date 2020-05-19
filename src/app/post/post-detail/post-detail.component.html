@@ -96,7 +96,7 @@
 
 
           <div class="col-md-4">
-            <a data-toggle="collapse" attr.data-target="#viewers{{post_id}}" class="options d-flex justify-content-center" (click)="getDifference()"> Viewers ({{numViewers}}) </a>
+            <a data-toggle="collapse" attr.data-target="#viewers{{post_id}}" class="options d-flex justify-content-center"> Viewers ({{numViewers}}) </a>
           </div>
           <div class="col-md-4">
             <a class="options d-flex justify-content-center" (click)=" toggleComments()"> Comments ({{postDetail.comments.length}}) </a>
@@ -135,8 +135,8 @@
       </div>
 
 
-      <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
-           <ng-option *ngFor="let r of difference" [value]="r">
+        <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
+        <ng-option *ngFor="let r of residents" [value]="r">
 
           <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
           <span class="name2"> {{r.name}} </span>

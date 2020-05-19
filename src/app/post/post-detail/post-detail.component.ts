@@ -47,16 +47,9 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   searchModel: string;
   selected: Resident[];
   residents: Resident[];
-  difference: Resident[];
 
   @ViewChild(PostCommentComponent, {static: true}) commentComponent: PostCommentComponent;
   @ViewChild(PostCommentCreateComponent, {static: true}) commentCreateComponent: PostCommentCreateComponent;
-
-  getDifference() {
-    this.difference = this.postService.getfreeviewers(this.neighborhood_id, this.post_id);
-
-    console.log(this.difference.length);
-  }
 
 
   toggleComments(): void {
@@ -121,7 +114,7 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
         this.viewers = viewers;
         this.numViewers = this.viewers.length;
 
-        this.residentService.getresidents(this.neighborhood_id)
+        this.postService.getPotentialViewers(this.neighborhood_id, this.post_id)
           .subscribe(residents => {
             this.residents = residents;
             this.toastrService.error(this.residents.length + "");
@@ -157,13 +150,13 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
 
     this.postService.addViewers(this.postDetail.author.neighborhood.id, this.postDetail.id, this.viewers.concat(this.selected)).subscribe(() => {
       this.toastrService.success(this.selected.length + " viewers were successfully added", 'Viewers added');
+      this.getViewers();
+      this.numViewers = this.viewers.length;
 
     }, err => {
       this.toastrService.error(err, 'Error');
     });
-    this.getViewers();
-    this.getDifference();
-    this.numViewers = this.viewers.length;
+
 
   }
 

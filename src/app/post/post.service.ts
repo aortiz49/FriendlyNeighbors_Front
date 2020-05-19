@@ -18,6 +18,7 @@ const comments = "/comments";
 const neighborhoods = "neighborhoods";
 const residents = "/residents";
 const viewers = "/viewers";
+const potential = "/potential";
 
 @Injectable({
   providedIn: 'root'
@@ -250,15 +251,18 @@ export class PostService {
     );
   }
 
-  getresidents(neighborhood): Observable<ResidentDetail[]> {
-    return this.http.get<ResidentDetail[]>(
-      API_URL + neighborhoods + "/" + neighborhood + residents + "/"
+  getPotentialViewers(neighborhood, postId): Observable<Resident[]> {
+    return this.http.get<Resident[]>(
+      API_URL +
+      neighborhoods +
+      "/" +
+      neighborhood +
+      posts +
+      "/" +
+      postId +
+      viewers +
+      potential
     );
   }
-
-  getfreeviewers(neighborhood, postId): Resident[] {
-    
-  }
-
 }
 
