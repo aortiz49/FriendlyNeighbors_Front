@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-group-detail',
   templateUrl: './group-detail.component.html',
-  styleUrls: ['./group-detail.component.css']
+  styleUrls: ['./group-detail.component.css', './group-detail.component.scss']
 })
 export class GroupDetailComponent implements OnInit {
 
@@ -18,6 +18,8 @@ export class GroupDetailComponent implements OnInit {
   @Input() group: Group;
   @Input() group_id: number;
   @Input() neigh_id: number;
+  toggle1: boolean;
+  toggle2: boolean;
 
   ngOnInit() {
     this.group = new Group();
@@ -25,6 +27,8 @@ export class GroupDetailComponent implements OnInit {
     this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
     this.group_id = +this.route.root.firstChild.firstChild.firstChild.firstChild.snapshot.paramMap.get("id");
     this.getDetail();
+    this.toggle1 = true;
+    this.toggle2 = false;
 
   }
 
@@ -37,5 +41,13 @@ export class GroupDetailComponent implements OnInit {
       });
   }
 
+  toggle11() {
+    this.toggle1 = !this.toggle1;
+  }
+
+  toggle12() {
+    this.toggle2 = !this.toggle2;
+  }
 
 }
+

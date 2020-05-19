@@ -1,0 +1,351 @@
+@import "~compass-sass-mixins/lib/compass/css3";
+@import "~compass-sass-mixins/lib/compass/reset";
+@import "~font-awesome/css/font-awesome.min.css";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+/* Variables */
+
+$backgroundColor: #473c98;
+$list: #544fa6;
+$border: #4b3d9f;
+$geneicons: #fff;
+
+body {
+  background: $backgroundColor;
+  font-family: Lato, sans-serif;
+}
+
+@font-face {
+}
+
+[class*="genericon"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1;
+  font-family: 'Genericons';
+  text-decoration: inherit;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: top;
+}
+
+[class*="genericon"] {
+  *overflow: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+.container {
+  margin: 100px auto;
+}
+
+.accordion {
+  background: $border;
+  height: 670px;
+  font-size: 0;
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: inline-block;
+  background-color: $list;
+  border-right: $border 1px solid;
+  width: 80px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  @include transition(all 0.4s 0.1s ease-in-out);
+
+
+  &:focus {
+    width: 80%;
+
+    .links {
+      a {
+        &:before {
+          margin-left: -100px;
+        }
+
+        &:after {
+          margin-left: 0px;
+        }
+      }
+
+    }
+  }
+
+  &:hover {
+    background-color: #6f5cce;
+  }
+
+  .paragraph {
+    position: relative;
+    width: 360px;
+    margin-left: 80px;
+    padding: 50px 0 0 10px;
+    height: 200px;
+    background: #fff;
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.88em;
+      line-height: 1.5em;
+      padding-right: 30px;
+    }
+  }
+}
+
+
+.links {
+  display: block;
+
+  a {
+    display: block;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+
+    &:before, &:after {
+      @include transition(all 0.4s 0.1s ease-in-out);
+      width: 80px;
+      height: 100%;
+      position: absolute;
+      text-indent: 0;
+      padding-top: 90px;
+      padding-left: 25px;
+      display: block;
+      font: normal 30px Genericons;
+      color: $geneicons;
+    }
+
+    &:after {
+      font-size: 48px;
+      padding-left: 20px;
+      padding-top: 80px;
+      margin-left: 85px;
+    }
+  }
+
+  i {
+    display: block;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+
+    &:before, &:after {
+      @include transition(all 0.4s 0.1s ease-in-out);
+      width: 80px;
+      height: 100%;
+      position: absolute;
+      text-indent: 0;
+      padding-top: 90px;
+      padding-left: 25px;
+      display: block;
+      font: normal 30px Genericons;
+      color: $geneicons;
+    }
+
+    &:after {
+      font-size: 48px;
+      padding-left: 20px;
+      padding-top: 80px;
+      margin-left: 85px;
+    }
+
+
+  }
+}
+
+
+.post-icon {
+  a {
+
+    &:before, &:after {
+      content: "Posts";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#3767f9, #4bc9f5));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-file-alt;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#3767f9, #4bc9f5));
+
+    }
+  }
+}
+
+
+.members-icon {
+  a {
+
+    &:before, &:after {
+      content: "Members";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#e03a70, #f189b8));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-users;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#e03a70, #f189b8));
+
+    }
+  }
+}
+
+
+.events-icon {
+  a {
+
+    &:before, &:after {
+      content: "Events";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#298733, #7fc121));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-calendar-alt;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#298733, #7fc121));
+
+    }
+  }
+}
+
+
+.pictures-icon {
+  a {
+
+    &:before, &:after {
+      content: "Pictures";
+      cursor: pointer;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+      text-transform: capitalize;
+      font-family: "Roboto", "Droid Sans", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+      font-size: 43px;
+      font-stretch: 100%;
+      font-style: normal;
+      font-variant-caps: normal;
+      font-variant-east-asian: normal;
+      font-variant-ligatures: normal;
+      font-variant-numeric: normal;
+      letter-spacing: 5px;
+      font-weight: 100;
+      padding: 100px 10px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#ff771f, #ffbc35));
+    }
+  }
+
+  i {
+    @extend .fas;
+    @extend .fa-camera-retro;
+
+    &:before, &:after {
+      font-family: "FontAwesome", serif;
+      z-index: 20;
+      font-size: 40px;
+    }
+
+    &:after {
+      @include background-image(linear-gradient(#ff771f, #ffbc35));
+
+    }
+  }
+}

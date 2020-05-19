@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 
 body {
 
@@ -27,6 +29,7 @@ h2 {
   font-variant: normal;
   font-weight: 500;
 }
+
 h3 {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   font-size: 1em;
@@ -35,6 +38,7 @@ h3 {
   font-weight: 500;
   line-height: 23px;
 }
+
 p {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   font-size: 14px;
@@ -43,6 +47,7 @@ p {
   font-weight: 400;
   line-height: 23px;
 }
+
 blockquote {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   font-size: 17px;
@@ -51,6 +56,7 @@ blockquote {
   font-weight: 400;
   line-height: 23px;
 }
+
 pre {
   font-family: Futura, Trebuchet MS, Arial, sans-serif;
   font-size: 11px;

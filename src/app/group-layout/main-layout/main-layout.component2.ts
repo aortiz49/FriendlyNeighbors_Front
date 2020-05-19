@@ -5,11 +5,11 @@ import {MethodInvocationService} from "../../shared/method-invocation.service";
 
 
 @Component({
-  selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.css']
+  selector: 'app-main-layout2',
+  templateUrl: './main-layout.component2.html',
+  styleUrls: ['./main-layout.component2.css']
 })
-export class MainLayoutComponent implements OnInit, OnChanges {
+export class MainLayoutComponent2 implements OnInit, OnChanges {
 
   searchModel: string;
   searchType: string;

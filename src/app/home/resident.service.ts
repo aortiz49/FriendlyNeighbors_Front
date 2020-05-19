@@ -4,7 +4,6 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
 import {ResidentDetail} from "./resident-detail";
-import {PostDetail} from "../post/post-detail";
 import {FavorDetail} from "../favor/favorDetail";
 import {Post} from "../post/post";
 

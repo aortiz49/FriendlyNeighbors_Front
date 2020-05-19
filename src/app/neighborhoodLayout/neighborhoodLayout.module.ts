@@ -14,7 +14,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
   ],
   exports: [
     MainLayoutComponent,
-    FooterOnlyLayoutComponent
+    FooterOnlyLayoutComponent,
+    FooterComponent
   ],
   declarations: [
     MainLayoutComponent,
