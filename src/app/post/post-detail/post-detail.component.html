@@ -135,7 +135,7 @@
       </div>
 
 
-        <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
+      <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
         <ng-option *ngFor="let r of residents" [value]="r">
 
           <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
@@ -149,7 +149,7 @@
       </div>
       <div class="list-group">
         <input class="form-control" id="myInput" type="text" placeholder="Search..." [(ngModel)]="searchModel">
-        <a href="#" class="list-group-item list-group-item-action" style="padding: 1px; min-width: 100%; margin-bottom: 5px" *ngFor="let r of viewers  | residentName:searchModel">
+        <a href="neighborhoods/{{this.neighborhood_id}}/residents/{{r.id}}" class="list-group-item list-group-item-action" style="padding: 1px; min-width: 100%; margin-bottom: 5px" *ngFor="let r of viewers  | residentName:searchModel">
           <span><img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/></span>
           <span class="name2"> {{r.name}}</span>
           <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
