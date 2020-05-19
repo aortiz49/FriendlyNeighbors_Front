@@ -295,18 +295,19 @@ a.buttons2 {
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
   font-weight: 400;
-  margin-bottom: 60px;
-  margin-top: 0px;
   text-size-adjust: 100%;
   -webkit-box-align: stretch;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
+  margin: 0 auto;
 }
 
 .backgroundD {
 
   width: 100%;
   background-color: #dadada;
+  margin: 0 auto;
+    horiz-align: center;
 
 
 }
@@ -365,7 +366,7 @@ a.buttons2 {
   -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
   -webkit-transition-duration: 0.35s;
-    transition-duration: 0.35s;
+  transition-duration: 0.35s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }

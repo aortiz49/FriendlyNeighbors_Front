@@ -6,6 +6,7 @@ import {CommentP} from "./commentP";
 import {environment} from "../../environments/environment";
 import {PostDetail} from "./post-detail";
 import {Resident} from "../home/resident";
+import {ResidentDetail} from "../home/resident-detail";
 
 const API_URL = environment.apiUrl;
 const posts = "/posts";
@@ -101,6 +102,7 @@ export class PostService {
    * G comment
    * @param neighborhood
    * @param postId
+   * @param author
    * @param comment Comment to be created
    * @returns True if created, false otherwise
    */
@@ -248,4 +250,15 @@ export class PostService {
     );
   }
 
+  getresidents(neighborhood): Observable<ResidentDetail[]> {
+    return this.http.get<ResidentDetail[]>(
+      API_URL + neighborhoods + "/" + neighborhood + residents + "/"
+    );
+  }
+
+  getfreeviewers(neighborhood, postId): Resident[] {
+    
+  }
+
 }
+

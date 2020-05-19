@@ -94,8 +94,9 @@
             <a class="options d-flex justify-content-center">Likes ({{postDetail.numberOfLikes}})</a>
           </div>
 
+
           <div class="col-md-4">
-            <a data-toggle="collapse" data-target="#viewers" class="options d-flex justify-content-center"> Viewers ({{postDetail.viewers.length}}) </a>
+            <a data-toggle="collapse" attr.data-target="#viewers{{post_id}}" class="options d-flex justify-content-center" (click)="getDifference()"> Viewers ({{numViewers}}) </a>
           </div>
           <div class="col-md-4">
             <a class="options d-flex justify-content-center" (click)=" toggleComments()"> Comments ({{postDetail.comments.length}}) </a>
@@ -124,8 +125,7 @@
     </td>
 
 
-    <td class="viewersFrame collapse width" id="viewers">
-
+    <td class="viewersFrame collapse width" id="viewers{{post_id}}">
       <div class="row">
         <div class="options col-8">Add viewers
         </div>
@@ -136,11 +136,11 @@
 
 
       <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
-        <ng-option *ngFor="let r of residents" [value]="r">
+           <ng-option *ngFor="let r of difference" [value]="r">
 
-            <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
-            <span class="name2"> {{r.name}} </span>
-            <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
+          <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>
+          <span class="name2"> {{r.name}} </span>
+          <!--    <img height="15" width="15" [src]="r.profilePicture"/>-->
         </ng-option>
       </ng-select>
 

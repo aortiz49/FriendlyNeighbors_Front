@@ -43,25 +43,19 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
   @Input() neighborhood_id: number;
   @Output() init = new EventEmitter();
   viewers: Resident[];
+  numViewers: number
   searchModel: string;
   selected: Resident[];
   residents: Resident[];
+  difference: Resident[];
 
   @ViewChild(PostCommentComponent, {static: true}) commentComponent: PostCommentComponent;
   @ViewChild(PostCommentCreateComponent, {static: true}) commentCreateComponent: PostCommentCreateComponent;
 
-  getAllResidents() {
+  getDifference() {
+    this.difference = this.postService.getfreeviewers(this.neighborhood_id, this.post_id);
 
-    this.residentService.getresidents(this.neighborhood_id)
-      .subscribe(residentDetail => {
-
-        let missing: ResidentDetail[];
-        missing = residentDetail;
-        missing.filter(item => this.viewers.indexOf(item) < 0);
-        this.residents = missing;
-        console.log(this.residents);
-
-      });
+    console.log(this.difference.length);
   }
 
 
@@ -123,9 +117,18 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
 
   getViewers(): void {
     this.postService.getViewers(this.neighborhood_id, this.post_id)
-      .subscribe(residents => {
-        this.viewers = residents;
+      .subscribe(viewers => {
+        this.viewers = viewers;
+        this.numViewers = this.viewers.length;
+
+        this.residentService.getresidents(this.neighborhood_id)
+          .subscribe(residents => {
+            this.residents = residents;
+            this.toastrService.error(this.residents.length + "");
+          });
+
       });
+
 
   }
 
@@ -137,9 +140,8 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
     this.getPostDetail();
     this.getOtherPosts();
     this.updateComments();
-    this.toastrService.success('Post initiated: on demand');
     this.getViewers();
-    this.getAllResidents();
+    this.toastrService.success('Post initiated: on demand');
 
 
   }
@@ -152,12 +154,16 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
 
   addViewers() {
 
-    this.postService.addViewers(this.postDetail.author.neighborhood.id, this.postDetail.id, this.selected).subscribe(() => {
+
+    this.postService.addViewers(this.postDetail.author.neighborhood.id, this.postDetail.id, this.viewers.concat(this.selected)).subscribe(() => {
       this.toastrService.success(this.selected.length + " viewers were successfully added", 'Viewers added');
-      this.getViewers();
+
     }, err => {
       this.toastrService.error(err, 'Error');
     });
+    this.getViewers();
+    this.getDifference();
+    this.numViewers = this.viewers.length;
 
   }
 
