@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   toggle2: boolean;
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
+               private route: ActivatedRoute,
               private service: ResidentService,
               private toastService: ToastrService,
   ) {
