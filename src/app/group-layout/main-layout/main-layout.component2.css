@@ -119,7 +119,7 @@ td {
 }
 
 
-.btn-outline-purple {
+.btn-outline-purple2 {
   color: #f8f9ff;
   border-color: #181818;
   letter-spacing: 0.2px;
@@ -163,30 +163,30 @@ td {
 }
 
 
-.btn-outline-purple:hover {
+.btn-outline-purple2:hover {
   background-color: #5f55cb;
   color: white;
   border-color: #544fa6;
 }
 
-.btn-outline-purple.focus, .btn-outline-purple:focus {
+.btn-outline-purple2.focus, .btn-outline-purple2:focus {
   color: #f8f9ff;
   box-shadow: 0 0 0 .1rem rgba(18, 42, 99, 0.5)
 }
 
-.btn-outline-purple.disabled, .btn-outline-purple:disabled {
+.btn-outline-purple2.disabled, .btn-outline-purple2:disabled {
   color: #473C98;
   background-color: transparent
 }
 
 
-.btn-outline-purple:not(:disabled):not(.disabled).active, .btn-outline-purple:not(:disabled):not(.disabled):active, .show > .btn-outline-purple.dropdown-toggle {
+.btn-outline-purple2:not(:disabled):not(.disabled).active, .btn-outline-purple2:not(:disabled):not(.disabled):active, .show > .btn-outline-purple2.dropdown-toggle {
   color: white;
   background-color: #301d6c !important;
   border-color: #0f071e
 }
 
-.btn-outline-purple:not(:disabled):not(.disabled).active:focus, .btn-outline-purple:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-purple.dropdown-toggle:focus {
+.btn-outline-purple2:not(:disabled):not(.disabled).active:focus, .btn-outline-purple2:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-purple2.dropdown-toggle:focus {
   box-shadow: 0 0 0 .1rem rgba(32, 18, 71, 0.5);
   background-color: #39268d !important;
 }

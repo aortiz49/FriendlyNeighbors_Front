@@ -12,11 +12,9 @@ export class SidebarComponent implements OnInit {
     console.log('Sidebar constructor called');
   }
 
-  @Input() posts: string;
-  @Input() favors: string;
-  @Input() events: string;
-  @Input() neigh: string;
-  @Input() services: string;
+  @Input() neigh: number;
+  @Input() resident: number;
+
 
   ngOnInit() {
   }

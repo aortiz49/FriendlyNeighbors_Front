@@ -21,9 +21,8 @@ export class MainLayoutComponent implements OnInit, OnChanges {
   neigh_id: number;
   resident_id: number;
 
-  @ViewChild(PostListComponent, {static: true}) home: PostListComponent;
-  @ViewChild(HomeComponent, {static: true}) posts: HomeComponent;
-  @ViewChild(Sidebar, {static: true}) bar: Sidebar;
+  @ViewChild(PostListComponent, {static: true}) posts: PostListComponent;
+  @ViewChild(HomeComponent, {static: true}) home: HomeComponent;
   private tree: UrlTree;
 
   update(): void {

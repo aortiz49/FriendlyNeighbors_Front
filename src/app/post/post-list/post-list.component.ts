@@ -76,6 +76,8 @@ export class PostListComponent implements OnInit, OnChanges {
         this.getPosts();
         this.getCopyOfPosts();
       }
+    } else {
+       this.sortDescDate();
     }
 
     this.toastrService.success('Post list component initiated');
@@ -83,6 +85,7 @@ export class PostListComponent implements OnInit, OnChanges {
 
   updatePosts(posts) {
     this.posts = posts;
+    this.sortDescDate();
   }
 
   ngOnChanges() {
@@ -94,19 +97,26 @@ export class PostListComponent implements OnInit, OnChanges {
   getGenericPostsByURL() {
     this.postService.getPostsGeneric(this.url).subscribe(cs => {
       this.posts = cs;
+      this.sortDescDate();
     }, err => {
 
       this.toastrService.error(JSON.stringify(err), 'Error');
     });
+
+
   }
+
 
   getPosts() {
     this.postService.getposts(this.neigh_id).subscribe(cs => {
       this.posts = cs;
+      this.sortDescDate();
     }, err => {
 
       this.toastrService.error(JSON.stringify(err), 'Error');
     });
+
+
   }
 
   getCopyOfPosts() {
@@ -116,6 +126,52 @@ export class PostListComponent implements OnInit, OnChanges {
 
       this.toastrService.error(JSON.stringify(err), 'Error');
     });
+  }
+
+  sortAsc() {
+    this.posts.sort((t1, t2) => {
+      const name1 = t1.title;
+      const name2 = t2.title;
+      if (name1 > name2) {
+        return 1;
+      }
+      if (name1 < name2) {
+        return -1;
+      }
+      return 0;
+    });
+
+  }
+
+  sortDesc() {
+    this.posts.sort((t1, t2) => {
+      const name1 = t1.title;
+      const name2 = t2.title;
+      if (name1 > name2) {
+        return -1;
+      }
+      if (name1 < name2) {
+        return 1;
+      }
+      return 0;
+    });
+
+  }
+
+  sortDescDate() {
+    this.posts.sort((t1, t2) => {
+      const name1 = t1.publishDate;
+      const name2 = t2.publishDate;
+
+      if (name1 < name2) {
+        return 1;
+      }
+      if (name1 > name2) {
+        return -1;
+      }
+      return 0;
+    });
+
   }
 
 
@@ -135,19 +191,6 @@ export class PostListComponent implements OnInit, OnChanges {
     this.posts = this.filterPipe.transform(this.originals, value);
   }
 
-  sortAlphDesc() {
-    this.posts.sort((t1, t2) => {
-      const name1 = t1.title.toLowerCase();
-      const name2 = t2.title.toLowerCase();
-      if (name1 > name2) {
-        return -1;
-      }
-      if (name1 < name2) {
-        return 1;
-      }
-      return 0;
-    });
-  }
 
   updateSpacers(id) {
     delay(100);
