@@ -21,6 +21,7 @@ export class GroupDetailComponent implements OnInit {
   @Input() neigh_id: number;
   toggle1: boolean;
   toggle2: boolean;
+  searchModel: string;
 
   ngOnInit() {
     this.group = new GroupDetail();

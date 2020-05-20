@@ -7,6 +7,9 @@ import { SimpleResidentComponent } from './simple-resident/simple-resident.compo
 import { GroupListComponent } from './group-list/group-list.component';
 import {GroupDetailRoutingModule} from "./group-detail/group-detail-routing.module";
 import {PostModule} from "../post/post.module";
+import {FormsModule} from "@angular/forms";
+import {SharedModule} from "../shared/shared.module";
+import {HomeModule} from "../home/home.module";
 
 
 
@@ -17,6 +20,9 @@ import {PostModule} from "../post/post.module";
     GroupRoutingModule,
     GroupDetailRoutingModule,
     PostModule,
+    FormsModule,
+    SharedModule,
+    HomeModule,
 
   ]
 })
