@@ -3,6 +3,7 @@ import {Group} from "../group";
 import {GroupService} from "../group.service";
 import {ResidentDetail} from "../../home/resident-detail";
 import {ActivatedRoute} from "@angular/router";
+import {GroupDetail} from "../group-detail";
 
 @Component({
   selector: 'app-group-detail',
@@ -15,14 +16,14 @@ export class GroupDetailComponent implements OnInit {
               private route: ActivatedRoute) {
   }
 
-  @Input() group: Group;
+  @Input() group: GroupDetail;
   @Input() group_id: number;
   @Input() neigh_id: number;
   toggle1: boolean;
   toggle2: boolean;
 
   ngOnInit() {
-    this.group = new Group();
+    this.group = new GroupDetail();
 
     this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
     this.group_id = +this.route.root.firstChild.firstChild.firstChild.firstChild.snapshot.paramMap.get("id");
@@ -47,6 +48,20 @@ export class GroupDetailComponent implements OnInit {
 
   toggle12() {
     this.toggle2 = !this.toggle2;
+  }
+
+  isEmpty(atr): boolean {
+
+    let rta: boolean;
+
+    if (atr == undefined) {
+      rta = true;
+    } else if (atr == null) {
+      rta = true;
+    } else if (atr.toString() == '') {
+      rta = true;
+    }
+    return rta;
   }
 
 }
