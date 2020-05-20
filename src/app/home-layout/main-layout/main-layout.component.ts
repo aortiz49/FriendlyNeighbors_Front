@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, ContentChild, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {ToastrService} from "ngx-toastr";
 import {PostListComponent} from "../../post/post-list/post-list.component";
 import {MethodInvocationService} from "../../shared/method-invocation.service";
@@ -21,7 +21,7 @@ export class MainLayoutComponent implements OnInit, OnChanges {
   neigh_id: number;
   resident_id: number;
 
-  @ViewChild(PostListComponent, {static: true}) posts: PostListComponent;
+  @ContentChild(PostListComponent, {static: true}) posts: PostListComponent;
   @ViewChild(HomeComponent, {static: true}) home: HomeComponent;
   private tree: UrlTree;
 
