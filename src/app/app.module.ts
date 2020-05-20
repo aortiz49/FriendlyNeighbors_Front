@@ -15,22 +15,23 @@ import {NeighborhoodModule} from './neighborhood/neighborhood.module';
 import {LandingModule} from './landing/landing.module';
 import {Routes, RouterModule} from '@angular/router';
 import {LandingComponent} from './landing/landing.component';
-import {LayoutModule} from './layout/layout.module';
+import {LayoutModule} from './home-layout/layout.module';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {RegistrationModule} from './neighborhoodLayout/default/registration.module';
 import {AccountSettingsModule} from './account-settings/account-settings.module';
 import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighborhood-registration.module';
 import {VisibilityService} from "./shared/visibility-service.service";
-import { LoginResgistrationModule } from './login-resgistration/login-resgistration.module';
-import { ProfileRegistrationModule } from './profile-registration/profile-registration.module';
-import { LocationRegistrationModule } from './location-registration/location-registration.module';
+import {LoginResgistrationModule} from './login-resgistration/login-resgistration.module';
+import {ProfileRegistrationModule} from './profile-registration/profile-registration.module';
+import {LocationRegistrationModule} from './location-registration/location-registration.module';
 import {HomeModule} from "./home/home.module";
-import { AgmCoreModule } from '@agm/core';
-import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
+import {AgmCoreModule} from '@agm/core';
+import {NeighborhoodLayoutModule} from './neighborhoodLayout/neighborhoodLayout.module';
 import {GroupModule} from "./group/group.module";
-import { LocationModule } from './location/location.module';
-import { FavorModule } from './favor/favor.module';
+import {LocationModule} from './location/location.module';
+import {FavorModule} from './favor/favor.module';
+import {GroupLayoutModule} from "./group-layout/group-layout.module";
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -58,11 +59,12 @@ const routes: Routes = [
     ProfileRegistrationModule,
     HttpClientModule,
     LayoutModule,
+    GroupLayoutModule,
     LoginModule,
     DashboardModule,
     RegistrationModule,
     NeighborhoodRegistrationModule,
-    NeighborhoodLayoutModule,
+     NeighborhoodLayoutModule,
     AccountSettingsModule,
     LocationRegistrationModule,
     LocationModule,

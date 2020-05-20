@@ -15,6 +15,7 @@ import {PostModule} from "../post/post.module";
   exports: [
     MainLayoutComponent,
     FooterOnlyLayoutComponent,
+    FooterComponent,
   ],
   declarations: [
     MainLayoutComponent,

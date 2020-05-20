@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 
-import { Neighborhood } from '../neighborhood/neighborhood';
-
+import {Neighborhood} from '../neighborhood/neighborhood';
 
 
 /**
@@ -53,13 +52,20 @@ export class Resident {
    * Represents a link to a proof of residence file of this resident
    */
   public proofOfResidence: string;
-
   /**
    * Represents the neighborhood of this resident
    */
   public neighborhood: Neighborhood;
 
   public profilePicture: string;
+
+  public muralPicture: string;
+
+  public livingSince: string;
+
+  public birthDate: string;
+
+  public joinDate: string;
 
 
 }

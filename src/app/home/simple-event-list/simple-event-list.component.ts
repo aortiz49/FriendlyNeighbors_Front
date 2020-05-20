@@ -33,7 +33,7 @@ export class SimpleEventListComponent implements OnInit {
 
   @Input() favors: Array<Favor>;
   @Input() neighborhood_id: number;
-
+  @Input() emptyMessage: string;
   navigationSubscription;
 
 

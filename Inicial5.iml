@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
+  <component name="CompassSettings">
+    <option name="compassConfigPath" value="C:\Users\andre\OneDrive - Universidad de los andes\2020-01\Desarrollo de SW\Ciclo2\Inicial5\node_modules\compass-sass-mixins\lib\_compass.sass" />
+    <option name="compassSupportEnabled" value="true" />
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
@@ -13,5 +17,6 @@
     <orderEntry type="library" name="jquery-3.3.1.slim" level="application" />
     <orderEntry type="library" name="jquery-3.3.1.slim" level="application" />
     <orderEntry type="library" name="popper" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>

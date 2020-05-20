@@ -1,17 +1,28 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
-import {HomeComponent} from "../home/home.component";
 import {GroupListComponent} from "./group-list/group-list.component";
-import { MainLayoutComponent } from '../neighborhoodLayout/main-layout/main-layout.component';
+import {MainLayoutComponent2} from "../group-layout/main-layout/main-layout.component2";
 
 
 const routes: Routes = [
-  {
-    path: 'neighborhoods/:id/groups',
-    component: MainLayoutComponent,
-    children: [{ path: '', component: GroupListComponent }],
-  }
+    {
+        path: 'neighborhoods',
+      component: MainLayoutComponent2,
+      children: [
+        {
+          path: ':id',
+          children: [
+            {
+              path: 'groups',
+              component: GroupListComponent,
+
+
+            }
+
+          ]
+        }
+      ]
+    }
   ]
 ;
 

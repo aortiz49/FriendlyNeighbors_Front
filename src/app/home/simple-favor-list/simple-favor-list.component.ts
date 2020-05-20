@@ -33,12 +33,13 @@ export class SimpleFavorListComponent implements OnInit {
 
   @Input() favors: Array<Favor>;
   @Input() type: string;
+  @Input() emptyMessage: string;
   @Input() neighborhood_id: number;
 
   navigationSubscription;
 
 
-    updateSpacers(id) {
+  updateSpacers(id) {
     delay(100);
     document.getElementById(id + 'f' + this.type).remove();
   }
@@ -51,8 +52,7 @@ export class SimpleFavorListComponent implements OnInit {
     if (this.type == 'color1') {
 
 
-
-        var items: any = document.getElementsByClassName('color1');
+      var items: any = document.getElementsByClassName('color1');
       for (let i = 0; i < items.length; i++) {
         let element = items[i];
         element.style.background = '#ff0065';

@@ -18,15 +18,12 @@ export class Group {
    */
   public description: string;
 
-  /**
-   * Represents the residents who are members of this post.
-   */
-
-  public members: Resident[];
-
 
   public neighborhood: Neighborhood;
 
   public id: number;
+
+  public muralPicture: string;
+
 
 }

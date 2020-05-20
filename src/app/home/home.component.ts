@@ -4,11 +4,9 @@ import {ResidentService} from "./resident.service";
 import {ResidentDetail} from "./resident-detail";
 import {ToastrService} from "ngx-toastr";
 import {FavorDetail} from "../favor/favorDetail";
-import {PostDetail} from "../post/post-detail";
-import {Resident} from "./resident";
 import {Post} from "../post/post";
-import {PostCommentCreateComponent} from "../post/post-comment-create/post-comment-create.component";
 import {PostListComponent} from "../post/post-list/post-list.component";
+import {Resident} from "./resident";
 
 @Component({
   selector: 'app-home',
@@ -22,12 +20,15 @@ export class HomeComponent implements OnInit {
   resident_id: number;
   navigationSubscription;
   @Input() resident: ResidentDetail;
+  residents: Resident[];
   posts: Post[];
   favors: FavorDetail[];
   @ViewChild(PostListComponent, {static: true}) postsList: PostListComponent;
+  toggle1: boolean;
+  toggle2: boolean;
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
+               private route: ActivatedRoute,
               private service: ResidentService,
               private toastService: ToastrService,
   ) {
@@ -52,17 +53,37 @@ export class HomeComponent implements OnInit {
     this.getResident();
     this.getFavors();
     this.getPosts();
+    this.getResidents();
+    this.toggle1 = true;
+    this.toggle2 = false;
+
 
   }
 
   getResident() {
+
     this.service.getresident(this.neigh_id, this.resident_id)
       .subscribe(residentDetail => {
         this.resident = residentDetail;
 
-        this.resident.album = ["http://placeimg.com/640/360/any", "http://placeimg.com/640/360/any"];
+        this.resident.album = ["http://placeimg.com/500/500/any", "http://placeimg.com/500/500/arch", "http://placeimg.com/500/500/nature", "http://placeimg.com/500/500/tech", "http://placeimg.com/500/500/tech/sepia", "http://placeimg.com/500/500/animals/sepia", "http://placeimg.com/500/500/animals", "http://placeimg.com/500/500/people", "http://placeimg.com/500/500/people/grayscale", "http://placeimg.com/500/500/people/sepia", "http://placeimg.com/500/500/tech/sepia", "http://placeimg.com/500/500/arch/grayscale"];
 
-        this.resident.profilePicture = "http://placeimg.com/640/360/any";
+        this.resident.profilePicture = "http://placeimg.com/500/500/any";
+        // @ts-ignore
+        this.resident.joinDate = new Date();
+        this.resident.livingSince = "2001";
+
+      });
+
+
+  }
+
+  getResidents() {
+    this.service.getresidents(this.neigh_id)
+      .subscribe(residentDetail => {
+        this.residents = residentDetail;
+        this.residents[0].profilePicture = "http://placeimg.com/500/500/any";
+        this.residents[1].profilePicture = "http://placeimg.com/500/500/any";
       });
   }
 
@@ -97,6 +118,30 @@ export class HomeComponent implements OnInit {
         this.favors = favors;
       });
 
+  }
+
+
+  toggle11() {
+    this.toggle1 = !this.toggle1;
+  }
+
+
+  toggle12() {
+    this.toggle2 = !this.toggle2;
+  }
+
+  isEmpty(atr): boolean {
+
+    let rta: boolean;
+
+    if (atr == undefined) {
+      rta = true;
+    } else if (atr == null) {
+      rta = true;
+    } else if (atr.toString() == '') {
+      rta = true;
+    }
+    return rta;
   }
 
 

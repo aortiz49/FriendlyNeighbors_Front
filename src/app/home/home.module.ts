@@ -10,17 +10,25 @@ import { SimpleFavorComponent } from './simple-favor-list/simple-favor/simple-fa
 import { SimpleEventComponent } from './simple-event-list/simple-event/simple-event.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { InfoComponent } from './info/info.component';
+import { ExtendedGalleryComponent } from './extended-gallery/extended-gallery.component';
+import { SimpleResidentListComponent } from './simple-resident-list/simple-resident-list.component';
+import {FormsModule} from "@angular/forms";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
-    PostModule
+    PostModule,
+    FormsModule,
+    SharedModule
   ],
   exports: [
     SimpleFavorListComponent,
-    SimpleEventListComponent
+    SimpleEventListComponent,
+    SimpleResidentListComponent,
+    ExtendedGalleryComponent
   ],
-  declarations: [HomeComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent, GalleryComponent, InfoComponent]
+  declarations: [HomeComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent, GalleryComponent, InfoComponent, ExtendedGalleryComponent, SimpleResidentListComponent]
 })
 export class HomeModule { }
