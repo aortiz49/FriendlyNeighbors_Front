@@ -26,7 +26,8 @@ import {SharedModule} from "../shared/shared.module";
   exports: [
     SimpleFavorListComponent,
     SimpleEventListComponent,
-    SimpleResidentListComponent
+    SimpleResidentListComponent,
+    ExtendedGalleryComponent
   ],
   declarations: [HomeComponent, SimpleFavorListComponent, SimpleEventListComponent, SimpleFavorComponent, SimpleEventComponent, GalleryComponent, InfoComponent, ExtendedGalleryComponent, SimpleResidentListComponent]
 })

@@ -31,18 +31,6 @@ export class ExtendedGalleryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.resident_id = +this.route.root.firstChild.firstChild.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.getAlbum();
-  }
-
-  getAlbum() {
-
-    this.service.getresident(this.neigh_id, this.resident_id)
-      .subscribe(residentDetail => {
-        this.album = residentDetail.album;
-      });
-
   }
 
 

@@ -149,7 +149,7 @@
 
 
         <div class="container2">
-          <app-simple-resident-list [residents]="group.members">
+          <app-simple-resident-list [neighborhood_id]="neigh_id" style="min-height: 670px" [residents]="group.members">
           </app-simple-resident-list>
         </div>
 
@@ -167,10 +167,13 @@
         <div class="links pictures-icon">
           <i></i> <a> </a>
         </div>
-        <div class="paragraph">
-          <h1>Facebook</h1>
 
+        <div class="container2">
+           <app-extended-gallery [album]="group.album" style="max-height: 670px;max-width: 500px ">
+          </app-extended-gallery>
         </div>
+
+
       </td>
 
 

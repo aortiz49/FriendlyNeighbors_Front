@@ -34,6 +34,7 @@
 .postFrame {
 
   max-width: 560px;
+  height: 670px;
   margin: 0 auto;
   background-color: white;
   padding: 0px;
@@ -67,9 +68,9 @@
 }
 
 .smallPicture {
-  height: 29px;
-  width: 29px;
-  border: 2px solid #6d16f7;
+  height: 61px;
+  width: 61px;
+  border: 3px solid #6d16f7;
   border-radius: 50%;
 
 }
@@ -77,7 +78,7 @@
 .name {
 
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size: 13px;
+  font-size: 20px;
   font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
@@ -92,7 +93,7 @@
 .nickName {
 
   font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
-  font-size: 10px;
+  font-size: 17px;
   font-stretch: 100%;
   font-style: italic;
   font-variant-caps: normal;
@@ -106,9 +107,15 @@
 
 .placeholder2 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-  font-size: 15px !important;
+  font-size: 30px !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
   text-align: left !important;
   color: #1f1f1f !important;
+}
+
+.item5 {
+
+   padding: 20px;
+  min-width: 100%;
 }

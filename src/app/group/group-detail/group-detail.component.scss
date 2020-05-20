@@ -361,6 +361,30 @@ body {
 
 }
 
+.container2 {
+  --scrollbarBG: #544fa6;
+  --thumbBG: #4d41a7;
+}
+
+.container2::-webkit-scrollbar {
+  width: 11px;
+}
+
+.container2 {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+.container2::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+.container2::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 
 :host {
 }
@@ -733,13 +757,13 @@ body {
 
 }
 
-.residentAttributeName {
+.groupAttributeName {
   color: rgb(17, 36, 40);
   cursor: pointer;
   display: inline;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 17px;
-  font-stretch: 100%;
+    font-stretch: 100%;
   font-style: normal;
   font-variant-caps: normal;
   font-variant-east-asian: normal;
@@ -778,7 +802,7 @@ body {
 
 }
 
-.residentAttribute {
+.groupAttribute {
   color: rgb(66, 66, 65);
   cursor: pointer;
   display: inline;
