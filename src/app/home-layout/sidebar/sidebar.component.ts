@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {$} from "protractor";
 
 @Component({
@@ -11,6 +11,12 @@ export class SidebarComponent implements OnInit {
   constructor() {
     console.log('Sidebar constructor called');
   }
+
+  @Input() posts: string;
+  @Input() favors: string;
+  @Input() events: string;
+  @Input() neigh: string;
+  @Input() services: string;
 
   ngOnInit() {
   }

@@ -9,11 +9,9 @@ import {Resident} from "../home/resident";
 import {ResidentDetail} from "../home/resident-detail";
 
 const API_URL = environment.apiUrl;
+const API_URL2 = environment.apiUrl2;
 const posts = "/posts";
 
-
-const API_URL2 = "../../assets/";
-const posts2 = "/posts.json";
 const comments = "/comments";
 const neighborhoods = "neighborhoods";
 const residents = "/residents";
@@ -36,6 +34,13 @@ export class PostService {
   getposts(neighborhood): Observable<Post[]> {
     return this.http.get<Post[]>(
       API_URL + neighborhoods + "/" + neighborhood + posts
+    );
+  }
+
+
+  getPostsGeneric(url): Observable<Post[]> {
+    return this.http.get<Post[]>(
+       API_URL2 + url
     );
   }
 

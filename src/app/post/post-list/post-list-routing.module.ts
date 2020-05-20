@@ -1,25 +1,24 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {PostListComponent} from "../post-list/post-list.component";
 import {MainLayoutComponent} from "../../home-layout/main-layout/main-layout.component";
+import {RegistrationComponent} from "../../neighborhoodLayout/default/registration.component";
+import {PostListComponent} from "./post-list.component";
 
 
 const routes: Routes = [
   {
-    path: 'posts',
+    path: 'neighborhoods/:id/residents/:id/posts',
     component: MainLayoutComponent,
     children: [
-      {
-        path: ':id', component: PostListComponent
-
-      }
-
+      {path: '', component: PostListComponent},
     ]
-
+  },
+  {
+      path: 'neighborhoods/:id/posts',
+    component: PostListComponent,
   }
+];
 
-
-]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
