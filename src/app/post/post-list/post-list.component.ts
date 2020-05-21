@@ -3,7 +3,7 @@ import {Post} from "../post";
 import {PostService} from "../post.service";
 import {PostFilterPipe} from "../../shared/post-title-filter.pipe";
 import {ToastrService} from "ngx-toastr";
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, Router, UrlTree} from "@angular/router";
 import {Observable, Subscription} from "rxjs";
 import {PostCommentComponent} from "../post-comment/post-comment.component";
 import {SpacerComponent} from "../spacer/spacer.component";
@@ -23,6 +23,7 @@ declare var $: any;
 
 
 export class PostListComponent implements OnInit, OnChanges {
+
 
   constructor(private  postService: PostService,
               private toastrService: ToastrService,
@@ -54,27 +55,37 @@ export class PostListComponent implements OnInit, OnChanges {
   @Input() notRouted: boolean;
   @Input() postsByInput: boolean;
   @Input() searchModel: string;
-
+  @Input() url: string;
+  tree: UrlTree;
 
   ngOnInit() {
+    this.url = this.router.url;
+    this.tree = this.router.parseUrl(this.url);
+    this.neigh_id = +this.tree.root.children['primary'].segments[1].path;
 
     if (!this.postsByInput) {
-      if (!this.notRouted) this.neigh_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
 
-      if (this.posts === undefined) {
-        this.getPostList();
-      }
-      if (this.originals === undefined) {
+      if (!this.notRouted) {
+        if (this.posts === undefined) {
+          this.getGenericPostsByURL();
+        }
+        if (this.originals === undefined) {
+          this.getCopyOfPostsByURL();
+        }
+      } else {
+        this.getPosts();
         this.getCopyOfPosts();
       }
-
+    } else {
+       this.sortDescDate();
     }
 
     this.toastrService.success('Post list component initiated');
   }
 
-  updatePosts(posts){
+  updatePosts(posts) {
     this.posts = posts;
+    this.sortDescDate();
   }
 
   ngOnChanges() {
@@ -83,19 +94,91 @@ export class PostListComponent implements OnInit, OnChanges {
     this.ngOnInit();
   }
 
-  getPostList() {
+  getGenericPostsByURL() {
+    this.postService.getPostsGeneric(this.url).subscribe(cs => {
+      this.posts = cs;
+      this.sortDescDate();
+    }, err => {
+
+      this.toastrService.error(JSON.stringify(err), 'Error');
+    });
+
+
+  }
+
+
+  getPosts() {
     this.postService.getposts(this.neigh_id).subscribe(cs => {
       this.posts = cs;
+      this.sortDescDate();
+    }, err => {
+
+      this.toastrService.error(JSON.stringify(err), 'Error');
+    });
+
+
+  }
+
+  getCopyOfPosts() {
+    this.postService.getposts(this.neigh_id).subscribe(cs => {
+      this.originals = cs;
     }, err => {
 
       this.toastrService.error(JSON.stringify(err), 'Error');
     });
   }
 
-  getCopyOfPosts()
+  sortAsc() {
+    this.posts.sort((t1, t2) => {
+      const name1 = t1.title;
+      const name2 = t2.title;
+      if (name1 > name2) {
+        return 1;
+      }
+      if (name1 < name2) {
+        return -1;
+      }
+      return 0;
+    });
+
+  }
+
+  sortDesc() {
+    this.posts.sort((t1, t2) => {
+      const name1 = t1.title;
+      const name2 = t2.title;
+      if (name1 > name2) {
+        return -1;
+      }
+      if (name1 < name2) {
+        return 1;
+      }
+      return 0;
+    });
+
+  }
+
+  sortDescDate() {
+    this.posts.sort((t1, t2) => {
+      const name1 = t1.publishDate;
+      const name2 = t2.publishDate;
+
+      if (name1 < name2) {
+        return 1;
+      }
+      if (name1 > name2) {
+        return -1;
+      }
+      return 0;
+    });
+
+  }
+
+
+  getCopyOfPostsByURL()
     :
     void {
-    this.postService.getposts(this.neigh_id)
+    this.postService.getPostsGeneric(this.url)
       .subscribe(originals => {
         this.originals = originals
       }, err => {
@@ -108,19 +191,6 @@ export class PostListComponent implements OnInit, OnChanges {
     this.posts = this.filterPipe.transform(this.originals, value);
   }
 
-  sortAlphDesc() {
-    this.posts.sort((t1, t2) => {
-      const name1 = t1.title.toLowerCase();
-      const name2 = t2.title.toLowerCase();
-      if (name1 > name2) {
-        return -1;
-      }
-      if (name1 < name2) {
-        return 1;
-      }
-      return 0;
-    });
-  }
 
   updateSpacers(id) {
     delay(100);

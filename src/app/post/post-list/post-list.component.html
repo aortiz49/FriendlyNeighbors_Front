@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 <body>
 <!-- Bootstrap row -->
 
-  <div class="row backgroundB">
+<div class="row backgroundB">
 
+  <div id="main" class="col-md-12">
 
-    <div id="main" class="col-md-12">
+    <div *ngFor="let post of posts">
 
-            <div *ngFor="let post of posts">
+      <div id="{{ post.id }}" #v>
+        <app-post-detail (init)="updateSpacers(post.id)" *visibleWith="v.id" [neighborhood_id]=neigh_id [post_id]=post.id>
+        </app-post-detail>
+        <br>
+         <br>
+        <app-spacer id="{{post.id + 's'}}" [spacersNumber]="30"></app-spacer>
+      </div>
+      <div>
 
-                <div id="{{ post.id }}" #v >
-                    <app-post-detail (init)="updateSpacers(post.id)" *visibleWith="v.id" [neighborhood_id]=neigh_id [post_id]=post.id>
-                    </app-post-detail>
-
-                  <app-spacer  id = "{{post.id + 's'}}" [spacersNumber]="30" ></app-spacer>
-                </div>
-              <div >
-
-              </div>
-            </div>
-
+      </div>
     </div>
+
+  </div>
 
 </div>
 
 </body>
-
-</html>

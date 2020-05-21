@@ -43,8 +43,8 @@ export class GroupListComponent implements OnInit {
   public groups: Group[];
 
   getGroups() {
-    this.service.getgroups(this.neighId).subscribe((residents) => {
-      this.groups = residents;
+    this.service.getgroups(this.neighId).subscribe((groups) => {
+      this.groups = groups;
     });
   }
 

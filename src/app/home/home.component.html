@@ -1,32 +1,199 @@
-<div style="     min-height: 100%;">
-  <div class=" banner" style="background-image: url('https://wallpaperaccess.com/full/1760835.jpg');">
+
+<div style="min-height: 100%;">
+  <div class=" banner">
 
 
-    <div class="wraper row">
+    <div class="wraper2 row">
+      <div class="wraper row">
 
+        <div>
+          <div class="outer-circle">
+            <img class="inner-circle" src='{{resident.profilePicture}}'>
+          </div>
+        </div>
 
-      <div class="outer-circle">
-        <img class="inner-circle" src="http://placeimg.com/640/360/any%7D">
+        <div style="align-self: flex-end">
+
+          <tr class="name">{{resident.name}}
+          </tr>
+          <tr class="year">Living in {{resident.neighborhood.name}} since  {{resident.livingSince}}
+          </tr>
+
+        </div>
+
       </div>
-      <div class="name"> {{resident.name}}
-      </div>
-
-
     </div>
+    <div class="muralPicture"></div>
+    <div class="transparencyPanel"></div>
 
 
-    <div class="footer ">
-
-    </div>
   </div>
 
   <div class="info">
-    <p class="options">About
-    </p>
+    <div class="options">More of {{resident.name}}
+
+    </div>
+
+    <div class="options">
+      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseR_{{resident.id }}" data-toggle="collapse" *ngIf="toggle1" class=" fa fa-caret-down fa-2x"></i>
+      <i (click)="toggle11(); toggle12() " attr.data-target="#collapseR_{{resident.id}}" data-toggle="collapse" *ngIf="toggle2" class=" fa fa-caret-up fa-2x"></i>
+    </div>
+
+  </div>
+
+  <div id="collapseR_{{resident.id}}" class="collapse">
+    <div class="infoPanel container-fluid">
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-info-circle">
+            </span> &nbsp; About
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.preferences)" class="residentAttribute"> {{resident.preferences}}
+            </div>
+            <div *ngIf="isEmpty(resident.preferences)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+
+
+        <div class="attributeLine">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="residentAttributeName">
+                <span> &nbsp;</span>
+                <span class="atributeIcon fas fa-signature">
+            </span> &nbsp; Nickname
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div *ngIf="!isEmpty(resident.nickname)" class="residentAttribute"> {{resident.nickname}}
+              </div>
+              <div *ngIf="isEmpty(resident.nickname)" class="emptyAttribute"> Nothing to show
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-inbox">
+            </span> &nbsp; E-mail
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.email)" class="residentAttribute"> {{resident.email}}
+            </div>
+            <div *ngIf="isEmpty(resident.email)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-map-marked">
+            </span> &nbsp; Address
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.address)" class="residentAttribute"> {{resident.address}}
+            </div>
+            <div *ngIf="isEmpty(resident.address)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon  fas fa-phone-square-alt">
+            </span> &nbsp; Phone
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.phoneNumber)" class="residentAttribute"> {{resident.phoneNumber}}
+            </div>
+            <div *ngIf="isEmpty(resident.phoneNumber)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon  fas fa-birthday-cake">
+            </span> &nbsp; Birthday
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.birthDate)" class="residentAttribute"> {{resident.birthDate}}
+            </div>
+            <div *ngIf="isEmpty(resident.birthDate)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+
+      <div class="attributeLine">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="residentAttributeName">
+              <span> &nbsp;</span>
+              <span class="atributeIcon fas fa-history">
+            </span> &nbsp; Joined in
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div *ngIf="!isEmpty(resident.joinDate)" class="residentAttribute"> {{resident.joinDate}}
+            </div>
+            <div *ngIf="isEmpty(resident.joinDate)" class="emptyAttribute"> Nothing to show
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <br>
   <br>
+
 
   <div class="row content">
 
@@ -34,20 +201,20 @@
     <div class="col-lg-4 col-md-6 mb-4">
 
 
-      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">New favors</div>
+      <div class="title3 favorLayout">New favors</div>
 
-      <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [type]="'color1'" [favors]="resident.favorsRequested">
+      <div class="favorLayout">
+        <app-simple-favor-list [emptyMessage]="'You still have no favors to show here. Get started by going to the sidebar.'" [type]="'color1'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
 
 
       <br>
 
-      <div class="title3" style="max-width: 70%; margin: 0 0 0 auto">Helped with favors</div>
+      <div class="title3 favorLayout">Helped with favors</div>
 
-      <div style="max-width: 70%; margin: 0 0 0 auto">
-        <app-simple-favor-list [type]="'color2'" [favors]="resident.favorsRequested">
+      <div class="favorLayout">
+        <app-simple-favor-list [emptyMessage]="'Looks like you are not a candidate to help with a favor. Get started by going to the sidebar.'" [type]="'color2'" [favors]="resident.favorsRequested">
         </app-simple-favor-list>
       </div>
 
@@ -56,7 +223,7 @@
       <div class="title3" style="max-width: 100%;">Pictures of {{resident.name}}
       </div>
 
-      <app-gallery>
+      <app-gallery [emptyMessage]="' Looks like you have not posted any picture. Get started by going to the sidebar.'" [album]="resident.album">
       </app-gallery>
 
     </div>
@@ -66,7 +233,7 @@
 
       <div class="title3" style="max-width: 100%;">What are you thinking about?
       </div>
-        <app-post-create [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
+      <app-post-create [residents]="residents" [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
       </app-post-create>
 
       <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">
@@ -77,16 +244,15 @@
 
     <div class="col-lg-3 col-md-6 mb-3">
 
-      <div class="title3" style="max-width: 80%; margin: 0 0 auto 0">Upcoming events</div>
+      <div class="title3 eventLayout">Upcoming events</div>
 
-      <div style="max-width: 80%; margin: 0 0  auto 0 ">
-        <app-simple-event-list [favors]="resident.favorsRequested">
+      <div class="eventLayout">
+        <app-simple-event-list [emptyMessage]="'Looks like you have not posted an event. Get started by going to the sidebar.'" [favors]="resident.favorsRequested">
         </app-simple-event-list>
       </div>
 
-
     </div>
-
 
   </div>
 </div>
+

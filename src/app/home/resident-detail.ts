@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import {Resident} from '../home/resident';
+import {Resident} from './resident';
 import {Post} from "../post/post";
 import {CommentP} from "../post/commentP";
 import {Favor} from "../favor/favor";

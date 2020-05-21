@@ -118,7 +118,6 @@
 
         <div class="item"> Posts</div>
 
-
       </li>
 
 
@@ -198,14 +197,9 @@
 </div>
 
 
-<div class="  backgroundSideBar">
-
-  <div class="" style="float: left;">
-    <app-sidebar></app-sidebar>
-    </div>
-
-
-  <div class=" backgroundM  contentS" style="padding-left: 30px">
+<div class="  backgroundSideBar ">
+  
+  <div class=" backgroundM  contentS">
 
 
     <div *ngIf="searchModel.length == 0 ; else elseBlock">
@@ -214,7 +208,7 @@
 
     <ng-template #elseBlock>
 
-      <app-post-list *ngIf="searchType == 'posts'" [notRouted]="true" [neigh_id]="1" [searchModel]="searchModel"></app-post-list>
+      <app-post-list *ngIf="searchType == 'posts'" [notRouted]="true" [searchModel]="searchModel"></app-post-list>
 
     </ng-template>
 
