@@ -29,13 +29,25 @@ export class PostCreateComponent implements OnInit {
   postID: number;
   images: File[];
   selectedImages: File[];
-  imagesInfo: string[][];
   form: FormGroup;
 
   @Output() updatePost = new EventEmitter();
 
 
   postComment(reviewForm: NgForm): PostDetail {
+
+
+    for (var i = 0; i < this.images.length; i++) {
+      let item = this.images[i];
+       let infoObject = {
+        title: "title",
+        description: "desc"
+      }
+      this.imageService.uploadImage(item, infoObject);
+      this.post.album.push(this.imageService.imageLink);
+    }
+
+    console.log(this.post.album)
 
     this.postService.createpost(this.neigh_id, this.post, this.residen_id)
       .subscribe(post => {
@@ -65,7 +77,7 @@ export class PostCreateComponent implements OnInit {
   ngOnInit() {
     this.post = new PostDetail();
     this.images = [];
-
+    //   this.selectedImages = [];
     this.form = this.fb.group({
       demo: ''
     })
@@ -74,7 +86,7 @@ export class PostCreateComponent implements OnInit {
 
   addImage() {
     this.images.push(this.picker.file);
-      this.form.get('demo').patchValue(this.images);
+    this.form.get('demo').patchValue(this.images);
     console.log(this.images)
   }
 
@@ -87,13 +99,6 @@ export class PostCreateComponent implements OnInit {
   uploadImagur() {
 
 
-    let infoObject = {
-      title: "title",
-      description: "desc"
-    }
-
-    let image: string;
-    this.imageService.uploadImage(this.picker.file, infoObject);
   }
 
 
