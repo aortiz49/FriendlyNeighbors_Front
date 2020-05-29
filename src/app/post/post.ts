@@ -55,11 +55,11 @@ export class Post {
   // public group: Group;
 
 
-  constructor(public datepipe: DatePipe) {
+  constructor() {
     this.id = -1;
     // @ts-ignore
-    this.publishDate = new DatePipe()
-    this.title = "";
+    this.publishDate = new Date()
+      this.title = "";
     this.description = "";
     this.numberOfLikes = 0;
     this.author = new Resident();

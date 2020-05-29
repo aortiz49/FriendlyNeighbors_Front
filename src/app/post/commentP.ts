@@ -33,22 +33,6 @@ export class CommentP {
      * The text body shown in this post.
      */
     public text: string;
-
-
-    constructor() {
-        this.id = -1;
-        this.author = new Resident();
-        this.post = new Post();
-        this.date = " ";
-        this.text = " ";
-    }
-
-
-    delete() {
-        this.id = null;
-        this.author = null;
-        this.post = null;
-        this.date = null;
-    }
+    W
 
 }

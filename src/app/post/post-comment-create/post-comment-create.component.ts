@@ -44,7 +44,6 @@ export class PostCommentCreateComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.comment = new CommentP();
-    this.comment.delete();
     // @ts-ignore
     this.comment.date = new Date();
     this.isCollapsed = true;

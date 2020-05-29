@@ -14,11 +14,13 @@ import { ExtendedGalleryComponent } from './extended-gallery/extended-gallery.co
 import { SimpleResidentListComponent } from './simple-resident-list/simple-resident-list.component';
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
+import {ExtendedGalleryRoutingModule} from "./extended-gallery/extended-gallery-routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
+    ExtendedGalleryRoutingModule,
     PostModule,
     FormsModule,
     SharedModule
