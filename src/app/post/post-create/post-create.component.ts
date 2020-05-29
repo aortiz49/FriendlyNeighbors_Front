@@ -39,7 +39,7 @@ export class PostCreateComponent implements OnInit {
 
     for (var i = 0; i < this.images.length; i++) {
       let item = this.images[i];
-       let infoObject = {
+      let infoObject = {
         title: "title",
         description: "desc"
       }
@@ -77,7 +77,7 @@ export class PostCreateComponent implements OnInit {
   ngOnInit() {
     this.post = new PostDetail();
     this.images = [];
-    //   this.selectedImages = [];
+    this.selectedImages = [];
     this.form = this.fb.group({
       demo: ''
     })
