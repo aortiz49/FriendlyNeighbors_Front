@@ -10,7 +10,7 @@ import { FilePickerComponent } from './file-picker/file-picker.component';
 
     imports: [CommonModule],
 
-  exports: [PostFilterPipe, ResidentNamePipe]
+  exports: [PostFilterPipe, ResidentNamePipe, FilePickerComponent]
 })
 export class SharedModule {
 }

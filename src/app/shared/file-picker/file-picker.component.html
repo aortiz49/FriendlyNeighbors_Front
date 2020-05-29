@@ -1,11 +1,7 @@
 <div class="container">
   <input type="file" style="display: none" #fileInput accept="image/*" (change)="onChangeFileInput()"/>
-  <button mat-raised-button color="primary" class="btn-outline-dark" (click)="onClickFileInputButton()">
-    fsfsdf
+  <button class="buttons btn btn-outline-light" style="font-size: 18px; font-weight: bold" (click)="onClickFileInputButton()">
+    <i class="fas fa-paperclip">
+    </i>
   </button>
-
-  <p class="file-name" *ngIf="!file; else fileName">dfsdfs</p>
-  <ng-template #fileName>
-    <p class="file-name">{{ file?.name }}</p>
-  </ng-template>
 </div>

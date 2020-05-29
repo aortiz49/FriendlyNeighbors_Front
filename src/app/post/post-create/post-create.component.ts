@@ -1,11 +1,13 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {PostService} from "../post.service";
 import {ToastrService} from "ngx-toastr";
 import {Post} from "../post";
 import {CommentP} from "../commentP";
-import {NgForm} from "@angular/forms";
+import {FormBuilder, FormGroup, NgForm} from "@angular/forms";
 import {PostDetail} from "../post-detail";
 import {Resident} from "../../home/resident";
+import {ImageService} from "../../shared/file-picker/image.service";
+import {FilePickerComponent} from "../../shared/file-picker/file-picker.component";
 
 @Component({
   selector: 'app-post-create',
@@ -14,15 +16,21 @@ import {Resident} from "../../home/resident";
 })
 export class PostCreateComponent implements OnInit {
 
-  constructor(private postService: PostService, private toastrService: ToastrService) {
+  constructor(private postService: PostService, private toastrService: ToastrService, private imageService: ImageService, private fb: FormBuilder) {
   }
 
+
+  @ViewChild(FilePickerComponent, {static: true}) picker: FilePickerComponent;
   @Input() post: PostDetail;
   @Input() residen_id: number;
   @Input() neigh_id: number;
   @Input() residents: Resident[];
   selected: Resident[];
   postID: number;
+  images: File[];
+  selectedImages: File[];
+  imagesInfo: string[][];
+  form: FormGroup;
 
   @Output() updatePost = new EventEmitter();
 
@@ -35,8 +43,6 @@ export class PostCreateComponent implements OnInit {
         this.toastrService.success("Post was successfully created", 'Post added');
 
         this.postID = post.id;
-        console.log(this.postID + "---------------------------------------------")
-        console.log(this.selected + "---------------------------------------------")
 
         this.postService.addViewers(this.neigh_id, this.postID, this.selected).subscribe(() => {
           this.updatePost.emit();
@@ -58,6 +64,36 @@ export class PostCreateComponent implements OnInit {
 
   ngOnInit() {
     this.post = new PostDetail();
+    this.images = [];
+
+    this.form = this.fb.group({
+      demo: ''
+    })
+  }
+
+
+  addImage() {
+    this.images.push(this.picker.file);
+      this.form.get('demo').patchValue(this.images);
+    console.log(this.images)
+  }
+
+
+  selectAll() {
+    this.form.get('demo').patchValue(this.images);
+    console.log(this.images)
+  }
+
+  uploadImagur() {
+
+
+    let infoObject = {
+      title: "title",
+      description: "desc"
+    }
+
+    let image: string;
+    this.imageService.uploadImage(this.picker.file, infoObject);
   }
 
 
