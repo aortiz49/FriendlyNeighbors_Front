@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpEvent} from "@angular/common/http";
+import {HttpClient, HttpEvent, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Post} from "./post";
 import {CommentP} from "./commentP";
@@ -228,7 +228,12 @@ export class PostService {
   }
 
 
-  addAlbum(neighborhood, postId, albumA): Observable<PostDetail[]> {
+  addPicture(neighborhood, postId, pic: string): Observable<PostDetail[]> {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
     return this.http.post<PostDetail[]>(
       API_URL +
       neighborhoods +
@@ -239,7 +244,7 @@ export class PostService {
       postId +
       album +
       "/",
-      albumA
+      pic, {headers: headers}
     );
   }
 

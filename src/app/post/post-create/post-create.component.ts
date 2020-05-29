@@ -38,15 +38,6 @@ export class PostCreateComponent implements OnInit {
   addPost(reviewForm: NgForm): PostDetail {
 
 
-    for (var i = 0; i < this.images.length; i++) {
-      let item = this.images[i];
-      let infoObject = {
-        title: "title",
-        description: "desc"
-      }
-      this.imageService.uploadImage(item, infoObject, this.album);
-    }
-
     this.post.album = this.album;
 
     this.postService.createpost(this.neigh_id, this.post, this.residen_id)
@@ -57,13 +48,33 @@ export class PostCreateComponent implements OnInit {
         this.postID = post.id;
 
         this.postService.addViewers(this.neigh_id, this.postID, this.selected).subscribe(() => {
-          this.updatePost.emit();
           this.toastrService.success(this.selected.length + " viewers were successfully added", 'Viewers added');
 
         }, err => {
           this.toastrService.error(err, 'Error');
         });
 
+
+        for (var i = 0; i < this.images.length; i++) {
+          let item = this.images[i];
+          let infoObject = {
+            title: "title",
+            description: "desc"
+          }
+          this.imageService.uploadImage(item, infoObject).subscribe(value => {
+
+            this.postService.addPicture(this.neigh_id, this.postID, value['data'].link).subscribe();
+
+            console.log(value['data'].link.toString())
+            console.log(value['data'].link.toString() +  "\"https://i.imgur.com/xTOHzzs.jpg\"")
+
+             console.log("\"https://i.imgur.com/xTOHzzs.jpg\"")
+
+          }, err => {
+            this.toastrService.error(err, 'Error');
+          });
+        }
+        this.updatePost.emit();
 
       }, err => {
         this.toastrService.error(err, 'Error');
