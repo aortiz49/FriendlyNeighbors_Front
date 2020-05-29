@@ -8,6 +8,7 @@ import {PostDetail} from "../post-detail";
 import {Resident} from "../../home/resident";
 import {ImageService} from "../../shared/file-picker/image.service";
 import {FilePickerComponent} from "../../shared/file-picker/file-picker.component";
+import {DatePipe, formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-post-create',
@@ -16,7 +17,7 @@ import {FilePickerComponent} from "../../shared/file-picker/file-picker.componen
 })
 export class PostCreateComponent implements OnInit {
 
-  constructor(private postService: PostService, private toastrService: ToastrService, private imageService: ImageService, private fb: FormBuilder) {
+  constructor(private datepipe: DatePipe, private postService: PostService, private toastrService: ToastrService, private imageService: ImageService, private fb: FormBuilder) {
   }
 
 
@@ -48,38 +49,35 @@ export class PostCreateComponent implements OnInit {
         this.postID = post.id;
 
         this.postService.addViewers(this.neigh_id, this.postID, this.selected).subscribe(() => {
+
           this.toastrService.success(this.selected.length + " viewers were successfully added", 'Viewers added');
+
+          for (var i = 0; i < this.images.length; i++) {
+            let item = this.images[i];
+            let infoObject = {
+              title: "title",
+              description: "desc"
+            }
+            this.imageService.uploadImage(item, infoObject).subscribe(value => {
+
+              this.postService.addPicture(this.neigh_id, this.postID, value['data'].link).subscribe();
+
+
+              this.updatePost.emit();
+
+            }, err => {
+              this.toastrService.error(err, 'Error');
+            });
+          }
 
         }, err => {
           this.toastrService.error(err, 'Error');
         });
 
 
-        for (var i = 0; i < this.images.length; i++) {
-          let item = this.images[i];
-          let infoObject = {
-            title: "title",
-            description: "desc"
-          }
-          this.imageService.uploadImage(item, infoObject).subscribe(value => {
-
-            this.postService.addPicture(this.neigh_id, this.postID, value['data'].link).subscribe();
-
-            console.log(value['data'].link.toString())
-            console.log(value['data'].link.toString() +  "\"https://i.imgur.com/xTOHzzs.jpg\"")
-
-             console.log("\"https://i.imgur.com/xTOHzzs.jpg\"")
-
-          }, err => {
-            this.toastrService.error(err, 'Error');
-          });
-        }
-        this.updatePost.emit();
-
       }, err => {
         this.toastrService.error(err, 'Error');
       });
-
 
     return this.post;
   }

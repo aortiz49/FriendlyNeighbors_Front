@@ -32,6 +32,7 @@ import {GroupModule} from "./group/group.module";
 import {LocationModule} from './location/location.module';
 import {FavorModule} from './favor/favor.module';
 import {GroupLayoutModule} from "./group-layout/group-layout.module";
+import {DatePipe} from "@angular/common";
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -64,7 +65,7 @@ const routes: Routes = [
     DashboardModule,
     RegistrationModule,
     NeighborhoodRegistrationModule,
-     NeighborhoodLayoutModule,
+    NeighborhoodLayoutModule,
     AccountSettingsModule,
     LocationRegistrationModule,
     LocationModule,
@@ -75,7 +76,8 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent],
   providers: [
-    VisibilityService,
+     VisibilityService,
+    DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,

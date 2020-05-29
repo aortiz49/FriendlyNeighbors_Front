@@ -77,7 +77,7 @@ export class PostListComponent implements OnInit, OnChanges {
         this.getCopyOfPosts();
       }
     } else {
-       this.sortDescDate();
+      this.sortDescDate();
     }
 
     this.toastrService.success('Post list component initiated');
@@ -160,13 +160,13 @@ export class PostListComponent implements OnInit, OnChanges {
 
   sortDescDate() {
     this.posts.sort((t1, t2) => {
-      const name1 = t1.publishDate;
-      const name2 = t2.publishDate;
+      const name1 = Date.parse(t1.publishDate.toString().replace("[UTC]", ""));
+      const name2 = Date.parse(t2.publishDate.toString().replace("[UTC]", ""));
 
       if (name1 < name2) {
         return 1;
       }
-      if (name1 > name2) {
+      if (name1 => name2) {
         return -1;
       }
       return 0;

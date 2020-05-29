@@ -116,7 +116,6 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
         this.postService.getPotentialViewers(this.neighborhood_id, this.post_id)
           .subscribe(residents => {
             this.residents = residents;
-            this.toastrService.error(this.residents.length + "");
           });
 
       });

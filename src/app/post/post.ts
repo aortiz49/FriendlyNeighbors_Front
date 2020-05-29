@@ -6,6 +6,7 @@
 
 import {Resident} from '../home/resident';
 import {Business} from '../business/business';
+import {DatePipe} from "@angular/common";
 
 /**
  *This class represents a post made by a resident
@@ -54,10 +55,10 @@ export class Post {
   // public group: Group;
 
 
-  constructor() {
+  constructor(public datepipe: DatePipe) {
     this.id = -1;
     // @ts-ignore
-    this.publishDate = new Date();
+    this.publishDate = new DatePipe()
     this.title = "";
     this.description = "";
     this.numberOfLikes = 0;
