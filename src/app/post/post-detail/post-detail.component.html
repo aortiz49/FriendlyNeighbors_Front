@@ -38,7 +38,7 @@
         </table>
 
       </div>
-      <div *ngIf="this.postDetail.album != null" class="spacerPhoto">
+      <div *ngIf="this.postDetail.album != null && this.postDetail.album.length != 0 " class="spacerPhoto">
 
 
         <div id="{{'carouselExampleIndicators' + this.postDetail.id}}" class="carousel slide" data-ride="carousel">

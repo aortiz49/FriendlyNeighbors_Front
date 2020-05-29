@@ -92,11 +92,10 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
     this.postService.getpostDetail(this.neighborhood_id, this.post_id)
       .subscribe(postDetail => {
         this.postDetail = postDetail;
-
-        this.postDetail.album = ["http://placeimg.com/640/360/any", "http://placeimg.com/640/360/any"];
-
         this.postDetail.author.profilePicture = "http://placeimg.com/640/360/any";
       });
+
+
   }
 
 
