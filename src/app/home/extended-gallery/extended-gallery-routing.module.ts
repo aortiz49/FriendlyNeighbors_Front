@@ -4,38 +4,15 @@ import {RouterModule, Routes} from "@angular/router";
 import {MainLayoutComponent} from "../../home-layout/main-layout/main-layout.component";
 import {HomeComponent} from "../home.component";
 import {ExtendedGalleryComponent} from "./extended-gallery.component";
+import {PostListComponent} from "../../post/post-list/post-list.component";
 
 
 const routes: Routes = [
   {
-    path: 'neighborhoods',
+    path: 'neighborhoods/:id/residents/:id/gallery',
     component: MainLayoutComponent,
     children: [
-      {
-        path: ':id',
-        children: [
-          {
-            path: 'residents',
-            children: [
-              {
-                path: ':id',
-                children: [
-                  {
-                    path: 'gallery',
-                    component: ExtendedGalleryComponent
-                  }
-
-                ]
-
-
-              }
-
-            ]
-
-          }
-
-        ]
-      }
+      {path: '', component: ExtendedGalleryComponent},
     ]
   }
 ];
