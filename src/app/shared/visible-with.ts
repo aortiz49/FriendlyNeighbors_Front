@@ -7,31 +7,27 @@ import {DOCUMENT} from "@angular/common";
 @Directive({selector: '[visibleWith]'})
 export class VisibleWith {
 
-    constructor(
-        @Inject(DOCUMENT) document: any,
-        private templateRef: TemplateRef<any>,
-        private viewContainer: ViewContainerRef,
-        private visibilityService: VisibilityService) {
+  constructor(
+    @Inject(DOCUMENT) document: any,
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef,
+    private visibilityService: VisibilityService) {
+  }
+
+
+  @Input()
+  set visibleWith(elementID) {
+
+    if (document.getElementById(elementID) != null) {
+      this.visibilityService
+        .elementInSight(new ElementRef(document.getElementById(elementID)))
+        .pipe(filter(visible => visible), take(1))
+        .subscribe(() => {
+          this.viewContainer.createEmbeddedView(this.templateRef);
+        });
     }
 
 
-    @Input()
-    set visibleWith(elementID) {
-
-
-        console.log(elementID);
-        console.log("element");
-        console.log(document.getElementById(elementID));
-        if (document.getElementById(elementID) != null) {
-            this.visibilityService
-                .elementInSight(new ElementRef(document.getElementById(elementID)))
-                .pipe(filter(visible => visible), take(1))
-                .subscribe(() => {
-                    this.viewContainer.createEmbeddedView(this.templateRef);
-                });
-        }
-
-
-    }
+  }
 
 }

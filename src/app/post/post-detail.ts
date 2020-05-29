@@ -22,7 +22,7 @@ export class PostDetail extends Post {
      */
     public viewers: Resident[];
 
-    public album: String[];
+    public album: string[];
 
 
     constructor() {

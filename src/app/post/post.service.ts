@@ -16,6 +16,7 @@ const comments = "/comments";
 const neighborhoods = "neighborhoods";
 const residents = "/residents";
 const viewers = "/viewers";
+const album = "/album";
 const potential = "/potential";
 
 @Injectable({
@@ -40,7 +41,7 @@ export class PostService {
 
   getPostsGeneric(url): Observable<Post[]> {
     return this.http.get<Post[]>(
-       API_URL2 + url
+      API_URL2 + url
     );
   }
 
@@ -227,6 +228,22 @@ export class PostService {
   }
 
 
+  addAlbum(neighborhood, postId, albumA): Observable<PostDetail[]> {
+    return this.http.post<PostDetail[]>(
+      API_URL +
+      neighborhoods +
+      "/" +
+      neighborhood +
+      posts +
+      "/" +
+      postId +
+      album +
+      "/",
+      albumA
+    );
+  }
+
+
   addViewers(neighborhood, postId, residents): Observable<Resident[]> {
     return this.http.put<Resident[]>(
       API_URL +
@@ -269,5 +286,7 @@ export class PostService {
       potential
     );
   }
+
+
 }
 
