@@ -148,8 +148,9 @@
 
 .fitandcenter {
   max-width: 100%;
-  margin: 0 auto
-
+  margin: 0 auto;
+  max-height: 600px;
+    overflow: auto;
 }
 
 body {
@@ -175,9 +176,6 @@ body {
 
   text-align: center;
 
-  overflow: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
 
 }
 
