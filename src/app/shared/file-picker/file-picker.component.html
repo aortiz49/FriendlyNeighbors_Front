@@ -1,6 +1,6 @@
 <div class="container">
   <input type="file" style="display: none" #fileInput accept="image/*" (change)="onChangeFileInput()"/>
-  <button class="buttons btn btn-outline-light" style="font-size: 18px; font-weight: bold" (click)="onClickFileInputButton()">
+  <button (click)="onClickFileInputButton()" class="buttons btn btn-outline-light" style="font-size: 18px; font-weight: bold">
     <i class="fas fa-paperclip">
     </i>
   </button>

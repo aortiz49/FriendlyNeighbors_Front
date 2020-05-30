@@ -12,9 +12,10 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { InfoComponent } from './info/info.component';
 import { ExtendedGalleryComponent } from './extended-gallery/extended-gallery.component';
 import { SimpleResidentListComponent } from './simple-resident-list/simple-resident-list.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import {ExtendedGalleryRoutingModule} from "./extended-gallery/extended-gallery-routing.module";
+import {NgSelectModule} from "@ng-select/ng-select";
 
 @NgModule({
   imports: [
@@ -23,7 +24,9 @@ import {ExtendedGalleryRoutingModule} from "./extended-gallery/extended-gallery-
     ExtendedGalleryRoutingModule,
     PostModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgSelectModule,
+    ReactiveFormsModule
   ],
   exports: [
     SimpleFavorListComponent,

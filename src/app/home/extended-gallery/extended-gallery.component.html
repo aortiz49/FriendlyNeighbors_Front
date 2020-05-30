@@ -1,14 +1,50 @@
 <body class="postFrame">
+
+<div class="row">
+  <div class="col-md-4 tag" style="text-align: center">
+    <form [formGroup]="form">
+
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-8 placeholder2">
+          <ng-select [multiple]="true" [(ngModel)]="images" placeholder="Add your pictures" formControlName="demo" style="background-color: #4b3d9f">
+            <ng-option *ngFor="let r of images" [value]="r">
+              <img class=" smallPicture" [src]="'http://icons.iconarchive.com/icons/designbolts/free-multimedia/256/Photo-icon.png'"/>
+              <span class="name"> {{r.name}} </span>
+            </ng-option>
+          </ng-select>
+        </div>
+
+        <div class="col-1" (click)="selectAll()">
+          <app-file-picker (picked)="addImage()">
+          </app-file-picker>
+        </div>
+        <div class="col-1"></div>
+
+      </div>
+
+    </form>
+  </div>
+  <div class="col-md-6">
+  </div>
+
+  <div class="col-md-2 tag2">
+    <div style="margin-left:auto; margin-right:30px ">
+      <button class="buttons btn btn-outline-light" (click)="addPictures()">Post</button>
+    </div>
+  </div>
+</div>
+
 <div class="fitandcenter">
   <br>
-  <div *ngIf="album.length == 0">
+  <div *ngIf="album.length == 0" style="max-width: 220px">
     <tr>
       <td>
         <i class="fas fa-pencil-alt fa-2x icon">
         </i>
       </td>
       <td>
-             <span class="emptyMessage">{{emptyMessage}}
+    <span class="emptyMessage">{{emptyMessage}}
           </span>
       </td>
     </tr>
@@ -20,7 +56,7 @@
   <div class="row fitandcenter">
     <div class="row fitandcenter" style="max-width: 70%">
 
-       <div *ngFor="let p of album, let i = index" class="col-lg-4 col-md-10  thumb">
+      <div *ngFor="let p of album, let i = index" class="col-lg-4 col-md-10  thumb">
         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
 
            data-target="#image-gallery"
@@ -59,7 +95,6 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-
 
         </div>
       </div>
