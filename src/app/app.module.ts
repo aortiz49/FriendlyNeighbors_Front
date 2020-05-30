@@ -32,6 +32,7 @@ import {GroupModule} from "./group/group.module";
 import {LocationModule} from './location/location.module';
 import {FavorModule} from './favor/favor.module';
 import {GroupLayoutModule} from "./group-layout/group-layout.module";
+import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -55,6 +56,7 @@ const routes: Routes = [
     NotificationModule,
     NeighborhoodModule,
     LoginResgistrationModule,
+    BusinessRegistrationModule,
     LoginModule,
     ProfileRegistrationModule,
     HttpClientModule,
