@@ -6,6 +6,7 @@
 
 import {Resident} from '../home/resident';
 import {Business} from '../business/business';
+import {DatePipe} from "@angular/common";
 
 /**
  *This class represents a post made by a resident
@@ -57,8 +58,8 @@ export class Post {
   constructor() {
     this.id = -1;
     // @ts-ignore
-    this.publishDate = new Date();
-    this.title = "";
+    this.publishDate = new Date()
+      this.title = "";
     this.description = "";
     this.numberOfLikes = 0;
     this.author = new Resident();

@@ -14,11 +14,12 @@ h4 {
 }
 
 #resTitle {
-  background-color: white;
-  border-bottom-right-radius: 1vw;
+  background-color: #4b3d9f;
+    border-bottom-right-radius: 1vw;
   color: #544fa6;
-  padding:.5vw;
+  padding: .5vw;
 }
+
 .container-fluid {
   background-color: #36393F;
   height: 100%;
@@ -40,10 +41,10 @@ h4 {
   margin: 1vw;
 }
 
-.card:hover{
+.card:hover {
   opacity: .5;
 }
 
-#point:hover{
-  cursor: pointer!important;
+#point:hover {
+  cursor: pointer !important;
 }

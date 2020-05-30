@@ -209,7 +209,7 @@
         <ul class="list-group">
 
 
-          <a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="c1 c2 c3 c4 c5 c6" class="d-none d-md-block btn-outline-purple2 menu2 list-group-item list-group-item-action">
+          <a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="c1 c2 c3 c4 c5 c6 c7" class="d-none d-md-block btn-outline-purple2 menu2 list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
               <span class="fa fa-bars  fa-fw mr-3 fa-2x"></span>
             </div>
@@ -240,7 +240,7 @@
           <!-- Submenu content -->
           <div id='submenu1' class="collapse sidebar-submenu">
             <a class="nav-link list-group-item list-group-item-action menu2 text-white" routerLink="/neighborhoods/{{neigh_id}}/residents/{{resident_id}}/posts">
-               <span class="menu-collapsed2" (click)="posts.sortAsc()">My Posts</span>
+              <span class="menu-collapsed2" (click)="posts.sortAsc()">My Posts</span>
             </a>
           </div>
 
@@ -271,13 +271,24 @@
             </div>
           </a>
 
+          <!-- Separator without title -->
+          <li class="sidebar-separator "></li>
+          <a routerLink="/neighborhoods/{{neigh_id}}/residents/{{resident_id}}/gallery" class="btn-outline-purple2 menu2 list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-start align-items-center">
+              <span class="fas fa-camera-retro  fa-fw mr-3 fa-2x"></span>
+              <div class="collapse width multi-collapse" id="c7">
+                <span class="menu-collapsed2 d-none d-md-block">Gallery</span>
+              </div>
+            </div>
+          </a>
+
 
           <!-- Separator without title -->
           <li class="sidebar-separator "></li>
           <!-- /END Separator -->
-          <a href="#" class="btn-outline-purple2 menu2 list-group-item list-group-item-action">
+          <a routerLink="/neighborhoods/{{neigh_id}}" class="btn-outline-purple2 menu2 list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
-              <span class="fa fa-home  fa-fw mr-3 fa-2x"></span>
+              <span class=" fa fa-home fa-fw mr-3 fa-2x"></span>
               <div class="collapse width multi-collapse" id="c4">
                 <span class="menu-collapsed2 d-none d-md-block">Neighborhood</span>
               </div>

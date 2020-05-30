@@ -11,6 +11,7 @@ import {CommentP} from "../commentP";
 import {Resident} from "../../home/resident";
 import {ResidentService} from "../../home/resident.service";
 import {ResidentDetail} from "../../home/resident-detail";
+import {SimpleAuthService} from "../../simple-auth-service/simple-auth.service";
 
 
 @Component({
@@ -26,7 +27,9 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
               private toastrService: ToastrService,
               private router: Router,
               private route: ActivatedRoute,
-              private cdRef: ChangeDetectorRef) {
+              private cdRef: ChangeDetectorRef,
+              private authService: SimpleAuthService,
+  ) {
     //This is added so we can refresh the view when one of the bikes in
     //the "Other bikes" list is clicked
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
@@ -92,11 +95,10 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
     this.postService.getpostDetail(this.neighborhood_id, this.post_id)
       .subscribe(postDetail => {
         this.postDetail = postDetail;
-
-        this.postDetail.album = ["http://placeimg.com/640/360/any", "http://placeimg.com/640/360/any"];
-
         this.postDetail.author.profilePicture = "http://placeimg.com/640/360/any";
       });
+
+
   }
 
 
@@ -117,7 +119,6 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
         this.postService.getPotentialViewers(this.neighborhood_id, this.post_id)
           .subscribe(residents => {
             this.residents = residents;
-            this.toastrService.error(this.residents.length + "");
           });
 
       });
@@ -189,6 +190,15 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
 
   ngAfterContentChecked(): void {
     this.cdRef.detectChanges();
+  }
+
+  canEdit(): boolean {
+    let b: boolean;
+    b = false;
+    this.authService.isOwner(this.postDetail.author.id).subscribe(value => {
+      b = value;
+    });
+    return b;
   }
 
 

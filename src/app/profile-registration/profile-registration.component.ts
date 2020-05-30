@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NeighborhoodService } from '../neighborhood/neighborhood.service';
-import { Neighborhood } from '../neighborhood/neighborhood';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ResidentService } from '../resident/resident.service';
-import { ToastrService, IndividualConfig } from 'ngx-toastr';
-import { Resident } from '../resident/resident';
-import { Login } from '../login/login';
-import { LoginService } from '../login/login.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NeighborhoodService} from '../neighborhood/neighborhood.service';
+import {Neighborhood} from '../neighborhood/neighborhood';
+import {FormGroup, FormControl} from '@angular/forms';
+import {ResidentService} from '../resident/resident.service';
+import {ToastrService, IndividualConfig} from 'ngx-toastr';
+import {Resident} from '../resident/resident';
+import {Login} from '../login/login';
+import {LoginService} from '../login/login.service';
 
 @Component({
   selector: 'app-profile-registration',
@@ -22,7 +22,8 @@ export class ProfileRegistrationComponent implements OnInit {
     private loginService: LoginService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+  }
 
   neighborhood: Neighborhood;
   neighId: number;
@@ -37,6 +38,7 @@ export class ProfileRegistrationComponent implements OnInit {
     email: new FormControl(null),
     phone: new FormControl(null),
     address: new FormControl(null),
+    livingSince: new FormControl(null),
   });
 
   getNeighborhood(id: number): Neighborhood {
@@ -54,8 +56,8 @@ export class ProfileRegistrationComponent implements OnInit {
     var email: string = this.residentProfileForm.value.email;
     var phone: string = this.residentProfileForm.value.phone;
     var address: string = this.residentProfileForm.value.address;
-
     var login: Login = this.login;
+    var livingSince: string = this.residentProfileForm.value.livingSince;
 
     var resident: Resident = new Resident(
       address,
@@ -65,6 +67,11 @@ export class ProfileRegistrationComponent implements OnInit {
       phone,
       login
     );
+
+    resident.livingSince = livingSince;
+    // @ts-ignore
+    resident.joinDate = new Date();
+
 
     console.log(resident);
     const toastrConfig: Partial<IndividualConfig> = {
@@ -76,6 +83,11 @@ export class ProfileRegistrationComponent implements OnInit {
       .subscribe(
         (resident) => {
           this.resident = resident;
+
+          localStorage.setItem('rol', 'user');
+          localStorage.setItem('userId', resident.id + "");
+          localStorage.setItem('neighId', resident.neighborhood.id + "");
+
           this.residentProfileForm.reset();
           this.toastr.success(
             'The resident ' + name + ' was added.',

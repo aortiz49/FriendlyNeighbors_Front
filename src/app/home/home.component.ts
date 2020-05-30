@@ -7,6 +7,7 @@ import {FavorDetail} from "../favor/favorDetail";
 import {Post} from "../post/post";
 import {PostListComponent} from "../post/post-list/post-list.component";
 import {Resident} from "./resident";
+import {SimpleAuthService} from "../simple-auth-service/simple-auth.service";
 
 @Component({
   selector: 'app-home',
@@ -28,9 +29,10 @@ export class HomeComponent implements OnInit {
   toggle2: boolean;
 
   constructor(private router: Router,
-               private route: ActivatedRoute,
+              private route: ActivatedRoute,
               private service: ResidentService,
               private toastService: ToastrService,
+              private authService: SimpleAuthService
   ) {
 
 
@@ -65,14 +67,7 @@ export class HomeComponent implements OnInit {
     this.service.getresident(this.neigh_id, this.resident_id)
       .subscribe(residentDetail => {
         this.resident = residentDetail;
-
-        this.resident.album = ["http://placeimg.com/500/500/any", "http://placeimg.com/500/500/arch", "http://placeimg.com/500/500/nature", "http://placeimg.com/500/500/tech", "http://placeimg.com/500/500/tech/sepia", "http://placeimg.com/500/500/animals/sepia", "http://placeimg.com/500/500/animals", "http://placeimg.com/500/500/people", "http://placeimg.com/500/500/people/grayscale", "http://placeimg.com/500/500/people/sepia", "http://placeimg.com/500/500/tech/sepia", "http://placeimg.com/500/500/arch/grayscale"];
-
         this.resident.profilePicture = "http://placeimg.com/500/500/any";
-        // @ts-ignore
-        this.resident.joinDate = new Date();
-        this.resident.livingSince = "2001";
-
       });
 
 
@@ -142,6 +137,15 @@ export class HomeComponent implements OnInit {
       rta = true;
     }
     return rta;
+  }
+
+  canEdit(): boolean {
+    let b: boolean;
+    b = false;
+    this.authService.isOwner(this.resident.id).subscribe(value => {
+      b = value;
+    });
+    return b;
   }
 
 

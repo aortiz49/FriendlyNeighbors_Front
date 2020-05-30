@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {ResidentDetail} from "../home/resident-detail";
 import {Post} from "../post/post";
 import {FavorDetail} from "../favor/favorDetail";
@@ -38,21 +38,39 @@ export class GroupService {
 
   }
 
-  getmembers(neighborhood, resident): Observable<ResidentDetail[]> {
+  getmembers(neighborhood, group): Observable<ResidentDetail[]> {
 
-    console.log(API_URL + neighborhoods + "/" + neighborhood + residents + "/" + resident + members);
+    console.log(API_URL + neighborhoods + "/" + neighborhood + residents + "/" + group + members);
 
-    let rr: Observable<ResidentDetail[]>;
+    let r: Observable<ResidentDetail[]>;
 
 
-    rr = this.http.get<ResidentDetail[]>(
-      API_URL + neighborhoods + "/" + neighborhood + residents + "/" + resident + members
+    r = this.http.get<ResidentDetail[]>(
+      API_URL + neighborhoods + "/" + neighborhood + residents + "/" + group + members
     );
 
 
-    return rr;
+    return r;
 
   }
 
+
+  isMember(neighborhood, group, resident): Observable<boolean> {
+
+    console.log(API_URL + neighborhoods + "/" + neighborhood + residents + "/" + group + members + "/" + resident);
+
+    let b: boolean;
+    b = true;
+
+    try {
+      this.http.get<ResidentDetail>(
+        API_URL + neighborhoods + "/" + neighborhood + residents + "/" + group + members + "/" + resident
+      );
+    } catch (e) {
+      b = false;
+    }
+
+    return of(b);
+  }
 
 }

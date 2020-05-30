@@ -7,12 +7,47 @@
   display: block;
 }
 
+.tag {
+  background-color: #544fa6;
+  border-bottom-right-radius: 1vw;
+  color: #544fa6;
+  padding: .5vw;
+}
+
+.tag2 {
+  background-color: #544fa6;
+  border-bottom-left-radius: 1vw;
+  color: #544fa6;
+  padding: .5vw;
+}
+
+.text {
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 17px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  color: #f8f9ff;
+  border-color: #181818;
+  letter-spacing: 0.2px;
+  outline-color: #0f071e;
+  background-color: #544FA6;
+  border-radius: 10px;
+}
+
+
 .emptyMessage {
 
   color: rgb(154, 154, 153);
+  max-width: 100px;
+  margin: 0 auto;
   cursor: pointer;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 20px;
   font-style: normal;
   font-variant-caps: normal;
   font-variant-east-asian: normal;
@@ -57,10 +92,49 @@
 }
 
 
+.smallPicture {
+  height: 29px;
+  width: 29px;
+  border: 2px solid #6d16f7;
+  border-radius: 50%;
+
+}
+
+.name {
+
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif, Charcoal, sans-serif;
+  font-size: 13px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 800;
+  color: #112428;
+  letter-spacing: 0.2px;
+}
+
+.placeholder2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  color: #1f1f1f !important;
+}
+
+
 .icon {
   color: rgb(154, 154, 153);
 }
 
+.buttons {
+  color: #ac00ff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: white;
+}
 
 .thumb {
   margin: 0;
@@ -74,14 +148,15 @@
 
 .fitandcenter {
   max-width: 100%;
-  margin: 0 auto
-
+  margin: 0 auto;
+  max-height: 600px;
+    overflow: auto;
 }
 
 body {
-  max-height: 260px;
+  max-height: 700px;
+  min-height: 700px;
   min-width: 100%;
-
   background-color: white;
   border-image-repeat: stretch;
   border-image-source: none;
@@ -101,9 +176,6 @@ body {
 
   text-align: center;
 
-  overflow: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
 
 }
 
@@ -116,3 +188,4 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
 }
+

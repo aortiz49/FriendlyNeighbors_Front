@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import { Neighborhood } from '../neighborhood/neighborhood';
-import { Login } from '../login/login';
+import {Neighborhood} from '../neighborhood/neighborhood';
+import {Login} from '../login/login';
 
 /**
  *This class represents a resident made by a resident
@@ -64,25 +64,45 @@ export class Resident {
 
   public profilePicture: string;
 
+  public muralPicture: string;
+
+  public livingSince: string;
+
+  public birthDate: string;
+
+  public joinDate: string;
+
+
   constructor(
     address: string,
     email: string,
     name: string,
     nickname: string,
     phonenumber: string,
-    login: Login
+    login: Login,
+
   ) {
-    this.address = address;
-    this.email = email;
-    this.name = name;
-    this.nickname = nickname;
-    this.phoneNumber = phonenumber;
-    this.preferences = '';
-    this.proofOfResidence = '';
-    this.login = login;
+    this
+      .address = address;
+    this
+      .email = email;
+    this
+      .name = name;
+    this
+      .nickname = nickname;
+    this
+      .phoneNumber = phonenumber;
+    this
+      .preferences = '';
+    this
+      .proofOfResidence = '';
+    this
+      .login = login;
   }
 
-  get Login(): Login {
+  get Login()
+    :
+    Login {
     return this.login;
   }
 }
