@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { NeighborhoodService } from '../neighborhood/neighborhood.service';
-import { Neighborhood } from '../neighborhood/neighborhood';
-import { FormGroup, FormControl } from '@angular/forms';
-import { LoginService } from './login.service';
-import { Login } from './login';
-import { ToastrService, IndividualConfig } from 'ngx-toastr';
-import { Router } from '@angular/router';
-import { Resident } from '../resident/resident';
+import {Component, OnInit} from '@angular/core';
+import {NeighborhoodService} from '../neighborhood/neighborhood.service';
+import {Neighborhood} from '../neighborhood/neighborhood';
+import {FormGroup, FormControl} from '@angular/forms';
+import {LoginService} from './login.service';
+import {Login} from './login';
+import {ToastrService, IndividualConfig} from 'ngx-toastr';
+import {Router} from '@angular/router';
+import {Resident} from '../resident/resident';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private toastr: ToastrService,
     private router: Router
-  ) {}
+  ) {
+  }
 
   neighborhoods: Array<Neighborhood>;
   login: Login;
@@ -36,16 +37,18 @@ export class LoginComponent implements OnInit {
     var password: string = this.LoginForm.value.password;
     var neighborhood: number = this.LoginForm.value.neighborhood;
 
+
     this.getLogin(neighborhood, username);
   }
 
-  getLogin(neighId: number, username: string): void {
+  getLogin(neighId: number, username): void {
     this.loginService
-      .getLoginByUsername(this.neighborhoods[0].id, username)
+      .getLoginById(this.neighborhoods[0].id, username)
       .subscribe((login) => {
         this.login = login;
         this.resident = this.login.resident;
-        console.log(this.resident);
+        console.log(login);
+        console.log(login.resident);
 
         this.authenticateLogin(this.LoginForm.get('password').value);
       });
@@ -57,8 +60,13 @@ export class LoginComponent implements OnInit {
     };
 
     if (this.login.password === password) {
+
+      localStorage.setItem('rol', 'user');
+      localStorage.setItem('userId', this.login.resident.id + "");
+      localStorage.setItem('neighId', this.login.resident.neighborhood.id + "");
+
       this.toastr.success(
-        `Welcome back, ${this.resident.nickname} \ud83d\udc95`,
+        `Welcome back, ${this.resident.name} \ud83d\udc95`,
         'Authenticated',
         toastrConfig
       );
@@ -79,6 +87,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {
       this.neighborhoods = neighborhoods;
     });

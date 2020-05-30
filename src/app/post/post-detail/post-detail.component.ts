@@ -11,6 +11,7 @@ import {CommentP} from "../commentP";
 import {Resident} from "../../home/resident";
 import {ResidentService} from "../../home/resident.service";
 import {ResidentDetail} from "../../home/resident-detail";
+import {SimpleAuthService} from "../../simple-auth-service/simple-auth.service";
 
 
 @Component({
@@ -26,7 +27,9 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
               private toastrService: ToastrService,
               private router: Router,
               private route: ActivatedRoute,
-              private cdRef: ChangeDetectorRef) {
+              private cdRef: ChangeDetectorRef,
+              private authService: SimpleAuthService,
+  ) {
     //This is added so we can refresh the view when one of the bikes in
     //the "Other bikes" list is clicked
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
@@ -187,6 +190,15 @@ export class PostDetailComponent implements OnInit, OnDestroy, AfterContentCheck
 
   ngAfterContentChecked(): void {
     this.cdRef.detectChanges();
+  }
+
+  canEdit(): boolean {
+    let b: boolean;
+    b = false;
+    this.authService.isOwner(this.postDetail.author.id).subscribe(value => {
+      b = value;
+    });
+    return b;
   }
 
 

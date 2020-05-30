@@ -126,8 +126,8 @@
 
 
     <td class="viewersFrame collapse width" id="viewers{{post_id}}">
-      <div class="row">
-        <div class="options col-8">Add viewers
+      <div *ngIf="canEdit()" class="row">
+          <div class="options col-8">Add viewers
         </div>
         <div class=col-2>
           <a class=" buttons2 btn btn-light d-flex justify-content-center " (click)="addViewers()"> <i class="fa fa-plus-square"></i></a>
@@ -135,7 +135,7 @@
       </div>
 
 
-      <ng-select [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
+      <ng-select *ngIf="canEdit()" [multiple]="true" [(ngModel)]="selected" placeholder="Type or select">
         <ng-option *ngFor="let r of residents" [value]="r">
 
           <img class=" smallPicture" [src]="'http://placeimg.com/500/500/people'"/>

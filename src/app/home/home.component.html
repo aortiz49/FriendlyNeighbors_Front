@@ -1,4 +1,3 @@
-
 <div style="min-height: 100%;">
   <div class=" banner">
 
@@ -231,9 +230,9 @@
 
     <div class="col-lg-5 col-md-6 mb-3">
 
-      <div class="title3" style="max-width: 100%;">What are you thinking about?
+      <div *ngIf="canEdit()" class="title3" style="max-width: 100%;">What are you thinking about?
       </div>
-      <app-post-create [residents]="residents" [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
+      <app-post-create *ngIf="canEdit()" [residents]="residents" [neigh_id]="neigh_id" [residen_id]="resident.id" (updatePost)="updatePosts()">
       </app-post-create>
 
       <app-post-list [postsByInput]="true" [neigh_id]="neigh_id" [posts]="resident.posts" [originals]="resident.posts">
