@@ -68,10 +68,6 @@ export class HomeComponent implements OnInit {
       .subscribe(residentDetail => {
         this.resident = residentDetail;
         this.resident.profilePicture = "http://placeimg.com/500/500/any";
-        // @ts-ignore
-        this.resident.joinDate = new Date();
-        this.resident.livingSince = "2001";
-
       });
 
 
