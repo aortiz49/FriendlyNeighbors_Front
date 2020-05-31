@@ -10,6 +10,8 @@ import { ResidentService } from '../home/resident.service';
 import { ResidentDetail } from '../home/resident-detail';
 import { Business } from '../business/business';
 
+
+
 @Component({
   selector: 'app-businessRegistration',
   templateUrl: './businessRegistration.component.html',
@@ -47,7 +49,6 @@ export class BusinessRegistrationComponent implements OnInit {
   }
 
   getResidents(neigh: Neighborhood): void {
-    console.log("mensaje!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     this.residentService.getresidents(neigh.id).subscribe((residents) => {
       this.residents = residents;
     });

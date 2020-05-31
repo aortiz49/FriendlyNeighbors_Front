@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FavorRegistrationComponent } from './favor-registration.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { BusinessRegistrationComponent } from './businessRegistration.component';
-import { ResidentModule } from '../resident/resident.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: 'newBusiness',
-    component: BusinessRegistrationComponent,
+    path: 'newFavor',
+    component: FavorRegistrationComponent,
     children: [
       {
-        path:'', component: BusinessRegistrationComponent }
+        path:'', component: FavorRegistrationComponent   }
     ]
   }
 ];
@@ -24,10 +23,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule,
     NeighborhoodModule,
-    ResidentModule,
     ReactiveFormsModule
   ],
-  declarations: [BusinessRegistrationComponent],
-  exports: [BusinessRegistrationComponent]
+  declarations: [FavorRegistrationComponent],
+  exports: [FavorRegistrationComponent]
 })
-export class BusinessRegistrationModule { }
+export class FavorRegistrationModule { }
