@@ -47,3 +47,20 @@ h4 {
 #point:hover{
   cursor: pointer!important;
 }
+
+#rateFilter {
+  margin: 1vw;
+  display: inline-block
+}
+
+#filterbutton {
+  margin: 1vw !important;
+}
+
+#search {
+  border-radius: 0.5vw;
+  width: 25vw;
+  background-color: #36393f;
+  margin: 5px;
+  padding: 1vw;
+}

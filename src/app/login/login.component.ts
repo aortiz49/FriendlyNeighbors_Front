@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
 
 
     this.getLogin(neighborhood, username);
+    console.log("HELLOO");
   }
 
   getLogin(neighId: number, username): void {
