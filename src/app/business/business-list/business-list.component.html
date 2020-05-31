@@ -9,18 +9,18 @@
     </div>
   </div>
 
-  <form style="margin:5px;">
+  <form [formGroup]= "businessForm" (ngSubmit)= "rating()">
     <div class="form-row">
       <div class="col-sm-3">
           <input type="number" min="0" max="10" step="0.1" class="form-control" placeholder="Filter by rating">
       </div>
-      <div class="col">
-          <button type="button" id="button-filterByName" class="btn btn-success">Apply</button>
+      <div id="button">
+        <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Apply</button>
       </div>
     </div>
 </form>
 
-  <button type="button" class="btn btn-warning float-right" (click)="nothingSelected()">
+  <button type="button" class="btn btn-warning float-right" (click)= "nothingSelected()">
     Minimize
   </button>
 

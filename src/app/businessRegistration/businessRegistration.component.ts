@@ -7,7 +7,6 @@ import { Neighborhood } from '../neighborhood/neighborhood';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Resident } from '../resident/resident';
 import { ResidentService } from '../home/resident.service';
-import { ResidentDetail } from '../home/resident-detail';
 import { Business } from '../business/business';
 
 
@@ -28,7 +27,9 @@ export class BusinessRegistrationComponent implements OnInit {
   ) { }
 
   neighborhoods: Array<Neighborhood>;
-  residents: Array<ResidentDetail>;
+  residents: Array<Resident>;
+  selectedNeighborhoodId: number;
+  selectedNeighborhood: Neighborhood;
 
   businessForm = new FormGroup({
     name: new FormControl(null),
@@ -42,16 +43,20 @@ export class BusinessRegistrationComponent implements OnInit {
     rating: new FormControl(null),
   });
 
+  getNeighborhoood():void{
+    this.neighborhoodService.getNeighborhoodById(this.selectedNeighborhoodId).subscribe((selectedNeighborhood) => {
+      this.selectedNeighborhood = selectedNeighborhood;
+    });
+  }
+
   getNeighborhoods(): void {
     this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {
       this.neighborhoods = neighborhoods;
     });
   }
 
-  getResidents(neigh: Neighborhood): void {
-    this.residentService.getresidents(neigh.id).subscribe((residents) => {
-      this.residents = residents;
-    });
+  getResidents(): void {
+    this.residents = this.selectedNeighborhood.people;
   }
 
   onSubmit(): void {
@@ -167,7 +172,7 @@ export class BusinessRegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.getNeighborhoods();
-    // this.getResidents(200);
+    this.getResidents();
   }
 
 }

@@ -36,7 +36,7 @@ export class BusinessListComponent implements OnInit {
     rating : new FormControl(null)
   });
 
-  filterbyRating():void{
+  rating():void{
     console.log("entra");
     this.rate = this.businessForm.get('rating').value;
     this.businesses = this.businesses.filter(business => business.rating >= this.rate);
@@ -49,7 +49,6 @@ export class BusinessListComponent implements OnInit {
 
   nothingSelected():void{
     this.selected = false;
-
   }
 
   ngOnInit() {
