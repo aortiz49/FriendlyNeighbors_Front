@@ -53,7 +53,12 @@ img {
   padding: 2vw;
   border-radius: 2vw;
 }
-
+.form-control-neigh:focus{
+  background-color: #5233db;
+  opacity: 0.8;
+  color: white;
+  font-family: Futura;
+}
 .form-control:focus,
 select {
   background-color: #5233db;

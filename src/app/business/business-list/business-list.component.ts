@@ -3,6 +3,7 @@ import { Business } from '../business';
 import { BusinessService } from '../business.service';
 import { BusinessDetail } from '../business-detail';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -28,6 +29,17 @@ export class BusinessListComponent implements OnInit {
         this.businesses = bs;
       }
     )
+  }
+  rate:number;
+
+  businessForm = new FormGroup({
+    rating : new FormControl(null)
+  });
+
+  filterbyRating():void{
+    console.log("entra");
+    this.rate = this.businessForm.get('rating').value;
+    this.businesses = this.businesses.filter(business => business.rating >= this.rate);
   }
 
   onSelected(c:BusinessDetail):void{
