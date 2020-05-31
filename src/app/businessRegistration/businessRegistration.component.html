@@ -88,13 +88,7 @@
             </div>
           </div>
 
-          <label for="governmentId" class="bmd-label-floating">
-            <h5>Neighborhood</h5>
-          </label>
-          <select formControlName="neighborhood" id="inputState" class="form-control" [(ngModel)]= "selectedNeighborhoodId">
-            <option [ngValue]= "null">Choose...</option>
-            <option value={{n.id}} *ngFor= "let n of neighborhoods"> {{n.name}}</option>
-          </select>
+
 
           <label for="governmentId" class="bmd-label-floating">
             <h5>Owner</h5>

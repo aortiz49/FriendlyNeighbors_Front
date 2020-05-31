@@ -7,7 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BusinessRegistrationComponent } from './businessRegistration.component';
 import { ResidentModule } from '../resident/resident.module';
 import { BusinessRoutingModule } from '../business/business-routing/business-routing.module';
-import { BusinessRegistrationRouBusinessRegistrationRoutingModuletingModule, BusinessRegistrationRoutingModule } from './BusinessRegistrationRouting.module';
+import { BusinessRegistrationRoutingModule } from './BusinessRegistrationRouting.module';
 
 
 @NgModule({

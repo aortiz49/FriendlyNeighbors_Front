@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { BusinessService } from '../business/business.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Neighborhood } from '../neighborhood/neighborhood';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Resident } from '../resident/resident';
 import { ResidentService } from '../home/resident.service';
 import { Business } from '../business/business';
+import { ResidentDetail } from '../home/resident-detail';
 
 
 
@@ -23,13 +24,16 @@ export class BusinessRegistrationComponent implements OnInit {
     private neighborhoodService: NeighborhoodService,
     private residentService: ResidentService,
     private businessService: BusinessService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+
   ) { }
 
   neighborhoods: Array<Neighborhood>;
-  residents: Array<Resident>;
+  residents: Array<ResidentDetail>;
   selectedNeighborhoodId: number;
   selectedNeighborhood: Neighborhood;
+  neighId: number;
 
   businessForm = new FormGroup({
     name: new FormControl(null),
@@ -43,22 +47,11 @@ export class BusinessRegistrationComponent implements OnInit {
     rating: new FormControl(null),
   });
 
-  getNeighborhoood():void{
-    this.neighborhoodService.getNeighborhoodById(this.selectedNeighborhoodId).subscribe((selectedNeighborhood) => {
-      this.selectedNeighborhood = selectedNeighborhood;
-      console.log(this.selectedNeighborhood)
-    });
-  }
-
-  getNeighborhoods(): void {
-    this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {
-      this.neighborhoods = neighborhoods;
-    });
-  }
 
   getResidents(): void {
-    this.residents = this.selectedNeighborhood.people;
-  }
+    this.residentService.getresidents(this.neighId).subscribe((residents) => {
+      this.residents = residents;
+    });  }
 
   onSubmit(): void {
     console.log(
@@ -172,7 +165,7 @@ export class BusinessRegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNeighborhoods();
+    this.neighId = +this.route.snapshot.paramMap.get('id');
     this.getResidents();
 
   }
