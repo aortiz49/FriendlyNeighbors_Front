@@ -31,6 +31,10 @@ import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayou
 import {GroupModule} from "./group/group.module";
 import { LocationModule } from './location/location.module';
 import { FavorModule } from './favor/favor.module';
+import { BusinessRegistrationRoutingModule } from './businessRegistration/BusinessRegistrationRouting.module';
+import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
+import { FavorRoutingModule } from './favor/favor-routing/favor-routing.module';
+import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -51,6 +55,10 @@ const routes: Routes = [
     PostModule,
     ResidentModule,
     BusinessModule,
+    BusinessRegistrationRoutingModule,
+    BusinessRegistrationModule,
+    FavorRoutingModule,
+    FavorRegistrationModule,
     NotificationModule,
     NeighborhoodModule,
     LoginResgistrationModule,

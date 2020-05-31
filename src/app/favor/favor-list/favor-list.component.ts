@@ -30,6 +30,10 @@ export class FavorListComponent implements OnInit {
     this.selectedFavor=c;
   }
 
+  nothingSelected():void{
+    this.selected=false;
+  }
+
   ngOnInit() {
     this.neighId = +this.route.snapshot.paramMap.get('id');
 

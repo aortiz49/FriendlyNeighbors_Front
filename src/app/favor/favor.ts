@@ -11,5 +11,19 @@ export class Favor {
   public isHelpWanted: Boolean;
   public candidates: Resident[];
 
-
+  constructor(
+    datePosted: string,
+    title: String,
+    description: String,
+    type: String,
+    isHelpWanted: Boolean,
+    candidates: Resident[]
+  ){
+    this.datePosted=datePosted;
+    this.title=title;
+    this.description=description;
+    this.type=type;
+    this.isHelpWanted=isHelpWanted;
+    this.candidates=candidates;
+  }
 }
