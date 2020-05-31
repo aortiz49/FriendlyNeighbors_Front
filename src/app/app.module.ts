@@ -32,7 +32,10 @@ import {GroupModule} from "./group/group.module";
 import {LocationModule} from './location/location.module';
 import {FavorModule} from './favor/favor.module';
 import {GroupLayoutModule} from "./group-layout/group-layout.module";
-import {DatePipe} from "@angular/common";
+import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
+import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
+import { BusinessRoutingModule } from './business/business-routing/business-routing.module';
+import { BusinessRegistrationRoutingModule } from './businessRegistration/BusinessRegistrationRouting.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -56,8 +59,12 @@ const routes: Routes = [
     NotificationModule,
     NeighborhoodModule,
     LoginResgistrationModule,
+    BusinessRegistrationModule,
+    BusinessRoutingModule,
+    BusinessRegistrationRoutingModule,
     LoginModule,
     ProfileRegistrationModule,
+    FavorRegistrationModule,
     HttpClientModule,
     LayoutModule,
     GroupLayoutModule,

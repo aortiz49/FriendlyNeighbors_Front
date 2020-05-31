@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row v-center">
+
+    <div id="place" class="col-sm-5 col-md-5 ">
+      <div class="row v-center text-center">
+        <div class="col">
+          <h2>New Favor</h2>
+        <img src="/assets/img/agreement.png" alt="Smiley face">
+        </div>
+      </div>
+    </div>
+
+    <div id="place" class="col-sm-7 col-md-7">
+      <div class="myForm">
+        <form [formGroup]= "favorForm" (ngSubmit)= "onSubmit()">
+          <div class="form-group">
+            <label for="title" class="bmd-label-floating">
+              <h5>Title</h5>
+            </label>
+            <input type="text" class="form-control" formControlName="title" id="title" placeholder="Enter title">
+          </div>
+          <div class="form-group">
+            <label for="type" class="bmd-label-floating">
+              <h5>Type</h5>
+            </label>
+            <input type="text" class="form-control" formControlName="type" id="type" placeholder="Ex: lend, pick up,...">
+          </div>
+          <div class="form-group">
+            <label for="description" class="bmd-label-floating">
+              <h5>Description</h5>
+            </label>
+            <textarea type="text" class="form-control" formControlName="description" id="description" placeholder="Enter description"></textarea>
+          </div>
+
+
+          <div class="form-group">
+            <label for="datePosted" class="bmd-label-floating">
+              <h5>Date Posted</h5>
+            </label>
+            <div class="col no-padding input-group">
+              <span class="input-group-prepend input-group-text">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </span>
+              <input type="datetime-local" class="form-control" formControlName="datePosted" id="datePosted">
+            </div>
+          </div>
+
+
+          <label for="governmentId" class="bmd-label-floating">
+            <h5>Neighborhood</h5>
+          </label>
+          <select formControlName="neighborhood" id="inputState" class="form-control">
+            <option [ngValue]= "null">Choose...</option>
+            <option value={{n.id}} *ngFor= "let n of neighborhoods" (click)= "getResidents(n.id)"> {{n.name}}</option>
+          </select>
+
+          <label for="governmentId" class="bmd-label-floating">
+            <h5>Author</h5>
+          </label>
+          <select formControlName="author" id="inputState" class="form-control">
+            <option [ngValue]= "null">Choose...</option>
+            <option value={{r.id}} *ngFor= "let r of residents"> {{r.name}}</option>
+          </select>
+
+          <label for="governmentId" class="bmd-label-floating">
+            <h5>Candidates</h5>
+          </label>
+
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="isHelpWanted" formControlName="isHelpWanted">
+            <label class="form-check-label" for="isHelpWanted">
+              Is Help Wanted?
+            </label>
+          </div>
+
+          <div id="button">
+            <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Submit</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>

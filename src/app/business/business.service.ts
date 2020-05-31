@@ -14,6 +14,8 @@ const neighborhoods = "/neighborhoods";
 })
 export class BusinessService {
 
+  private apiUrl = environment.apiUrl + 'neighborhoods';
+
 constructor(private http:HttpClient) { }
 
 
@@ -22,5 +24,10 @@ constructor(private http:HttpClient) { }
     return this.http.get<Business[]>(
       "http://localhost:8080/s3_neighborhood-api/api/neighborhoods/" + neighID + "/businesses"
   );
+  }
+
+  addBusiness(neighId: number, business: Business, residentId: number): Observable<Business>{
+    var a: string = JSON.stringify(business);
+    return this.http.post<Business>(`${this.apiUrl}/${neighId}/residents/` + residentId + `/businesses/`,business);
   }
 }

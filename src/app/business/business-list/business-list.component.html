@@ -7,45 +7,33 @@
         Businesses
       </h2>
     </div>
-
-    <div id="rateFilter">
-      <form [formGroup]="RateForm" (ngSubmit)="onSubmit()">
-
-        <div class="form-group">
-          <label for="Rating" class="bmd-label-floating">
-            <h5>Rating</h5>
-          </label>
-          <input type="number" step=".1" class="form-control" formControlName="rating">
-        </div>
-        <br />
-
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" id="search">
-            <h3>Search <i class="fa fa-arrow-circle-right"></i></h3>
-          </button>
-
-        </div>
-
-      </form>
-
-    </div>
   </div>
 
+  <form [formGroup]= "businessForm" (ngSubmit)= "rating()">
+    <div class="form-row">
+      <div class="col-sm-3">
+          <input type="number" min="0" max="10" step="0.1" class="form-control" placeholder="Filter by rating">
+      </div>
+      <div id="button">
+        <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Apply</button>
+      </div>
+    </div>
+</form>
 
-  <button type="button" class="btn btn-warning float-right" (click)="nothingSelected()">
+  <button type="button" class="btn btn-warning float-right" (click)= "nothingSelected()">
     Minimize
   </button>
 
   <div id="cardsRow" class="row">
 
 
-    <div *ngIf="selected" class="row" style="text-align: center; padding: 0;">
-      <app-business-detail [businessDetail]="selectedBusiness"></app-business-detail>
+    <div *ngIf= "selected" class="row" style="text-align: center; padding: 0;">
+      <app-business-detail [businessDetail]= "selectedBusiness"></app-business-detail>
     </div>
 
-    <div *ngFor="let r of filteredBusinesses" class="col-sm-2 col-md-4 align-items-center"
+    <div *ngFor= "let r of businesses" class="col-sm-2 col-md-4 align-items-center"
       style="text-align: center; padding: 0;">
-      <div id="point" (click)="onSelected(r)" class="card card-block d-flex">
+      <div id="point" (click)= "onSelected(r)" class="card card-block d-flex">
         <div class="card-body align-items-center d-flex justify-content-center">
           <h4>
             {{r.name}}

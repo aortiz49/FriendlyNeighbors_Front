@@ -6,7 +6,11 @@ h3 {
   font-size: 1.6vw;
   font-family: Futura;
 }
-
+label{
+  font-size: 1.3vw;
+  font-family: Futura;
+  color: white;
+}
 h4 {
   font-size: 1.3vw;
   font-family: Futura;

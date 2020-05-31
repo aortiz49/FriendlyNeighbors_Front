@@ -24,7 +24,7 @@ export class ResidentService {
   constructor(private http: HttpClient) {
   }
 
-  getresidents(neighborhood): Observable<ResidentDetail[]> {
+  getresidents(neighborhood: number): Observable<ResidentDetail[]> {
     return this.http.get<ResidentDetail[]>(
       API_URL + neighborhoods + "/" + neighborhood + residents + "/"
     );
