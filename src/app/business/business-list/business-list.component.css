@@ -68,3 +68,22 @@ h4 {
   margin: 5px;
   padding: 1vw;
 }
+
+#searchButton {
+  margin:1vw;
+  width: 25%;
+}
+
+.button, .btn {
+  padding: 0 !important;
+  margin: 0 ;
+}
+
+#searchbar{
+  margin:1vw;
+  width: 25%;
+}
+
+i{
+  margin: auto;
+}

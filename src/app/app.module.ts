@@ -36,6 +36,7 @@ import { BusinessRegistrationModule } from './businessRegistration/businessRegis
 import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
 import { BusinessRoutingModule } from './business/business-routing/business-routing.module';
 import { BusinessRegistrationRoutingModule } from './businessRegistration/BusinessRegistrationRouting.module';
+import { DatePipe } from '@angular/common';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},

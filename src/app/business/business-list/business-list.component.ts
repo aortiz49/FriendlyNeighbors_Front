@@ -21,12 +21,14 @@ export class BusinessListComponent implements OnInit {
   selectedBusiness:BusinessDetail;
   selected=false;
   public businesses:Array<Business>;
+  filteredBusinesses : Array<Business>;
 
   getAllBusiness(){
     console.log("In de getAllBusiness");
 
     this.bussinessService.getbusinesses(this.neighId).subscribe(bs => {
         this.businesses = bs;
+        this.filteredBusinesses = bs;
       }
     )
   }
@@ -36,11 +38,18 @@ export class BusinessListComponent implements OnInit {
     rating : new FormControl(null)
   });
 
-  rating():void{
-    console.log("entra");
-    this.rate = this.businessForm.get('rating').value;
-    this.businesses = this.businesses.filter(business => business.rating >= this.rate);
+  onSubmit():void{
+
+     this.filteredBusinesses = [];
+     this.rate = this.businessForm.get('rating').value;
+
+    for (let index = 0; index < this.businesses.length; index++) {
+          if(this.businesses[index].rating >= this.rate){
+            this.filteredBusinesses.push(this.businesses[index]);
+          }
+    }
   }
+
 
   onSelected(c:BusinessDetail):void{
     this.selected = true;

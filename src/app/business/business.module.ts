@@ -5,13 +5,15 @@ import { BusinessDetailComponent } from './business-detail/business-detail.compo
 import { BusinessRoutingModule } from './business-routing/business-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BusinessRoutingComponent } from './business-routing/business-routing.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // merged comment
 @NgModule({
   imports: [
     CommonModule,
     BusinessRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   declarations: [BusinessListComponent, BusinessDetailComponent,BusinessRoutingComponent],
   exports:[BusinessListComponent,BusinessRoutingComponent]
