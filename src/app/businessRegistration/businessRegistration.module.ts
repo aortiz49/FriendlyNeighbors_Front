@@ -6,26 +6,18 @@ import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BusinessRegistrationComponent } from './businessRegistration.component';
 import { ResidentModule } from '../resident/resident.module';
+import { BusinessRoutingModule } from '../business/business-routing/business-routing.module';
+import { BusinessRegistrationRouBusinessRegistrationRoutingModuletingModule, BusinessRegistrationRoutingModule } from './BusinessRegistrationRouting.module';
 
-const routes: Routes = [
-  {
-    path: 'newBusiness',
-    component: BusinessRegistrationComponent,
-    children: [
-      {
-        path:'', component: BusinessRegistrationComponent }
-    ]
-  }
-];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
     HttpClientModule,
     NeighborhoodModule,
     ResidentModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BusinessRegistrationRoutingModule
   ],
   declarations: [BusinessRegistrationComponent],
   exports: [BusinessRegistrationComponent]

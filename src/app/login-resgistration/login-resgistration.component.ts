@@ -116,18 +116,11 @@ export class LoginResgistrationComponent implements OnInit {
         this.residentLoginForm.reset();
       }
     );
-
-
   }
-
-
-
-
 
 
   ngOnInit() {
     this.getNeighborhoods();
-
 
   }
 }

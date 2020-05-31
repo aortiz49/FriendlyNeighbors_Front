@@ -46,6 +46,7 @@ export class BusinessRegistrationComponent implements OnInit {
   getNeighborhoood():void{
     this.neighborhoodService.getNeighborhoodById(this.selectedNeighborhoodId).subscribe((selectedNeighborhood) => {
       this.selectedNeighborhood = selectedNeighborhood;
+      console.log(this.selectedNeighborhood)
     });
   }
 
@@ -173,6 +174,7 @@ export class BusinessRegistrationComponent implements OnInit {
   ngOnInit() {
     this.getNeighborhoods();
     this.getResidents();
+
   }
 
 }

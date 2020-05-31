@@ -4,6 +4,7 @@ import { BusinessListComponent } from './business-list/business-list.component';
 import { BusinessDetailComponent } from './business-detail/business-detail.component';
 import { BusinessRoutingModule } from './business-routing/business-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BusinessRoutingComponent } from './business-routing/business-routing.component';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BusinessRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [BusinessListComponent, BusinessDetailComponent],
-  exports:[BusinessListComponent]
+  declarations: [BusinessListComponent, BusinessDetailComponent,BusinessRoutingComponent],
+  exports:[BusinessListComponent,BusinessRoutingComponent]
 })
 export class BusinessModule { }
