@@ -56,18 +56,22 @@ export class NeighborhoodRegistrationComponent implements OnInit {
   });
 
   onSubmit(): void {
-    console.log(
-      'Name:' +
-        this.neighborhoodForm.get('name').value +
-        '\n' +
-        'Locality:' +
-        this.neighborhoodForm.get('locality').value +
-        '\n' +
-        'Capacity:' +
-        this.neighborhoodForm.get('numberOfResidents').value
-    );
 
-    this.addNeighborhood();
+if(confirm("Are you sure you want to add this neighborhood?")){
+
+  console.log(
+    'Name:' +
+      this.neighborhoodForm.get('name').value +
+      '\n' +
+      'Locality:' +
+      this.neighborhoodForm.get('locality').value +
+      '\n' +
+      'Capacity:' +
+      this.neighborhoodForm.get('numberOfResidents').value
+  );
+
+  this.addNeighborhood();
+}
 
 
   }
