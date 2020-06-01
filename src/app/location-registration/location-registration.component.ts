@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { Location } from '../location/location';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Neighborhood } from '../neighborhood/neighborhood';
 import { FormGroup, FormControl } from '@angular/forms';
 import { LocationService } from '../location/location.service';
@@ -17,10 +17,12 @@ export class LocationRegistrationComponent implements OnInit {
     private toastr: ToastrService,
     private neighborhoodService: NeighborhoodService,
     private locationService: LocationService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   neighborhoods: Array<Neighborhood>;
+  neighId: number;
 
   locationForm = new FormGroup({
     name: new FormControl(null),
@@ -29,15 +31,7 @@ export class LocationRegistrationComponent implements OnInit {
     closeTime: new FormControl(null),
     latitude: new FormControl(null),
     longitude: new FormControl(null),
-    neighborhood: new FormControl(null),
   });
-
-  getNeighborhoods(): void {
-    this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {
-      // this.neighborhoods = neighborhoods.slice(0,4);
-      this.neighborhoods = neighborhoods;
-    });
-  }
 
   onSubmit(): void {
     console.log(
@@ -57,10 +51,7 @@ export class LocationRegistrationComponent implements OnInit {
         this.locationForm.get('latitude').value +
         '\n' +
         'Longitude:' +
-        this.locationForm.get('longitude').value +
-        '\n' +
-        'Neighborhood:' +
-        this.locationForm.get('neighborhood').value
+        this.locationForm.get('longitude').value
     );
     this.addLocation();
   }
@@ -100,7 +91,7 @@ export class LocationRegistrationComponent implements OnInit {
     var closeTime: string = this.locationForm.value.closeTime;
     var latitude: number = this.locationForm.value.latitude;
     var longitude: number = this.locationForm.value.longitude;
-    var neighborhood: number = this.locationForm.value.neighborhood;
+    var neighborhood: number = this.neighId;
 
     openTime = this.converTimeTo12Hr(openTime);
     closeTime = this.converTimeTo12Hr(closeTime);
@@ -125,7 +116,6 @@ export class LocationRegistrationComponent implements OnInit {
       .subscribe(
         () => {
           this.locationForm.reset();
-          this.locationForm.controls.neighborhood.setValue('Choose...');
           this.toastr.success(
             `The location "${locationName}" was added to the neighborhood.`,
             'Success',
@@ -142,6 +132,6 @@ export class LocationRegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNeighborhoods();
+    this.neighId = +this.route.snapshot.paramMap.get('id');
   }
 }

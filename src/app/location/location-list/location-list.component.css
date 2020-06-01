@@ -47,3 +47,42 @@ h4 {
 #point:hover{
   cursor: pointer!important;
 }
+
+input[type="text"],
+select,
+select:hover,
+select,
+option:active{
+  font-family: "Futura";
+  font-size: 1.2vw;
+  background-color: #313339;
+  border-color: #222428;
+  font-weight: lighter;
+  color: #dcddde;
+}
+
+
+
+.form-control:focus{
+  border-color: #7289da;
+  box-shadow: none;
+  border-width: 2px;
+  color: #dcddde;
+  background-color:#313339 ;
+}
+
+
+
+.btn{
+  background-color: #7289da;
+  border: none;
+  display: flex;
+  align-items: center;}
+
+  #searchButton{
+    margin:1vw;
+    margin-top: 1.2vw;
+    margin-left: 0;
+    width: 20%;
+    height: 2.5vw;
+  }

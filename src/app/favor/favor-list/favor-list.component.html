@@ -7,11 +7,34 @@
         Favors
       </h2>
     </div>
+
+    <div class="col-sm-10 col-md-10">
+      <form [formGroup]= "favorForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="isHelpWanted" formControlName="rating">
+            <label class="form-check-label" for="isHelpWanted">
+              <h4>Filter favors for those who need help</h4>
+            </label>
+          </div>
+
+          <div class="col-sm-5">
+            <div class="form-group">
+              <button id="searchButton" type="submit" class="btn btn-primary btn-lg btn-block">
+                <h3> <i class="fa fa-arrow-circle-right" style="padding:.2vw"></i></h3>
+              </button>
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+    </div>
   </div>
   <button type="button" class="btn btn-warning float-right" (click)= "nothingSelected()">
     Minimize
   </button>
-  <button routerLink="/newFavor" type="button" class="btn btn-light float-right">Create favor</button>
 
   <div id="cardsRow" class="row">
 
@@ -19,7 +42,7 @@
       <app-favor-detail [favorDetail]= "selectedFavor"></app-favor-detail>
     </div>
 
-    <div *ngFor= "let r of favors" class="col-sm-2 col-md-4 align-items-center"
+    <div *ngFor= "let r of filteredFavor" class="col-sm-2 col-md-4 align-items-center"
       style="text-align: center; padding: 0;">
       <div id="point" (click)= "onSelected(r)" class="card card-block d-flex">
         <div class="card-body align-items-center d-flex justify-content-center">

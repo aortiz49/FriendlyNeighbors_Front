@@ -28,6 +28,11 @@ export class LocationDetailComponent implements OnInit {
     });
   }
 
+  deletePlace():void{
+    console.log("HELLO" + this.neighId + " " + this.locId);
+    this.locationService.getLocationById(this.neighId,this.locId).subscribe();
+  }
+
   ngOnInit() {
     this.neighId = +this.route.snapshot.paramMap.get('id');
     this.locId = +this.route.snapshot.paramMap.get('lid');

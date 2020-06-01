@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LocationService } from '../location.service';
 import { Location } from '../location';
+import { FormGroup, FormControl } from '@angular/forms';
+import { empty } from 'rxjs';
 
 
 @Component({
@@ -38,10 +40,37 @@ export class LocationListComponent implements OnInit {
     '#ffa3ae',
   ];
   public locations: Location[];
+  filteredLocations: Array<Location>
+  name: string;
+
+  locationForm = new FormGroup({
+    name : new FormControl(null)
+  });
+
+  onSubmit():void{
+
+    this.name = this.locationForm.get('name').value;
+    console.log(this.name);
+
+    if(this.name == ''){
+      this.filteredLocations = this.locations;
+    }
+    else {
+    this.filteredLocations = [];
+    }
+
+
+   for (let index = 0; index < this.locations.length; index++) {
+         if(this.locations[index].name === this.name){
+           this.filteredLocations.push(this.locations[index]);
+         }
+   }
+ }
 
   getResidents() {
     this.locationService.getLocations(this.neighId).subscribe((locations) => {
       this.locations = locations;
+      this.filteredLocations = locations;
     });
   }
 

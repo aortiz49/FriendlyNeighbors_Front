@@ -83,6 +83,7 @@ export class BusinessRegistrationComponent implements OnInit {
         this.businessForm.get('rating').value
     );
     this.addBusiness();
+
   }
 
   converTimeTo12Hr(time: string): string {
@@ -120,7 +121,7 @@ export class BusinessRegistrationComponent implements OnInit {
     var closeTime: string = this.businessForm.value.closeTime;
     var latitude: number = this.businessForm.value.latitude;
     var longitude: number = this.businessForm.value.longitude;
-    var neighborhood: number = this.businessForm.value.neighborhood;
+    var neighborhood: number = this.neighId;
     var owner: number = this.businessForm.value.owner;
     var rating: number = this.businessForm.value.rating;
 
@@ -155,8 +156,9 @@ export class BusinessRegistrationComponent implements OnInit {
             toastrConfig
           );
           setTimeout(() => {
-            this.router.navigateByUrl('/');
-          }, 2300);
+            this.router.navigateByUrl(
+              `/neighborhoods/${this.neighId}`
+            );          }, 1300);
         },
         () => {
           this.businessForm.reset();

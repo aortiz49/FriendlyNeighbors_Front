@@ -15,28 +15,28 @@ import {NeighborhoodModule} from './neighborhood/neighborhood.module';
 import {LandingModule} from './landing/landing.module';
 import {Routes, RouterModule} from '@angular/router';
 import {LandingComponent} from './landing/landing.component';
-import {LayoutModule} from './home-layout/layout.module';
+import {LayoutModule} from './layout/layout.module';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {RegistrationModule} from './neighborhoodLayout/default/registration.module';
 import {AccountSettingsModule} from './account-settings/account-settings.module';
 import {NeighborhoodRegistrationModule} from './neighborhood-registration/neighborhood-registration.module';
 import {VisibilityService} from "./shared/visibility-service.service";
-import {LoginResgistrationModule} from './login-resgistration/login-resgistration.module';
-import {ProfileRegistrationModule} from './profile-registration/profile-registration.module';
-import {LocationRegistrationModule} from './location-registration/location-registration.module';
+import { LoginResgistrationModule } from './login-resgistration/login-resgistration.module';
+import { ProfileRegistrationModule } from './profile-registration/profile-registration.module';
+import { LocationRegistrationModule } from './location-registration/location-registration.module';
 import {HomeModule} from "./home/home.module";
-import {AgmCoreModule} from '@agm/core';
-import {NeighborhoodLayoutModule} from './neighborhoodLayout/neighborhoodLayout.module';
+import { AgmCoreModule } from '@agm/core';
+import { NeighborhoodLayoutModule } from './neighborhoodLayout/neighborhoodLayout.module';
 import {GroupModule} from "./group/group.module";
-import {LocationModule} from './location/location.module';
-import {FavorModule} from './favor/favor.module';
-import {GroupLayoutModule} from "./group-layout/group-layout.module";
-import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
-import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
-import { BusinessRoutingModule } from './business/business-routing/business-routing.module';
+import { LocationModule } from './location/location.module';
+import { FavorModule } from './favor/favor.module';
 import { BusinessRegistrationRoutingModule } from './businessRegistration/BusinessRegistrationRouting.module';
-import { DatePipe } from '@angular/common';
+import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
+import { FavorRoutingModule } from './favor/favor-routing/favor-routing.module';
+import { FavorRegistrationRoutingModule } from './favor-registration/favorRegistrationRouting.module';
+import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
+import { LocationRegistrationRoutingModule } from './location-registration/location-registration-routing.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -57,18 +57,19 @@ const routes: Routes = [
     PostModule,
     ResidentModule,
     BusinessModule,
+    BusinessRegistrationRoutingModule,
+    BusinessRegistrationModule,
+    FavorRoutingModule,
+    FavorRegistrationRoutingModule,
+    FavorRegistrationModule,
     NotificationModule,
+    LocationRegistrationRoutingModule,
     NeighborhoodModule,
     LoginResgistrationModule,
-    BusinessRegistrationModule,
-    BusinessRoutingModule,
-    BusinessRegistrationRoutingModule,
     LoginModule,
     ProfileRegistrationModule,
-    FavorRegistrationModule,
     HttpClientModule,
     LayoutModule,
-    GroupLayoutModule,
     LoginModule,
     DashboardModule,
     RegistrationModule,
@@ -84,8 +85,7 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent],
   providers: [
-     VisibilityService,
-    DatePipe,
+    VisibilityService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
