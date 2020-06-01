@@ -34,6 +34,7 @@ import { FavorModule } from './favor/favor.module';
 import { BusinessRegistrationRoutingModule } from './businessRegistration/BusinessRegistrationRouting.module';
 import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
 import { FavorRoutingModule } from './favor/favor-routing/favor-routing.module';
+import { FavorRegistrationRoutingModule } from './favor-registration/favorRegistrationRouting.module';
 import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
 import { LocationRegistrationRoutingModule } from './location-registration/location-registration-routing.module';
 
@@ -59,6 +60,7 @@ const routes: Routes = [
     BusinessRegistrationRoutingModule,
     BusinessRegistrationModule,
     FavorRoutingModule,
+    FavorRegistrationRoutingModule,
     FavorRegistrationModule,
     NotificationModule,
     LocationRegistrationRoutingModule,

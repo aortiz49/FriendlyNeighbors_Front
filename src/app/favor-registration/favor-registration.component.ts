@@ -3,7 +3,7 @@ import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { NeighborhoodService } from '../neighborhood/neighborhood.service';
 import { ResidentService } from '../home/resident.service';
 import { FavorService } from '../favor/favor.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Neighborhood } from '../neighborhood/neighborhood';
 import { ResidentDetail } from '../home/resident-detail';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -22,11 +22,16 @@ export class FavorRegistrationComponent implements OnInit {
     private neighborhoodService: NeighborhoodService,
     private residentService: ResidentService,
     private favorService: FavorService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+
   ) { }
 
   neighborhoods: Array<Neighborhood>;
   residents: Array<ResidentDetail>;
+  neighId: number;
+  selectedNeighborhoodId: number;
+  selectedNeighborhood: Neighborhood;
 
     favorForm=new FormGroup({
       datePosted: new FormControl(null),
@@ -38,17 +43,10 @@ export class FavorRegistrationComponent implements OnInit {
       neighborhood: new FormControl(null),
       author: new FormControl(null)
     })
-    getNeighborhoods(): void {
-      this.neighborhoodService.getNeighborhoods().subscribe((neighborhoods) => {
-        this.neighborhoods = neighborhoods;
-      });
-    }
-
-    getResidents(neigh: Neighborhood): void {
-      this.residentService.getresidents(neigh.id).subscribe((residents) => {
+    getResidents(): void {
+      this.residentService.getresidents(this.neighId).subscribe((residents) => {
         this.residents = residents;
-      });
-    }
+      });  }
   onSubmit(): void {
     console.log(
       'Date Posted:' +
@@ -95,7 +93,7 @@ export class FavorRegistrationComponent implements OnInit {
     var favorName = this.favorForm.value.title;
 
     var observable = this.favorService
-      .addFavor(neighborhood, favor, 1)
+      .addFavor(this.neighId, favor, 2)
       .subscribe(
         () => {
           this.favorForm.reset();
@@ -106,8 +104,9 @@ export class FavorRegistrationComponent implements OnInit {
             toastrConfig
           );
           setTimeout(() => {
-            this.router.navigateByUrl('/');
-          }, 2300);
+            this.router.navigateByUrl(
+              `/neighborhoods/${this.neighId}`
+            );          }, 1300);
         },
         () => {
           this.favorForm.reset();
@@ -116,7 +115,8 @@ export class FavorRegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNeighborhoods();
+    this.neighId = +this.route.snapshot.paramMap.get('id');
+    this.getResidents();
   }
 
 }
