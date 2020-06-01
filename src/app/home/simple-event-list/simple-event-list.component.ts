@@ -46,7 +46,6 @@ export class SimpleEventListComponent implements OnInit {
   ngOnInit() {
 
     this.neighborhood_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.toastrService.success("SimpleEvent list on");
 
   }
 
