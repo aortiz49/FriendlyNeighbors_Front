@@ -4,7 +4,7 @@
     <div id="place" class="col-sm-5 col-md-5 ">
       <div class="row v-center text-center">
         <div class="col">
-          <h2>New Location</h2>
+          <h2>New Location </h2>
         <img src="/assets/img/place.png" alt="Smiley face">
         </div>
       </div>
@@ -88,13 +88,6 @@
             </div>
 
           </div>
-          <label for="governmentId" class="bmd-label-floating">
-            <h5>Neighborhood</h5>
-          </label>
-          <select formControlName="neighborhood" id="inputState" class="form-control">
-            <option [ngValue]= "null">Choose...</option>
-            <option value={{n.id}} *ngFor="let n of neighborhoods"> {{n.name}}</option>
-          </select>
 
           <div id="button">
             <button type="submit" class="btn btn-primary btn-round-lg btn-lg one">Submit</button>

@@ -35,6 +35,7 @@ import { BusinessRegistrationRoutingModule } from './businessRegistration/Busine
 import { BusinessRegistrationModule } from './businessRegistration/businessRegistration.module';
 import { FavorRoutingModule } from './favor/favor-routing/favor-routing.module';
 import { FavorRegistrationModule } from './favor-registration/favor-registration.module';
+import { LocationRegistrationRoutingModule } from './location-registration/location-registration-routing.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
@@ -60,6 +61,7 @@ const routes: Routes = [
     FavorRoutingModule,
     FavorRegistrationModule,
     NotificationModule,
+    LocationRegistrationRoutingModule,
     NeighborhoodModule,
     LoginResgistrationModule,
     LoginModule,

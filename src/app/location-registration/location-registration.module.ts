@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NeighborhoodModule } from '../neighborhood/neighborhood.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainLayoutComponent } from '../neighborhoodLayout/main-layout/main-layout.component';
+import { LocationRegistrationRoutingModule } from './location-registration-routing.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
     HttpClientModule,
     NeighborhoodModule,
     ReactiveFormsModule,
+    LocationRegistrationRoutingModule
   ],
   declarations: [LocationRegistrationComponent],
 })
