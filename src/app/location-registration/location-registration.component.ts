@@ -122,7 +122,7 @@ export class LocationRegistrationComponent implements OnInit {
             toastrConfig
           );
           setTimeout(() => {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/neighborhoods/'+this.neighId);
           }, 2300);
         },
         () => {

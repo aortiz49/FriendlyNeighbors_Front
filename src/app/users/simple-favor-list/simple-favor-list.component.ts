@@ -58,7 +58,6 @@ export class SimpleFavorListComponent implements OnInit {
   ngOnInit() {
 
     this.neighborhood_id = +this.route.root.firstChild.firstChild.snapshot.paramMap.get("id");
-    this.toastrService.success("Simple list on");
 
     this.getFavors();
 

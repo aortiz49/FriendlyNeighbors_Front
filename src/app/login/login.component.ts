@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
         this.incorrect = 0;
         this.active = false;
         this.toastr.error(
-          `Too many incorrect attempt! Locked out for 5 seconds. 	\uD83D\uDE25`,
+          `Too many incorrect attempt! Locked out for 5 seconds. 	\uD83D\uDE25p`,
           'Authentication Failed'
         );
         setTimeout(() => {

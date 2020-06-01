@@ -29,12 +29,12 @@ export class LocationService {
 
   getLocationById(neighId:number, locId: number): Observable<Location> {
     var a:string = JSON.stringify(location);
-    return this.http.delete<Location>(`${this.apiUrl}/${neighId}/locations/${locId}`);
+    return this.http.get<Location>(`${this.apiUrl}/${neighId}/locations/${locId}`);
   }
 
   deleteLocationById(neighId:number, locId: number): Observable<Location> {
     var a:string = JSON.stringify(location);
-    return this.http.get<Location>(`${this.apiUrl}/${neighId}/locations/${locId}`);
+    return this.http.delete<Location>(`${this.apiUrl}/${neighId}/locations/${locId}`);
   }
 
 }

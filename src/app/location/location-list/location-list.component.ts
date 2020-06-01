@@ -59,8 +59,7 @@ export class LocationListComponent implements OnInit {
     this.filteredLocations = [];
     }
 
-
-   for (let index = 0; index < this.locations.length; index++) {
+  for (let index = 0; index < this.locations.length; index++) {
          if(this.locations[index].name === this.name){
            this.filteredLocations.push(this.locations[index]);
          }

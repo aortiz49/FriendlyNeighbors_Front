@@ -17,7 +17,6 @@ export class SimpleEventComponent implements OnInit {
   ngOnInit() {
 
     this.init.emit();
-    this.toastrService.success("Favor: initiated on demand");
 
   }
 

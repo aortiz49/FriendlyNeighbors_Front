@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '../location';
 import { LocationService } from '../location.service';
+import { ToastrService, IndividualConfig } from 'ngx-toastr';
 
 @Component({
   selector: 'app-location-detail',
@@ -11,7 +12,10 @@ import { LocationService } from '../location.service';
 export class LocationDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private locationService: LocationService
+    private locationService: LocationService,
+    private toastr: ToastrService,
+    private router: Router
+
   ) {}
 
   neighId: number;
@@ -28,9 +32,26 @@ export class LocationDetailComponent implements OnInit {
     });
   }
 
-  deletePlace():void{
-    console.log("HELLO" + this.neighId + " " + this.locId);
-    this.locationService.getLocationById(this.neighId,this.locId).subscribe();
+  deletePlace(): void{
+    const toastrConfig: Partial<IndividualConfig> = {
+      timeOut: 1800,
+    };
+
+
+    this.locationService.deleteLocationById(this.neighId,this.locId).subscribe((location) => {
+
+    });
+
+    this.toastr.success(
+      `Location ${this.location.name} was deleted.`,
+      'Delete Location',
+      toastrConfig
+    );
+    setTimeout(() => {
+      this.router.navigateByUrl(
+        `/neighborhoods/${this.neighId}`
+      );
+    }, 2300);
   }
 
   ngOnInit() {

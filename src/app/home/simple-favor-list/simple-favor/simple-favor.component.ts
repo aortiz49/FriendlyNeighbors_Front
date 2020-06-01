@@ -24,7 +24,6 @@ export class SimpleFavorComponent implements OnInit {
     this.toggle2 = false;
 
     this.init.emit();
-    this.toastrService.success("Favor: initiated on demand");
 
   }
 
